@@ -1,4 +1,4 @@
-# Prueba-Test-Essalud
+# LAB-01-Caso Essalud
 
 ## 1. Definición del Problema
 

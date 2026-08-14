@@ -58,9 +58,9 @@ El piloto inicia en la región de Lima y sus distritos, con proyección de expan
 
 <!-- Actualiza los enlaces cuando crees los archivos correspondientes en /Personas -->
 
-- [Mariel Carolina Tovar Tolentino](./Personas/Mariel.md) — Jefa de Área
-- [Rensso Victor Hugo Mora Choque](./Personas/Rensso.md) — Médico Intensivista
-- [Carlos Balbuena Palacios](./Personas/Carlos.md) — Enfermero
-- [Shakira Carol G Frisancho](./Personas/Shakira.md) — Interna
+- [Mariel Carolina Tovar Tolentino](./Personas/MarielCarolinaTovarTolentino.md) — Jefa de Área
+- [Rensso Victor Hugo Mora Choque](./Personas/RenssoVictorHugoMoraChoque.md) — Médico Intensivista
+- [Carlos Balbuena Palacios](./Personas/CarlosBalbuenaPalacios.md) — Enfermero
+- [Shakira Carol G Frisancho](./Personas/ShakiraCarolGFrisancho.md) — Interna
 
 ---

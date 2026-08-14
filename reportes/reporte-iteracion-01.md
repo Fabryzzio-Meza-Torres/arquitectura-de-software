@@ -1,0 +1,104 @@
+# Evaluación de requisitos — Iteración 01
+
+Fecha: 2026-08-13  
+Fuentes: `Agents/Eval-Spec.md`, `README.md`, `Requirements/FunctionalRequirements.md`, `Requirements/NonunctionalRequirements.md` y las cuatro personas de `Personas/`.  
+Comparación: no aplica; no se recibió una iteración anterior y el historial solo contiene una versión sustantiva de los requisitos.
+
+## 1. Detalle por persona
+
+Los requerimientos con relevancia **No aplica** se muestran para dejar completo el mapeo, pero se excluyen tanto del puntaje obtenido como del máximo aplicable. En Bloque B, el criterio “sin cruces” solo se incluye en el máximo de RF-04 y RF-05. Ningún requisito acredita viabilidad para las tres escalas 1K/100K/10M, porque no establece capacidades ni límites para esas fases.
+
+| Persona | Requerimiento (ID) | Relevancia | Score (A+B+C / máx) | Justificación |
+| --- | --- | --- | --- | --- |
+| Shakira Carol G Frisancho | RF-01 | Alta | 1+0+0 / 26 | RF-01 — A (1/9): permite consultar y actualizar información, pero no asegura claridad, vigencia ni un flujo simple; B (0/6): sin escala, métrica ni meta de rendimiento; C (0/11): no garantiza entrega, contacto ni persistencia continua. |
+| Shakira Carol G Frisancho | RF-02 | Media | 1+0+0 / 26 | RF-02 — A (1/9): la trazabilidad ayuda a diferenciar cambios, pero no identifica sin ambigüedad la indicación vigente; B (0/6): sin escala, umbral o rendimiento; C (0/11): conservar historial no garantiza disponibilidad del diagnóstico en el relevo ni ante fallos. |
+| Shakira Carol G Frisancho | RF-03 | Media | 1+0+0 / 26 | RF-03 — A (1/9): menciona la entrega entre turnos, pero no define qué verá o hará la interna ni casos borde; B (0/6): es ambiguo y no medible; C (0/11): no exige diagnóstico completo disponible antes o durante el cambio. |
+| Shakira Carol G Frisancho | RF-04 | Media | 1+2+0 / 28 | RF-04 — A (1/9): conocer cobertura puede orientar el contacto, pero no indica a quién contactar; B (2/8): detecta cruces, aunque sin escala, umbral ni rendimiento; C (0/11): no define contacto nocturno ni notificaciones. |
+| Shakira Carol G Frisancho | RF-05 | No aplica | No evaluado | RF-05 — la gestión administrativa de ausencias y reemplazos no satisface una necesidad directa descrita para la interna. |
+| Shakira Carol G Frisancho | RF-06 | Alta | 1+0+0 / 26 | RF-06 — A (1/9): permite generar alertas priorizadas, pero no identifica al destinatario ni el flujo de respuesta; B (0/6): sin escala, tiempo ni umbral verificable; C (0/11): no exige contacto rápido al responsable ni push multirrol. |
+| Shakira Carol G Frisancho | RF-07 | Alta | 1+0+2 / 26 | RF-07 — A (1/9): contempla escalamiento, pero no define destino, tiempo concreto ni cierre del flujo; B (0/6): “tiempo establecido” es ambiguo; C (2/11): responde solo qué ocurre si el responsable no responde. |
+| Shakira Carol G Frisancho | RF-08 | Media | 1+0+0 / 26 | RF-08 — A (1/9): limita información por rol y reduce riesgo, pero no define contenido claro ni aprendizaje; B (0/6): sin escala, métrica o rendimiento; C (0/11): no resuelve los tres problemas críticos. |
+| Shakira Carol G Frisancho | RNF-01 | Media | 1+4+0 / 26 | RNF-01 — A (1/9): la disponibilidad apoya el uso en emergencias, sin asegurar un flujo de usuario; B (4/6): 99.9 % es verificable y satisface la meta de disponibilidad, pero no prueba las escalas; C (0/11): no cubre entrega, contacto ni persistencia del diagnóstico. |
+| Shakira Carol G Frisancho | RNF-02 | Media | 1+4+0 / 26 | RNF-02 — A (1/9): recuperar funciones críticas reduce interrupciones, pero no define qué hace la interna durante la caída; B (4/6): RTO menor a 5 minutos es medible y cumple la meta; C (0/11): no garantiza continuidad de datos durante la indisponibilidad. |
+| Shakira Carol G Frisancho | RNF-03 | Alta | 1+4+0 / 26 | RNF-03 — A (1/9): mostrar información en menos de 1 segundo favorece rapidez, pero “esencial” y “condiciones normales” no aseguran claridad o vigencia; B (4/6): umbral de latencia verificable, sin escala; C (0/11): no garantiza el relevo clínico. |
+| Shakira Carol G Frisancho | RNF-04 | Alta | 1+4+0 / 26 | RNF-04 — A (1/9): reduce demora para usuarios conectados, pero no cubre desconexión ni fallback; B (4/6): umbral de 2 segundos medible y orientado a latencia; C (0/11): no especifica push a médicos y enfermeras ni persistencia. |
+| Shakira Carol G Frisancho | RNF-05 | No aplica | No evaluado | RNF-05 — la incorporación de entidades no responde a una necesidad directa de la interna. |
+| Shakira Carol G Frisancho | RNF-06 | Media | 1+0+0 / 26 | RNF-06 — A (1/9): protege el acceso apropiado para su rol, pero no define UX ni información vigente; B (0/6): sin escala, métrica o meta de rendimiento; C (0/11): no resuelve los problemas críticos. |
+| Shakira Carol G Frisancho | RNF-07 | Media | 1+0+0 / 26 | RNF-07 — A (1/9): protege datos clínicos, pero no satisface claridad, contacto o simplicidad; B (0/6): no fija algoritmo, cobertura o criterio verificable; C (0/11): cifrar no garantiza persistencia ni distribución en tiempo real. |
+| Shakira Carol G Frisancho | RNF-08 | Alta | 5+2+0 / 26 | RNF-08 — A (5/9): cubre el mecanismo simple de alerta con máximo de tres pasos y prioridad visible, aunque sin fallback; B (2/6): el límite es verificable, sin escala ni meta de rendimiento indicada; C (0/11): no define destinatario, push o persistencia. |
+| Rensso Victor Hugo Mora Choque | RF-01 | Alta | 1+0+0 / 26 | RF-01 — A (1/9): permite consultar y registrar diagnóstico, pero no garantiza inmediatez, agilidad ni que esté completo al relevo; B (0/6): sin escala, métrica o rendimiento; C (0/11): no garantiza disponibilidad antes/durante el cambio ni persistencia ante fallos. |
+| Rensso Victor Hugo Mora Choque | RF-02 | Alta | 1+0+0 / 26 | RF-02 — A (1/9): conserva trazabilidad clínica, pero no obliga al saliente a completar el diagnóstico vigente; B (0/6): sin umbral o rendimiento; C (0/11): el historial por sí solo no garantiza el dato requerido durante el relevo o todo el tiempo. |
+| Rensso Victor Hugo Mora Choque | RF-03 | Alta | 1+0+0 / 26 | RF-03 — A (1/9): contempla entrega entre turnos, pero no contenido, momento, validación ni fallback; B (0/6): no es medible; C (0/11): no garantiza que el diagnóstico saliente esté disponible al entrante. |
+| Rensso Victor Hugo Mora Choque | RF-04 | Media | 1+2+0 / 28 | RF-04 — A (1/9): apoya la correcta asignación del responsable, pero no su contacto; B (2/8): detecta cruces, sin escala, métrica o rendimiento; C (0/11): no resuelve localización nocturna. |
+| Rensso Victor Hugo Mora Choque | RF-05 | Media | 1+0+0 / 28 | RF-05 — A (1/9): comunica cambios de turno, pero no actualiza explícitamente responsable clínico ni contacto; B (0/8): no garantiza ausencia de cruces ni fija métricas; C (0/11): no cubre los problemas críticos. |
+| Rensso Victor Hugo Mora Choque | RF-06 | Alta | 1+0+0 / 26 | RF-06 — A (1/9): genera alertas clínicas priorizadas, pero no promete push, destinatario correcto o información esencial; B (0/6): no fija tiempo ni escala; C (0/11): no responde explícitamente el contacto rápido al encargado ni distribución multirrol. |
+| Rensso Victor Hugo Mora Choque | RF-07 | Alta | 1+0+2 / 26 | RF-07 — A (1/9): ofrece fallback automático, pero no dice a quién escala, en cuánto tiempo ni cómo confirma atención; B (0/6): el tiempo no está cuantificado; C (2/11): cubre solo la subpregunta de escalamiento por falta de respuesta. |
+| Rensso Victor Hugo Mora Choque | RF-08 | Media | 1+0+0 / 26 | RF-08 — A (1/9): asegura acceso acorde con el rol médico, pero no sus flujos urgentes; B (0/6): sin escala, métrica o rendimiento; C (0/11): no cubre continuidad, contacto o tiempo real. |
+| Rensso Victor Hugo Mora Choque | RNF-01 | Alta | 1+4+0 / 26 | RNF-01 — A (1/9): disponibilidad alta apoya guardias, pero admite indisponibilidad y no define fallback; B (4/6): 99.9 % es medible y cumple la meta, sin evidencia por escala; C (0/11): no garantiza datos persistidos durante fallos. |
+| Rensso Victor Hugo Mora Choque | RNF-02 | Alta | 1+4+0 / 26 | RNF-02 — A (1/9): limita la caída, pero no define operación clínica durante esos 5 minutos; B (4/6): RTO verificable y alineado a la meta; C (0/11): recuperación no equivale a persistencia permanente. |
+| Rensso Victor Hugo Mora Choque | RNF-03 | Alta | 1+4+0 / 26 | RNF-03 — A (1/9): aporta rapidez, pero no asegura historial completo/diagnóstico vigente al inicio de turno; B (4/6): latencia menor a 1 segundo verificable, sin escala; C (0/11): no garantiza el relevo. |
+| Rensso Victor Hugo Mora Choque | RNF-04 | Alta | 1+4+0 / 26 | RNF-04 — A (1/9): actualiza rápido solo a conectados, no garantiza push independientemente de ubicación ni fallback; B (4/6): 2 segundos es verificable y de rendimiento; C (0/11): no define push multirrol ni persistencia. |
+| Rensso Victor Hugo Mora Choque | RNF-05 | No aplica | No evaluado | RNF-05 — la incorporación de hospitales o unidades no satisface una necesidad directa descrita para el intensivista. |
+| Rensso Victor Hugo Mora Choque | RNF-06 | Media | 1+0+0 / 26 | RNF-06 — A (1/9): protege funciones del médico, pero no resuelve sus flujos clínicos; B (0/6): sin escala, métrica o rendimiento; C (0/11): sin aporte explícito a problemas críticos. |
+| Rensso Victor Hugo Mora Choque | RNF-07 | Media | 1+0+0 / 26 | RNF-07 — A (1/9): protege la información que consulta, pero no su disponibilidad o agilidad; B (0/6): no fija algoritmo o cobertura verificable; C (0/11): cifrado no garantiza persistencia ante fallos. |
+| Rensso Victor Hugo Mora Choque | RNF-08 | Alta | 1+2+0 / 26 | RNF-08 — A (1/9): agiliza generar alertas, pero no el registro de diagnóstico ni la recepción push; B (2/6): máximo de tres pasos verificable; C (0/11): no define contacto, distribución o persistencia. |
+| Mariel Carolina Tovar Tolentino | RF-01 | Alta | 1+0+0 / 26 | RF-01 — A (1/9): habilita datos clínicos, pero no un dashboard ni estado completo/incompleto/pendiente; B (0/6): sin escala, métrica o rendimiento; C (0/11): no garantiza relevo ni persistencia permanente. |
+| Mariel Carolina Tovar Tolentino | RF-02 | Alta | 1+0+0 / 26 | RF-02 — A (1/9): aporta autor y tiempo para auditoría clínica, pero no registra recepción/respuesta/escalamiento de emergencias; B (0/6): sin umbrales; C (0/11): no garantiza diagnóstico en relevo o persistencia ante fallos. |
+| Mariel Carolina Tovar Tolentino | RF-03 | Alta | 1+0+0 / 26 | RF-03 — A (1/9): trata la entrega de pacientes, pero no tablero, completitud, momento o bloqueo; B (0/6): ambiguo; C (0/11): no garantiza diagnóstico disponible al cambio. |
+| Mariel Carolina Tovar Tolentino | RF-04 | Alta | 5+2+0 / 28 | RF-04 — A (5/9): cubre administración y detección de turnos sin cobertura, cruces y duplicados, pero no define flujo de corrección/fallback; B (2/8): respeta “sin cruces”, sin escala, métrica o rendimiento; C (0/11): no cubre contacto nocturno. |
+| Mariel Carolina Tovar Tolentino | RF-05 | Alta | 5+0+0 / 28 | RF-05 — A (5/9): cubre registro, aprobación y comunicación de ausencias/reemplazos/cambios, pero sin casos borde; B (0/8): no garantiza ausencia de cruces ni fija métricas; C (0/11): no atiende los tres problemas críticos. |
+| Mariel Carolina Tovar Tolentino | RF-06 | Alta | 1+0+0 / 26 | RF-06 — A (1/9): genera alertas priorizadas, pero no confirma destinatario, recepción o respuesta para auditoría; B (0/6): sin escala o tiempo; C (0/11): no exige contacto rápido ni push multirrol. |
+| Mariel Carolina Tovar Tolentino | RF-07 | Alta | 1+0+2 / 26 | RF-07 — A (1/9): escala por falta de respuesta, pero no ordena notificar directamente a la jefa ni auditar el flujo; B (0/6): tiempo ambiguo; C (2/11): cubre solo que exista escalamiento. |
+| Mariel Carolina Tovar Tolentino | RF-08 | Media | 1+0+0 / 26 | RF-08 — A (1/9): permite delimitar la vista de supervisión, pero no define su alcance; B (0/6): sin escala, métrica o rendimiento; C (0/11): no resuelve problemas críticos. |
+| Mariel Carolina Tovar Tolentino | RNF-01 | Alta | 1+4+0 / 26 | RNF-01 — A (1/9): disponibilidad apoya supervisión continua, pero no define fallback; B (4/6): 99.9 % medible y alineado a la meta, sin demostrar escalas; C (0/11): no asegura persistencia o notificación durante fallos. |
+| Mariel Carolina Tovar Tolentino | RNF-02 | Alta | 1+4+0 / 26 | RNF-02 — A (1/9): acota interrupción de funciones críticas, pero no operación durante la caída; B (4/6): RTO medible y alineado; C (0/11): no garantiza datos en todo momento. |
+| Mariel Carolina Tovar Tolentino | RNF-03 | Alta | 1+4+0 / 26 | RNF-03 — A (1/9): mejora lectura rápida, pero no define dashboard o datos completos; B (4/6): umbral menor a 1 segundo verificable; C (0/11): no garantiza relevo. |
+| Mariel Carolina Tovar Tolentino | RNF-04 | Alta | 1+4+0 / 26 | RNF-04 — A (1/9): ofrece actualización rápida a conectados, pero no confirmación de entrega/lectura ni fallback; B (4/6): 2 segundos verificable; C (0/11): no define push a varios roles ni persistencia. |
+| Mariel Carolina Tovar Tolentino | RNF-05 | Alta | 1+0+0 / 26 | RNF-05 — A (1/9): favorece expansión organizacional, pero no el tablero o reportes que necesita; B (0/6): no cuantifica 1K/100K/10M ni capacidad; C (0/11): no atiende problemas críticos. |
+| Mariel Carolina Tovar Tolentino | RNF-06 | Media | 1+0+0 / 26 | RNF-06 — A (1/9): protege permisos de supervisión, sin definir sus vistas o acciones; B (0/6): no medible ni ligado a rendimiento; C (0/11): sin cobertura crítica. |
+| Mariel Carolina Tovar Tolentino | RNF-07 | Media | 1+0+0 / 26 | RNF-07 — A (1/9): protege datos bajo su responsabilidad, pero no auditoría o continuidad; B (0/6): sin algoritmo o criterio verificable; C (0/11): cifrado no garantiza persistencia. |
+| Mariel Carolina Tovar Tolentino | RNF-08 | Media | 1+2+0 / 26 | RNF-08 — A (1/9): favorece alertas legibles, pero no dashboards, reportes o auditoría; B (2/6): máximo de tres pasos verificable; C (0/11): no define routing, push o persistencia. |
+| Carlos Balbuena Palacios | RF-01 | Alta | 1+0+0 / 26 | RF-01 — A (1/9): permite consultar y actualizar indicaciones/diagnóstico, pero no distingue la versión vigente ni asegura claridad; B (0/6): sin escala, métrica o rendimiento; C (0/11): no garantiza relevo ni persistencia permanente. |
+| Carlos Balbuena Palacios | RF-02 | Media | 1+0+0 / 26 | RF-02 — A (1/9): aporta trazabilidad, pero no identifica la indicación actual sin ambigüedad; B (0/6): sin umbrales; C (0/11): no garantiza diagnóstico disponible al relevo o ante fallos. |
+| Carlos Balbuena Palacios | RF-03 | Alta | 1+0+0 / 26 | RF-03 — A (1/9): apoya continuidad al cerrar turno, pero no define datos obligatorios, momento o fallback; B (0/6): no medible; C (0/11): no garantiza diagnóstico disponible al entrante. |
+| Carlos Balbuena Palacios | RF-04 | Alta | 1+2+0 / 28 | RF-04 — A (1/9): detecta cruces, pero no exige visualizar su horario o alertarlo; B (2/8): contribuye a “sin cruces”, sin escala, métrica o rendimiento; C (0/11): no resuelve contacto nocturno. |
+| Carlos Balbuena Palacios | RF-05 | Media | 1+0+0 / 28 | RF-05 — A (1/9): comunica cambios de turno, pero no muestra horario ni previene cruces; B (0/8): no garantiza “sin cruces” ni fija métricas; C (0/11): no atiende problemas críticos. |
+| Carlos Balbuena Palacios | RF-06 | Alta | 1+0+0 / 26 | RF-06 — A (1/9): permite generar alertas priorizadas, pero no asegura simplicidad o identificación del médico; B (0/6): sin tiempo o escala; C (0/11): no exige contacto al responsable ni push multirrol. |
+| Carlos Balbuena Palacios | RF-07 | Alta | 1+0+2 / 26 | RF-07 — A (1/9): contempla falta de respuesta, pero no destinatario alterno, tiempo o confirmación; B (0/6): “tiempo establecido” no es medible; C (2/11): cubre solo escalamiento por no respuesta. |
+| Carlos Balbuena Palacios | RF-08 | Media | 1+0+0 / 26 | RF-08 — A (1/9): limita acciones e información según su rol, pero no define las necesarias; B (0/6): sin escala, métrica o rendimiento; C (0/11): no aporta explícitamente a problemas críticos. |
+| Carlos Balbuena Palacios | RNF-01 | Media | 1+4+0 / 26 | RNF-01 — A (1/9): disponibilidad apoya atención continua, pero no define conducta ante indisponibilidad; B (4/6): 99.9 % verificable y alineado a meta, sin escala; C (0/11): no garantiza persistencia durante fallos. |
+| Carlos Balbuena Palacios | RNF-02 | Media | 1+4+0 / 26 | RNF-02 — A (1/9): limita la interrupción, pero no cubre el flujo clínico durante 5 minutos; B (4/6): RTO verificable y alineado; C (0/11): no asegura información todo el tiempo. |
+| Carlos Balbuena Palacios | RNF-03 | Alta | 1+4+0 / 26 | RNF-03 — A (1/9): aporta acceso rápido, pero no claridad o vigencia de indicaciones; B (4/6): latencia menor a 1 segundo verificable; C (0/11): no garantiza relevo clínico. |
+| Carlos Balbuena Palacios | RNF-04 | Alta | 1+4+0 / 26 | RNF-04 — A (1/9): muestra alertas rápido a conectados, sin identificación/confirmación del médico ni fallback; B (4/6): umbral de 2 segundos verificable; C (0/11): no define push multirrol o persistencia. |
+| Carlos Balbuena Palacios | RNF-05 | No aplica | No evaluado | RNF-05 — incorporar nuevas entidades no responde a una necesidad directa descrita para el enfermero. |
+| Carlos Balbuena Palacios | RNF-06 | Media | 1+0+0 / 26 | RNF-06 — A (1/9): protege permisos de enfermería, pero no garantiza acceso claro y suficiente; B (0/6): sin escala, métrica o rendimiento; C (0/11): no resuelve problemas críticos. |
+| Carlos Balbuena Palacios | RNF-07 | Media | 1+0+0 / 26 | RNF-07 — A (1/9): protege datos, pero no sus flujos operativos; B (0/6): no fija algoritmo o cobertura verificable; C (0/11): cifrado no garantiza persistencia ante fallos. |
+| Carlos Balbuena Palacios | RNF-08 | Alta | 5+2+0 / 26 | RNF-08 — A (5/9): satisface un mecanismo simple de alerta con máximo de tres pasos y prioridad distinguible, aunque sin fallback; B (2/6): criterio verificable, sin escala ni meta de rendimiento indicada; C (0/11): no identifica responsable, push o persistencia. |
+
+## 2. Resumen de iteración
+
+| Persona | Cálculo | Score |
+| --- | --- | --- |
+| Shakira Carol G Frisancho | (40 / 366) × 10 | 1.09/10 |
+| Rensso Victor Hugo Mora Choque | (37 / 394) × 10 | 0.94/10 |
+| Mariel Carolina Tovar Tolentino | (46 / 420) × 10 | 1.10/10 |
+| Carlos Balbuena Palacios | (41 / 394) × 10 | 1.04/10 |
+| **PROMEDIO** | **(1.09 + 0.94 + 1.10 + 1.04) / 4** | **1.04/10 - FAILED** |
+
+## 3. Gaps críticos
+
+- RF-03 — Rensso, Mariel, Carlos y Shakira — Rotación de doctor — “Facilitar la entrega” no obliga a que el médico saliente complete el diagnóstico, no define cuándo debe quedar disponible ni cómo se valida antes/durante el cambio de turno.
+- RF-06 / RNF-04 — Rensso, Carlos, Shakira y Mariel — Medianoche y tiempo real — No identifican automáticamente al médico encargado ni definen una notificación push simultánea a médicos/enfermeras; RNF-04 además excluye a usuarios desconectados.
+- RF-07 — Rensso, Carlos, Shakira y Mariel — Medianoche — Existe escalamiento, pero falta el plazo concreto, la cadena/destinatario alterno, la confirmación de recepción y el cierre si nadie responde.
+- RF-01 / RF-02 / RNF-02 — Todas las personas — Tiempo real — Registrar o conservar información y recuperar funciones no define persistencia del diagnóstico en todo momento, confirmación de escritura, operación offline, reintentos ni recuperación sin pérdida ante fallos parciales.
+- RF-02 / RF-07 — Mariel — Medianoche — No existe auditoría completa de alertas: destinatarios, entrega, lectura, respuesta, tiempos y cada nivel de escalamiento.
+- RNF-05 — Essalud y Mariel — Viabilidad/escala — “Incorporar” entidades no demuestra operación viable en 1K, 100K y 10M hospitales ni fija cargas, concurrencia, volumen, degradación o pruebas por fase.
+- RF-04 / RF-05 — Mariel y Carlos — Sin cruces — RF-04 detecta cruces, pero no los bloquea ni define resolución; RF-05 puede aprobar/comunicar un cambio sin exigir revalidación de cobertura, duplicidad y cruces.
+- RF-01 / RF-02 / RF-03 — Shakira, Rensso y Carlos — Satisfacción/continuidad — No se define cuál diagnóstico o indicación es vigente, qué campos son obligatorios, cómo se marca un relevo incompleto ni qué ocurre si el saliente no lo finaliza.
+- RNF-08 — Shakira y Carlos — Satisfacción/UX — Solo limita la creación de alertas a tres pasos para usuarios capacitados; no cubre aprendizaje inicial, accesibilidad, claridad del resto de la interfaz ni prevención/recuperación de errores.
+
+No se detectaron contradicciones textuales directas entre RF y RNF; el problema es principalmente de omisiones, ambigüedad y falta de criterios verificables.
+
+## 4. Recomendación
+
+El conjunto no está listo para diseño de arquitectura: necesita otra iteración. Priorizar RF-03, RF-06, RF-07 y RNF-04 para cerrar rotación/medianoche/push, y RF-01/RF-02/RNF-02 para persistencia; después cuantificar escala, auditoría, horarios y UX.

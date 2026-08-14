@@ -32,28 +32,28 @@ requerimiento puede sumar puntos en varios a la vez.
 **A.1 — Nivel de cumplimiento** (elige UNA sola opción, son excluyentes entre sí):
 | Criterio | Score |
 |---|---|
-| Cumple totalmente la necesidad básica del usuario | 5 |
+| Cumple totalmente la necesidad básica del usuario | 3 |
 | Cumple parcialmente la necesidad del usuario | 1 |
 | No cumple la necesidad del usuario | 0 |
 
 **A.2 — Bonus de flujo** (independiente del nivel anterior, se suma aparte):
 | Criterio | Score |
 |---|---|
-| Existe un flujo claro para el usuario (incluye caso borde / fallback) | 4 |
+| Existe un flujo claro para el usuario (incluye caso borde / fallback) | 2 |
 | No define un flujo claro / no cubre casos borde | 0 |
 
-Score de Bloque A = A.1 + A.2. Máximo posible: 5 + 4 = **9**.
+Score de Bloque A = A.1 + A.2. Máximo posible: 3 + 2 = **5**.
 
 ### Bloque B — Viabilidad del sistema (contextual)
 
 | Criterio                                                                                        | Score |
 | ----------------------------------------------------------------------------------------------- | ----- |
 | Es viable en la escala correspondiente a la fase evaluada (1K / 100K / 10M)                     | 2     |
-| Es medible/verificable — tiene una métrica o umbral concreto, no es ambiguo                     | 2     |
-| Contribuye a alguna meta de rendimiento (latencia, disponibilidad 99.9%, RTO < 5 min)           | 2     |
-| Respeta la meta de "sin cruces" (consistencia en asignación de horarios/diagnóstico), si aplica | 2     |
+| Es medible/verificable — tiene una métrica o umbral concreto, no es ambiguo                     | 1     |
+| Contribuye a alguna meta de rendimiento (latencia, disponibilidad 99.9%, RTO < 5 min)           | 1     |
+| Respeta la meta de "sin cruces" (consistencia en asignación de horarios/diagnóstico), si aplica | 1     |
 
-Score máximo Bloque B: **8**
+Score máximo Bloque B: **5**
 
 ### Bloque C — Cobertura de Problemas Críticos (eje central del caso de estudio)
 
@@ -64,16 +64,16 @@ contra las preguntas específicas que el enunciado plantea para cada problema
 
 | Problema crítico       | Pregunta que debe responder el requerimiento                                                                                              | Score                              |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| **Rotación de doctor** | ¿Garantiza que el diagnóstico del médico saliente esté disponible para el entrante antes/durante el cambio de turno?                      | 3                                  |
+| **Rotación de doctor** | ¿Garantiza que el diagnóstico del médico saliente esté disponible para el entrante antes/durante el cambio de turno?                      | 2                                  |
 | **Medianoche**         | ¿Define cómo contactar rápido al médico encargado **y** qué pasa si no está disponible (escalamiento/fallback)?                           | 4 (2+2, una por cada sub-pregunta) |
 | **Tiempo real**        | ¿Define la estrategia de notificación push a varios médicos/enfermeras **y** cómo garantiza persistencia del diagnóstico en todo momento? | 4 (2+2, una por cada sub-pregunta) |
 
-Score máximo Bloque C: **11**. Un requerimiento puede puntuar en más de una
+Score máximo Bloque C: **10**. Un requerimiento puede puntuar en más de una
 fila si atiende más de un problema. Si no toca ninguno de los 3, su score en
 este bloque es 0 — eso no lo invalida (puede seguir siendo útil para Bloque A
 o B), pero debe quedar señalado como tal.
 
-**Score máximo por requerimiento: 9 (A) + 8 (B) + 11 (C) = 28**
+**Score máximo por requerimiento: 5 (A) + 5 (B) + 10 (C) = 20**
 
 Si un criterio del Bloque B no aplica al tipo de requerimiento evaluado
 (ej. un RNF de seguridad no tiene por qué hablar de "sin cruces"), exclúyelo
@@ -133,9 +133,9 @@ necesita otra iteración, indica qué requerimientos priorizar.
 
 **Evaluación esperada:**
 
-| Persona | Requerimiento | Relevancia | Score | Justificación                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| ------- | ------------- | ---------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Pablo   | RF-07         | Alta       | 8/28  | Bloque A (1/9): A.1 cumple parcialmente (1) — notifica, pero no define fallback si no responde; A.2 sin flujo claro (0). Bloque B (2/8): es medible (2), pero no viable/verificable en las demás dimensiones evaluadas. Bloque C (5/11): responde la parte "contactar rápido" del problema de medianoche (2 de los 4), pero NO define qué pasa si el médico no está disponible — la sub-pregunta más importante del problema queda sin cubrir. |
+| Persona | Requerimiento | Relevancia | Score            | Justificación                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| ------- | ------------- | ---------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pablo   | RF-07         | Alta       | 4/10 (aplicable) | Bloque A (1/5): A.1 cumple parcialmente (1) — notifica, pero no define fallback si no responde; A.2 sin flujo claro (0). Bloque B (1/1): solo aplica "medible" y sí lo cumple (1); los demás criterios de B no aplican a este requerimiento. Bloque C (2/4): responde la parte "contactar rápido" del problema de medianoche (2 de los 4), pero NO define qué pasa si el médico no está disponible — la sub-pregunta más importante queda sin cubrir; rotación y tiempo real no aplican a este requerimiento. |
 
 ## Restricciones
 

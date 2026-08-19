@@ -13,7 +13,10 @@
 ## Frustraciones / Dolores actuales
 - Al iniciar su turno, no siempre cuenta con certeza sobre el estado y diagnóstico más reciente del paciente dejado por el médico anterior
 - Ante emergencias durante la madrugada, la información que recibe al ser contactado suele ser incompleta o llega con demora
-- El registro del diagnóstico le demanda tiempo considerable, lo que en ocasiones provoca que quede pendiente o se documente de forma incompleta ya que a veces el hacerlo después hace que se olvide
+- El registro del diagnóstico le demanda tiempo considerable, lo que en ocasiones provoca que quede pendiente o se documente de forma incompleta ya que a veces el hacerlo después hace que se olvide.
+- Cuando hay una emergencia, se le avisa a el y a varios medicos para la misma urgencia sin tener en consideracion la especialidad, horario o cercania a la emergencia.
+- No sabe que medicamentos fueron aplicados a cada paciente, entonces no sabe si deberia volver a darcelos por miedo a sobredosis.
+- Muchas veces hay conflicto con su horario y en un mismo turno hay 2 medicos, perdiendo horas libres
 
 ## Escenario de uso típico
 Rensso empieza su turno noche revisando en el sistema el estado clínico de cada paciente a su cargo, junto con las anotaciones dejadas por el médico saliente. Durante la madrugada, si un paciente empeora su estado, recibe una notificación push con la información clínica esencial para actuar de inmediato. Al finalizar su turno, documenta el diagnóstico y las novedades relevantes, de esta forma el equipo entrante contará con información actualizada.

@@ -22,7 +22,6 @@
 - No hay forma de confirmar que una alerta le llegó a la persona correcta y que esta persona la vio
 - Arma los horarios a mano (con Excel y llamadas) y se da cuenta de los cruces cuando ya causaron un problema
 
-
 ## Escenario de uso típico
 <!-- Un día/turno típico de esta persona interactuando con el sistema -->
 

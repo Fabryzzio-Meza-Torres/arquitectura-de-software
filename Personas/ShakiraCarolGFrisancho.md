@@ -11,9 +11,16 @@
 - Sentirse segura respecto al protocolo de contacto en caso de una situación crítica
 
 ## Frustraciones / Dolores actuales
-- Por su condición de personal nuevo, no siempre identifica con facilidad dónde ubicar la información o indicaciones del paciente
-- Le genera inseguridad no tener claridad sobre a quién contactar si ocurre una emergencia y el médico a cargo no está disponible
-- Un sistema con procesos complejos puede generarle errores o demoras, ya que su nivel de experiencia aún es limitado
+- Por su condición de personal nuevo, no siempre identifica con facilidad dónde ubicar la información o indicaciones del paciente.
+- Le genera inseguridad no tener claridad sobre a quién contactar de inmediato si ocurre una situación crítica y el médico a cargo no está disponible.
+- Un sistema con procesos complejos puede generarle equivocaciones o demoras, lo cual le genera ansiedad dado que su experiencia aún es limitada.
+- El sistema muestra demasiada información clínica a la vez, lo que la abruma y le impide identificar rápidamente qué es lo más urgente.
+- Al reportar una observación inusual en el sistema, se frustra al no saber si el personal a cargo realmente leyó o recibió la alerta.
+- Está acostumbrada a manejar aplicaciones móviles modernas y fluidas, por lo que usar sistemas hospitalarios antiguos y poco intuitivos le genera rechazo y lentitud.
+- Al cambiar de turno o de área, sufre para entender el estado actual del paciente porque los diagnósticos de evolución suelen estar desordenados o incompletos.
+- Se estresa cuando la plataforma del hospital carga lento o se cuelga justo en momentos de mayor afluencia de pacientes.
+- Le frusta que el sistema no sea intuitivo y que asuma que ya conoce todos los protocolos. Necesita recordatorios visuales rápidos para encargos de trabajo que recién está aprendiendo.
+- Pierde tiempo valioso de aprendizaje clínico realizando clics innecesarios o navegando por múltiples menús para tareas rutinarias.
 
 ## Escenario de uso típico
 Shakira inicia su turno acompañando al médico o enfermero responsable. Revisa en el sistema la información básica del paciente que se le asigna para brindar apoyo. Ante cualquier señal inusual en el paciente, reporta la observación a través del sistema al personal correspondiente. En el proceso, se apoya en la guía visual del sistema para familiarizarse progresivamente con el flujo de trabajo.

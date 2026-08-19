@@ -14,14 +14,14 @@
 
 ## Frustraciones / Dolores actuales
 
-- Por su condición de personal nuevo, no siempre identifica con facilidad dónde ubicar la información o indicaciones del paciente
-- Le genera inseguridad no tener claridad sobre a quién contactar si ocurre una emergencia, ya que el médico a cargo está muy saturado
-- Un sistema con procesos complejos puede serle confuso, generarle errores o demoras, ya que su nivel de experiencia aún es limitado
-- Hay procesos poco documentados que solo los conoce el personal con más experiencia, lo que le genera incertidumbre sobre cómo actuar en ciertas situaciones
-- La alta saturación de pacientes en el hospital le genera estrés y ansiedad, lo que puede afectar su desempeño y aprendizaje
-- La necesidad de depender constantemente de la supervisión del personal responsable puede retrasar su apoyo en situaciones urgentes, ya que no siempre puede actuar con autonomía
-- El riesgo de cometer errores al registrar o interpretar datos clínicos le genera temor, porque sabe que una equivocación puede afectar la seguridad del paciente
-- No siempre tiene claridad sobre si la información del paciente está actualizada o si hubo cambios relevantes entre turnos, lo que dificulta mantener un seguimiento preciso
+- Por su condición de personal nuevo, no siempre identifica con facilidad dónde ubicar la información o las indicaciones del paciente dentro del sistema.
+- Le genera inseguridad no tener claridad sobre a quién contactar en caso de emergencia o situación crítica, especialmente cuando el médico a cargo está muy saturado o no está disponible.
+- Un sistema con procesos complejos, poco intuitivos y con demasiada información visual a la vez puede confundirla, generar errores y hacerle perder tiempo en tareas rutinarias.
+- Hay procesos poco documentados y sin recordatorios visuales claros, lo que le genera incertidumbre sobre cómo actuar cuando aún está aprendiendo el flujo de trabajo.
+- La falta de confirmación o seguimiento sobre si una observación o alerta fue revisada por el personal responsable le genera frustración y dudas sobre la continuidad del cuidado.
+- El riesgo de cometer errores al registrar o interpretar datos clínicos le genera ansiedad, porque sabe que una equivocación puede afectar la seguridad del paciente.
+- No siempre tiene claridad sobre si la información del paciente está actualizada o si hubo cambios relevantes entre turnos, lo que dificulta un seguimiento preciso.
+- La alta saturación de pacientes en el hospital y la lentitud de la plataforma aumentan su estrés, afectando su desempeño, aprendizaje y capacidad para responder con rapidez.
 
 ## Escenario de uso típico
 

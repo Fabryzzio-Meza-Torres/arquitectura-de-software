@@ -8,15 +8,15 @@ César is not "the company" as an abstract entity — he's the actual user who l
 
 ## Role in the system
 
-César is the one who **starts** the leasing cycle, and his **only counterpart inside the system is Juan Pedro, Head of Collections at Juan Pedro's Leasing Company**. César never talks to the Provider through the platform — identifying which machine and which provider to use is a negotiation that happens entirely outside the system, before César ever opens it. Once that's settled, everything César does *in the system* is with Juan Pedro's Leasing Company: requesting financing, tracking approval, paying installments, and closing out the contract.
+César is the one who **starts** the leasing cycle, and his **only counterpart inside the system is Juan Pedro, Head of Collections at The Leasing Company**. César never talks to the Provider through the platform — identifying which machine and which provider to use is a negotiation that happens entirely outside the system, before César ever opens it. Once that's settled, everything César does *in the system* is with The Leasing Company: requesting financing, tracking approval, paying installments, and closing out the contract.
 
 ## Out of scope: the Provider
 
 The Provider (equipment seller) is real and necessary to the business — César needs a specific machine from a specific Provider before any of this starts. But the Provider is **not a persona or actor of this system**, and this is a deliberate scope decision, not an oversight:
 
 - César never talks to the Provider *through the platform*. Choosing the machine and the Provider is a commercial negotiation that happens entirely outside the system, before he ever opens it.
-- The system's job is narrowly to mediate the **César ↔ Juan Pedro's Leasing Company** relationship (financing request → approval → payments → end-of-contract decision). It is not a marketplace or procurement tool.
-- Any interaction Juan Pedro's Leasing Company has with the Provider (purchasing the equipment) also happens outside the system — see `JuanPedro.md` for that scope note.
+- The system's job is narrowly to mediate the **César ↔ The Leasing Company** relationship (financing request → approval → payments → end-of-contract decision). It is not a marketplace or procurement tool.
+- Any interaction The Leasing Company has with the Provider (purchasing the equipment) also happens outside the system — see `JuanPedro.md` for that scope note.
 
 So the Provider is mentioned here only as **business context** that explains *why* César needs financing in the first place — never as a flow, screen, or actor the system needs to support.
 
@@ -33,7 +33,7 @@ So the Provider is mentioned here only as **business context** that explains *wh
 
 - Tight cash flow — can't afford to lock up capital buying machinery outright.
 - Traditional credit evaluation processes are slow and opaque (no visibility into why a request was rejected or what's missing).
-- Risk of the project stalling if equipment delivery is delayed — even though that delay is entirely outside his control (it depends on Juan Pedro's Leasing Company's arrangement with the Provider).
+- Risk of the project stalling if equipment delivery is delayed — even though that delay is entirely outside his control (it depends on the Leasing Company's arrangement with the Provider).
 - Lack of visibility: not always clear how much is owed, how much has been paid, or what happens after a missed installment.
 - Uncertainty at end-of-contract: needs a clear, low-friction way to decide between purchasing the equipment or returning it.
 - As Head of Finance specifically, César is the one exposed to **currency risk** — he needs to know, contract by contract, what exchange rate applies and when it can move.
@@ -50,11 +50,11 @@ This is a business rule that directly shapes what César needs from the system, 
 
 ## Main flows he participates in (inside the system)
 
-1. **Request leasing financing** from Juan Pedro's Leasing Company, referencing the equipment already agreed upon externally, and specifying the contract currency (PEN or USD).
+1. **Request leasing financing** from The Leasing Company, referencing the equipment already agreed upon externally, and specifying the contract currency (PEN or USD).
 2. Track the **approval status** of the financing request.
-3. **Pay installments** to Juan Pedro's Leasing Company throughout the contract term, in the contract's currency. (Physical delivery of the equipment by the Provider happens outside the system — César only sees it reflected as a status update, if at all.)
+3. **Pay installments** to The Leasing Company throughout the contract term, in the contract's currency. (Physical delivery of the equipment by the Provider happens outside the system — César only sees it reflected as a status update, if at all.)
 4. Monitor **exchange-rate changes** affecting the contract, if/when they occur.
-5. At the **end of the contract term**, choose one of two paths with Juan Pedro's Leasing Company:
+5. At the **end of the contract term**, choose one of two paths with The Leasing Company:
    - **Pay off all remaining installments and exercise the purchase option**, keeping the equipment.
    - **Return the equipment** in lieu of a final payment, closing the contract without acquiring the asset.
 

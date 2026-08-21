@@ -44,7 +44,28 @@ What he should never experience:
 - Discovering a change to his exchange rate after the fact, with no record of when or why.
 - Being told to "handle the last step offline".
 
-## Juan Pedro — Head of Collections (leasing company)
+## Broker — negotiation facilitator (new role, see `KeyProductDecisions.md` KPD-11)
+
+The Broker's main pain point is closing the deal and the contract between the company and the
+leasing company, with all the pertinent documentation attached. Their experience should
+optimize for **speed to close**, not for owning the decision.
+
+What they should be able to do without friction:
+
+1. **Book a negotiation meeting** between the company and the leasing company, and propose
+   ideas to close the agreement based on their knowledge of the provider, the client's
+   finances and the client's need.
+2. **View open negotiations and agreements** they are facilitating.
+3. **Send messages** to the company or the leasing company with guidance and advice to help
+   close the agreement.
+4. **Submit the PDF, summary and details** of the contract into the system.
+
+What they should never experience:
+
+- Losing track of which negotiations are still open versus closed.
+- Uploading a document with no confirmation that both César and Juan Pedro can now see it.
+
+## Juan Pedro — Head of Credit and Collections (leasing company)
 
 Juan Pedro lives in a **portfolio view**. His experience should feel like a control tower: at
 a glance he knows what is healthy, what is at risk, and where the money and currency exposure
@@ -56,13 +77,16 @@ What he should be able to do without friction:
 2. **Get an installment schedule generated automatically** per contract, with the currency
    clearly attached — no spreadsheets.
 3. **Track collections and delinquency** across many active contracts, in two currencies,
-   from one dashboard.
+   from one dashboard, with clients grouped by the **4-color delinquency level** (KPD-9).
 4. **Reconcile payments** against the schedule automatically — "did they pay what they owed"
    is answered by the system, not by manual math.
 5. **Apply and see exchange-rate updates** on active contracts, keeping schedule and balance
    consistent, with an audit trail per contract.
 6. **Process the end-of-contract branch** César selects (purchase option vs. return) with no
    manual work and a clear record of which path was taken.
+7. **See the pronosticated income of the current month** at a glance, assuming every active
+   installment is paid, and send a formal message to a delinquent client based on how late
+   they are.
 
 What he should never experience:
 

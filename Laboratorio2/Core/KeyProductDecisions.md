@@ -41,6 +41,13 @@ The credit/risk **approval decision** may conceptually sit with a separate credi
 but for the POC it is treated as a decision surfaced to (and tracked by) the leasing-company
 side, not a third persona.
 
+> **Update (architecture-diagram walkthrough):** the diagram review surfaced a **third
+> authenticated role, the Broker**, and refined Juan Pedro's title to **Head of Credit and
+> Collections**. KPD-3 above is kept as the original two-role decision for traceability; see
+> **KPD-11** below, which supersedes the "exactly two roles" statement with the current,
+> three-role model. Nothing in KPD-1/KPD-2/KPD-4/KPD-5 changes as a result — the Broker acts
+> as a facilitator between César and Juan Pedro's Leasing Company, not as a new relationship.
+
 ## KPD-4 — Contracts are denominated in PEN or USD, and the exchange rate is a value tracked over time
 
 This is the most load-bearing business rule and it directly shapes the data model:
@@ -91,3 +98,47 @@ Per the case deliverables, the POC must run **at least one Happy Path end to end
 the users. The chosen Happy Path is César's financing request through to an active contract
 with a generated installment schedule (see `MainFlows.md`, Flow 1 + Flow 3). Everything else
 is designed but may be stubbed in the POC.
+
+## KPD-8 — Credit evaluation is delegated; the system only orchestrates the outcome
+
+Risk analysis is explicitly **out of scope** for the platform. The system never scores or
+decides credit — it acts as an **orchestrator that tracks approval or rejection**, even if
+the decision itself sits elsewhere (a risk analyst, an external bureau, a manual call).
+Getting information and advice directly from the risk analyst is likewise out of scope: the
+Broker (KPD-11) may relay that advice informally to the client, but the platform does not
+model the risk analyst as an actor.
+
+## KPD-9 — Delinquency is standardized into exactly 4 time-based levels
+
+Delinquency is classified strictly by elapsed time since the missed due date, with no
+external benchmarks or configurable typologies:
+
+| Level | Meaning |
+| --- | --- |
+| Green | Paid on time |
+| Yellow | 1 month without payment |
+| Orange | 2 months without payment |
+| Red | More than 2 months without payment |
+
+This 4-level scheme is the only delinquency taxonomy the POC needs to support.
+
+## KPD-10 — Contract closing stays binary (cross-reference)
+
+Restates KPD-5: the two closing branches (purchase option vs. equipment return) are the only
+supported ways to end a contract. No third closing path is introduced by the Broker role.
+
+## KPD-11 — A third role: the Broker facilitates negotiation and documentation
+
+The architecture-diagram review adds a **third authenticated role**, sitting alongside César
+(Head of Finance) and Juan Pedro (Head of Credit and Collections — see the title update in
+KPD-3):
+
+- **Broker:** a tactical facilitator, not a decision-maker. Schedules negotiation meetings
+  between César and the Leasing Company, proposes deal ideas based on the client's need, and
+  uploads the contract documentation — the PDF, its summary and its details — into the
+  system.
+- The Broker never replaces César's or Juan Pedro's decisions; the Broker's output (meetings,
+  proposals, uploaded PDFs) feeds the negotiation that César and Juan Pedro's Leasing Company
+  ultimately close.
+- Access is scoped narrowly: a Broker only sees the contracts they are actively negotiating
+  (see `Core/AcceptanceCriteria.md` and the RBAC note in `Core/HintsAndTips.md`).

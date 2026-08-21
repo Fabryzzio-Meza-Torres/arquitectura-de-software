@@ -17,13 +17,20 @@ the phases declared here are valid; no other scale figures exist unless added he
 for a single financing lifecycle. This is the phase the deliverable POC must satisfy.
 
 **In scope:**
-- Flow 1 (Request financing) → Flow 2 (Approval, possibly a simplified/manual decision) →
-  Flow 3 (Contract activation + schedule generation). This chain is the **committed Happy
-  Path** (KPD-7).
-- Two authenticated roles (César, Juan Pedro).
+- Flow 1 (Request financing) → Flow 1B (Broker negotiation & documentation) → Flow 2
+  (Approval, possibly a simplified/manual decision) → Flow 3 (Contract activation + schedule
+  generation, including equipment-reception confirmation). This chain is the **committed
+  Happy Path** (KPD-7).
+- Three authenticated roles (César, Juan Pedro / Head of Credit and Collections, Broker —
+  KPD-11).
 - Contract currency selection **PEN or USD**, with the **rate locked at start** and stored as
   a rate value with an effective date (KPD-4).
 - Real-time request/contract status and visible rejection reasons.
+- Negotiation-meeting scheduling and PDF contract upload/viewing with the fixed exchange rate
+  attached (Flow 1B).
+- Confirmation of equipment reception by César (Flow 3).
+- Dynamic delinquency classification into the 4-color scheme (KPD-9).
+- Execution of both end-of-contract closing branches (KPD-5/KPD-10).
 
 **Planning assumptions (to validate):**
 - Single leasing company (single tenant).
@@ -80,3 +87,7 @@ These restate the settled scope boundaries so no phase accidentally pulls them i
 - Equipment **procurement / supply-chain / delivery logistics** — external and offline.
 - A **marketplace** or machine-selection tool — the machine/Provider is chosen offline
   before any request (KPD-1).
+- **Information and advice directly from the risk analyst** — the risk analyst is not a
+  system actor (KPD-8).
+- The **transactional credit-decisioning engine** itself — the system orchestrates and
+  tracks the outcome, it never computes the approval/rejection decision (KPD-8).

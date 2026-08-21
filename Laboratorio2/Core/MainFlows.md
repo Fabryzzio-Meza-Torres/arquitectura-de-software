@@ -5,7 +5,8 @@ gate: **at least one flow must be covered end to end** by the requirement set fo
 be implementable. Actors are César (client / Head of Finance) and Juan Pedro (leasing company
 / Head of Collections). The Provider is **not** an actor (see `KeyProductDecisions.md`, KPD-2).
 
-Legend: **[C]** = César · **[JP]** = Juan Pedro · **[SYS]** = system.
+Legend: **[C]** = César · **[JP]** = Juan Pedro (Head of Credit and Collections) · **[B]** =
+Broker · **[SYS]** = system.
 
 ---
 
@@ -24,6 +25,24 @@ Legend: **[C]** = César · **[JP]** = Juan Pedro · **[SYS]** = system.
 - Incomplete or invalid form → request is not created; field-level errors are shown.
 - Duplicate submission → the system does not create a second request for the same intent
   (idempotent submit).
+
+---
+
+## Flow 1B — Negotiation & documentation (Broker)
+
+**Goal:** the Broker facilitates the deal and attaches the contract documentation while the
+request is under review. Runs alongside Flow 2.
+
+1. **[B]** Books a negotiation meeting between César and Juan Pedro's Leasing Company.
+2. **[C]/[JP]** Propose, accept or reject the meeting date.
+3. **[B]** Proposes deal ideas based on the provider, the client's finances and the client's
+   need.
+4. **[B]** Submits the **PDF, summary and details** of the contract into the system.
+5. **[C]/[JP]** Both can access the details of the same agreement once uploaded.
+
+**Edge cases / fallbacks:**
+- A rejected meeting date does not close the negotiation — the Broker can propose another.
+- An uploaded PDF with no summary or missing details is not treated as complete.
 
 ---
 
@@ -57,12 +76,16 @@ Legend: **[C]** = César · **[JP]** = Juan Pedro · **[SYS]** = system.
    dates, count.
 4. **[C]** Sees the schedule, outstanding balance, currency and rate in effect.
 5. **[JP]** Sees the new active contract in the collections portfolio.
+6. **[C]** **Confirms or rejects the reception** of the machinery from the Provider; a
+   confirmed reception is recorded against the contract.
 
 **Edge cases / fallbacks:**
 - Schedule generation must be **consistent under concurrency** — no double-generation, no
   lost update if activation is retried.
 - Equipment delivery by the Provider (external) may appear only as a **status update**; it
   does not block schedule generation.
+- A **rejected reception** is recorded and flagged to Juan Pedro; it does not silently pass as
+  confirmed.
 
 > This is the flow the POC implements end to end (KPD-7).
 

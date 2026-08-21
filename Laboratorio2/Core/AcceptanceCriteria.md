@@ -88,6 +88,23 @@ must hold.
 - **AC-7.4** State transitions (request → approval → active → closed) are persisted and
   traceable at all times.
 
+## Validation Gates — Broker negotiation & collections telemetry (KPD-9, KPD-11)
+
+The POC additionally must pass these validation gates, framed around the Broker role and the
+Head of Credit and Collections' portfolio telemetry rather than individual user stories.
+
+- **VG1 — Negotiation traceability.** A Broker successfully uploads a PDF with the contract
+  summary; César and Juan Pedro can both access the same agreement's details and propose,
+  accept or reject meeting dates.
+- **VG2 — Schedule engine & tracking.** After César confirms equipment reception, the system
+  automatically generates the installment schedule; César can view the contract's timeline.
+- **VG3 — Collections telemetry.** The system accurately computes the pronosticated income of
+  the current month assuming every active installment is paid, groups delinquent clients by
+  the 4-color scheme (KPD-9), and issues a warning message based on how late a client is.
+- **VG4 — Asset settlement.** At contract end, Juan Pedro records one of the two resolutions:
+  the purchase option (if all installments are paid) or the return (if César returns the
+  equipment instead); the closed contract is reflected in the closed-agreements history.
+
 ---
 
 ## POC exit criteria (Phase 1 gate)

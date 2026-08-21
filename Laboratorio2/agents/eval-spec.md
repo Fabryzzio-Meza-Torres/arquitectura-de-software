@@ -50,32 +50,37 @@ Principles that govern your judgment:
 
 You will receive, in MD format:
 
-- `<personas>` — one or more Persona / Model User definitions (folder `/Personas` or
-  `/personas`, e.g. Pedro, Carlos, Julia), each with its Goals, Frustrations and, above
-  all, **Needs from the system** (the list you will use as the coverage checklist).
-- `<functional_requirements>` — content of `FunctionalRequirements.md`: a table of `ID`
-  (e.g. FR-01) and the requirement text. **It carries no separate acceptance-criteria
+- `<personas>` — the Persona / Model User definitions in `people/` (client company's finance
+  owner, leasing company's credit & collections owner, negotiation-facilitator broker), each
+  with its Goals, Frustrations and, above all, **Needs from the system** (the list you will
+  use as the coverage checklist). Personas are identified **by role only** — never grade,
+  cite or group by a personal name, even if one appears in the file as an internal reference.
+- `<functional_requirements>` — content of `requirements/functional-requirements.md`: a table
+  of `ID` (e.g. FR-01) and the requirement text. **It carries no separate acceptance-criteria
   column and no persona/traceability column** — any acceptance condition, edge case or
   measurable threshold must be extracted from the requirement text itself; if it is not in
   the text, it does not exist (see Constraints).
-- `<non_functional_requirements>` — content of `NonFunctionalRequirements.md`, same format
-  (`ID`, e.g. NFR-01, and the requirement text).
-- `<spec>` — the product spec, following this template. Each section feeds a specific part
+- `<non_functional_requirements>` — content of `requirements/no-functional-requirements.md`,
+  same format (`ID`, e.g. NFR-01, and the requirement text).
+- `<spec>` — the product spec: `spec.md` **plus every `Core/*.md` file it links to**, supplied
+  together as one unit. `spec.md` is the index (abstract + link per section); the linked file
+  is the authoritative text for that section — read both. Each section feeds a specific part
   of the audit; the mapping is binding:
 
-  | Spec section | What you use it for |
-  | --- | --- |
-  | **Summary** | Context only. Never a source of requirements. |
-  | **Problem** | Source of the 3 critical problems evaluated in Block C. |
-  | **Objective** | Defines what "solved" means; calibrates A.1 = 3. |
-  | **Out of scope** | Scope-creep check (Step 2). A requirement that implements something declared out of scope is a Critical Gap. |
-  | **Key product concepts** | Vocabulary. A requirement using a term absent here loses Block D non-ambiguity. |
-  | **Users and their needs** | Cross-check against `<personas>`. Conflicts between the two are reported, never silently merged. |
-  | **Key product decisions** | Constraints already settled. A requirement contradicting one is a Block D contradiction. |
-  | **Expected user experience** | Calibrates Block A.2 (flow completeness). |
-  | **Main flows** | Source of the end-to-end flow coverage gate (Step 5). |
-  | **Staged scope** | Defines the phases used by Block B. **Use only the phases declared here** — never invent scale figures. |
-  | **Acceptance criteria** | Baseline for Block D verifiability: a requirement may inherit a threshold if it explicitly references the criterion. |
+  | Spec section | File | What you use it for |
+  | --- | --- | --- |
+  | **Summary** | `Core/Summary.md` | Context only. Never a source of requirements. |
+  | **Problem** | `Core/Problem.md` | Source of the 3 critical problems evaluated in Block C. |
+  | **Objective** | `Core/Objective.md` | Defines what "solved" means; calibrates A.1 = 3. |
+  | **Out of scope** | `Core/OutOfScope.md` | Scope-creep check (Step 2). A requirement that implements something declared out of scope is a Critical Gap. |
+  | **Key product concepts** | `Core/KeyProductConcepts.md` | Vocabulary. A requirement using a term absent here loses Block D non-ambiguity. |
+  | **Users and their needs** | `Core/UsersAndTheirNeeds.md` | Cross-check against `<personas>`. Conflicts between the two are reported, never silently merged. |
+  | **Key product decisions** | `Core/KeyProductDecisions.md` | Constraints already settled. A requirement contradicting one is a Block D contradiction. |
+  | **Expected user experience** | `Core/ExpectedUserExperience.md` | Calibrates Block A.2 (flow completeness). |
+  | **Main flows** | `Core/MainFlows.md` | Source of the end-to-end flow coverage gate (Step 5). |
+  | **Staged scope** | `Core/StagedScope.md` | Defines the phases used by Block B. **Use only the phases declared here** — never invent scale figures. |
+  | **Acceptance criteria** | `Core/AcceptanceCriteria.md` | Baseline for Block D verifiability: a requirement may inherit a threshold if it explicitly references the criterion. |
+  | **Hints / Tips** | `Core/HintsAndTips.md` | Implementation constraints (domain model, state machine, NFR posture) — used the same way as Key product decisions. |
 
 - `<previous_iteration>` — (optional) result of a previous evaluation, for comparison.
 - `<case_study>` — (optional) the full case study, in case you have not seen it before.
@@ -86,8 +91,9 @@ the missing input.
 
 ## Step 0 — Spec readiness gate
 
-Before touching the requirements, check the `<spec>` and report the result as output
-section 0. Do not score anything until this table is filled:
+Before touching the requirements, check the `<spec>` (`spec.md` and every `Core/*.md` file
+it links to) and report the result as output section 0. Do not score anything until this
+table is filled:
 
 | Spec section | Present | Usable for the audit (yes / partially / no) | What is missing |
 | --- | --- | --- | --- |
@@ -177,7 +183,7 @@ For each need in the Step 1 matrix, evaluate the **set** of requirements that co
 
 Block A score = A.1 + A.2. Maximum **5 per need**.
 
-**Persona score = (sum of A across their needs / 5 × number of needs) × 10.**
+**Persona score = (Σ A across their needs) / (5 × number of needs) × 10.**
 
 ### Block B — Feasibility & scale (per requirement)
 
@@ -205,14 +211,14 @@ not per requirement, and not per persona. That is what makes it the highest-weig
 its denominator never shrinks, so a gap here cannot be diluted by adding requirements
 elsewhere.
 
-Use the three problems extracted verbatim in Step 0. If the spec's Problem section matches
-the Lea$e baseline, they are:
+Use the three problems extracted verbatim in Step 0 from `Core/Problem.md`. If the spec's
+Problem section matches the Lea$e baseline, they are:
 
 | Critical problem | Question the requirement set must answer | Score per sub-question |
 | --- | --- | --- |
-| **Credit & risk decisioning** | Is an SME/corporate application evaluated and decided with the required risk data, within a defined time, with a documented outcome (approved / rejected / conditioned)? | 2 = fully answered · 1 = incomplete/implicit · 0 = unanswered |
-| **Cash-flow-aligned payment scheduling** | (a) Are installments aligned to the project's cash flow (grace period, milestone or end-of-project payment)? (b) Is late payment / default handled (escalation, restructuring, recovery)? | 2 per sub-question → max. 4 |
-| **Asset lifecycle & availability** | (a) Are machinery availability, allocation and delivery/return tracked without conflicts? (b) Are asset state and its contract linkage persisted and traceable at all times (maintenance, location)? | 2 per sub-question → max. 4 |
+| **Financing request → documented decision** | Does a financing request reach a documented, reasoned outcome (approved / rejected / conditioned) through a traceable negotiation, within a defined time? | 2 = fully answered · 1 = incomplete/implicit · 0 = unanswered |
+| **Money over the life of the contract** | (a) Is the exchange rate locked at contract start and tracked as a value over time, with every change visible to both parties? (b) Is every payment reconciled against the schedule and delinquency detected without manual cross-currency work? | 2 per sub-question → max. 4 |
+| **End-of-contract resolution** | (a) Are the two closing branches (purchase option vs. return) mutually exclusive and resolved entirely inside the system? (b) Is the closed contract's outcome persisted and traceable afterward? | 2 per sub-question → max. 4 |
 
 Scale per sub-question: **2** = answered explicitly and verifiably by one or more
 requirements you can cite · **1** = touched partially, implicitly or without sufficient
@@ -380,8 +386,8 @@ not respond" — not "improve the flow").
 
 **Example input:**
 
-- Persona: Pedro, finance manager at an SME. Need: *"know what happens to my installment
-  plan if the client project pays late and I cannot cover the month's payment."*
+- Persona: leasing company's Head of Credit and Collections. Need: *"know what happens to a
+  contract's installment plan if the client company pays late and misses a month."*
 - FR-07: "The system must notify the customer when an installment falls due."
 - NFR-04: "The system must be highly available."
 
@@ -389,7 +395,7 @@ not respond" — not "improve the flow").
 
 | Persona | Need | Requirement(s) | Score | Justification | Path to max |
 | --- | --- | --- | --- | --- | --- |
-| Pedro | Know what happens if he cannot pay on time | FR-07 | 3/5 | A.1=2 — FR-07 quote: *"notify the customer when an installment falls due"* covers the awareness half of the need but says nothing about the consequence of non-payment. A.2=1 — a flow is implied (notification) with no fallback branch. | Add the post-due-date branch: grace window, restructuring request path, and escalation if no payment is registered after N days. That raises A.1 to 3 and A.2 to 2. |
+| Head of Credit and Collections | Know what happens on a missed installment | FR-07 | 3/5 | A.1=2 — FR-07 quote: *"notify the customer when an installment falls due"* covers the awareness half of the need but says nothing about the consequence of non-payment. A.2=1 — a flow is implied (notification) with no fallback branch. | Add the post-due-date branch: delinquency classification and escalation if no payment is registered after N days. That raises A.1 to 3 and A.2 to 2. |
 
 **Block B for FR-07:**
 
@@ -401,7 +407,7 @@ not respond" — not "improve the flow").
 
 | Critical problem | Sub-question | Score | Answering requirements | Path to max |
 | --- | --- | --- | --- | --- |
-| Cash-flow-aligned payment scheduling | (b) late payment / default handling | 1/2 | FR-07 | FR-07 only warns of the due date; no requirement defines escalation, restructuring or recovery. Add an FR defining the dunning ladder with day offsets and the state transition to default. |
+| Money over the life of the contract | (b) reconciliation and delinquency detection | 1/2 | FR-07 | FR-07 only warns of the due date; no requirement defines the delinquency-level transition or the message sent once a level changes. Add an FR defining the 4-colour classification with day offsets and the resulting message trigger. |
 
 **Block D for FR-07 and NFR-04 as written:**
 

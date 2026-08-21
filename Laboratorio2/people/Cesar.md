@@ -99,7 +99,8 @@ facilitator — unlike the provider, the Broker *is* an in-system actor. The Bro
 negotiation meetings (which the Head of Finance can accept or reject), proposes deal ideas,
 and uploads the contract's PDF, summary and details. The Head of Finance never negotiates the
 deal terms alone — the Broker's job is to help close it faster. See
-`Core/KeyProductDecisions.md` (KPD-11) and `Core/MainFlows.md` (Flow 1B).
+[Key product decisions](../Core/KeyProductDecisions.md) (KPD-11) and
+[Main flows](../Core/MainFlows.md) (Flow 1B).
 
 ## Main flows this role participates in (inside the system)
 

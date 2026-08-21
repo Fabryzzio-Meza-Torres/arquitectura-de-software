@@ -13,7 +13,7 @@ the phases declared here are valid; no other scale figures exist unless added he
 
 ## Phase 1 — POC / MVP: one Happy Path, end to end
 
-**Objective:** prove the César ↔ Juan Pedro's Leasing Company relationship works end to end
+**Objective:** prove the Head of Finance ↔ the leasing company relationship works end to end
 for a single financing lifecycle. This is the phase the deliverable POC must satisfy.
 
 **In scope:**
@@ -21,14 +21,14 @@ for a single financing lifecycle. This is the phase the deliverable POC must sat
   (Approval, possibly a simplified/manual decision) → Flow 3 (Contract activation + schedule
   generation, including equipment-reception confirmation). This chain is the **committed
   Happy Path** (KPD-7).
-- Three authenticated roles (César, Juan Pedro / Head of Credit and Collections, Broker —
+- Three authenticated roles (the Head of Finance, the Head of Credit and Collections, Broker —
   KPD-11).
 - Contract currency selection **PEN or USD**, with the **rate locked at start** and stored as
   a rate value with an effective date (KPD-4).
 - Real-time request/contract status and visible rejection reasons.
 - Negotiation-meeting scheduling and PDF contract upload/viewing with the fixed exchange rate
   attached (Flow 1B).
-- Confirmation of equipment reception by César (Flow 3).
+- Confirmation of equipment reception by the Head of Finance (Flow 3).
 - Dynamic delinquency classification into the 4-color scheme (KPD-9).
 - Execution of both end-of-contract closing branches (KPD-5/KPD-10).
 
@@ -51,9 +51,9 @@ automation, portfolio analytics, multi-tenant.
   a defined dunning/escalation ladder**.
 - Flow 5 (Exchange-rate update on an active contract) with full **rate-change history** and
   forward-only recomputation.
-- Juan Pedro's **collections dashboard**: active contracts, pending installments, delinquency,
-  currency/rate exposure.
-- Notifications to César (upcoming/overdue installments, rate changes).
+- The Head of Credit and Collections' **collections dashboard**: active contracts, pending
+  installments, delinquency, currency/rate exposure.
+- Notifications to the Head of Finance (upcoming/overdue installments, rate changes).
 
 **Planning assumptions (to validate):**
 - Growth to the order of **hundreds of active contracts** across PEN and USD.
@@ -69,7 +69,7 @@ automation, portfolio analytics, multi-tenant.
 **In scope:**
 - Flow 6 (End-of-contract resolution) with both branches — **purchase option** and
   **return** — fully in-system (KPD-5).
-- Portfolio-level analytics and currency-exposure reporting for Juan Pedro.
+- Portfolio-level analytics and currency-exposure reporting for the Head of Credit and Collections.
 - Hardening for larger scale.
 
 **Planning assumptions (to validate):**
@@ -81,7 +81,8 @@ automation, portfolio analytics, multi-tenant.
 
 ## Out-of-phase (never in scope in any phase)
 
-These restate the settled scope boundaries so no phase accidentally pulls them in:
+These restate the settled scope boundaries so no phase accidentally pulls them in — see
+[Out of scope](OutOfScope.md) for the authoritative list:
 
 - The **Provider** as an actor, screen, API or flow (KPD-2).
 - Equipment **procurement / supply-chain / delivery logistics** — external and offline.

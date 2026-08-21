@@ -3,7 +3,8 @@
 > Title updated from "Head of Collections" to **Head of Credit and Collections** after the
 > architecture-diagram review — same responsibilities below, now with explicit visibility into
 > the credit side of the pipeline (this role receives and tracks financing requests, even
-> though the risk decision itself sits elsewhere — see `Core/KeyProductDecisions.md` KPD-8).
+> though the risk decision itself sits elsewhere — see
+> [Key product decisions](../Core/KeyProductDecisions.md) KPD-8).
 
 ## Who they are
 
@@ -60,7 +61,7 @@ never as a system actor, screen, or flow.
 - Group delinquent clients by a standardized **4-color delinquency level**
   (Green/Yellow/Orange/Red) and send a formal message based on how late they are.
 - Receive the Broker's negotiation meetings and PDF contract submissions for the deals being
-  tracked (see `Core/MainFlows.md`, Flow 1B).
+  tracked (see [Main flows](../Core/MainFlows.md), Flow 1B).
 
 ## Pain points
 

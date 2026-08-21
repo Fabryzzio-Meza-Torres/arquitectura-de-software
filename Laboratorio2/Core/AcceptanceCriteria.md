@@ -2,21 +2,22 @@
 
 Baseline, testable conditions the platform must satisfy. Each criterion is written so a QA
 engineer can turn it into a pass/fail test with no further interpretation. They are grouped
-by the flow / decision they validate and tied to the phase of `StagedScope.md` in which they
-must hold.
+by the flow / decision they validate and tied to the phase of [Staged scope](StagedScope.md)
+in which they must hold.
 
 > Thresholds marked *(assumption to validate)* come from planning assumptions in
-> `StagedScope.md`, not from the case study. Validate before treating them as contractual.
+> [Staged scope](StagedScope.md), not from the case study. Validate before treating them as
+> contractual.
 
 ---
 
 ## AC-1 — Financing request (Flow 1) · Phase 1
 
-- **AC-1.1** Given a logged-in César, when he submits a request with equipment reference,
-  amount, term and a currency of **PEN or USD**, then a request is created in state **Under
-  review** and is visible to the leasing-company side.
-- **AC-1.2** Given an incomplete or invalid request form, when he submits, then no request is
-  created and field-level validation errors are returned.
+- **AC-1.1** Given a logged-in Head of Finance, when a request is submitted with equipment
+  reference, amount, term and a currency of **PEN or USD**, then a request is created in
+  state **Under review** and is visible to the leasing-company side.
+- **AC-1.2** Given an incomplete or invalid request form, when it is submitted, then no
+  request is created and field-level validation errors are returned.
 - **AC-1.3** Given an identical resubmission of the same request, when submitted, then no
   duplicate request is created (idempotent submit).
 
@@ -26,8 +27,8 @@ must hold.
   or **Rejected**.
 - **AC-2.2** A **Conditioned** or **Rejected** outcome **must** store a reason; the outcome
   cannot be persisted with an empty reason.
-- **AC-2.3** The outcome and its reason are visible to César and the status of his request
-  updates accordingly.
+- **AC-2.3** The outcome and its reason are visible to the Head of Finance and the request's
+  status updates accordingly.
 - **AC-2.4** *(assumption to validate)* A decision outcome is recorded within **2 business
   days** of submission; until then the request remains **Under review** and never disappears.
 
@@ -41,8 +42,8 @@ must hold.
   and due dates; the sum of installments reconciles to the financed amount at the locked rate.
 - **AC-3.4** Retried or concurrent activation of the same request produces **exactly one**
   contract and **one** schedule (no double-generation, no lost update).
-- **AC-3.5** César can view schedule, outstanding balance, currency and rate in effect; the
-  contract appears in Juan Pedro's portfolio.
+- **AC-3.5** The Head of Finance can view schedule, outstanding balance, currency and rate in
+  effect; the contract appears in the Head of Credit and Collections' portfolio.
 
 ## AC-4 — Payments & reconciliation (Flow 4) · Phase 2
 
@@ -61,15 +62,15 @@ must hold.
   preserves the previous value in an auditable history (who, when, why).
 - **AC-5.2** A rate change recomputes only installments from the **effective date forward**;
   already-reconciled past installments are never rewritten.
-- **AC-5.3** César is notified of the change with **before rate, after rate, effective date
-  and reason**.
+- **AC-5.3** The Head of Finance is notified of the change with **before rate, after rate,
+  effective date and reason**.
 - **AC-5.4** At any time, both parties can retrieve the full rate-change history for a
   contract.
 
 ## AC-6 — End-of-contract resolution (Flow 6) · Phase 3
 
-- **AC-6.1** At end of term, César is presented with exactly two mutually exclusive branches:
-  **purchase option** and **return**.
+- **AC-6.1** At end of term, the Head of Finance is presented with exactly two mutually
+  exclusive branches: **purchase option** and **return**.
 - **AC-6.2** Choosing **purchase option** requires all remaining installments settled; on
   completion the purchase option is exercised and the contract moves to **Closed**.
 - **AC-6.3** Choosing **return** closes the contract without exercising the purchase option
@@ -87,6 +88,13 @@ must hold.
   delivery appears at most as a status update (scope check, KPD-2).
 - **AC-7.4** State transitions (request → approval → active → closed) are persisted and
   traceable at all times.
+- **AC-7.5** A Broker's read/write access is restricted to the negotiations they are
+  actively facilitating; the pronosticated-income figure and the delinquency engine are
+  restricted to the Head of Credit and Collections role. Any cross-role access attempt is
+  denied by default (see [Hints / Tips](HintsAndTips.md)).
+- **AC-7.6** Delinquency-level recomputation runs under an ACID transaction per contract: a
+  payment registered in the same window that settles the outstanding installment halts the
+  collections-message trigger immediately (see [Hints / Tips](HintsAndTips.md)).
 
 ## Validation Gates — Broker negotiation & collections telemetry (KPD-9, KPD-11)
 
@@ -94,21 +102,23 @@ The POC additionally must pass these validation gates, framed around the Broker 
 Head of Credit and Collections' portfolio telemetry rather than individual user stories.
 
 - **VG1 — Negotiation traceability.** A Broker successfully uploads a PDF with the contract
-  summary; César and Juan Pedro can both access the same agreement's details and propose,
-  accept or reject meeting dates.
-- **VG2 — Schedule engine & tracking.** After César confirms equipment reception, the system
-  automatically generates the installment schedule; César can view the contract's timeline.
+  summary; the Head of Finance and the Head of Credit and Collections can both access the
+  same agreement's details and propose, accept or reject meeting dates.
+- **VG2 — Schedule engine & tracking.** After the Head of Finance confirms equipment
+  reception, the system automatically generates the installment schedule; the Head of
+  Finance can view the contract's timeline.
 - **VG3 — Collections telemetry.** The system accurately computes the pronosticated income of
   the current month assuming every active installment is paid, groups delinquent clients by
   the 4-color scheme (KPD-9), and issues a warning message based on how late a client is.
-- **VG4 — Asset settlement.** At contract end, Juan Pedro records one of the two resolutions:
-  the purchase option (if all installments are paid) or the return (if César returns the
-  equipment instead); the closed contract is reflected in the closed-agreements history.
+- **VG4 — Asset settlement.** At contract end, the Head of Credit and Collections records one
+  of the two resolutions: the purchase option (if all installments are paid) or the return
+  (if the Head of Finance returns the equipment instead); the closed contract is reflected in
+  the closed-agreements history.
 
 ---
 
 ## POC exit criteria (Phase 1 gate)
 
 The POC is accepted when **AC-1, AC-2, AC-3 and the applicable AC-7 items** pass end to end
-for the César → active-contract Happy Path (KPD-7) — proving at least one main flow works
-fully, with currency locked and schedule generated correctly.
+for the Head of Finance → active-contract Happy Path (KPD-7) — proving at least one main flow
+works fully, with currency locked and schedule generated correctly.

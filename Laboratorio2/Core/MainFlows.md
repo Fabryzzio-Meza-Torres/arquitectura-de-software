@@ -2,17 +2,18 @@
 
 The end-to-end flows the system must support. These are the baseline for the flow-coverage
 gate: **at least one flow must be covered end to end** by the requirement set for the POC to
-be implementable. Actors are César (client / Head of Finance) and Juan Pedro (leasing company
-/ Head of Collections). The Provider is **not** an actor (see `KeyProductDecisions.md`, KPD-2).
+be implementable. Actors are the client company's Head of Finance and the leasing company's
+Head of Credit and Collections. The Provider is **not** an actor (see
+[Key product decisions](KeyProductDecisions.md), KPD-2).
 
-Legend: **[C]** = César · **[JP]** = Juan Pedro (Head of Credit and Collections) · **[B]** =
+Legend: **[C]** = the Head of Finance · **[JP]** = the Head of Credit and Collections · **[B]** =
 Broker · **[SYS]** = system.
 
 ---
 
 ## Flow 1 — Request leasing financing
 
-**Goal:** César opens a financing request for equipment already agreed externally.
+**Goal:** the Head of Finance opens a financing request for equipment already agreed externally.
 
 1. **[C]** Logs in and starts a new financing request.
 2. **[C]** Enters the equipment reference (agreed offline) and the requested amount/term.
@@ -33,7 +34,7 @@ Broker · **[SYS]** = system.
 **Goal:** the Broker facilitates the deal and attaches the contract documentation while the
 request is under review. Runs alongside Flow 2.
 
-1. **[B]** Books a negotiation meeting between César and Juan Pedro's Leasing Company.
+1. **[B]** Books a negotiation meeting between the Head of Finance and the leasing company.
 2. **[C]/[JP]** Propose, accept or reject the meeting date.
 3. **[B]** Proposes deal ideas based on the provider, the client's finances and the client's
    need.
@@ -55,8 +56,8 @@ request is under review. Runs alongside Flow 2.
 3. Outcome is one of, and is **recorded with a reason**:
    - **Approved** → proceed to Flow 3.
    - **Conditioned** → approved subject to stated conditions.
-   - **Rejected** → closed, with the reason visible to César.
-4. **[SYS]** Notifies César of the outcome and updates request status.
+   - **Rejected** → closed, with the reason visible to the Head of Finance.
+4. **[SYS]** Notifies the Head of Finance of the outcome and updates request status.
 
 **Edge cases / fallbacks:**
 - Rejection/conditioning **must** carry a reason (no bare status).
@@ -84,7 +85,7 @@ request is under review. Runs alongside Flow 2.
   lost update if activation is retried.
 - Equipment delivery by the Provider (external) may appear only as a **status update**; it
   does not block schedule generation.
-- A **rejected reception** is recorded and flagged to Juan Pedro; it does not silently pass as
+- A **rejected reception** is recorded and flagged to the Head of Credit and Collections; it does not silently pass as
   confirmed.
 
 > This is the flow the POC implements end to end (KPD-7).
@@ -93,7 +94,7 @@ request is under review. Runs alongside Flow 2.
 
 ## Flow 4 — Pay installments & reconciliation
 
-**Goal:** César pays; Juan Pedro's side reconciles against the schedule.
+**Goal:** the Head of Finance pays; the Head of Credit and Collections' side reconciles against the schedule.
 
 1. **[C]** Pays an installment in the contract currency.
 2. **[SYS]** Registers the payment and **updates the outstanding balance**.
@@ -117,7 +118,7 @@ request is under review. Runs alongside Flow 2.
 2. **[SYS]** Records a **new rate value with an effective date**, preserving the prior value
    in history.
 3. **[SYS]** Recomputes affected installments/balance from the effective date forward.
-4. **[SYS]** Notifies César: the **before/after rate, the effective date, and the reason**.
+4. **[SYS]** Notifies the Head of Finance: the **before/after rate, the effective date, and the reason**.
 5. **[C]/[JP]** Both see the updated schedule and the rate-change history.
 
 **Edge cases / fallbacks:**
@@ -130,7 +131,7 @@ request is under review. Runs alongside Flow 2.
 
 **Goal:** close the contract via exactly one of the two branches (KPD-5).
 
-1. **[SYS]** At end of term, prompts César for the closing decision.
+1. **[SYS]** At end of term, prompts the Head of Finance for the closing decision.
 2. **[C]** Chooses one branch:
    - **Purchase option:** pay off all remaining installments → exercise purchase option →
      keep equipment.

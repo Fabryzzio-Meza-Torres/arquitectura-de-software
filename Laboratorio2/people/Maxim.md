@@ -1,8 +1,10 @@
 # Broker — Negotiation Facilitator
 
-> New persona added after the architecture-diagram review. Internal reference name: **Maxim**.
-> See `Core/KeyProductDecisions.md` (KPD-11), `Core/ExpectedUserExperience.md` and
-> `Core/MainFlows.md` (Flow 1B) for how this role fits into the rest of the spec.
+> New role added after the architecture-diagram review. See
+> [Key product decisions](../Core/KeyProductDecisions.md) (KPD-11),
+> [Expected user experience](../Core/ExpectedUserExperience.md) and
+> [Main flows](../Core/MainFlows.md) (Flow 1B) for how this role fits into the rest of the
+> spec.
 
 ## Who they are
 
@@ -38,7 +40,7 @@ company, with the pertinent documentation attached.
 2. **Propose deal ideas** to close the agreement.
 3. **Submit the PDF, summary and details** of the contract.
 
-See `Core/MainFlows.md`, Flow 1B, for the full step-by-step.
+See [Main flows](../Core/MainFlows.md), Flow 1B, for the full step-by-step.
 
 ## What this role expects from the system
 

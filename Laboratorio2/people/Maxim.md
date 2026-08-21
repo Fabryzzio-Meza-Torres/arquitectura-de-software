@@ -1,11 +1,5 @@
 # Broker — Negotiation Facilitator
 
-> New role added after the architecture-diagram review. See
-> [Key product decisions](../Core/KeyProductDecisions.md) (KPD-11),
-> [Expected user experience](../Core/ExpectedUserExperience.md) and
-> [Main flows](../Core/MainFlows.md) (Flow 1B) for how this role fits into the rest of the
-> spec.
-
 ## Who they are
 
 The Broker is a tactical facilitator who sits between the client company's Head of Finance and

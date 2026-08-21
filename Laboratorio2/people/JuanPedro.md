@@ -1,11 +1,5 @@
 # Head of Credit and Collections — Leasing Company
 
-> Title updated from "Head of Collections" to **Head of Credit and Collections** after the
-> architecture-diagram review — same responsibilities below, now with explicit visibility into
-> the credit side of the pipeline (this role receives and tracks financing requests, even
-> though the risk decision itself sits elsewhere — see
-> [Key product decisions](../Core/KeyProductDecisions.md) KPD-8).
-
 ## Who they are
 
 The Head of Credit and Collections leads collections at the leasing company, the financial

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>New Financing Request - Lea$e</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#e5eeff",
+                      "outline": "#76777d",
+                      "secondary-fixed-dim": "#c4c6d1",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "primary": "#000000",
+                      "inverse-surface": "#213145",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#271901",
+                      "on-background": "#0b1c30",
+                      "on-secondary": "#ffffff",
+                      "inverse-primary": "#bec6e0",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "on-tertiary-container": "#98805d",
+                      "secondary-container": "#dedfeb",
+                      "on-secondary-fixed": "#191b24",
+                      "surface-variant": "#d3e4fe",
+                      "surface-container-high": "#dce9ff",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "secondary-fixed": "#e1e2ed",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#cbdbf5",
+                      "on-surface": "#0b1c30",
+                      "secondary": "#5c5e68",
+                      "surface-tint": "#565e74",
+                      "background": "#f8f9ff",
+                      "tertiary-fixed": "#fcdeb5",
+                      "outline-variant": "#c6c6cd",
+                      "surface": "#f8f9ff",
+                      "on-secondary-fixed-variant": "#444650",
+                      "on-primary-fixed": "#131b2e",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "tertiary-container": "#271901",
+                      "on-primary-container": "#7c839b",
+                      "on-surface-variant": "#45464d",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#dae2fd",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#bec6e0",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#131b2e",
+                      "surface-container-low": "#eff4ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-secondary-container": "#60626c",
+                      "tertiary": "#000000"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "grid_columns": "12",
+                      "margin_desktop": "40px",
+                      "container_max_width": "1440px",
+                      "gutter": "24px",
+                      "base": "4px",
+                      "margin_mobile": "16px"
+              },
+              "fontFamily": {
+                      "label-caps": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "data-tabular": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "mono-label": ["JetBrains Mono"],
+                      "headline-md": ["Inter"],
+                      "display": ["Inter"]
+              },
+              "fontSize": {
+                      "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "data-tabular": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "mono-label": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md">
+<!-- Minimal Header for Task-Focused View -->
+<header class="h-16 px-margin_desktop bg-surface-container-lowest border-b border-outline-variant flex justify-between items-center sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="font-display text-display tracking-tighter text-primary">Lea$e</span>
+<div class="h-6 w-px bg-outline-variant mx-2"></div>
+<h1 class="font-headline-md text-headline-md text-on-surface">New Financing Request</h1>
+</div>
+<button class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container transition-colors font-label-caps text-label-caps flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">close</span>
+            Cancel
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-container_max_width mx-auto p-margin_desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Wizard Flow (8 cols) -->
+<div class="md:col-span-8 flex flex-col gap-8">
+<!-- Progress Stepper -->
+<div class="flex items-center w-full relative">
+<!-- Step 1: Active -->
+<div class="flex flex-col items-center flex-1 relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-data-tabular text-data-tabular shadow-sm ring-4 ring-surface">1</div>
+<span class="mt-2 font-label-caps text-label-caps text-primary">Machinery Details</span>
+</div>
+<!-- Connector -->
+<div class="absolute top-4 left-[16.6%] right-[50%] h-0.5 bg-outline-variant -z-10"></div>
+<!-- Step 2: Future -->
+<div class="flex flex-col items-center flex-1 relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-data-tabular text-data-tabular ring-4 ring-surface">2</div>
+<span class="mt-2 font-label-caps text-label-caps text-on-surface-variant">Financing Terms</span>
+</div>
+<!-- Connector -->
+<div class="absolute top-4 left-[50%] right-[16.6%] h-0.5 bg-outline-variant -z-10"></div>
+<!-- Step 3: Future -->
+<div class="flex flex-col items-center flex-1 relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-data-tabular text-data-tabular ring-4 ring-surface">3</div>
+<span class="mt-2 font-label-caps text-label-caps text-on-surface-variant">Documentation</span>
+</div>
+</div>
+<!-- Form Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 shadow-sm">
+<div class="mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Machinery Details</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Please provide the specifications and estimated cost of the asset to be financed.</p>
+</div>
+<form class="grid grid-cols-2 gap-6">
+<div class="col-span-2">
+<label class="block font-label-caps text-label-caps text-on-surface mb-2">Equipment Category</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant rounded px-4 py-3 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none transition-shadow">
+<option disabled="" selected="" value="">Select category...</option>
+<option>Heavy Construction</option>
+<option>Precision Manufacturing</option>
+<option>Agricultural</option>
+<option>Transportation &amp; Logistics</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-3 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="col-span-1">
+<label class="block font-label-caps text-label-caps text-on-surface mb-2">Manufacturer</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none transition-shadow" placeholder="e.g. Caterpillar, Haas" type="text"/>
+</div>
+<div class="col-span-1">
+<label class="block font-label-caps text-label-caps text-on-surface mb-2">Model</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none transition-shadow" placeholder="e.g. 320 GC" type="text"/>
+</div>
+<div class="col-span-2 mt-4">
+<div class="h-px bg-outline-variant w-full"></div>
+</div>
+<div class="col-span-2">
+<label class="block font-label-caps text-label-caps text-on-surface mb-2">Estimated Price (Excl. VAT)</label>
+<div class="flex gap-4">
+<div class="relative w-32">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant rounded px-4 py-3 font-data-tabular text-data-tabular text-on-surface focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none transition-shadow">
+<option>USD</option>
+<option>PEN</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+<input class="flex-1 bg-surface-container-lowest border border-outline-variant rounded px-4 py-3 font-data-tabular text-data-tabular text-on-surface placeholder:text-outline text-right focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none transition-shadow" placeholder="0.00" type="text"/>
+</div>
+</div>
+<div class="col-span-2">
+<label class="block font-label-caps text-label-caps text-on-surface mb-2">Condition</label>
+<div class="flex gap-4">
+<label class="flex-1 border border-outline-variant rounded p-4 flex items-center gap-3 cursor-pointer hover:bg-surface-container-low transition-colors has-[:checked]:border-primary has-[:checked]:bg-surface-container-low">
+<input checked="" class="text-primary focus:ring-primary w-4 h-4" name="condition" type="radio" value="new"/>
+<span class="font-body-md text-body-md text-on-surface">New Asset</span>
+</label>
+<label class="flex-1 border border-outline-variant rounded p-4 flex items-center gap-3 cursor-pointer hover:bg-surface-container-low transition-colors has-[:checked]:border-primary has-[:checked]:bg-surface-container-low">
+<input class="text-primary focus:ring-primary w-4 h-4" name="condition" type="radio" value="used"/>
+<span class="font-body-md text-body-md text-on-surface">Used / Refurbished</span>
+</label>
+</div>
+</div>
+</form>
+</div>
+<!-- Form Actions -->
+<div class="flex justify-between items-center pt-4">
+<button class="px-6 py-3 rounded-lg border border-transparent text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container-low transition-colors">
+                    Save Draft
+                </button>
+<div class="flex gap-4">
+<button class="px-6 py-3 rounded-lg bg-primary text-on-primary font-label-caps text-label-caps hover:bg-inverse-surface transition-colors shadow-sm flex items-center gap-2">
+                        Next: Financing Terms
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary Sidebar (4 cols) -->
+<div class="md:col-span-4 sticky top-[104px]">
+<div class="bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<!-- Header -->
+<div class="bg-surface-container border-b border-outline-variant p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calculate</span>
+                        Financing Impact
+                    </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Estimated simulation based on input</p>
+</div>
+<!-- Content -->
+<div class="p-6 flex flex-col gap-6">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Asset Value</span>
+<div class="font-data-tabular text-[24px] font-semibold text-on-surface">USD 0.00</div>
+</div>
+<div class="h-px bg-outline-variant/50 w-full"></div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Down Payment (20%)</span>
+<div class="font-data-tabular text-body-lg text-on-surface">USD 0.00</div>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Financed Amount</span>
+<div class="font-data-tabular text-body-lg text-primary">USD 0.00</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-4 rounded-lg mt-2">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-caps text-label-caps text-on-surface">Est. Monthly Payment</span>
+<span class="bg-[#e6f4ea] text-[#137333] px-2 py-0.5 rounded-full font-mono-label text-mono-label">Indicative</span>
+</div>
+<div class="font-data-tabular text-[28px] font-bold text-on-surface">--</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Pending term selection (Step 2)</p>
+</div>
+</div>
+<!-- Footer / Help -->
+<div class="bg-surface-container-lowest p-4 border-t border-outline-variant flex items-start gap-3">
+<span class="material-symbols-outlined text-outline mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rates are estimated based on current prime lending metrics. Final approval required by Credit Decisions committee.</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

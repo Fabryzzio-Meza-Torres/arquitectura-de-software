@@ -50,6 +50,25 @@ class MeetingState(StrEnum):
 class ContractState(StrEnum):
     PENDING = "PENDING"
     ACTIVE = "ACTIVE"
+    COMPLETED_PURCHASED = "COMPLETED_PURCHASED"
+    COMPLETED_RETURNED = "COMPLETED_RETURNED"
+
+
+class DelinquencyLevel(StrEnum):
+    GREEN = "GREEN"
+    YELLOW = "YELLOW"
+    ORANGE = "ORANGE"
+    RED = "RED"
+
+
+class ResolutionChoice(StrEnum):
+    PURCHASE = "PURCHASE"
+    RETURN = "RETURN"
+
+
+class ReconciliationStatus(StrEnum):
+    MATCHED = "MATCHED"
+    RECONCILIATION_MISMATCH = "RECONCILIATION_MISMATCH"
 
 
 class ReceptionState(StrEnum):
@@ -233,15 +252,17 @@ class ScheduleSimulation(SQLModel, table=True):
 
 class Installment(SQLModel, table=True):
     __tablename__ = "installments"
-    __table_args__ = (UniqueConstraint("simulation_id", "number", name="uq_installment_number"),)
+    __table_args__ = (UniqueConstraint("simulation_id", "contract_id", "number", name="uq_installment_number"),)
     id: int | None = Field(default=None, primary_key=True)
     simulation_id: int = Field(foreign_key="schedule_simulations.id", index=True)
+    contract_id: int | None = Field(default=None, foreign_key="contracts.id", index=True)
     number: int
     due_date: date
     amount: Decimal = Field(max_digits=14, decimal_places=2)
     principal: Decimal = Field(max_digits=14, decimal_places=2)
     interest: Decimal = Field(max_digits=14, decimal_places=2)
     cash_flow_gap_days: int
+    paid_amount: Decimal = Field(default=Decimal("0"), max_digits=14, decimal_places=2)
 
 
 class Contract(SQLModel, table=True):
@@ -254,11 +275,14 @@ class Contract(SQLModel, table=True):
     application_id: int = Field(foreign_key="applications.id", index=True)
     simulation_id: int = Field(foreign_key="schedule_simulations.id")
     owner_id: int = Field(foreign_key="users.id", index=True)
-    status: ContractState = Field(default=ContractState.ACTIVE, index=True)
+    status: ContractState = Field(default=ContractState.PENDING, index=True)
     currency: str
     locked_exchange_rate: Decimal = Field(max_digits=12, decimal_places=6)
-    outstanding_balance: Decimal = Field(max_digits=14, decimal_places=2)
+    outstanding_balance: Decimal = Field(default=Decimal("0"), max_digits=14, decimal_places=2)
     reception_status: ReceptionState = Field(default=ReceptionState.PENDING)
+    reception_note: str | None = None
+    resolution_choice: ResolutionChoice | None = None
+    resolved_at: datetime | None = None
     activated_at: datetime = Field(default_factory=utcnow)
 
 
@@ -269,3 +293,16 @@ class ExchangeRateEntry(SQLModel, table=True):
     rate: Decimal = Field(max_digits=12, decimal_places=6)
     effective_at: datetime = Field(default_factory=utcnow)
     reason: str = "Initial contract activation"
+
+
+class Payment(SQLModel, table=True):
+    __tablename__ = "payments"
+    __table_args__ = (UniqueConstraint("contract_id", "bank_reference", name="uq_payment_contract_bank_reference"),)
+    id: int | None = Field(default=None, primary_key=True)
+    contract_id: int = Field(foreign_key="contracts.id", index=True)
+    bank_reference: str = Field(index=True)
+    amount: Decimal = Field(max_digits=14, decimal_places=2)
+    currency: str
+    registered_by: int = Field(foreign_key="users.id")
+    reconciliation_status: ReconciliationStatus = Field(default=ReconciliationStatus.MATCHED)
+    created_at: datetime = Field(default_factory=utcnow)

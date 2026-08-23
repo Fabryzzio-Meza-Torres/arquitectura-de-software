@@ -8,7 +8,7 @@ from sqlmodel import Session
 
 from database import create_db_and_tables, engine
 from models.domain import AuditEntry, DemoSession, User
-from routers import auth, contracts, financing, negotiation, support
+from routers import auth, collections, contracts, financing, negotiation, support
 
 
 TAGS = [
@@ -17,6 +17,7 @@ TAGS = [
     {"name": "External integrations", "description": "Callbacks that record external outcomes. Lea$e never computes credit decisions."},
     {"name": "Broker negotiation", "description": "Explicit user-authored dates, responses, proposals, messages and shared PDF records. No automatic negotiation."},
     {"name": "Schedules and contracts", "description": "Simulations, signature, atomic activation, locked currency/rate and reception status."},
+    {"name": "Collections and end-of-contract resolution", "description": "Idempotent payments, reconciliation, 4-color delinquency, pronosticated income and the purchase/return branches."},
     {"name": "Support and traceability", "description": "In-app inbox and immutable audit trail."},
 ]
 
@@ -32,7 +33,10 @@ Lea$e records explicit user actions and external outcomes. It does **not** calcu
 
 ## Swagger authorization
 
-1. Call `POST /api/demo/session` with user `1` (César), `2` (Juan Pedro), `3` (Maxim) or `4` (Ana).
+1. Call `POST /api/demo/session` with user `1` (César, CLIENT), `2` (Juan Pedro, LEASING) or
+   `3` (Maxim, BROKER). User `4` is the NFR-07 dual-approval service account, not a persona —
+   it is omitted from `GET /api/demo/users` but can still open a session directly for testing
+   the >PEN 500,000 dual-attestation rule.
 2. Copy `access_token`.
 3. Click **Authorize** and paste the token.
 
@@ -92,6 +96,7 @@ app.include_router(auth.router)
 app.include_router(financing.router)
 app.include_router(negotiation.router)
 app.include_router(contracts.router)
+app.include_router(collections.router)
 app.include_router(support.router)
 
 

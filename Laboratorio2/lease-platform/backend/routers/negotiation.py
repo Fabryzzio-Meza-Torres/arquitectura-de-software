@@ -104,7 +104,9 @@ def list_broker_assignments(
     session: SessionDep,
     user: Annotated[User, Depends(require_roles(Role.BROKER))],
 ):
-    assignments = session.exec(select(BrokerAssignment).where(BrokerAssignment.broker_id == user.id)).all()
+    assignments = session.exec(
+        select(BrokerAssignment).where(BrokerAssignment.broker_id == user.id).order_by(BrokerAssignment.created_at.desc())
+    ).all()
     result = []
     for assignment in assignments:
         application = session.get(Application, assignment.application_id)

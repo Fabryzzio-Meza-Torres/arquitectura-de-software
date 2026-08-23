@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from decimal import Decimal
 from typing import Annotated
 
@@ -15,6 +15,7 @@ from models.domain import (
     Contract,
     ContractState,
     ExchangeRateEntry,
+    InboxMessage,
     Installment,
     ReceptionState,
     Role,
@@ -32,6 +33,7 @@ from schemas.api import (
 )
 from services.audit import audit
 from services.auth import CurrentUser, require_roles
+from services.collections import delinquency_level
 from services.schedule import build_simulation, signature_for
 
 
@@ -41,16 +43,28 @@ SessionDep = Annotated[Session, Depends(get_session)]
 
 def _simulation_read(session: Session, simulation: ScheduleSimulation) -> SimulationRead:
     installments = session.exec(
-        select(Installment).where(Installment.simulation_id == simulation.id).order_by(Installment.number)
+        select(Installment)
+        .where(Installment.simulation_id == simulation.id, Installment.contract_id.is_(None))
+        .order_by(Installment.number)
     ).all()
     return SimulationRead(**SimulationRead.model_validate(simulation).model_dump(exclude={"installments"}), installments=installments)
 
 
 def _contract_read(session: Session, contract: Contract) -> ContractRead:
     simulation = session.get(ScheduleSimulation, contract.simulation_id)
+    executable_installments = session.exec(
+        select(Installment).where(Installment.contract_id == contract.id).order_by(Installment.number)
+    ).all()
+    rate_history = session.exec(
+        select(ExchangeRateEntry).where(ExchangeRateEntry.contract_id == contract.id).order_by(ExchangeRateEntry.effective_at)
+    ).all()
+    level = delinquency_level(executable_installments, date.today()) if executable_installments else None
     return ContractRead(
-        **ContractRead.model_validate(contract).model_dump(exclude={"schedule"}),
+        **ContractRead.model_validate(contract).model_dump(exclude={"schedule", "installments", "rate_history", "delinquency_level"}),
         schedule=_simulation_read(session, simulation) if simulation else None,
+        installments=executable_installments,
+        rate_history=rate_history,
+        delinquency_level=level,
     )
 
 
@@ -118,13 +132,16 @@ def accept_simulation(simulation_id: int, payload: SimulationAccept, session: Se
     return _simulation_read(session, simulation)
 
 
-@router.post("/requests/{application_id}/activate", response_model=ContractRead, summary="Atomically activate one signed contract")
+@router.post("/requests/{application_id}/activate", response_model=ContractRead, summary="Atomically create one PENDING contract with the rate locked")
 def activate_contract(
     application_id: int,
     payload: ContractActivate,
     session: SessionDep,
     user: Annotated[User, Depends(require_roles(Role.LEASING))],
 ):
+    """FR-10, AC-3.2: locks currency and exchange rate now. The installment schedule is only
+    materialized once the Head of Finance confirms equipment reception (VG2, KeyProductConcepts:
+    contract stays PENDING until then)."""
     application = _application_for_user(session, application_id, user)
     if application.status != ApplicationStatus.APPROVED:
         raise HTTPException(status_code=409, detail="Application must be APPROVED by the external evaluator")
@@ -143,16 +160,16 @@ def activate_contract(
         application_id=application.id,
         simulation_id=simulation.id,
         owner_id=application.owner_id,
-        status=ContractState.ACTIVE,
+        status=ContractState.PENDING,
         currency=application.currency,
         locked_exchange_rate=payload.exchange_rate,
-        outstanding_balance=simulation.total_cost,
+        outstanding_balance=Decimal("0"),
     )
     try:
         session.add(contract)
         session.flush()
         session.add(ExchangeRateEntry(contract_id=contract.id, rate=payload.exchange_rate))
-        audit(session, entity_type="contract", entity_id=contract.id, action="ACTIVATED", actor=user, new=f"{contract.currency}@{contract.locked_exchange_rate}")
+        audit(session, entity_type="contract", entity_id=contract.id, action="CREATED_PENDING", actor=user, new=f"{contract.currency}@{contract.locked_exchange_rate}")
         session.commit()
     except (IntegrityError, OperationalError) as exc:
         session.rollback()
@@ -186,8 +203,11 @@ def read_contract(contract_id: int, session: SessionDep, user: CurrentUser):
     return _contract_read(session, contract)
 
 
-@router.post("/contracts/{contract_id}/reception-status", response_model=ContractRead, summary="Record reception as a status only")
+@router.post("/contracts/{contract_id}/reception-status", response_model=ContractRead, summary="Confirm reception (activates the contract and generates the schedule) or reject it")
 def update_reception(contract_id: int, payload: ReceptionUpdate, session: SessionDep, user: CurrentUser):
+    """FR-18, VG2: a CONFIRMED reception is what generates the installment schedule and moves
+    the contract PENDING -> ACTIVE (KeyProductConcepts). A REJECTED reception is recorded and
+    flagged to the leasing company instead of silently passing as confirmed (FR-18)."""
     if user.role != Role.CLIENT:
         raise HTTPException(status_code=403, detail="Unauthorized access")
     contract = session.get(Contract, contract_id)
@@ -195,9 +215,42 @@ def update_reception(contract_id: int, payload: ReceptionUpdate, session: Sessio
         raise HTTPException(status_code=404, detail="Contract not found")
     if contract.owner_id != user.id:
         raise HTTPException(status_code=403, detail="Unauthorized access")
+    if contract.status != ContractState.PENDING:
+        raise HTTPException(status_code=409, detail="Reception can only be recorded while the contract is PENDING")
     previous = contract.reception_status
     contract.reception_status = ReceptionState(payload.status)
-    audit(session, entity_type="contract", entity_id=contract.id, action="RECEPTION_STATUS_RECORDED", actor=user, previous=previous.value, new=contract.reception_status.value)
+    contract.reception_note = payload.note
+
+    if contract.reception_status == ReceptionState.CONFIRMED:
+        simulation = session.get(ScheduleSimulation, contract.simulation_id)
+        source_installments = session.exec(
+            select(Installment).where(Installment.simulation_id == simulation.id).order_by(Installment.number)
+        ).all()
+        for item in source_installments:
+            session.add(Installment(
+                simulation_id=item.simulation_id,
+                contract_id=contract.id,
+                number=item.number,
+                due_date=item.due_date,
+                amount=item.amount,
+                principal=item.principal,
+                interest=item.interest,
+                cash_flow_gap_days=item.cash_flow_gap_days,
+            ))
+        contract.outstanding_balance = simulation.total_cost
+        contract.status = ContractState.ACTIVE
+        audit(session, entity_type="contract", entity_id=contract.id, action="ACTIVATED_WITH_SCHEDULE", actor=user, previous=previous.value, new="ACTIVE")
+    else:
+        owner = session.get(User, contract.owner_id)
+        leasing_recipients = session.exec(select(User).where(User.role == Role.LEASING)).all()
+        for recipient in leasing_recipients:
+            session.add(InboxMessage(
+                user_id=recipient.id,
+                subject=f"Contrato #{contract.id}: recepción rechazada",
+                body=f"{owner.name if owner else 'El cliente'} rechazó la recepción de la maquinaria. Motivo: {payload.note or 'sin detalle'}.",
+            ))
+        audit(session, entity_type="contract", entity_id=contract.id, action="RECEPTION_REJECTED", actor=user, previous=previous.value, new=contract.reception_status.value)
+
     session.commit()
     session.refresh(contract)
     return _contract_read(session, contract)

@@ -139,3 +139,69 @@ del caso de estudio.
   humana", recordar separarla claramente de lo que consume el agente evaluador, o excluirla
   explícitamente en el prompt del agente (como ya hace `eval-spec.md` en su sección de
   Restricciones).
+
+## Lab2 / S2 — lecciones
+
+Trabajo hecho: auditoría y reconstrucción del POC `lease-platform` (FastAPI + React) contra el
+spec ya validado en Lab1, para que el happy path completo (los 4 validation gates VG1–VG4, no
+solo el exit criteria mínimo AC-1/2/3/7) corra de punta a punta en el navegador por las 3
+personas del caso. Lecciones generalizables a cualquier caso de estudio con spec + POC, no
+específicas de este código:
+
+### 1. La máquina de estados declarada en el spec es el contrato de arquitectura, no una sugerencia
+`KeyProductConcepts.md` declaraba 4 estados de contrato (`PENDING → ACTIVE →
+COMPLETED_PURCHASED/COMPLETED_RETURNED`); el código sólo tenía `PENDING`/`ACTIVE`, y `PENDING`
+era un enum muerto — el contrato nacía directamente `ACTIVE`, sin pasar por el estado que el
+spec dice que existe para que el Broker programe reuniones antes de la activación. **Regla:**
+cuando el spec define una FSM explícita con nombre y transición de cada estado, tratarla como
+lista de verificación literal — un estado que "sobra" en el enum o que nunca se asigna en ningún
+handler es deuda arquitectónica silenciosa, no una simplificación inocua. Grep el enum contra
+cada `.status =` del código antes de dar por buena la implementación.
+
+### 2. Un campo de estado que no dispara ninguna transición es teatro de dominio
+`reception_status` se guardaba en el contrato pero no generaba el cronograma, no cambiaba el
+estado del contrato ni notificaba a nadie — parecía trazabilidad real (había un campo, una
+tabla, un endpoint) pero no producía ningún efecto de negocio. **Regla:** para cada campo de
+estado que un flujo del spec menciona como gatillo ("cuando el cliente confirma X, el sistema
+debe Y"), verificar que el handler que lo escribe también ejecuta la consecuencia Y en la misma
+transacción — no basta con persistir el nuevo valor.
+
+### 3. Distinguir persona de cuenta cuando un NFR de segregación de funciones entra en juego
+Un requisito de doble aprobación (NFR-07: montos > umbral requieren dos cuentas autorizadas
+distintas) se había sembrado como una **cuarta persona** en el selector de login demo,
+mezclándose con las personas reales del caso de estudio (`people/*.md`). La regla de negocio es
+correcta; el error es de modelado de usuarios: NFR-07 exige una segunda *cuenta* con el mismo
+rol, no un nuevo actor con necesidades propias. **Regla:** cuando un requisito de seguridad o
+cumplimiento (segregación de funciones, doble control, cuatro-ojos) exige una segunda credencial,
+implementarla como una cuenta de servicio explícitamente etiquetada como tal — nunca como una
+persona adicional en la lista de personas del caso, aunque técnicamente comparta rol con una de
+ellas. Mezclar ambas cosas contamina tanto la UI (usuarios reales no saben qué hace la cuarta
+tarjeta) como la trazabilidad hacia `UsersAndTheirNeeds.md`.
+
+### 4. Los propios documentos de scope pueden contradecirse entre sí — elevar el conflicto, no resolverlo en silencio
+En este caso, `AcceptanceCriteria.md` fijaba el exit criteria de la POC en AC-1/2/3/7 (un solo
+happy path), pero el mismo archivo listaba VG1–VG4 como validation gates que "the POC
+additionally must pass", y `StagedScope.md` metía la mora de 4 colores y ambas ramas de cierre
+dentro de "Phase 1 — POC/MVP". Tres fuentes de scope, tres lecturas distintas de "qué basta".
+**Regla:** cuando los documentos de spec no concuerdan sobre el alcance mínimo, no elegir en
+silencio la lectura que implica menos trabajo — convertirlo en una pregunta explícita al
+responsable del producto (`AskUserQuestion` o equivalente) y documentar la decisión tomada, igual
+que se haría con cualquier otra ambigüedad de requisitos.
+
+### 5. Un "happy path end-to-end" probado sólo por API demuestra el backend, no el happy path
+El E2E original recorría casi toda la lógica de negocio vía `request.post(...)` directo a la API
+y sólo abría el navegador para 3 aserciones cosméticas en una sola vista. Pasaba en verde sin que
+ninguna de las tres personas hubiera llenado un formulario, subido un archivo o hecho clic en un
+botón real. **Regla:** si el entregable pedido es "que el happy path funcione end-to-end", la
+prueba de aceptación debe recorrer la misma superficie que recorre el usuario (la UI, con
+selectores de rol, formularios y uploads reales) para cada actor del flujo — un test que solo
+llama a la API está verificando el backend, es una prueba distinta y no sustituye a la otra.
+
+### 6. Cuidado con capturar referencias de evento de React a través de un `await`
+Bug de implementación con lección reusable: `event.currentTarget` deja de ser válido después de
+que el manejador cede el control con `await` (React limpia la referencia del evento sintético
+tras la fase de despacho). Guardar `const form = event.currentTarget` **antes** del primer
+`await` si se necesita después (p. ej. para `form.reset()`); acceder a la propiedad tras esperar
+una llamada de red produce `Cannot read properties of null`, y el fallo es intermitente porque
+depende del tiempo de respuesta del servidor — apareció recién en la octava iteración de un bucle
+de pruebas, no en la primera.

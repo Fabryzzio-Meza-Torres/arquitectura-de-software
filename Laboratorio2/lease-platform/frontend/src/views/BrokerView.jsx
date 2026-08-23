@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
-import { api } from '../api/client'
+import { api, downloadFile } from '../api/client'
 import { Empty, Notice, Section, StatusBadge } from '../components'
-import { usePolling } from '../hooks'
+import { usePolling, useRequestSequence } from '../hooks'
 
 export default function BrokerView() {
   const [applications, setApplications] = useState([])
@@ -12,13 +12,18 @@ export default function BrokerView() {
   const [busy, setBusy] = useState(false)
   const negotiation = useMemo(() => negotiations.find((item) => item.id === Number(selectedNegotiationId)), [negotiations, selectedNegotiationId])
 
+  const { start, isCurrent } = useRequestSequence()
+
   async function load() {
+    const seq = start()
     try {
       const [nextApplications, nextNegotiations] = await Promise.all([api('/api/broker/assignments'), api('/api/negotiations')])
+      if (!isCurrent(seq)) return
       setApplications(nextApplications); setNegotiations(nextNegotiations)
       if (!selectedApplicationId && nextApplications[0]) setSelectedApplicationId(nextApplications[0].application_id)
       if (!selectedNegotiationId && nextNegotiations[0]) setSelectedNegotiationId(nextNegotiations[0].id)
-    } catch (error) { setNotice({ error: error.message }) }
+      setNotice((current) => (current.error ? {} : current))
+    } catch (error) { if (isCurrent(seq)) setNotice({ error: error.message }) }
   }
   usePolling(load)
 
@@ -58,7 +63,7 @@ export default function BrokerView() {
 
   return (
     <main className="dashboard" aria-busy={busy}>
-      <div className="hero-card broker-hero"><div><p className="eyebrow">Broker · Negotiation facilitator</p><h1>Cada acuerdo, en contexto.</h1><p>Registra lo que las personas proponen. Nunca decide por ellas.</p></div><div className="hero-metric"><span>{negotiations.length}</span><small>negociaciones asignadas</small></div></div>
+      <div className="hero-card broker-hero"><div><p className="eyebrow">Broker · Negotiation facilitator</p><h1>Cada acuerdo, en contexto.</h1><p>Registra lo que las personas proponen. Nunca decide por ellas.</p><p className="microcopy">Maxim: abre la negociación, propone fechas y comparte el PDF del contrato. El crédito y el cronograma los llevan César y Juan Pedro.</p></div><div className="hero-metric"><span>{negotiations.length}</span><small>negociaciones asignadas</small></div></div>
       <Notice {...notice} />
       <div className="two-column">
         <Section eyebrow="Asignación" title="Abrir negociación">
@@ -77,7 +82,8 @@ export default function BrokerView() {
         </div>
         <Section eyebrow="Contrato" title="PDF, resumen y detalles">
           <form className="document-form" onSubmit={uploadDocument}><label>PDF<input required type="file" name="file" accept="application/pdf,.pdf" /></label><label>Resumen<textarea required minLength="10" name="summary" defaultValue="Contrato de leasing para maquinaria del proyecto." /></label><label>Detalles estructurados<textarea required minLength="2" name="structured_details" defaultValue='{"asset":"excavadora","term_months":12}' /></label><button className="primary" disabled={busy}>Compartir documento</button></form>
-          <div className="record-grid"><div><h3>Fechas propuestas</h3>{negotiation.meetings.map((item) => <p key={item.id}>{new Date(item.scheduled_for).toLocaleString('es-PE')} <StatusBadge value={item.state} /></p>)}</div><div><h3>Propuestas</h3>{negotiation.proposals.map((item) => <p key={item.id}>{item.text}</p>)}</div><div><h3>Documentos</h3>{negotiation.documents.map((item) => <p key={item.id}><strong>{item.original_name}</strong><br />{item.summary}</p>)}</div></div>
+          <div className="record-grid"><div><h3>Fechas propuestas</h3>{negotiation.meetings.map((item) => <p key={item.id}>{new Date(item.scheduled_for).toLocaleString('es-PE')} <StatusBadge value={item.state} /></p>)}</div><div><h3>Propuestas</h3>{negotiation.proposals.map((item) => <p key={item.id}>{item.text}</p>)}</div><div><h3>Mensajes</h3>{negotiation.messages.map((item) => <p key={item.id}><strong>{item.recipients}</strong>: {item.body} <StatusBadge value={item.delivery_status} /></p>)}</div></div>
+          <div className="record-grid"><div><h3>Documentos compartidos</h3>{negotiation.documents.map((item) => <p key={item.id}><strong>{item.original_name}</strong><br />{item.summary}<br /><button className="ghost" onClick={() => downloadFile(`/api/negotiations/${negotiation.id}/documents/${item.id}/download`, item.original_name)}>Descargar PDF</button></p>)}</div></div>
         </Section>
       </>}
     </main>

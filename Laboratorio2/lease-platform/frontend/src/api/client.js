@@ -25,10 +25,12 @@ export async function api(path, options = {}) {
     try {
       const response = await fetch(`${API_URL}${path}`, { ...rest, body: payload, headers: requestHeaders })
       if (!response.ok) {
+        if (response.status === 401) setToken('')
         const error = await response.json().catch(() => ({ detail: response.statusText }))
         const detail = typeof error.detail === 'string' ? error.detail : JSON.stringify(error.detail)
         const httpError = new Error(detail || `HTTP ${response.status}`)
         httpError.isHttpError = true
+        httpError.status = response.status
         throw httpError
       }
       if (response.status === 204) return null
@@ -43,4 +45,23 @@ export async function api(path, options = {}) {
 export const sessionApi = {
   users: () => api('/api/demo/users'),
   select: (userId) => api('/api/demo/session', { method: 'POST', body: { user_id: userId } }),
+  me: () => api('/api/me'),
+}
+
+export function hasToken() {
+  return Boolean(token)
+}
+
+export async function downloadFile(path, suggestedName) {
+  const response = await fetch(`${API_URL}${path}`, { headers: token ? { Authorization: `Bearer ${token}` } : {} })
+  if (!response.ok) throw new Error(`No se pudo descargar el archivo (HTTP ${response.status})`)
+  const blob = await response.blob()
+  const url = URL.createObjectURL(blob)
+  const anchor = document.createElement('a')
+  anchor.href = url
+  anchor.download = suggestedName || 'documento.pdf'
+  document.body.appendChild(anchor)
+  anchor.click()
+  anchor.remove()
+  URL.revokeObjectURL(url)
 }

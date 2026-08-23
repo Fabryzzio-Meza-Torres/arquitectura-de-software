@@ -110,10 +110,11 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .list-row strong, .list-row small { display: block; }
 .list-row small { margin-top: 3px; color: #535d58; }
 .badge { display: inline-flex; width: fit-content; border-radius: 999px; padding: 5px 9px; font-size: .67rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; background: #e8ebe7; color: #4c5952; }
-.badge-approved, .badge-active, .badge-confirmed, .badge-signed, .badge-accepted { color: #225b36; background: #dcefd3; }
-.badge-rejected, .badge-scoring-unavailable, .badge-stalled { color: #87352d; background: #fae2de; }
-.badge-in-review, .badge-proposed, .badge-submitted, .badge-pending { color: #745214; background: #f6e9c9; }
+.badge-approved, .badge-active, .badge-confirmed, .badge-signed, .badge-accepted, .badge-green, .badge-matched, .badge-completed-purchased, .badge-purchase { color: #225b36; background: #dcefd3; }
+.badge-rejected, .badge-scoring-unavailable, .badge-stalled, .badge-red, .badge-reconciliation-mismatch, .badge-delivery-failed { color: #87352d; background: #fae2de; }
+.badge-in-review, .badge-proposed, .badge-submitted, .badge-pending, .badge-yellow { color: #745214; background: #f6e9c9; }
 .badge-conditioned, .badge-rescheduled { color: #4c4f8b; background: #e3e3f8; }
+.badge-orange, .badge-completed-returned, .badge-return { color: #9a4c14; background: #fbe4c8; }
 
 .document-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .upload-card { border: 1px dashed #b8c5b4; background: #f7f8f4; border-radius: 14px; padding: 14px; cursor: pointer; }

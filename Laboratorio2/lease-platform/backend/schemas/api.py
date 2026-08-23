@@ -10,9 +10,12 @@ from models.domain import (
     ApplicationStatus,
     ContractState,
     DecisionOutcome,
+    DelinquencyLevel,
     MeetingState,
     NegotiationState,
     ReceptionState,
+    ReconciliationStatus,
+    ResolutionChoice,
     Role,
 )
 
@@ -239,6 +242,7 @@ class InstallmentRead(ORMModel):
     principal: Decimal
     interest: Decimal
     cash_flow_gap_days: int
+    paid_amount: Decimal = Decimal("0")
 
 
 class SimulationRead(ORMModel):
@@ -273,6 +277,13 @@ class ReceptionUpdate(BaseModel):
     note: str | None = Field(default=None, max_length=500)
 
 
+class ExchangeRateEntryRead(ORMModel):
+    id: int
+    rate: Decimal
+    effective_at: datetime
+    reason: str
+
+
 class ContractRead(ORMModel):
     id: int
     application_id: int
@@ -283,8 +294,50 @@ class ContractRead(ORMModel):
     locked_exchange_rate: Decimal
     outstanding_balance: Decimal
     reception_status: ReceptionState
+    reception_note: str | None = None
+    resolution_choice: ResolutionChoice | None = None
+    resolved_at: datetime | None = None
     activated_at: datetime
     schedule: SimulationRead | None = None
+    installments: list[InstallmentRead] = []
+    rate_history: list[ExchangeRateEntryRead] = []
+    delinquency_level: DelinquencyLevel | None = None
+
+
+class PaymentCreate(BaseModel):
+    bank_reference: str = Field(min_length=3, max_length=80, examples=["BCP-2027-000123"])
+    amount: Decimal = Field(gt=0, max_digits=14, decimal_places=2)
+
+
+class PaymentRead(ORMModel):
+    id: int
+    contract_id: int
+    bank_reference: str
+    amount: Decimal
+    currency: str
+    reconciliation_status: ReconciliationStatus
+    created_at: datetime
+
+
+class CollectionMessageCreate(BaseModel):
+    note: str | None = Field(default=None, max_length=500)
+
+
+class ResolutionCreate(BaseModel):
+    choice: ResolutionChoice
+
+
+class DelinquencyBucket(BaseModel):
+    level: DelinquencyLevel
+    count: int
+    outstanding_total: Decimal
+
+
+class CollectionsSummaryRead(BaseModel):
+    computed_at: datetime
+    pronosticated_income_by_currency: dict[str, Decimal]
+    receivable_by_currency: dict[str, Decimal]
+    delinquency_buckets: list[DelinquencyBucket]
 
 
 class InboxRead(ORMModel):

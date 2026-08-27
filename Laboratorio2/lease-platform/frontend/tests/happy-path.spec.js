@@ -1,85 +1,122 @@
-import { expect, request as playwrightRequest, test } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 
-async function sessionToken(api, userId) {
-  const response = await api.post('/api/demo/session', { data: { user_id: userId } })
-  expect(response.ok()).toBeTruthy()
-  return (await response.json()).access_token
+function pdfBuffer(label) {
+  return Buffer.from(`%PDF-1.4 ${label}`)
 }
 
-function bearer(token) {
-  return { Authorization: `Bearer ${token}` }
+async function switchTo(page, firstName) {
+  const changeRole = page.getByRole('button', { name: 'Cambiar rol' })
+  if (await changeRole.isVisible().catch(() => false)) await changeRole.click()
+  await page.getByRole('button', { name: new RegExp(firstName) }).click()
 }
 
-test('Phase 1 API happy path appears in client UI and Swagger is interactive', async ({ page }) => {
-  const api = await playwrightRequest.newContext({ baseURL: 'http://127.0.0.1:8000' })
-  const clientToken = await sessionToken(api, 1)
-  const brokerToken = await sessionToken(api, 3)
-  const leasingToken = await sessionToken(api, 2)
+test('Lea$e Phase 1 happy path runs end to end through the UI (VG1-VG4)', async ({ page }) => {
   const ruc = `20${Date.now().toString().slice(-9)}`
-  const machineryName = `Excavadora E2E ${ruc.slice(-4)}`
+  const machineryName = `Excavadora UI ${ruc.slice(-4)}`
 
-  let response = await api.post('/api/requests', {
-    headers: bearer(clientToken),
-    data: {
-      ruc, machinery_type: machineryName, requested_term_months: 12,
-      requested_amount: 250000, currency: 'PEN', expected_settlement_date: '2027-12-20',
-    },
-  })
-  expect(response.ok()).toBeTruthy()
-  const application = await response.json()
-  for (const kind of ['BANK_STATEMENTS', 'TAX_RETURN', 'PROJECT_CONTRACT']) {
-    response = await api.post(`/api/requests/${application.id}/documents`, {
-      headers: bearer(clientToken),
-      multipart: {
-        kind,
-        file: { name: `${kind}.pdf`, mimeType: 'application/pdf', buffer: Buffer.from('%PDF-1.4 E2E') },
-      },
-    })
-    expect(response.ok()).toBeTruthy()
-  }
-  response = await api.post(`/api/requests/${application.id}/submit`, {
-    headers: bearer(clientToken), data: { bureau_scenario: 'SUCCESS', bureau_score: 720 },
-  })
-  expect(response.ok()).toBeTruthy()
-
-  response = await api.post(`/api/requests/${application.id}/negotiation`, { headers: bearer(brokerToken) })
-  const negotiation = await response.json()
-  response = await api.post(`/api/negotiations/${negotiation.id}/documents`, {
-    headers: bearer(brokerToken),
-    multipart: {
-      summary: 'Contrato E2E completo y compartido', structured_details: '{"source":"e2e"}',
-      file: { name: 'contract.pdf', mimeType: 'application/pdf', buffer: Buffer.from('%PDF-1.4 contract') },
-    },
-  })
-  expect(response.ok()).toBeTruthy()
-
-  response = await api.post('/api/integrations/risk-outcomes', {
-    headers: { 'X-Integration-Key': 'poc-risk-secret' },
-    data: {
-      application_id: application.id, outcome: 'APPROVED', reason_code: 'E2E_EXTERNAL_APPROVED',
-      reason_text: 'External evaluator approved the E2E application.', approved_limit: 250000,
-      approved_term_months: 12, annual_interest_rate: 12,
-    },
-  })
-  expect(response.ok()).toBeTruthy()
-  response = await api.post(`/api/requests/${application.id}/simulations`, {
-    headers: bearer(clientToken), data: { grace_months: 0, frequency: 'MONTHLY', balloon_percent: 0 },
-  })
-  const simulation = await response.json()
-  await api.post(`/api/simulations/${simulation.id}/accept`, {
-    headers: bearer(clientToken), data: { signer_confirmation: 'César — Head of Finance' },
-  })
-  response = await api.post(`/api/requests/${application.id}/activate`, {
-    headers: bearer(leasingToken), data: { exchange_rate: 1 },
-  })
-  expect(response.ok()).toBeTruthy()
-
+  // --- César: Flow 1 — request financing, complete dossier, submit for review ---
   await page.goto('/')
-  await page.getByRole('button', { name: /César/ }).click()
+  await switchTo(page, 'César')
   await expect(page.getByText('Capital listo para el proyecto.')).toBeVisible()
+
+  await page.getByLabel('RUC').fill(ruc)
+  await page.getByLabel('Maquinaria').fill(machineryName)
+  await page.locator('input[name="requested_amount"]').fill('250000')
+  await page.getByLabel('Plazo (meses)').fill('12')
+  await page.getByLabel('Moneda').selectOption('PEN')
+  await page.getByLabel('Liquidación del proyecto').fill('2028-12-20')
+  await page.getByRole('button', { name: 'Crear solicitud' }).click()
   await expect(page.getByText(machineryName)).toBeVisible()
-  await expect(page.getByText(/Contrato activo/)).toBeVisible()
+
+  for (const kind of ['BANK_STATEMENTS', 'TAX_RETURN', 'PROJECT_CONTRACT']) {
+    await page.getByLabel(`Subir ${kind}`).setInputFiles({ name: `${kind}.pdf`, mimeType: 'application/pdf', buffer: pdfBuffer(kind) })
+    await expect(page.getByText(`${kind} procesado.`)).toBeVisible()
+  }
+  await page.getByRole('button', { name: 'Enviar a revisión externa' }).click()
+  await expect(page.getByText('Expediente enviado.')).toBeVisible()
+
+  // --- Maxim: Flow 1B — open negotiation, propose meeting, share the contract PDF (VG1) ---
+  await switchTo(page, 'Maxim')
+  await page.getByRole('button', { name: 'Abrir o consultar' }).click()
+  await expect(page.getByText('Negociación documental abierta.')).toBeVisible()
+
+  await page.getByLabel('Fecha y hora').fill('2028-01-15T15:00')
+  await page.getByRole('button', { name: 'Registrar propuesta' }).click()
+  await expect(page.getByText(/Fecha propuesta por Maxim/)).toBeVisible()
+
+  await page.getByRole('button', { name: 'Registrar idea' }).click()
+  await expect(page.getByText('Propuesta no vinculante registrada.')).toBeVisible()
+
+  await page.getByRole('button', { name: 'Registrar mensaje' }).click()
+  await expect(page.getByText('Mensaje preservado en negociación.')).toBeVisible()
+
+  await page.locator('input[name="file"]').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: pdfBuffer('contract') })
+  await page.getByRole('button', { name: 'Compartir documento' }).click()
+  await expect(page.getByText('PDF compartido con ambas empresas.')).toBeVisible()
+
+  // --- César: accept the meeting date and confirm the shared PDF is visible ---
+  await switchTo(page, 'César')
+  await page.getByRole('button', { name: 'Aceptar' }).click()
+  await expect(page.getByText('Respuesta registrada; Lea$e no tomó ninguna decisión por ti.')).toBeVisible()
+  await expect(page.getByText('contract.pdf', { exact: true })).toBeVisible()
+
+  // --- Juan Pedro: Flow 2 — record the external credit outcome (APPROVED) ---
+  await switchTo(page, 'Juan Pedro')
+  await page.getByRole('button', { name: new RegExp(machineryName) }).click()
+  await page.locator('select[name="outcome"]').selectOption('APPROVED')
+  await page.locator('input[name="annual_rate"]').fill('12')
+  await page.getByRole('button', { name: 'Simular callback externo' }).click()
+  await expect(page.getByText('Callback externo registrado. Lea$e no calculó el resultado.')).toBeVisible()
+
+  // --- César: Flow 3 — simulate and digitally sign the schedule ---
+  await switchTo(page, 'César')
+  await page.getByRole('button', { name: 'Simular' }).click()
+  await expect(page.getByText('Simulación generada con precisión decimal.')).toBeVisible()
+  await page.getByRole('button', { name: 'Elegir y firmar' }).click()
+  await expect(page.getByText('Cronograma firmado; hash de integridad registrado.')).toBeVisible()
+
+  // --- Juan Pedro: activate — contract is created PENDING, no schedule yet ---
+  await switchTo(page, 'Juan Pedro')
+  await page.getByRole('button', { name: new RegExp(machineryName) }).click()
+  await page.getByRole('button', { name: 'Activar una vez' }).click()
+  await expect(page.getByText('Contrato y cronograma activados exactamente una vez.')).toBeVisible()
+
+  // --- César: confirm reception — VG2, schedule is generated only now ---
+  await switchTo(page, 'César')
+  await expect(page.getByText('Confirmar recepción')).toBeVisible()
+  await page.getByRole('button', { name: 'Confirmar recepción' }).click()
+  await expect(page.getByText('Recepción confirmada; cronograma generado.')).toBeVisible()
+  await expect(page.locator('.schedule-table')).toBeVisible()
+
+  // --- César: Flow 4 — pay off every installment, idempotent by bank reference ---
+  // Exact amounts are read from the API (raw Decimal, not the locale-formatted table cell)
+  // so the final balance lands at exactly zero for the purchase-option check below.
+  const clientToken = await page.evaluate(() => sessionStorage.getItem('lease-demo-token'))
+  const contractsResponse = await page.request.get('/api/contracts', { headers: { Authorization: `Bearer ${clientToken}` } })
+  const [apiContract] = await contractsResponse.json()
+  for (const [index, installment] of apiContract.installments.entries()) {
+    await page.locator('input[name="bank_reference"]').fill(`E2E-REF-${index}`)
+    await page.locator('input[name="amount"]').fill(String(installment.amount))
+    await page.getByRole('button', { name: 'Registrar pago' }).click()
+    await expect(page.getByText(`E2E-REF-${index}`)).toBeVisible()
+  }
+  await expect(page.getByRole('button', { name: 'Ejercer opción de compra' })).toBeEnabled()
+
+  // --- César: Flow 6 — resolve end of contract via the purchase option ---
+  await page.getByRole('button', { name: 'Ejercer opción de compra' }).click()
+  await expect(page.getByText('Opción de compra elegida.')).toBeVisible()
+
+  // --- Juan Pedro: VG3 pronosticated income + VG4 process the closing branch ---
+  await switchTo(page, 'Juan Pedro')
+  await expect(page.getByText('Ingreso pronosticado')).toBeVisible()
+  await page.getByRole('button', { name: /Procesar PURCHASE/ }).click()
+  await expect(page.getByText('Cierre de contrato procesado.')).toBeVisible()
+  await expect(page.getByText('COMPLETED PURCHASED').first()).toBeVisible()
+
+  // --- Maxim: RBAC — no portfolio, no schedules, no collections summary ---
+  await switchTo(page, 'Maxim')
+  await expect(page.getByText('Broker · Negotiation facilitator')).toBeVisible()
 
   await page.setViewportSize({ width: 360, height: 800 })
   const accessibility = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze()
@@ -88,5 +125,4 @@ test('Phase 1 API happy path appears in client UI and Swagger is interactive', a
   await page.goto('http://127.0.0.1:8000/docs')
   await expect(page.locator('.swagger-ui')).toBeVisible()
   await expect(page.locator('.info .title')).toContainText('Lea$e POC API')
-  await api.dispose()
 })

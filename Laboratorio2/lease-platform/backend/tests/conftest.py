@@ -1,11 +1,19 @@
 from __future__ import annotations
 
-import pytest
-from fastapi.testclient import TestClient
-from sqlmodel import SQLModel
+import os
+import sys
+import tempfile
+from pathlib import Path
 
-from database import create_db_and_tables, engine
-from main import app
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+os.environ.setdefault("DATABASE_URL", f"sqlite:///{Path(tempfile.mkdtemp()) / 'test.db'}")
+
+import pytest  # noqa: E402
+from fastapi.testclient import TestClient  # noqa: E402
+from sqlmodel import SQLModel  # noqa: E402
+
+from database import create_db_and_tables, engine  # noqa: E402
+from main import app  # noqa: E402
 
 
 @pytest.fixture()
@@ -82,6 +90,27 @@ def signed_simulation(client: TestClient, token: str, application_id: int) -> di
         f"/api/simulations/{simulation['id']}/accept",
         headers=auth(token),
         json={"signer_confirmation": "César — Head of Finance"},
+    )
+    assert response.status_code == 200, response.text
+    return response.json()
+
+
+def activated_pending_contract(client: TestClient, client_token: str, leasing_token: str, application_id: int, *, exchange_rate: float = 1) -> dict:
+    signed_simulation(client, client_token, application_id)
+    response = client.post(
+        f"/api/requests/{application_id}/activate",
+        headers=auth(leasing_token),
+        json={"exchange_rate": exchange_rate},
+    )
+    assert response.status_code == 200, response.text
+    return response.json()
+
+
+def confirm_reception(client: TestClient, client_token: str, contract_id: int) -> dict:
+    response = client.post(
+        f"/api/contracts/{contract_id}/reception-status",
+        headers=auth(client_token),
+        json={"status": "CONFIRMED", "note": "Recibido conforme"},
     )
     assert response.status_code == 200, response.text
     return response.json()

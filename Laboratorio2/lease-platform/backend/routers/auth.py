@@ -16,9 +16,20 @@ router = APIRouter(prefix="/api", tags=["Demo session"])
 SessionDep = Annotated[Session, Depends(get_session)]
 
 
-@router.get("/demo/users", response_model=list[DemoUserRead], summary="List seeded demo identities")
+DUAL_APPROVAL_SERVICE_ACCOUNT_ID = 4
+
+
+@router.get(
+    "/demo/users",
+    response_model=list[DemoUserRead],
+    summary="List seeded demo identities (case-study personas only)",
+)
 def list_demo_users(session: SessionDep):
-    return session.exec(select(User).order_by(User.id)).all()
+    """Excludes the NFR-07 dual-approval service account (id 4): it is a second
+    authorized leasing-company account for segregation of duties, not a fourth persona."""
+    return session.exec(
+        select(User).where(User.id != DUAL_APPROVAL_SERVICE_ACCOUNT_ID).order_by(User.id)
+    ).all()
 
 
 @router.post("/demo/session", response_model=DemoSessionRead, summary="Select a POC identity")

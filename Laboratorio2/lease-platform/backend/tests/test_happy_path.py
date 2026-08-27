@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from decimal import Decimal
 
-from conftest import auth, complete_dossier, create_request, external_approve, signed_simulation, token_for
+from conftest import auth, complete_dossier, confirm_reception, create_request, external_approve, signed_simulation, token_for
 
 
 def test_phase_one_happy_path(client):
@@ -60,16 +60,36 @@ def test_phase_one_happy_path(client):
     )
     assert response.status_code == 200, response.text
     contract = response.json()
-    assert contract["status"] == "ACTIVE"
+    assert contract["status"] == "PENDING"
     assert contract["currency"] == "PEN"
     assert contract["schedule"]["signature_hash"] == simulation["signature_hash"]
+    assert contract["installments"] == []  # not materialized until reception is confirmed (VG2)
 
+    contract = confirm_reception(client, client_token, contract["id"])
+    assert contract["status"] == "ACTIVE"
+    assert contract["reception_status"] == "CONFIRMED"
+    assert len(contract["installments"]) == len(simulation["installments"])
+    assert contract["delinquency_level"] == "GREEN"
+
+    # Flow 4: idempotent payment registration, oldest-first (FR-11, VG3 pronosticated income).
+    first_due = contract["installments"][0]
     response = client.post(
-        f"/api/contracts/{contract['id']}/reception-status",
+        f"/api/contracts/{contract['id']}/payments",
         headers=auth(client_token),
-        json={"status": "CONFIRMED", "note": "Status only"},
+        json={"bank_reference": "BCP-E2E-0001", "amount": first_due["amount"]},
     )
-    assert response.json()["reception_status"] == "CONFIRMED"
+    assert response.status_code == 200, response.text
+    payment = response.json()
+    assert payment["reconciliation_status"] == "MATCHED"
+    replay = client.post(
+        f"/api/contracts/{contract['id']}/payments",
+        headers=auth(client_token),
+        json={"bank_reference": "BCP-E2E-0001", "amount": first_due["amount"]},
+    )
+    assert replay.json()["id"] == payment["id"]
+
+    summary = client.get("/api/collections/summary", headers=auth(leasing_token)).json()
+    assert "PEN" in summary["pronosticated_income_by_currency"]
 
     schema = client.get("/openapi.json").json()
     assert "/docs" not in schema["paths"]
@@ -83,11 +103,13 @@ def test_broker_cannot_record_outcome_or_read_contracts(client):
     broker_token = token_for(client, 3)
     assert client.get("/api/requests", headers=auth(broker_token)).status_code == 403
     assert client.get("/api/contracts", headers=auth(broker_token)).status_code == 403
+    # Missing X-Integration-Key: FastAPI's APIKeyHeader(auto_error=True) rejects before body
+    # validation runs, so this is 401, not 422.
     assert client.post(
         "/api/integrations/risk-outcomes",
         headers=auth(broker_token),
         json={},
-    ).status_code in {401, 422}
+    ).status_code == 401
     audit_token = token_for(client, 2)
     entries = client.get("/api/audit", headers=auth(audit_token)).json()
     assert any(entry["action"] == "UNAUTHORIZED_ACCESS_DENIED" for entry in entries)

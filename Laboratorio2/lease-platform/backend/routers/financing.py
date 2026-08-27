@@ -108,18 +108,23 @@ def create_request(payload: ApplicationCreate, session: SessionDep, user: Curren
         raise HTTPException(status_code=403, detail="Unauthorized access")
     intent_key = _intent(payload)
     existing = session.exec(select(Application).where(Application.intent_key == intent_key)).first()
-    if existing and existing.status in {
-        ApplicationStatus.SUBMITTED,
-        ApplicationStatus.IN_REVIEW,
-        ApplicationStatus.SCORING_UNAVAILABLE,
-    }:
+    if existing:
+        # Same intent resubmitted at any point (still under review, or already decided):
+        # idempotent submit returns the existing application rather than erroring (AC-1.3).
         return existing
     application = Application(owner_id=user.id, intent_key=intent_key, **payload.model_dump())
-    session.add(application)
-    session.flush()
-    session.add(BrokerAssignment(application_id=application.id, broker_id=3))
-    audit(session, entity_type="application", entity_id=application.id, action="CREATED", actor=user, new=application.status.value)
-    session.commit()
+    try:
+        session.add(application)
+        session.flush()
+        session.add(BrokerAssignment(application_id=application.id, broker_id=3))
+        audit(session, entity_type="application", entity_id=application.id, action="CREATED", actor=user, new=application.status.value)
+        session.commit()
+    except IntegrityError:
+        session.rollback()
+        existing = session.exec(select(Application).where(Application.intent_key == intent_key)).first()
+        if existing:
+            return existing
+        raise
     session.refresh(application)
     return application
 

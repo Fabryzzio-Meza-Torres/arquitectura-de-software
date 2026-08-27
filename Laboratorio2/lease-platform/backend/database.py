@@ -3,7 +3,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-from sqlalchemy import text
+from sqlalchemy import event, text
 from sqlmodel import Session, SQLModel, create_engine, select
 
 from models.domain import Role, User
@@ -16,6 +16,14 @@ connect_args = {"check_same_thread": False, "timeout": 30} if DATABASE_URL.start
 engine = create_engine(DATABASE_URL, connect_args=connect_args)
 
 
+if DATABASE_URL.startswith("sqlite"):
+    @event.listens_for(engine, "connect")
+    def _enable_sqlite_foreign_keys(dbapi_connection, _record):
+        cursor = dbapi_connection.cursor()
+        cursor.execute("PRAGMA foreign_keys=ON")
+        cursor.close()
+
+
 def get_session():
     with Session(engine) as session:
         yield session
@@ -26,7 +34,6 @@ def create_db_and_tables() -> None:
     SQLModel.metadata.create_all(engine)
     with engine.begin() as connection:
         connection.execute(text("PRAGMA journal_mode=WAL"))
-        connection.execute(text("PRAGMA foreign_keys=ON"))
         connection.execute(text("""
             CREATE TRIGGER IF NOT EXISTS audit_no_update
             BEFORE UPDATE ON audit_entries BEGIN
@@ -42,8 +49,8 @@ def create_db_and_tables() -> None:
         connection.execute(text("""
             CREATE TRIGGER IF NOT EXISTS contract_financial_immutability
             BEFORE UPDATE OF currency, locked_exchange_rate ON contracts
-            WHEN OLD.status = 'ACTIVE' BEGIN
-                SELECT RAISE(ABORT, 'active contract currency and locked rate are immutable');
+            WHEN OLD.status IN ('PENDING', 'ACTIVE', 'COMPLETED_PURCHASED', 'COMPLETED_RETURNED') BEGIN
+                SELECT RAISE(ABORT, 'contract currency and locked rate are immutable once set');
             END
         """))
         connection.execute(text("""
@@ -66,7 +73,9 @@ def seed_demo_users() -> None:
         User(id=1, name="César — Head of Finance", organization="Andes Projects SAC", role=Role.CLIENT),
         User(id=2, name="Juan Pedro — Credit & Collections", organization="Lea$e Perú", role=Role.LEASING),
         User(id=3, name="Maxim — Broker", organization="Broker Partner", role=Role.BROKER),
-        User(id=4, name="Ana — Second Leasing Approver", organization="Lea$e Perú", role=Role.LEASING),
+        # Service account for NFR-07 dual-approval segregation of duties, not a case-study persona.
+        # Excluded from GET /api/demo/users; see routers/auth.py.
+        User(id=4, name="Cuenta de aprobación dual — Lea$e Perú", organization="Lea$e Perú", role=Role.LEASING),
     ]
     with Session(engine) as session:
         existing = set(session.exec(select(User.id)).all())

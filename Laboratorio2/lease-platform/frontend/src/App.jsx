@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { sessionApi, setToken } from './api/client'
+import { hasToken, sessionApi, setToken } from './api/client'
 import ClientView from './views/ClientView'
 import LeasingView from './views/LeasingView'
 import BrokerView from './views/BrokerView'
@@ -9,8 +9,14 @@ export default function App() {
   const [users, setUsers] = useState([])
   const [current, setCurrent] = useState(null)
   const [error, setError] = useState('')
+  const [restoring, setRestoring] = useState(hasToken())
 
   useEffect(() => { sessionApi.users().then(setUsers).catch((reason) => setError(reason.message)) }, [])
+
+  useEffect(() => {
+    if (!hasToken()) { setRestoring(false); return }
+    sessionApi.me().then(setCurrent).catch(() => setToken('')).finally(() => setRestoring(false))
+  }, [])
 
   async function selectUser(userId) {
     try {
@@ -22,6 +28,8 @@ export default function App() {
   }
 
   function logout() { setToken(''); setCurrent(null) }
+
+  if (restoring) return <div className="login-shell" aria-busy="true" />
 
   if (!current) return (
     <div className="login-shell">
@@ -40,9 +48,9 @@ export default function App() {
 
   return <div className="app-shell">
     <header className="topbar"><a className="wordmark" href="/">Lea<span>$</span>e</a><div className="topbar-scope">POC · {current.role}</div><div className="current-user"><span className={`avatar avatar-${current.role.toLowerCase()}`}>{current.name.charAt(0)}</span><span><strong>{current.name.split(' — ')[0]}</strong><small>{current.organization}</small></span><button className="text-button" onClick={logout}>Cambiar rol</button></div></header>
-    {current.role === 'CLIENT' && <ClientView />}
+    {current.role === 'CLIENT' && <ClientView user={current} />}
     {current.role === 'LEASING' && <LeasingView user={current} />}
-    {current.role === 'BROKER' && <BrokerView />}
+    {current.role === 'BROKER' && <BrokerView user={current} />}
   </div>
 }
 

@@ -1,27 +1,30 @@
-# Non-functional requirements — SendIT backlog
+# Non-functional requirements — SendIT
 
-Per the case-study restriction, each item is a clear backlog title. Quality thresholds and
-degraded behavior are defined in `core/10. staged-scope.md` and
-`core/11. acceptance-criteria.md`.
+These quality requirements are aligned with the finalized service architecture. Phase 1
+figures are planning assumptions from `core/10. staged-scope.md` and must be validated before
+they become contractual targets.
 
-| ID | Backlog item title |
+| ID | Non-functional requirement |
 | --- | --- |
-| NFR-01 | Encryption in transit and at rest with secret-data log masking |
-| NFR-02 | Strong authentication and session protection for money-moving actions |
-| NFR-03 | Deny-by-default role, agency, shift and transaction access control |
-| NFR-04 | Single-rounding monetary precision and confirmed-snapshot immutability |
-| NFR-05 | Atomic and idempotent funding, payout, cancellation and refund consistency |
-| NFR-06 | Phase 1 monthly availability of at least 99.9 percent |
-| NFR-07 | Phase 1 quote, status and search response at p95 within 2 seconds |
-| NFR-08 | Bounded provider retries with uncertain-result reconciliation |
-| NFR-09 | Phase 1 recovery time of 60 minutes and recovery point of 5 minutes |
-| NFR-10 | Immutable, retrievable and legally retained security and money audit trail |
-| NFR-11 | Cross-border personal-data minimization, consent and privacy protection |
-| NFR-12 | WCAG 2.2 AA accessible customer and agency-assisted flows |
-| NFR-13 | Responsive customer use at 360-pixel mobile width |
-| NFR-14 | Locale-correct money, date and instruction presentation |
-| NFR-15 | End-to-end transaction observability and actionable security alerts |
-| NFR-16 | Growth from Phase 1 tens to Phase 3 ten-thousand daily remittances |
-| NFR-17 | Time-bounded AgencyWorker assisted sessions and automatic session locking |
-| NFR-18 | Versioned exchange-rate, fee-schedule and rounding-rule configuration |
-| NFR-19 | Atomic agency cash ledger posting and tamper-evident shift reconciliation |
+| NFR-01 | **Encryption in transit and at rest with secret-data log masking.** The system must protect client, AgencyWorker and service-to-service traffic with TLS 1.3, and protect stored personal, financial and remittance data with encryption at rest. Authentication credentials, payout tokens, card data and identity evidence must never be written in plaintext to application logs, audit views or non-production environments. |
+| NFR-02 | **Strong authentication and session protection for money-moving actions.** The Login/Register Service must enforce secure authentication for Senders and AgencyWorkers and protect active sessions against unauthorized reuse. It must require a current authenticated session before funding, payout, cancellation, refund, quote confirmation or AgencyWorker operations, and must end or block compromised sessions safely. |
+| NFR-03 | **Deny-by-default role, agency, shift and transaction access control.** Every service must authorize requests according to role, transaction ownership and, for AgencyWorkers, assigned agency and active shift. Unauthorized requests must return no remittance data, be denied by default and be recorded for review. |
+| NFR-04 | **Single-rounding monetary precision and confirmed-snapshot immutability.** Currency Exchange, Commission and Transaction services must calculate the Receiver amount with one destination-currency rounding rule and preserve the confirmed monetary snapshot. After confirmation, no user, worker, service or provider callback may alter the locked rate, commission, total deposit or Receiver amount. |
+| NFR-05 | **Atomic and idempotent funding, payout, cancellation and refund consistency.** The Transaction, Payment Card Network API, Cancellation & Refund and agency cash services must process each money-moving command once, even after retries, concurrency or duplicate callbacks. A remittance must reach only one valid terminal monetary outcome: paid out, refunded or denied with its applicable refund path. |
+| NFR-06 | **Phase 1 monthly availability of at least 99.9 percent.** At the Phase 1 planning load, SendIT must provide at least 99.9% monthly availability for core quote, transaction, tracking and agency operations. During a partial dependency outage, it must preserve confirmed monetary records and show an accurate pending or unavailable status rather than fabricate a result. |
+| NFR-07 | **Phase 1 quote, status and search response at p95 within 2 seconds.** At the Phase 1 planning load of tens of daily remittances and up to 10 concurrent authenticated users, quote creation, transaction tracking and authorized agency search must complete within 2 seconds at p95, excluding external provider latency. A slow external dependency must not make the system return an incorrect transaction state. |
+| NFR-08 | **Bounded provider retries with uncertain-result reconciliation.** Calls to rate, card-payment, payout and identity providers must use bounded idempotent retries. If a provider result remains uncertain, SendIT must place the affected action in reconciliation and must not mark funding, payout or refund as successful until a confirmed result is recorded. |
+| NFR-09 | **Phase 1 recovery time of 60 minutes and recovery point of 5 minutes.** SendIT must recover core services and data after a service or infrastructure failure within a 60-minute recovery-time objective and with no more than 5 minutes of data loss. Recovery must not duplicate or lose confirmed monetary snapshots, terminal money events or audit records. |
+| NFR-10 | **Immutable, retrievable and legally retained security and money audit trail.** Audit Service records for sign-in, quote confirmation, funding, review, payout, cancellation, refund, agency cash movement and access denial must be append-only and protected against modification. They must remain retrievable for the retention period required by the applicable legal and compliance policy. |
+| NFR-11 | **Cross-border personal-data minimization, consent and privacy protection.** The system must collect and expose only personal data necessary for remittance, verification, payout, support and legally required compliance. It must record consent where required, restrict sensitive data to authorized roles and support applicable privacy requests without exposing another user's remittance data. |
+| NFR-12 | **WCAG 2.2 AA accessible customer and agency-assisted flows.** Sender, Receiver and AgencyWorker screens must meet WCAG 2.2 AA for contrast, keyboard access, focus visibility and input labels. Accessibility failures must not prevent the user from seeing the price, identity requirements, payout status or next action. |
+| NFR-13 | **Responsive customer use at 360-pixel mobile width.** Web/mobile Sender and Receiver flows must remain usable at a 360-pixel viewport without hiding required quote amounts, commission, status, token instructions or confirmation actions. The same remittance information must remain available through an agency channel when a customer cannot complete a digital action. |
+| NFR-14 | **Locale-correct money, date and instruction presentation.** SendIT must present currency, amounts, dates and instructions in the locale relevant to the Sender or Receiver without changing stored monetary values. A localized display must clearly distinguish the origin amount, sending commission, total deposit and confirmed Receiver amount. |
+| NFR-15 | **End-to-end transaction observability and actionable security alerts.** Transaction, tracking, payment, message, audit and worker-operation services must emit correlated logs, metrics and traces for each remittance. The platform must alert authorized operations staff about service failures, repeated access denials, payment/provider uncertainty and cash-reconciliation discrepancies without exposing sensitive values in alerts. |
+| NFR-16 | **Growth from Phase 1 tens to Phase 3 ten-thousand daily remittances.** The architecture must support growth from Phase 1 tens of daily remittances and 10 concurrent users to Phase 3 at least 10,000 daily remittances and 1,000 concurrent authenticated users. Scaling must not weaken transaction idempotency, monetary consistency, access control or auditability. |
+| NFR-17 | **Time-bounded AgencyWorker assisted sessions and automatic session locking.** An AgencyWorker assisted session must be associated with one authenticated worker, agency, shift and customer consent. It must expire or lock after the configured inactivity or maximum-session period, requiring reauthentication before any further money-moving or identity-sensitive action. |
+| NFR-18 | **Versioned exchange-rate, fee-schedule and rounding-rule configuration.** Currency Exchange and Commission services must use versioned, effective-dated rate, fee and rounding configurations. A confirmed remittance must retain the exact configuration version used for its quote, even after a later configuration update. |
+| NFR-19 | **Atomic agency cash ledger posting and tamper-evident shift reconciliation.** Cash Operations and Worker Operations services must record agency cash deposits, payouts and refunds atomically with their remittance event. Shift reconciliation records must make discrepancies evident and must not allow a worker to conceal a difference by changing a completed transaction. |
+| NFR-20 | **Authenticated and authorized service-to-service communication.** Middleware, Transaction, Tracking, Audit, Message, Cash Operations, Worker Operations and identity-related services must authenticate every internal request using a service identity and authorize it for the requested operation. Calls from an unknown, expired or unauthorized service identity must be rejected and logged. |
+| NFR-21 | **Reliable remittance-message delivery.** Message Service must deliver remittance status, payout-token and exception notifications at least once without creating duplicate business effects. Failed deliveries must be retried according to a bounded policy and then be visible for operational follow-up; notification failure must never change a remittance's monetary state. |
+| NFR-22 | **Protected card-payment integration.** The Payment Card Network API integration for Visa, Mastercard, American Express and Diners Club must tokenize card data and comply with the applicable PCI DSS controls. SendIT must not persist full card numbers or security codes, and card-provider responses must remain subject to the idempotency and reconciliation rules of NFR-05 and NFR-08. |

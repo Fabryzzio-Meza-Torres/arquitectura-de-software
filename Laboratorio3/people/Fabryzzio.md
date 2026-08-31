@@ -1,8 +1,8 @@
-# Sender — Fabrizzio
+# Sender — Fabryzzio
 
 ## Who they are
 
-Fabrizzio represents the **Sender**: the person who initiates an international remittance and
+Fabryzzio represents the **Sender**: the person who initiates an international remittance and
 provides the money that SendIT must deliver to a Receiver in the Receiver's local currency.
 The Sender may use SendIT directly from the web or a mobile device, or may ask an
 AgencyWorker for assisted service at a physical agency.

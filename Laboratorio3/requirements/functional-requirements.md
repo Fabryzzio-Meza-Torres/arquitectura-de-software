@@ -1,37 +1,32 @@
 # Functional requirements — SendIT backlog
 
-Per the case-study restriction, each item is a clear backlog title rather than an extended
-requirement description. Testable detail is defined in `core/11. acceptance-criteria.md`.
+This remapped backlog preserves the agreed IDs and topics from the review. Each requirement
+adds observable behavior while remaining consistent with the SendIT product decisions and
+acceptance criteria in `core/`.
 
-| ID | Backlog item title |
+| ID | Functional requirement |
 | --- | --- |
-| FR-01 | Sender account registration and secure sign-in |
-| FR-02 | Sender identity verification before remittance confirmation |
-| FR-03 | Receiver identity, destination and payout-method capture |
-| FR-04 | Exact local-currency Receiver amount calculation in the remittance quote |
-| FR-05 | Sending commission and total-to-deposit disclosure before funding |
-| FR-06 | Expired unconfirmed quote refresh |
-| FR-07 | Confirmed monetary snapshot and exchange-rate lock |
-| FR-08 | Exact-total digital funding and funding receipt |
-| FR-09 | Exact-total agency cash funding and cash receipt |
-| FR-10 | Duplicate funding prevention across retries and provider callbacks |
-| FR-11 | Identity, fraud, limit and compliance review before payout |
-| FR-12 | Shared remittance status and customer-visible timeline across channels |
-| FR-13 | Safe Receiver notification with amount, payout method and next step |
-| FR-14 | Exact local-currency digital payout to the authorized destination |
-| FR-15 | Identity-verified agency cash payout with one-time authorization |
-| FR-16 | Duplicate payout prevention and one-time authorization invalidation |
-| FR-17 | Sender and Receiver payout receipts |
-| FR-18 | Pre-cancellation operational-fee and exact-refund preview |
-| FR-19 | Atomic pre-payout cancellation eligibility and payout exclusion |
-| FR-20 | Idempotent cancellation refund and refund receipt |
-| FR-21 | Full funded-total refund after post-funding SendIT rejection |
-| FR-22 | Agency-assisted Sender session with explicit customer consent |
-| FR-23 | Individual AgencyWorker sign-in and assigned-shift opening |
-| FR-24 | Privacy-preserving agency transaction search |
-| FR-25 | Agency display and printing of quote, consent summary and receipts |
-| FR-26 | Security, identity, cash and provider-exception escalation |
-| FR-27 | Agency shift ledger closure and cash reconciliation |
-| FR-28 | Append-only audit events for every money and state transition |
-| FR-29 | Confirmed-transaction correction through cancellation and a new quote |
-| FR-30 | Post-payout support and dispute case creation |
+| FR-01 | **Sender authentication and registration service.** The system must allow a Sender to create an account and sign in using their registered credentials. It must reject invalid sign-in attempts without exposing whether an account, credential or security control caused the rejection. |
+| FR-02 | **Sender registration of Receiver details.** The system must allow the Sender to register the Receiver's required personal details, destination country and selected payout method before requesting a remittance quote. It must show validation errors for incomplete or unsupported destination or payout data and must not create a remittance with partial Receiver data. |
+| FR-03 | **Stable exchange rate throughout the remittance transaction.** When the Sender confirms a quote, the system must lock the quoted exchange rate and use it to preserve the confirmed Receiver amount until the remittance is paid out, refunded or otherwise reaches a terminal state. Processing time, channel changes and later market-rate changes must not modify that confirmed rate or Receiver amount. |
+| FR-04 | **Pre-transfer disclosure of sending commissions.** Before the Sender confirms or funds a remittance, the system must show the origin amount, exchange rate, Receiver amount, sending commission and total amount to deposit. It must calculate the commission from the active fee schedule and must not add an undisclosed sending charge after funding. |
+| FR-05 | **Fee for an uncollected remittance after the collection deadline.** The system must show the Receiver collection deadline and the applicable uncollected-remittance fee before the Sender confirms the remittance. When the deadline passes without payout, it must apply the configured fee according to the disclosed policy, record it in the remittance timeline and notify the Sender and Receiver; it must not silently reduce the confirmed Receiver amount. |
+| FR-06 | **Secure remittance transaction read and write operations.** The system must authorize every read or write of a remittance according to the authenticated role, transaction ownership, agency and shift scope. It must deny unauthorized access or modification without exposing transaction data and record the attempt in the audit trail. |
+| FR-07 | **Fraud and money-laundering prevention.** The system must evaluate remittances against configured fraud, transaction-limit and anti-money-laundering controls before payout. A suspicious or non-compliant remittance must be placed on hold or denied with an auditable reason category and a permitted next step, without altering its confirmed monetary snapshot. |
+| FR-08 | **Remittance deposit tracking.** The system must allow the Sender to see whether the required deposit is pending, received, under review, processing, ready for payout, paid out, cancelled, refunded or denied. It must display a timestamped timeline of the latest persisted remittance events across web, mobile and agency channels. |
+| FR-09 | **Temporary token for cash withdrawal.** The system must generate a time-limited, one-time token bound to the specific remittance and Receiver for agency cash withdrawal. The token must be validated together with the Receiver's identity, expire under the active security policy and become unusable immediately after a successful payout. |
+| FR-10 | **Payment receipts.** The system must issue an immutable receipt after a successful deposit, payout, cancellation or refund. Each receipt must identify the remittance, event type, date and time, channel, relevant amount and currency, while minimizing sensitive personal data. |
+| FR-11 | **Pre-payout remittance cancellation and refund.** The system must allow the Sender, or an AgencyWorker acting in an explicitly consented assisted session, to request cancellation only before a payout is completed. It must reject cancellation of a paid-out remittance and ensure a valid cancellation prevents any later payout for that remittance. |
+| FR-12 | **Refund for a denied remittance transaction.** If SendIT denies a remittance after its deposit has been received, the system must return the funded total through an authorized refund method. This denial refund must not apply the operational cancellation fee and must generate the corresponding refund receipt. |
+| FR-13 | **In-person agency service.** The system must provide an assisted agency flow through which an AgencyWorker can help a Sender create and fund a remittance, help a Receiver collect it, and assist an eligible cancellation. Agency actions must use the same remittance, monetary snapshot, status and security controls as web and mobile channels. |
+| FR-14 | **AgencyWorker sign-in.** The system must require each AgencyWorker to sign in with an individual account before accessing agency functions. It must associate the session with the worker, assigned agency and active shift, and must not allow shared or anonymous worker activity. |
+| FR-15 | **AgencyWorker access to transaction history.** The system must allow an AgencyWorker to view the transaction history needed to serve customers at the assigned agency, including current status and prior relevant events. It must restrict this history to transactions within the worker's authorized scope and must not expose unrelated customer or agency data. |
+| FR-16 | **AgencyWorker quote amendment before confirmation, with customer consent and receipt.** Before a Sender confirms a quote, the system must allow an AgencyWorker to amend permitted quote data when the Sender explicitly consents. It must generate the updated quote and a receipt or record of the amendment; after confirmation, the worker must not change the rate, commission, Receiver amount or other monetary-snapshot data. |
+| FR-17 | **Security controls and identity verification.** The system must verify the required Sender and Receiver identity evidence before allowing the corresponding funding or payout action. It must securely store or reference the verification result, block the action when verification fails or expires, and record the result without exposing sensitive verification data to unauthorized users. |
+| FR-18 | **AgencyWorker view of available cash for in-person payout.** Before an AgencyWorker initiates a cash payout, the system must show the cash amount currently available at the assigned agency and shift. It must block payout when available cash is insufficient for the confirmed Receiver amount and provide a controlled escalation path. |
+| FR-19 | **End-of-shift cash and transaction-ledger reconciliation.** At shift closure, the system must compare physical cash counts with the agency ledger of cash deposits, payouts and refunds recorded during that shift. It must record the reconciliation result, flag any difference for review and prevent discrepancies from being hidden by editing completed remittances. |
+| FR-20 | **Concurrency control and duplicate payout prevention.** The system must process payout commands and provider callbacks atomically and idempotently so that one remittance can produce only one successful payout. Concurrent or repeated payout attempts must return the recorded result or fail safely without creating a second disbursement. |
+| FR-21 | **Cancellation fee and refund processing.** Before the Sender confirms an eligible cancellation, the system must show the operational cancellation fee and the exact refund amount. Once confirmed, it must apply the disclosed fee, process the refund once and record the cancellation and refund in the remittance timeline. |
+| FR-22 | **Post-transaction support.** The system must allow an authorized Sender or Receiver to create a support case after a remittance reaches a terminal state, linking the case to the remittance and its receipt. It must provide the case status and preserve access control over the associated transaction data. |
+| FR-23 | **Payment processing through supported card networks.** The system must process supported card-funded remittances through Visa, Mastercard, American Express and Diners Club, subject to the enabled corridor and provider availability. It must register approved, declined and uncertain payment outcomes against the remittance and must not treat a timeout or duplicate provider callback as a second successful deposit. |
+| FR-24 | **AgencyWorker error resolution and escalation.** The system must show an AgencyWorker the permitted next action for cash, identity, security or provider errors encountered during agency service. The worker may resolve only actions within their authorization and must be able to escalate unresolved or restricted errors without overriding identity, monetary or access-control safeguards. |

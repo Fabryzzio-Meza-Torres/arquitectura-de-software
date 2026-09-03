@@ -23,11 +23,21 @@
 
 # R2: Los estudiantes deben poder tener acceso a los cursos predeterminados que te da el gorbierno desde la aplicacion.
 
-# R4: Los estudiantes deben poder subir sus entregables a cada curso
+# R4: Los estudiantes deben poder subir sus entregables en cada tarea del curso
 
 # R3: Los estudiantes deben poder tener una caja de comentarios en cada entregable
 
-# R4: Los estudiantes pueden visualizar tods sus cursos.
+# R4: Los estudiantes pueden visualizar todos sus cursos.
+
+# R5: Los estudiantes pueden visualizar todas sus notas.
+
+# R5: Los estudiantes pueden visualizar los comentarios de su entregable.
+
+# R6 : Los estudiantes pueden unirse a los grupos que crea el profesor
+
+# R7: Los estudiantes pueden mandarle un mensaje al profesor.
+
+# R8: Los alumnos pueden participar dentro de los foros de educacion.
 
 ## Profesores
 
@@ -49,24 +59,36 @@
 
 # R9: El profesor puede recibir notificaciones del sistema
 
-# Sistema:
+# R10: Los profesores pueden crear grupos, para que los alumnos se puedan juntar para los trabajos grupales.
 
-# R5: El sistema debe trabajar con cache para poder acceder a los recursos de manera offline en caso se caiga el internet
+# Sistema:
 
 # R6: System prompt -> para que se puedan usar skills y que matchee de acuerdo a lo que necesita crear
 
 # R7: System prompt -> (Que cambie el modelo de acuerdo al request)
 
-# ordenado
+# R8: El sistema debe tener ordenado todos sus modulos y componentes
 
-# ux/ui
+# R9: Se debe tener en cuenta la experiencia de los usuarios finales al momento de desarrollar la aplicacion.
 
-# simple
+# R10: El sistema debe ser intuitivo para los usuario
 
-# programacion de archivos
+# R11: El sistema debe permitir la programacion de envio de archivos, mensajes y anuncios.
 
-# foros
+# R12: foros
 
 # anuncios
 
 # acepta distintos formatos
+
+# recap:
+
+# Arquitectura local de redes. Junto con intermediario entre lima y local (pc del profe)
+
+# Usuario tienen que ir a clase (red lan) para poder entrar a la plataforma.
+
+# Se permiten enviar y descargar videos
+
+# Garantizar que se puedan enviar archivos pesados y retry automatico
+
+# Manejar la base (batch) -> porque puede ser que perdamos info o poder tener un backup

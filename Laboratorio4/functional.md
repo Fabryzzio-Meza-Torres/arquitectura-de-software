@@ -3,92 +3,55 @@
 #central
 #sistema
 
-## gobierno
+# Requerimientos Funcionales
 
-# R1: Los trabajadores del gobierno deben poder subir la curricula de los cursos a todas las regiones
+## Profesores del gobierno (nivel central - Lima)
 
-# R2: Los trabajadores del gobierno deben poder mantener actualizada la curricula de los cursos en todas las regiones incluso las mas lejanas
-
-# R3: Los trabajadores del gobierno deben poder subir cursos predeterminados de manera publica dentro del sistema.
-
-# R5: Los trabajadores del gobierno pueden auditar los cursos y dar feedback a los profesores del curso auditado.
-
-# R6: Los trabajadores del gobierno pueden acceder a la informacion de los perfiles de los profesores
-
-# R7: Los trabajadores del gobierno pueden recibir quejas de los profesores.
+- **RF-G1:** Los profesores del gobierno deben poder subir la currícula de los cursos y distribuirla a todas las regiones.
+- **RF-G2:** Los profesores del gobierno deben poder mantener actualizada la currícula de los cursos en todas las regiones.
+- **RF-G3:** Los profesores del gobierno deben poder publicar cursos predeterminados de acceso público dentro del sistema.
+- **RF-G5:** Los profesores del gobierno deben poder acceder a la información de los perfiles de los profesores.
+- **RF-G7:** Los profesores del gobierno deben poder crear su material de clase con ayuda de una IA.
+- **RF-G9:** El sistema debe imponer un límite de tokens por día y por curso para el uso de la IA por parte de los profesores del gobierno.
+- **RF-G10:** El sistema debe permitir el envío de videos como parte del material de los cursos.
 
 ## Estudiantes
 
-# R1: Los estudiantes deben poder tener acceso a los materiales de cada curso desde la aplicacion.
+- **RF-E1:** Los estudiantes deben poder acceder desde la aplicación a los materiales de cada uno de sus cursos.
+- **RF-E2:** Los estudiantes deben poder acceder desde la aplicación a los cursos predeterminados que provee el gobierno.
+- **RF-E3:** Los estudiantes deben poder visualizar todas sus notas.
+- **RF-E4:** Los estudiantes deben poder visualizar los comentarios de sus entregables.
 
-# R2: Los estudiantes deben poder tener acceso a los cursos predeterminados que te da el gorbierno desde la aplicacion.
+## Profesores de colegios rurales
 
-# R4: Los estudiantes deben poder subir sus entregables en cada tarea del curso
+- **RF-R1:** Los profesores rurales deben poder descargar los videos del material para reproducirlos sin conexión a internet.
+- **RF-R2:** Los profesores rurales deben poder revisar los materiales de los cursos.
+- **RF-R3:** Los profesores rurales deben poder crear tareas y anuncios para su clase.
+- **RF-R4:** Los profesores rurales deben poder programar el envío de sus tareas y anuncios de clase.
+- **RF-R5:** Los profesores rurales deben poder registrar comentarios en los entregables de los estudiantes.
+- **RF-R6:** Los profesores rurales deben poder recibir notificaciones del sistema.
 
-# R3: Los estudiantes deben poder tener una caja de comentarios en cada entregable
+## Sistema
 
-# R4: Los estudiantes pueden visualizar todos sus cursos.
+- **RF-S1:** El sistema debe usar un system prompt que permita seleccionar y combinar skills según lo que el profesor necesite crear.
+- **RF-S2:** El sistema debe seleccionar automáticamente el modelo de IA más adecuado según el tipo de request.
+- **RF-S3:** El sistema debe permitir la programación del envío de archivos, mensajes y anuncios.
+- **RF-S4:** El sistema debe ofrecer foros de participación por curso.
+- **RF-S5:** El sistema debe soportar el manejo de anuncios.
+- **RF-S6:** El sistema debe aceptar distintos formatos de archivo para el material.
 
-# R5: Los estudiantes pueden visualizar todas sus notas.
+# Requerimientos No Funcionales
 
-# R5: Los estudiantes pueden visualizar los comentarios de su entregable.
+## Arquitectura y conectividad
 
-# R6 : Los estudiantes pueden unirse a los grupos que crea el profesor
+- **RNF-1:** La solución debe operar sobre una arquitectura de redes locales (LAN) por colegio, con un servidor departamental intermediario entre el nivel central (Lima) y la laptop-servidor de cada colegio.
+- **RNF-2:** Los usuarios deben poder acceder a la plataforma desde la red LAN del colegio (en clase), sin requerir internet en cada laptop de salón.
+- **RNF-3:** El sistema debe garantizar el envío de archivos pesados con reintento (retry) automático ante fallos de transferencia.
+- **RNF-4:** El sistema debe manejar el procesamiento y sincronización de datos por lotes (batch) para tolerar pérdidas de conexión y mantener respaldos (backup) de la información.
+- **RNF-5:** El sistema debe eliminar automáticamente los archivos al cierre de cada bimestre para liberar espacio de almacenamiento.
 
-# R7: Los estudiantes pueden mandarle un mensaje al profesor.
+## Modularidad y experiencia de usuario
 
-# R8: Los alumnos pueden participar dentro de los foros de educacion.
-
-## Profesores
-
-# R1: Los profesores pueden crear su material con ayuda de una IA
-
-# R2: Los profesores pueden acceder a los cursos que el gobierno da a los profesores que sirve para que puedan crear el material de la clase
-
-# R3: Los profesores pueden crear tareas, anuncios y foros.
-
-# R2: Los Profesores pueden revisar los materiales desde la aplicacion.
-
-# Los profesores pueden programar sus tareas, anuncios de la clase.
-
-# R6: Los profesores deben tener un limite de tokens al dia por curso
-
-# R7: Los profesores puede calificar los entregables de los alumnos
-
-# R8: El profesor puede poner comentarios en los entregables
-
-# R9: El profesor puede recibir notificaciones del sistema
-
-# R10: Los profesores pueden crear grupos, para que los alumnos se puedan juntar para los trabajos grupales.
-
-# Sistema:
-
-# R6: System prompt -> para que se puedan usar skills y que matchee de acuerdo a lo que necesita crear
-
-# R7: System prompt -> (Que cambie el modelo de acuerdo al request)
-
-# R8: El sistema debe tener ordenado todos sus modulos y componentes
-
-# R9: Se debe tener en cuenta la experiencia de los usuarios finales al momento de desarrollar la aplicacion.
-
-# R10: El sistema debe ser intuitivo para los usuario
-
-# R11: El sistema debe permitir la programacion de envio de archivos, mensajes y anuncios.
-
-# R12: foros
-
-# anuncios
-
-# acepta distintos formatos
-
-# recap:
-
-# Arquitectura local de redes. Junto con intermediario entre lima y local (pc del profe)
-
-# Usuario tienen que ir a clase (red lan) para poder entrar a la plataforma.
-
-# Se permiten enviar y descargar videos
-
-# Garantizar que se puedan enviar archivos pesados y retry automatico
-
-# Manejar la base (batch) -> porque puede ser que perdamos info o poder tener un backup
+- **RNF-6:** El sistema debe estar organizado en módulos y componentes bien definidos y desacoplados.
+- **RNF-7:** El desarrollo debe priorizar la experiencia de los usuarios finales.
+- **RNF-8:** La interfaz del sistema debe ser intuitiva y fácil de usar para todos los perfiles de usuario.

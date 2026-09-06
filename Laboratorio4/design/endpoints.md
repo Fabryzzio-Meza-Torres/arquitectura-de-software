@@ -4,7 +4,7 @@ Convenciones:
 
 - **Auth:** `Authorization: Bearer <JWT>` en todo lo protegido.
 - **Sync idempotente:** los `POST` de sincronización llevan header **`Idempotency-Key`** para que un reintento no duplique datos ni chunks.
-- **Archivos pesados = Distribution Agent (torrent-like):** archivos partidos en **chunks** con hash; el agente re-baja solo los chunks que fallan (RNF-3) y puede jalarlos de **colegios vecinos (peers)**.
+- **Archivos pesados = Distribution Agent (jerárquico):** archivos partidos en **chunks** con hash; el agente local re-descarga solo los chunks que fallan (RNF-3, RNF-4, RNF-5), solicitándolos siempre al nodo superior en la jerarquía (colegio→departamento→central), sin comunicación directa entre colegios (RNF-1).
 - **IA:** el `system prompt` con skills **se asume ya construido**; el AI Gateway lo aplica por dentro.
 
 ---
@@ -48,19 +48,18 @@ Convenciones:
 
 Endpoints y procesos que **ningún humano llama directo**; son la plomería que hace que todo funcione con internet limitado.
 
-| Método      | Endpoint                                              | Para qué sirve                                                   | RF/RNF   |
-| ----------- | ----------------------------------------------------- | ---------------------------------------------------------------- | -------- |
-| `GET`       | `/dist/{contentId}/manifest`                          | Manifiesto de chunks (índices + hash + tamaño).                  | RNF-1, 3 |
-| `GET`       | `/dist/{contentId}/chunks/{index}`                    | Descarga un chunk (resumible, `Range`).                          | RNF-3    |
-| `POST`      | `/dist/announce`                                      | Un nodo se anuncia al tracker y pide peers.                      | RNF-1    |
-| `GET`       | `/dist/{contentId}/peers`                             | Lista nodos con chunks (departamental + colegios vecinos).       | RNF-1    |
-| `POST`      | `/dist/{contentId}/verify`                            | Reporta chunks fallidos → re-baja solo esos (**auto-retry**).    | RNF-3    |
-| `GET`       | `/dist/jobs/{jobId}`                                  | Estado de la transferencia (progreso, reintentos).               | RNF-3    |
-| `POST`      | `/sync/batch`                                         | Sube por lote los cambios del aula (notas, comentarios, tareas). | RNF-4    |
-| `GET`       | `/sync/batch/{batchId}`                               | Estado del lote de sincronización.                               | RNF-4    |
-| _(interno)_ | selección de skills + modelo dentro de `/ai/generate` | Combina skills y elige el modelo más adecuado.                   | S1, S2   |
-| _(interno)_ | motor del Scheduler                                   | Ejecuta los envíos programados.                                  | S3       |
-| _(interno)_ | limpieza fin de bimestre · replicación push           | Libera espacio · empuja contenido a regiones.                    | RNF-5    |
+| Método      | Endpoint                                              | Para qué sirve                                                     | RF/RNF        |
+| ----------- | ----------------------------------------------------- | --------------------------------------------------------------------- | ------------- |
+| `GET`       | `/dist/{contentId}/manifest`                          | Manifiesto de chunks (índices + hash + tamaño).                     | RNF-1, RNF-3  |
+| `GET`       | `/dist/{contentId}/chunks/{index}`                    | Descarga un chunk desde el nodo superior (resumible, `Range`).      | RNF-1, RNF-3  |
+| `POST`      | `/dist/{contentId}/verify`                            | Reporta chunks fallidos → re-descarga solo esos desde el nodo superior (auto-retry). | RNF-3, RNF-4  |
+| `GET`       | `/dist/jobs/{jobId}`                                  | Estado de la transferencia (progreso, reintentos).                  | RNF-3         |
+| `POST`      | `/sync/batch`                                         | Sube por lote los cambios del aula (notas, comentarios, tareas).    | RNF-7         |
+| `GET`       | `/sync/batch/{batchId}`                               | Estado del lote de sincronización.                                   | RNF-7         |
+| _(interno)_ | selección de skills + modelo dentro de `/ai/generate` | Combina skills y elige el modelo más adecuado.                       | S1, S2        |
+| _(interno)_ | motor del Scheduler                                   | Ejecuta los envíos programados.                                      | S3            |
+| _(interno)_ | limpieza fin de bimestre · replicación push           | Libera espacio · empuja contenido a regiones.                        | RNF-8         |
+
 
 ---
 
@@ -81,13 +80,6 @@ Base del agente torrent-like: describe el contenido como una lista de chunks ver
     ]
   }
   ```
-
-### `POST /dist/announce`
-
-El colegio pide peers para no saturar el enlace a Lima; puede jalar chunks de colegios vecinos.
-
-- **Body:** `{ "nodeId": str, "contentId": str, "chunksHave": [0,1,5] }`
-- **200:** `{ "peers": [ { "nodeId": "colegio-2", "endpoint": "http://10.0.x.x", "chunksHave": [2,3,4] } ] }`
 
 ### `POST /dist/{contentId}/verify`
 

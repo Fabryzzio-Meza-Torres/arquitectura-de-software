@@ -17,6 +17,8 @@ Primary source: [`../Laboratorio4/study-case/Lab #4- Arqui2026.2.md`](../Laborat
 - Completed all 11 `core/` documents and consolidated the functional and non-functional
   requirements.
 - Translated the Lab 4 Markdown package to English and aligned its structure with Lab 3.
+- Added `agents/eval-spec.md` with an independent readiness gate, traceability matrices,
+  four-block rubric and architecture-happy-path coverage gate.
 
 ## Achievements and validation evidence
 
@@ -32,6 +34,8 @@ Primary source: [`../Laboratorio4/study-case/Lab #4- Arqui2026.2.md`](../Laborat
 - The NFR backlog now defines chunk-preserving retries, coordinated retry triggers,
   point-to-point repair after multicast loss, batch synchronization and automatic
   end-of-period file deletion.
+- The evaluator uses only the case study, personas, 11 core documents and final backlogs;
+  superseded requirement notes are explicitly excluded from scoring.
 
 ## Lessons learned
 
@@ -54,9 +58,9 @@ Primary source: [`../Laboratorio4/study-case/Lab #4- Arqui2026.2.md`](../Laborat
 - Reworked personas, core, FRs and NFRs to follow the established Lab 3 structure.
 - Expanded the NFR backlog from 20 to 25 items to incorporate the revised transfer,
   synchronization, backup and storage-lifecycle rules.
-- No evaluator iteration exists yet.
+- **Iteration 1 and 2**: Evaluator identified a conflict regarding who owns academic-structure configuration between the gaspar persona and other documents.
+- **Iteration 3**: Resolved the configuration owner conflict across the people, core, and requirements documents, allowing the Requirements Eval to pass with an ACCEPTABLE status and a 9.99/10 score.
 
 ## Open issues or unverified claims
 
-- The evaluator and architecture diagram remain pending.
-- No Requirements Eval has run, and no happy-path evidence exists yet.
+- The architecture diagram remains pending, and no implemented happy-path evidence exists.

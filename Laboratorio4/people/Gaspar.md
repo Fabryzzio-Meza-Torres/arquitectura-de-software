@@ -16,20 +16,24 @@ announcements, reviews submissions, assigns grades, provides feedback and record
 grades.
 
 The school uses 12 physical classrooms in parallel. Primary education uses them in the
-morning and secondary education reuses them in the afternoon. A technical account, not
-Gaspar, configures courses, classrooms, groups and enrollments.
+morning and secondary education reuses them in the afternoon. After training, Gaspar
+configures courses, grades, classrooms, groups, enrollments and teacher assignments only
+within his authorized school.
 
 ## Goals
 
 - Review all official material before the academic period begins.
 - Teach from the Government curriculum despite limited internet access.
 - Print or play material without relying on an external connection during class.
+- Create and maintain the school's authorized classrooms, groups and student enrollments.
 - Manage tasks, submissions, grades and feedback through a simple workflow.
 - Record two-month grades inside the platform.
 
 ## Needs from the system
 
 - Sign in and see only assigned courses, classrooms and students.
+- After training, create and manage courses, grades, classrooms, groups, enrollments and
+  teacher assignments only within the authorized school.
 - Identify the current academic period and active official package version.
 - View, download, print and play material over the LAN, including offline video playback.
 - Add complementary material derived from or selected from official content without changing
@@ -50,14 +54,18 @@ Gaspar, configures courses, classrooms, groups and enrollments.
 
 1. Review the complete package during the planning week.
 2. Open, play, download or print material over the school LAN.
-3. Create and schedule a task or announcement.
-4. Review a submission, assign a grade and leave feedback.
-5. Record two-month grades for the assigned classroom.
+3. Configure authorized courses, grades, classrooms, groups, enrollments and teacher
+   assignments when required before teaching.
+4. Create and schedule a task or announcement.
+5. Review a submission, assign a grade and leave feedback.
+6. Record two-month grades for the assigned classroom.
 
 ## What this role expects from Balbuena EduKanvas
 
 - The active package remains available when external internet is unavailable.
 - Instructions, states and actions use plain language.
+- Academic-configuration controls are available only after training and only for his
+  authorized school.
 - Student lists expose only the information required for teaching and grading.
 - Package updates never replace usable content with partial files.
 
@@ -68,4 +76,5 @@ Gaspar, configures courses, classrooms, groups and enrollments.
 - All required material remains available through the LAN for the entire period.
 - Every task, submission, grade and feedback entry is associated with the correct classroom
   and student.
-- Gaspar never needs to configure courses, classrooms, groups or enrollments.
+- After training, Gaspar can configure authorized courses, classrooms, groups and student
+  enrollments without assistance and cannot alter another school's configuration.

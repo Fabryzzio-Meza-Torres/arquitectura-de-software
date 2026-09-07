@@ -9,5 +9,6 @@ Este repositorio es el **monorepo de todos los laboratorios del curso de Arquite
 | `Laboratorio1/` | Entregables del primer laboratorio del curso. |
 | `Laboratorio2/` | Caso Lea$e: especificación, requisitos, evaluación y POC funcional. |
 | `Laboratorio3/` | Caso SendIT: especificación, requisitos y evaluación. |
+| `Laboratorio4/` | Caso RemoteSchooly: especificación, requisitos y evaluación. |
 
 La documentación específica de cada caso vive dentro de su respectiva carpeta.

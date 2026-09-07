@@ -16,6 +16,7 @@ This file contains the stable conventions and cross-laboratory lessons. Each `la
 | `Laboratorio1/` | [`lab1.md`](lab1.md) | [`../Laboratorio1/study-case/`](../Laboratorio1/study-case/) |
 | `Laboratorio2/` | [`lab2.md`](lab2.md) | [`../Laboratorio2/study-case/`](../Laboratorio2/study-case/) |
 | `Laboratorio3/` | [`lab3.md`](lab3.md) | [`../Laboratorio3/study-case/`](../Laboratorio3/study-case/) |
+| `Laboratorio4/` | [`lab4.md`](lab4.md) | [`../Laboratorio4/study-case/`](../Laboratorio4/study-case/) |
 
 Memory provides a starting point, not permission to copy domain assumptions. The current study case and the user's explicit instructions always take precedence.
 

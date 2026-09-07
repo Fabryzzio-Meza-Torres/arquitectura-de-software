@@ -21,6 +21,7 @@ Before doing any work:
 | `Laboratorio1/` | [`brain/lab1.md`](brain/lab1.md), then [`Laboratorio1/study-case/`](Laboratorio1/study-case/) |
 | `Laboratorio2/` | [`brain/lab2.md`](brain/lab2.md), then [`Laboratorio2/study-case/`](Laboratorio2/study-case/) |
 | `Laboratorio3/` | [`brain/lab3.md`](brain/lab3.md), then [`Laboratorio3/study-case/`](Laboratorio3/study-case/) |
+| `Laboratorio4/` | [`brain/lab4.md`](brain/lab4.md), then [`Laboratorio4/study-case/`](Laboratorio4/study-case/) |
 | A new `LaboratorioN/` | Read all existing `brain/lab*.md` files from newest to oldest, then read the new `study-case/` |
 | Cross-laboratory work | Read every affected laboratory memory and the directly relevant source files |
 

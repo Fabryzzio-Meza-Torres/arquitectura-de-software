@@ -29,6 +29,9 @@ Primary source: [`../Laboratorio4/study-case/Lab #4- Arqui2026.2.md`](../Laborat
   reduction are traceable across people, core and requirements.
 - The final backlogs use the Lab 3 `ID | requirement` table structure and unique `FR-XX` and
   `NFR-XX` identifiers.
+- The NFR backlog now defines chunk-preserving retries, coordinated retry triggers,
+  point-to-point repair after multicast loss, batch synchronization and automatic
+  end-of-period file deletion.
 
 ## Lessons learned
 
@@ -36,6 +39,9 @@ Primary source: [`../Laboratorio4/study-case/Lab #4- Arqui2026.2.md`](../Laborat
   independent weekly packages.
 - Temporary cache is removed after synchronization and integrity confirmation, while the
   active package remains available throughout the period.
+- Regional multicast may start distribution, but missing chunks must be repaired through a
+  resumable point-to-point transfer before a package can become active.
+- Files in active school storage are deleted automatically after the academic period closes.
 - Official Ministry grade entry is manual and external; the platform does not export grades.
 - A technical account can configure courses, classrooms and enrollments without becoming a
   fourth primary persona.
@@ -46,6 +52,8 @@ Primary source: [`../Laboratorio4/study-case/Lab #4- Arqui2026.2.md`](../Laborat
   confirmed scope.
 - Replaced indiscriminate file deletion with temporary-cache cleanup after verification.
 - Reworked personas, core, FRs and NFRs to follow the established Lab 3 structure.
+- Expanded the NFR backlog from 20 to 25 items to incorporate the revised transfer,
+  synchronization, backup and storage-lifecycle rules.
 - No evaluator iteration exists yet.
 
 ## Open issues or unverified claims

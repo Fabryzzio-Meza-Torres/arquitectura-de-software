@@ -1,15 +1,23 @@
-# Requerimientos No Funcionales
+# Original non-functional-requirement notes — superseded
 
-## Arquitectura y conectividad
+These translated notes preserve the initial input. The reconciled and authoritative backlog
+is [`requirements/no-functional-requirements.md`](requirements/no-functional-requirements.md).
 
-- **RNF-1:** La solución debe operar sobre una arquitectura de redes locales (LAN) por colegio, con un servidor departamental intermediario entre el nivel central (Lima) y la laptop-servidor de cada colegio.
-- **RNF-2:** Los usuarios deben poder acceder a la plataforma desde la red LAN del colegio (en clase), sin requerir internet en cada laptop de salón.
-- **RNF-3:** El sistema debe garantizar el envío de archivos pesados con reintento (retry) automático ante fallos de transferencia.
-- **RNF-4:** El sistema debe manejar el procesamiento y sincronización de datos por lotes (batch) para tolerar pérdidas de conexión y mantener respaldos (backup) de la información.
-- **RNF-5:** El sistema debe eliminar automáticamente los archivos al cierre de cada bimestre para liberar espacio de almacenamiento.
+## Architecture and connectivity
 
-## Modularidad y experiencia de usuario
+- **RNF-1:** The solution must use local networks for each school, with a departmental server
+  between the central level in Lima and each school's server laptop.
+- **RNF-2:** Users must be able to access the platform through the school LAN during class
+  without requiring internet on every classroom laptop.
+- **RNF-3:** The system must ensure delivery of large files through automatic retry after a
+  transfer failure.
+- **RNF-4:** The system must support batch data processing and synchronization to tolerate
+  connectivity loss and retain information backups.
+- **RNF-5:** The system must automatically delete files at the close of each two-month period
+  to free storage.
 
-- **RNF-6:** El sistema debe estar organizado en módulos y componentes bien definidos y desacoplados.
-- **RNF-7:** El desarrollo debe priorizar la experiencia de los usuarios finales.
-- **RNF-8:** La interfaz del sistema debe ser intuitiva y fácil de usar para todos los perfiles de usuario.
+## Modularity and user experience
+
+- **RNF-6:** The system must be organized into well-defined, decoupled modules and components.
+- **RNF-7:** Development must prioritize the experience of end users.
+- **RNF-8:** The interface must be intuitive and easy to use for every user role.

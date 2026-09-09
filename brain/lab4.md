@@ -36,6 +36,7 @@ Primary source: [`../Laboratorio4/study-case/Lab #4- Arqui2026.2.md`](../Laborat
   end-of-period file deletion.
 - The evaluator uses only the case study, personas, 11 core documents and final backlogs;
   superseded requirement notes are explicitly excluded from scoring.
+- The architecture diagram from Excalidraw was successfully translated to Mermaid and added to the README.
 
 ## Lessons learned
 
@@ -63,4 +64,4 @@ Primary source: [`../Laboratorio4/study-case/Lab #4- Arqui2026.2.md`](../Laborat
 
 ## Open issues or unverified claims
 
-- The architecture diagram remains pending, and no implemented happy-path evidence exists.
+- No implemented happy-path evidence exists.

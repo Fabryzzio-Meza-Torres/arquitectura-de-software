@@ -17,6 +17,7 @@ This file contains the stable conventions and cross-laboratory lessons. Each `la
 | `Laboratorio2/` | [`lab2.md`](lab2.md) | [`../Laboratorio2/study-case/`](../Laboratorio2/study-case/) |
 | `Laboratorio3/` | [`lab3.md`](lab3.md) | [`../Laboratorio3/study-case/`](../Laboratorio3/study-case/) |
 | `Laboratorio4/` | [`lab4.md`](lab4.md) | [`../Laboratorio4/study-case/`](../Laboratorio4/study-case/) |
+| `Laboratorio5/` | [`lab5.md`](lab5.md) | [`../Laboratorio5/study-case/`](../Laboratorio5/study-case/) |
 
 Memory provides a starting point, not permission to copy domain assumptions. The current study case and the user's explicit instructions always take precedence.
 
@@ -78,6 +79,7 @@ Work in this order unless the user explicitly requests another sequence:
 ## Cross-laboratory conventions
 
 - Keep work inside the requested laboratory unless the task is explicitly cross-cutting.
+- Write every Markdown artifact in English, including study-case notes, people, core, requirements, evaluator prompts, reports, and laboratory memory files.
 - Treat the study case as the primary source for scope, deliverables, constraints, and numeric targets. Do not invent thresholds.
 - Maintain traceability across `people/`, `core/`, `requirements/`, `agents/`, and `reports/`.
 - Evaluators are Markdown prompts stored in `agents/eval-spec.md`, not application code.

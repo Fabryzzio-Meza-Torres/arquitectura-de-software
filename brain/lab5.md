@@ -10,6 +10,7 @@ This laboratory designs a reliable Harness around an existing local LLM to manag
 - Completed the eleven `core/` documents and aligned the three `people/` profiles.
 - Reworked 20 FRs and 15 NFRs into sequential-ID tables, with verifiable semantics in flows and AC.
 - Created `agents/eval-spec.md` to inspect sources, people, core, backlog, diagram, failures, and single points of failure, then performed the first document-level evaluation.
+- Added `Laboratorio5/README.md` as the lab entry point, covering the problem, human-control boundary, architecture principles, reading path, and documented validation limits.
 
 ## Achievements and validation evidence
 

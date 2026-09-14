@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "bb3608c7-649e-4bc0-87a0-bba239d6ed93",
+		"name": "Software Architecture",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27024569",
+		"_collection_link": "https://restless-meadow-922782.postman.co/workspace/JeffreyWorkspace~7da7d723-dc62-4262-8340-a7a455d30de3/collection/27024569-bb3608c7-649e-4bc0-87a0-bba239d6ed93?action=share&source=collection_link&creator=27024569"
+	},
+	"item": [
+		{
+			"name": "Minion Lab05",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{minion_lab05}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/11.1.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"owner\": \"jeffreymonjacastro\",\r\n  \"repo\": \"arquitectura-de-software\",\r\n  \"ref\": \"main\",\r\n  \"path\": \"Laboratorio5\",\r\n  \"requirementsFolder\": \"requirements\",\r\n  \"peopleFolder\": \"people\",\r\n  \"diagramFolder\": \"diagram\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://arquisoft-clasificacion.balbuenac.workers.dev/evaluate?format=md",
+					"protocol": "https",
+					"host": [
+						"arquisoft-clasificacion",
+						"balbuenac",
+						"workers",
+						"dev"
+					],
+					"path": [
+						"evaluate"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "md"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "minion_lab05",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

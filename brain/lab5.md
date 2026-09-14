@@ -26,6 +26,7 @@ This laboratory designs a reliable Harness around an existing local LLM to manag
 ## Improvements across iterations
 
 - First iteration: drafts let the LLM resolve or close tickets and mixed capabilities with attributes in NFRs. The specification moved execution and closure to support/engineering, separated FR/NFR, and documented load, cache, and recovery scenarios.
+- Normalized the architecture-artifact directory to lowercase `diagram/`, removing the `Diagram/` versus `diagram/` Git path collision on case-insensitive Windows filesystems.
 
 ## Open issues or unverified claims
 

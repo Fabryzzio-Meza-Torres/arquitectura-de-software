@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evaluador de arquitectura Excalidraw"
+  short_description: "Evalúa Excalidraw con JSON, render y rúbrica"
+  default_prompt: "Usa $excalidraw-architecture-evaluator para evaluar el archivo .excalidraw de esta ruta local con la rúbrica del examen parcial."

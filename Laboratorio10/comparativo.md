@@ -1,69 +1,86 @@
-#### 1. Colas independientes
+#### 1. Colas (modelo del profe: 10 servicios al 1%)
 
 | Metrica | Baseline | PoC 1: diagrama | PoC 2: mejorada |
 |---|---:|---:|---:|
-| p50 (ms) | 21.9 | 22.5 | 22.2 |
-| p95 (ms) | 1366.5 | 46.1 | 46.9 |
-| p99 (ms) | 1480.2 | 63.5 | 57.4 |
-| CVaR99 (ms) | 1489.9 | 71.4 | 59.2 |
+| p50 (ms) | 19.7 | 19.9 | 19.8 |
+| p95 (ms) | 1003.2 | 33.6 | 33.9 |
+| p99 (ms) | 1082.1 | 39.2 | 39.4 |
+| CVaR99 (ms) | 1092.7 | 44.3 | 46.0 |
 | Requests ejecutadas | 4000 | 4000 | 4000 |
-| Llamadas a backend | 40000 | 42137 | 41902 |
-| Carga extra | 0.0% | 5.34% | 4.75% |
-| Requests degradadas (dato de cache) | 0 (0.0%) | 128 (3.2%) | 131 (3.28%) |
+| Llamadas a backend | 40000 | 42059 | 41804 |
+| Carga extra | 0.0% | 5.15% | 4.51% |
+| Requests degradadas (dato de cache) | 0 (0.0%) | 3 (0.07%) | 9 (0.22%) |
 | Requests con llamada fallida (GG) | 0 (0.0%) | 0 (0.0%) | 0 (0.0%) |
-| Hedges / retries / timeouts | 0 / 0 / 0 | 2135 / 2 / 130 | 1899 / 3 / 134 |
-| Antiguedad max. del dato de cache (s) | - | 0.01 | 0.01 |
-| Lag p99 del event loop (ms) | 3.17 | 3.46 | 1.65 |
+| Hedges / retries / timeouts | 0 / 0 / 0 | 2055 / 4 / 7 | 1792 / 12 / 21 |
+| Antiguedad max. del dato de cache (s) | - | 0.0 | 0.01 |
+| Lag p99 del event loop (ms) | 3.48 | 2.32 | 2.28 |
 
-#### 2. Service 9 caido (30% central)
-
-| Metrica | Baseline | PoC 1: diagrama | PoC 2: mejorada |
-|---|---:|---:|---:|
-| p50 (ms) | 674.4 | 21.5 | 22.2 |
-| p95 (ms) | 2003.2 | 51.9 | 46.4 |
-| p99 (ms) | 2014.0 | 62.5 | 58.0 |
-| CVaR99 (ms) | 2026.1 | 64.4 | 60.3 |
-| Requests ejecutadas | 4000 | 4000 | 4000 |
-| Llamadas a backend | 40000 | 40700 | 40474 |
-| Carga extra | 0.0% | 1.75% | 1.18% |
-| Requests degradadas (dato de cache) | 0 (0.0%) | 1485 (37.12%) | 1332 (33.3%) |
-| Requests con llamada fallida (GG) | 0 (0.0%) | 0 (0.0%) | 94 (2.35%) |
-| Hedges / retries / timeouts | 0 / 0 / 0 | 2024 / 2 / 195 | 1794 / 4 / 139 |
-| Antiguedad max. del dato de cache (s) | - | 5.62 | 5.0 |
-| Lag p99 del event loop (ms) | 5.46 | 1.52 | 1.75 |
-
-#### 3. Service 9 caido, prolongado (65%)
+#### 2. Estres: servicios 8-10 al 10%, colas de 0.5-1.5 s
 
 | Metrica | Baseline | PoC 1: diagrama | PoC 2: mejorada |
 |---|---:|---:|---:|
-| p50 (ms) | 2001.5 | 21.6 | 21.9 |
-| p95 (ms) | 2003.4 | 61.4 | 45.7 |
-| p99 (ms) | 2035.3 | 62.9 | 57.4 |
-| CVaR99 (ms) | 2052.3 | 64.3 | 59.7 |
+| p50 (ms) | 22.2 | 22.5 | 22.5 |
+| p95 (ms) | 1367.4 | 42.0 | 42.1 |
+| p99 (ms) | 1479.7 | 48.0 | 46.2 |
+| CVaR99 (ms) | 1490.8 | 50.6 | 49.9 |
 | Requests ejecutadas | 4000 | 4000 | 4000 |
-| Llamadas a backend | 40000 | 39293 | 39045 |
-| Carga extra | 0.0% | -1.77% | -2.39% |
-| Requests degradadas (dato de cache) | 0 (0.0%) | 2845 (71.12%) | 1295 (32.38%) |
-| Requests con llamada fallida (GG) | 0 (0.0%) | 0 (0.0%) | 1397 (34.92%) |
-| Hedges / retries / timeouts | 0 / 0 / 0 | 1940 / 2 / 261 | 1670 / 3 / 127 |
-| Antiguedad max. del dato de cache (s) | - | 11.22 | 5.0 |
-| Lag p99 del event loop (ms) | 2.04 | 1.79 | 2.06 |
-
-#### 4. Service 3 degradado x2.5 (40% central)
-
-| Metrica | Baseline | PoC 1: diagrama | PoC 2: mejorada |
-|---|---:|---:|---:|
-| p50 (ms) | 26.7 | 27.6 | 27.5 |
-| p95 (ms) | 1367.2 | 50.3 | 51.6 |
-| p99 (ms) | 1480.1 | 63.0 | 60.4 |
-| CVaR99 (ms) | 1490.1 | 69.9 | 77.1 |
-| Requests ejecutadas | 4000 | 4000 | 4000 |
-| Llamadas a backend | 40000 | 43175 | 41955 |
-| Carga extra | 0.0% | 7.94% | 4.89% |
-| Requests degradadas (dato de cache) | 0 (0.0%) | 128 (3.2%) | 131 (3.28%) |
+| Llamadas a backend | 40000 | 43148 | 42829 |
+| Carga extra | 0.0% | 7.87% | 7.07% |
+| Requests degradadas (dato de cache) | 0 (0.0%) | 134 (3.35%) | 168 (4.2%) |
 | Requests con llamada fallida (GG) | 0 (0.0%) | 0 (0.0%) | 0 (0.0%) |
-| Hedges / retries / timeouts | 0 / 0 / 0 | 3167 / 8 / 136 | 1949 / 6 / 137 |
+| Hedges / retries / timeouts | 0 / 0 / 0 | 3144 / 4 / 138 | 2817 / 12 / 181 |
 | Antiguedad max. del dato de cache (s) | - | 0.01 | 0.01 |
-| Lag p99 del event loop (ms) | 1.88 | 2.93 | 2.01 |
+| Lag p99 del event loop (ms) | 3.62 | 2.73 | 1.77 |
+
+#### 3. Service 9 caido (30% central)
+
+| Metrica | Baseline | PoC 1: diagrama | PoC 2: mejorada |
+|---|---:|---:|---:|
+| p50 (ms) | 22.8 | 19.9 | 20.1 |
+| p95 (ms) | 2003.1 | 37.7 | 35.7 |
+| p99 (ms) | 2006.2 | 73.8 | 52.6 |
+| CVaR99 (ms) | 2009.6 | 96.1 | 64.3 |
+| Requests ejecutadas | 4000 | 4000 | 4000 |
+| Llamadas a backend | 40000 | 40978 | 40503 |
+| Carga extra | 0.0% | 2.45% | 1.26% |
+| Requests degradadas (dato de cache) | 0 (0.0%) | 1370 (34.25%) | 1256 (31.4%) |
+| Requests con llamada fallida (GG) | 0 (0.0%) | 0 (0.0%) | 69 (1.73%) |
+| Hedges / retries / timeouts | 0 / 0 / 0 | 2277 / 6 / 74 | 1793 / 13 / 39 |
+| Antiguedad max. del dato de cache (s) | - | 5.47 | 5.0 |
+| Lag p99 del event loop (ms) | 4.13 | 3.87 | 4.96 |
+
+#### 4. Service 9 caido, prolongado (65%)
+
+| Metrica | Baseline | PoC 1: diagrama | PoC 2: mejorada |
+|---|---:|---:|---:|
+| p50 (ms) | 2001.6 | 19.9 | 19.3 |
+| p95 (ms) | 2003.7 | 46.8 | 33.8 |
+| p99 (ms) | 2009.8 | 88.0 | 40.3 |
+| CVaR99 (ms) | 2015.6 | 123.7 | 49.1 |
+| Requests ejecutadas | 4000 | 4000 | 4000 |
+| Llamadas a backend | 40000 | 39751 | 39222 |
+| Carga extra | 0.0% | -0.62% | -1.94% |
+| Requests degradadas (dato de cache) | 0 (0.0%) | 2739 (68.47%) | 1256 (31.4%) |
+| Requests con llamada fallida (GG) | 0 (0.0%) | 0 (0.0%) | 1363 (34.08%) |
+| Hedges / retries / timeouts | 0 / 0 / 0 | 2355 / 5 / 138 | 1798 / 15 / 47 |
+| Antiguedad max. del dato de cache (s) | - | 10.95 | 5.0 |
+| Lag p99 del event loop (ms) | 3.39 | 4.64 | 1.76 |
+
+#### 5. Service 3 degradado x2.5 (40% central)
+
+| Metrica | Baseline | PoC 1: diagrama | PoC 2: mejorada |
+|---|---:|---:|---:|
+| p50 (ms) | 22.2 | 22.7 | 22.9 |
+| p95 (ms) | 1002.3 | 41.6 | 43.1 |
+| p99 (ms) | 1081.9 | 69.8 | 59.4 |
+| CVaR99 (ms) | 1092.4 | 77.4 | 72.8 |
+| Requests ejecutadas | 4000 | 4000 | 4000 |
+| Llamadas a backend | 40000 | 43384 | 41896 |
+| Carga extra | 0.0% | 8.46% | 4.74% |
+| Requests degradadas (dato de cache) | 0 (0.0%) | 3 (0.07%) | 10 (0.25%) |
+| Requests con llamada fallida (GG) | 0 (0.0%) | 0 (0.0%) | 0 (0.0%) |
+| Hedges / retries / timeouts | 0 / 0 / 0 | 3320 / 64 / 67 | 1880 / 16 / 26 |
+| Antiguedad max. del dato de cache (s) | - | 0.01 | 0.01 |
+| Lag p99 del event loop (ms) | 2.47 | 2.83 | 5.51 |
 
 ![comparativo](comparativo.png)

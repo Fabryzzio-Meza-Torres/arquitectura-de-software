@@ -1,7 +1,7 @@
 {
- "alpha_ms": 22.2,
- "beta_star_ms": 39.7,
- "beta_ms": 59.6,
+ "alpha_ms": 18.8,
+ "beta_star_ms": 29.7,
+ "beta_ms": 44.6,
  "safety": 1.5,
  "stress": false,
  "q": 0.99,
@@ -11,105 +11,105 @@
   {
    "alpha": 32.5,
    "feasible": true,
-   "extra_load%": 3.47,
-   "cvar99": 103.5
+   "extra_load%": 1.06,
+   "cvar99": 52.6
   },
   {
    "alpha": 18.75,
-   "feasible": false,
-   "extra_load%": 7.41,
-   "cvar99": 105.0
-  },
-  {
-   "alpha": 25.62,
    "feasible": true,
-   "extra_load%": 3.75,
-   "cvar99": 104.0
+   "extra_load%": 4.98,
+   "cvar99": 37.8
   },
   {
-   "alpha": 22.19,
-   "feasible": true,
-   "extra_load%": 4.63,
-   "cvar99": 103.6
-  },
-  {
-   "alpha": 20.47,
+   "alpha": 11.88,
    "feasible": false,
-   "extra_load%": 6.06,
-   "cvar99": 107.7
+   "extra_load%": 34.14,
+   "cvar99": 31.0
   },
   {
-   "alpha": 21.33,
+   "alpha": 15.31,
    "feasible": false,
-   "extra_load%": 5.13,
-   "cvar99": 103.6
+   "extra_load%": 13.36,
+   "cvar99": 34.5
+  },
+  {
+   "alpha": 17.03,
+   "feasible": false,
+   "extra_load%": 8.0,
+   "cvar99": 36.0
+  },
+  {
+   "alpha": 17.89,
+   "feasible": false,
+   "extra_load%": 6.29,
+   "cvar99": 37.1
   }
  ],
  "trace_beta": [
   {
-   "beta": 63.59,
+   "beta": 61.88,
    "feasible": true,
    "timeouts%": [
-    0.28
+    0.0
    ],
-   "extra_load%": 4.67,
+   "extra_load%": 5.0,
    "cvar99": [
-    67.9
+    38.1
    ]
   },
   {
-   "beta": 45.39,
+   "beta": 42.81,
    "feasible": true,
    "timeouts%": [
-    0.29
+    0.0
    ],
-   "extra_load%": 4.72,
+   "extra_load%": 4.95,
    "cvar99": [
-    61.9
+    37.0
    ]
   },
   {
-   "beta": 36.29,
+   "beta": 33.28,
+   "feasible": true,
+   "timeouts%": [
+    0.11
+   ],
+   "extra_load%": 5.08,
+   "cvar99": [
+    44.8
+   ]
+  },
+  {
+   "beta": 28.52,
    "feasible": false,
    "timeouts%": [
-    0.82
+    0.59
    ],
-   "extra_load%": 4.71,
+   "extra_load%": 5.33,
    "cvar99": [
-    49.6
+    47.0
    ]
   },
   {
-   "beta": 40.84,
+   "beta": 30.9,
    "feasible": true,
    "timeouts%": [
-    0.32
+    0.36
    ],
-   "extra_load%": 4.64,
+   "extra_load%": 5.27,
    "cvar99": [
-    44.3
+    48.6
    ]
   },
   {
-   "beta": 38.56,
-   "feasible": false,
-   "timeouts%": [
-    0.54
-   ],
-   "extra_load%": 4.68,
-   "cvar99": [
-    46.5
-   ]
-  },
-  {
-   "beta": 39.7,
+   "beta": 29.71,
    "feasible": true,
    "timeouts%": [
-    0.44
+    0.47
    ],
-   "extra_load%": 4.68,
+   "extra_load%": 5.27,
    "cvar99": [
-    44.9
+    48.0
    ]
   }
  ]

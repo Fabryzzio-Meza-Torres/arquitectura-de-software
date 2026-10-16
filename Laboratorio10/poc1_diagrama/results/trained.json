@@ -1,0 +1,116 @@
+{
+ "alpha_ms": 22.2,
+ "beta_star_ms": 39.7,
+ "beta_ms": 59.6,
+ "safety": 1.5,
+ "stress": false,
+ "q": 0.99,
+ "load_budget": 0.05,
+ "timeout_budget": 0.005,
+ "trace_alpha": [
+  {
+   "alpha": 32.5,
+   "feasible": true,
+   "extra_load%": 3.47,
+   "cvar99": 103.5
+  },
+  {
+   "alpha": 18.75,
+   "feasible": false,
+   "extra_load%": 7.41,
+   "cvar99": 105.0
+  },
+  {
+   "alpha": 25.62,
+   "feasible": true,
+   "extra_load%": 3.75,
+   "cvar99": 104.0
+  },
+  {
+   "alpha": 22.19,
+   "feasible": true,
+   "extra_load%": 4.63,
+   "cvar99": 103.6
+  },
+  {
+   "alpha": 20.47,
+   "feasible": false,
+   "extra_load%": 6.06,
+   "cvar99": 107.7
+  },
+  {
+   "alpha": 21.33,
+   "feasible": false,
+   "extra_load%": 5.13,
+   "cvar99": 103.6
+  }
+ ],
+ "trace_beta": [
+  {
+   "beta": 63.59,
+   "feasible": true,
+   "timeouts%": [
+    0.28
+   ],
+   "extra_load%": 4.67,
+   "cvar99": [
+    67.9
+   ]
+  },
+  {
+   "beta": 45.39,
+   "feasible": true,
+   "timeouts%": [
+    0.29
+   ],
+   "extra_load%": 4.72,
+   "cvar99": [
+    61.9
+   ]
+  },
+  {
+   "beta": 36.29,
+   "feasible": false,
+   "timeouts%": [
+    0.82
+   ],
+   "extra_load%": 4.71,
+   "cvar99": [
+    49.6
+   ]
+  },
+  {
+   "beta": 40.84,
+   "feasible": true,
+   "timeouts%": [
+    0.32
+   ],
+   "extra_load%": 4.64,
+   "cvar99": [
+    44.3
+   ]
+  },
+  {
+   "beta": 38.56,
+   "feasible": false,
+   "timeouts%": [
+    0.54
+   ],
+   "extra_load%": 4.68,
+   "cvar99": [
+    46.5
+   ]
+  },
+  {
+   "beta": 39.7,
+   "feasible": true,
+   "timeouts%": [
+    0.44
+   ],
+   "extra_load%": 4.68,
+   "cvar99": [
+    44.9
+   ]
+  }
+ ]
+}

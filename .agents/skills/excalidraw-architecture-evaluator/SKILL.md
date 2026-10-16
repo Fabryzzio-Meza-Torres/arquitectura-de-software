@@ -55,7 +55,7 @@ If parsing, rendering, theory access, or essential visual inspection fails, repo
 
 ## Decide and return
 
-Assess rows **1, 2, 3a, 3b, 4, 5, 6, 7, 8, 9**, using only:
+Assess rows **1, 2, 3a, 3b, 4, 5, 6, 7a, 7b, 7c, 7d, 7e, 7f, 8** from the current rubric: 3a and 3b cover iterations #2 and #1; 7a–7f cover the six reliability cases. Use only:
 
 - **Cumple**: all obligations in the row have clear, consistent artifact evidence.
 - **Parcialmente**: meaningful work is evidenced, but another obligation is missing, inconsistent, ambiguous, or inadequately justified.

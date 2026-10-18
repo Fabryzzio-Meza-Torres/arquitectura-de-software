@@ -1,0 +1,8 @@
+flowchart LR
+    C["Cerrado: permite consultar"]
+    A["Abierto: responde con cache vigente"]
+    H["Semiabierto: permite una prueba"]
+    C -->|"5 intentos fallidos: t=0.32 s"| A
+    A -->|"Espera minima 1 s: prueba t=1.34 s"| H
+    H -->|"Si sigue fallando, abre otro segundo"| A
+    H -->|"Respuesta valida: cierra t=3.43 s"| C

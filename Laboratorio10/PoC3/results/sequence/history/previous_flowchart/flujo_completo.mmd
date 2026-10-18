@@ -1,0 +1,37 @@
+flowchart TB
+    P["PRECARGA - antes de t=0<br/>3 servicios aleatorios: S2, S5, S6<br/>Independientes de los 2 servicios lentos"]
+    A["SOLICITUD - t=0 ms<br/>Consultar 10 servicios en paralelo"]
+    B["MISMA POLITICA POR SERVICIO<br/>2 primarios lentos aleatorios; otros 8 completados a t=14.8 ms"]
+    C{"Circuit breaker permite consultar?"}
+    D["SERVICIO PROBLEMATICO<br/>Un bloque agrupa los 2 primarios lentos<br/>Inicio observado: t=0.8 ms"]
+    H["HEDGING / REPLICA<br/>Si el original sigue pendiente al superar alpha, consultar otra instancia<br/>alpha inicial: 17 ms; replicas iniciadas a t=17.9 ms"]
+    V["RESPUESTA VALIDA POR SERVICIO<br/>S2: t=33.4 ms / S10: t=23.8 ms<br/>Primera valida gana; cancelar pendientes, actualizar cache y cerrar circuito"]
+    F["INTENTO FALLIDO<br/>Error o ninguna respuesta valida antes de beta<br/>beta inicial: 34,1 ms desde el inicio de cada intento<br/>Contar fallo; desde 5 fallos, abrir circuito por 1 s"]
+    Q{"Hay cache fresca con edad hasta 1 s?"}
+    R{"Circuito permite, quedan intentos<br/>y hay presupuesto de reintento?"}
+    J["REINTENTO CON BACKOFF Y JITTER<br/>Espera aleatoria: 0-5 ms, luego 0-10 ms<br/>Hasta 3 intentos; presupuesto ratio 10 %, capacidad 20"]
+    S{"Hay cache con edad hasta 5 s?"}
+    K["RESPUESTA CON CACHE<br/>Dato vigente segun TTL; resultado degradado<br/>Precargar no fuerza latencia cero"]
+    X["SIN DATO VALIDO<br/>Cache ausente o vencida: marcar fallo"]
+    Z["RESPUESTA FINAL DE LA API<br/>Esperar los 10 resultados: fallo si alguno falla;<br/>degradada si usa cache; ok si todos responden<br/>Ejemplo observado: t=33.7 ms, resultado ok"]
+    P --> A
+    A --> B
+    B --> C
+    C -->|"Si: cerrado o prueba semiabierta"| D
+    C -->|"No: abierto o prueba ya en curso"| S
+    D -->|"Valida antes de alpha"| V
+    D -->|"Sin respuesta; sigue pendiente"| H
+    D -->|"Error sin tareas pendientes"| F
+    H -->|"Primera valida antes de beta"| V
+    H -->|"Timeout o error"| F
+    F --> Q
+    Q -->|"Si"| K
+    Q -->|"No"| R
+    R -->|"Si"| J
+    J --> C
+    R -->|"No"| S
+    S -->|"Si"| K
+    S -->|"No"| X
+    V --> Z
+    K --> Z
+    X --> Z

@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155.1049999999998 1646" width="1155.1049999999998" height="1646" style="--bg:#ffffff;--fg:#233247;--line:#73849b;--accent:#187f78;--muted:#334155;--surface:#eef3fb;--border:#71829a;background:var(--bg)"><rect width="100%" height="100%" fill="#ffffff"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Arial', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="seq-arrow" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" />
+  </marker>
+  <marker id="seq-arrow-open" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polyline points="0 0, 8 2.5, 0 5" fill="none" stroke="var(--_arrow)" stroke-width="1" />
+  </marker>
+</defs>
+<g class="block" data-type="alt" data-label="Hay dato fresco">
+  <rect x="30" y="868" width="1095.1049999999998" height="424" rx="0" ry="0" fill="none" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="30" y="868" width="119.95000000000002" height="18" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="36" y="877" font-size="11" font-weight="600" fill="var(--_text-sec)" dy="3.8499999999999996">alt [Hay dato fresco]</text>
+  <line x1="30" y1="984" x2="1125.1049999999998" y2="984" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+  <text x="38" y="998" font-size="11" text-anchor="start" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">[No hay dato fresco]</text>
+</g>
+<g class="block" data-type="alt" data-label="Respuesta válida antes de β (ejemplo medido)">
+  <rect x="30" y="426" width="1095.1049999999998" height="866" rx="0" ry="0" fill="none" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="30" y="426" width="270.43000000000006" height="18" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="36" y="435" font-size="11" font-weight="600" fill="var(--_text-sec)" dy="3.8499999999999996">alt [Respuesta válida antes de β (ejemplo medido)]</text>
+  <line x1="30" y1="702" x2="1125.1049999999998" y2="702" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+  <text x="38" y="716" font-size="11" text-anchor="start" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">[Error o espera agotada (ruta alternativa)]</text>
+</g>
+<g class="block" data-type="alt" data-label="Circuito cerrado o prueba permitida">
+  <rect x="30" y="198" width="1095.1049999999998" height="1398" rx="0" ry="0" fill="none" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="30" y="198" width="222.91000000000003" height="18" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="36" y="207" font-size="11" font-weight="600" fill="var(--_text-sec)" dy="3.8499999999999996">alt [Circuito cerrado o prueba permitida]</text>
+  <line x1="30" y1="1300" x2="1125.1049999999998" y2="1300" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+  <text x="38" y="1314" font-size="11" text-anchor="start" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">[Circuito abierto o prueba ya en curso]</text>
+</g>
+<line class="lifeline" data-actor="Cliente" x1="80" y1="70" x2="80" y2="1616" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="API" x1="220" y1="70" x2="220" y2="1616" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Circuito" x1="361.8055" y1="70" x2="361.8055" y2="1616" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Otros8" x1="530.9739999999999" y1="70" x2="530.9739999999999" y2="1616" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Problema" x1="719.4085" y1="70" x2="719.4085" y2="1616" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Replicas" x1="883.39" y1="70" x2="883.39" y2="1616" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Cache" x1="1040.7024999999999" y1="70" x2="1040.7024999999999" y2="1616" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<g class="message" data-from="API" data-to="Cache" data-label="Antes de t=0: precarga de 3 servicios aleatorios (S2, S5, S6)" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="90" x2="1040.7024999999999" y2="90" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="630.3512499999999" y="80" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Antes de t=0: precarga de 3 servicios aleatorios (S2, S5, S6)</text>
+</g>
+<g class="message" data-from="Cliente" data-to="API" data-label="t=0,0 ms - Solicitar datos de 10 servicios" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="80" y1="130" x2="220" y2="130" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="150" y="120" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=0,0 ms - Solicitar datos de 10 servicios</text>
+</g>
+<g class="message" data-from="API" data-to="Circuito" data-label="t=0.3 ms - Consultar estado del circuito" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="170" x2="361.8055" y2="170" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="290.90274999999997" y="160" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=0.3 ms - Consultar estado del circuito</text>
+</g>
+<g class="message" data-from="Circuito" data-to="API" data-label="t=0.7 ms - Permitir las consultas" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="361.8055" y1="238" x2="220" y2="238" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="290.90274999999997" y="228" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=0.7 ms - Permitir las consultas</text>
+</g>
+<g class="message" data-from="API" data-to="Otros8" data-label="t=0.8 ms - 8 consultas en paralelo" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="278" x2="530.9739999999999" y2="278" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="375.48699999999997" y="268" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=0.8 ms - 8 consultas en paralelo</text>
+</g>
+<g class="message" data-from="API" data-to="Problema" data-label="t=0.8 ms - Consultar los 2 servicios lentos" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="318" x2="719.4085" y2="318" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="469.70425" y="308" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=0.8 ms - Consultar los 2 servicios lentos</text>
+</g>
+<g class="message" data-from="Otros8" data-to="API" data-label="t=14.8 ms - Los otros 8 completaron" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="530.9739999999999" y1="358" x2="220" y2="358" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="375.48699999999997" y="348" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=14.8 ms - Los otros 8 completaron</text>
+</g>
+<g class="message" data-from="API" data-to="Replicas" data-label="t=17.9 ms - Superar α: lanzar 2 consultas alternativas (α inicial 17 ms)" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="398" x2="883.39" y2="398" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="551.6949999999999" y="388" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=17.9 ms - Superar α: lanzar 2 consultas alternativas (α inicial 17 ms)</text>
+</g>
+<g class="message" data-from="Replicas" data-to="API" data-label="t=23.8 ms - Primera respuesta válida de S10" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="883.39" y1="466" x2="220" y2="466" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="551.6949999999999" y="456" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=23.8 ms - Primera respuesta válida de S10</text>
+</g>
+<g class="message" data-from="Replicas" data-to="API" data-label="t=33.4 ms - Primera respuesta válida de S2" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="883.39" y1="506" x2="220" y2="506" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="551.6949999999999" y="496" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=33.4 ms - Primera respuesta válida de S2</text>
+</g>
+<g class="message" data-from="API" data-to="Problema" data-label="t=33.6 ms - Cancelar originales pendientes" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="546" x2="719.4085" y2="546" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="469.70425" y="536" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=33.6 ms - Cancelar originales pendientes</text>
+</g>
+<g class="message" data-from="API" data-to="Circuito" data-label="t=33.6 ms - Registrar éxito y reiniciar fallos" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="586" x2="361.8055" y2="586" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="290.90274999999997" y="576" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=33.6 ms - Registrar éxito y reiniciar fallos</text>
+</g>
+<g class="message" data-from="API" data-to="Cache" data-label="Tras el éxito: actualizar datos y su vigencia" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="626" x2="1040.7024999999999" y2="626" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="630.3512499999999" y="616" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Tras el éxito: actualizar datos y su vigencia</text>
+</g>
+<g class="message" data-from="API" data-to="Cliente" data-label="t=33.7 ms - Respuesta final correcta" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="666" x2="80" y2="666" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="150" y="656" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=33.7 ms - Respuesta final correcta</text>
+</g>
+<g class="message" data-from="API" data-to="API" data-label="β inicial 34,1 ms por intento: cancelar pendientes" data-line-style="solid" data-arrow-head="filled" data-self="true">
+  <polyline points="220,730 250,730 250,750 220,750" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="258" y="740" font-size="11" text-anchor="start" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">β inicial 34,1 ms por intento: cancelar pendientes</text>
+</g>
+<g class="message" data-from="API" data-to="Circuito" data-label="Registrar fallo; al quinto intento fallido, abrir durante 1 s" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="800" x2="361.8055" y2="800" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="290.90274999999997" y="790" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Registrar fallo; al quinto intento fallido, abrir durante 1 s</text>
+</g>
+<g class="message" data-from="API" data-to="Cache" data-label="Buscar dato fresco con edad de hasta 1 s" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="840" x2="1040.7024999999999" y2="840" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="630.3512499999999" y="830" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Buscar dato fresco con edad de hasta 1 s</text>
+</g>
+<g class="message" data-from="Cache" data-to="API" data-label="Devolver dato de caché vigente" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="1040.7024999999999" y1="908" x2="220" y2="908" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="630.3512499999999" y="898" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Devolver dato de caché vigente</text>
+</g>
+<g class="message" data-from="API" data-to="Cliente" data-label="Respuesta con caché (tras completar los 10)" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="948" x2="80" y2="948" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="150" y="938" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Respuesta con caché (tras completar los 10)</text>
+</g>
+<g class="message" data-from="API" data-to="API" data-label="Verificar circuito, presupuesto y máximo de 3 intentos" data-line-style="solid" data-arrow-head="filled" data-self="true">
+  <polyline points="220,1012 250,1012 250,1032 220,1032" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="258" y="1022" font-size="11" text-anchor="start" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Verificar circuito, presupuesto y máximo de 3 intentos</text>
+</g>
+<g class="message" data-from="API" data-to="API" data-label="Si permite reintento: espera aleatoria 0-5 ms y luego 0-10 ms" data-line-style="solid" data-arrow-head="filled" data-self="true">
+  <polyline points="220,1082 250,1082 250,1102 220,1102" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="258" y="1092" font-size="11" text-anchor="start" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Si permite reintento: espera aleatoria 0-5 ms y luego 0-10 ms</text>
+</g>
+<g class="message" data-from="API" data-to="Problema" data-label="Repetir consulta y política de réplica con nuevo α/β" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="1152" x2="719.4085" y2="1152" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="469.70425" y="1142" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Repetir consulta y política de réplica con nuevo α/β</text>
+</g>
+<g class="message" data-from="API" data-to="Cache" data-label="Si no puede reintentar o agota intentos: buscar dato de hasta 5 s" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="1192" x2="1040.7024999999999" y2="1192" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="630.3512499999999" y="1182" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Si no puede reintentar o agota intentos: buscar dato de hasta 5 s</text>
+</g>
+<g class="message" data-from="Cache" data-to="API" data-label="Dato vigente o ausencia de dato válido" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="1040.7024999999999" y1="1232" x2="220" y2="1232" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="630.3512499999999" y="1222" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Dato vigente o ausencia de dato válido</text>
+</g>
+<g class="message" data-from="API" data-to="Cliente" data-label="Respuesta: caché vigente o fallo" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="1272" x2="80" y2="1272" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="150" y="1262" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Respuesta: caché vigente o fallo</text>
+</g>
+<g class="message" data-from="Circuito" data-to="API" data-label="Evitar consultar al servicio problemático" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="361.8055" y1="1336" x2="220" y2="1336" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="290.90274999999997" y="1326" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Evitar consultar al servicio problemático</text>
+</g>
+<g class="message" data-from="API" data-to="Otros8" data-label="Consultar los otros 8 servicios en paralelo" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="1376" x2="530.9739999999999" y2="1376" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="375.48699999999997" y="1366" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Consultar los otros 8 servicios en paralelo</text>
+</g>
+<g class="message" data-from="API" data-to="Cache" data-label="Buscar dato con edad de hasta 5 s" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="1416" x2="1040.7024999999999" y2="1416" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="630.3512499999999" y="1406" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Buscar dato con edad de hasta 5 s</text>
+</g>
+<g class="message" data-from="Cache" data-to="API" data-label="Dato vigente o ausencia de dato válido" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="1040.7024999999999" y1="1456" x2="220" y2="1456" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="630.3512499999999" y="1446" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Dato vigente o ausencia de dato válido</text>
+</g>
+<g class="message" data-from="Otros8" data-to="API" data-label="Los otros 8 completaron" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="530.9739999999999" y1="1496" x2="220" y2="1496" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="375.48699999999997" y="1486" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Los otros 8 completaron</text>
+</g>
+<g class="message" data-from="API" data-to="Cliente" data-label="Respuesta: caché vigente o fallo" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="1536" x2="80" y2="1536" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="150" y="1526" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Respuesta: caché vigente o fallo</text>
+</g>
+<g class="message" data-from="API" data-to="Circuito" data-label="Tras 1 s: permitir una prueba; éxito cierra y fallo reabre" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="220" y1="1576" x2="361.8055" y2="1576" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="290.90274999999997" y="1566" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Tras 1 s: permitir una prueba; éxito cierra y fallo reabre</text>
+</g>
+<g class="actor" data-id="Cliente" data-label="Cliente" data-type="participant">
+  <rect x="40" y="30" width="80" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="80" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Cliente</text>
+</g>
+<g class="actor" data-id="API" data-label="API" data-type="participant">
+  <rect x="180" y="30" width="80" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="220" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">API</text>
+</g>
+<g class="actor" data-id="Circuito" data-label="Circuit breaker" data-type="participant">
+  <rect x="300" y="30" width="123.611" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="361.8055" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Circuit breaker</text>
+</g>
+<g class="actor" data-id="Otros8" data-label="Otros 8 servicios" data-type="participant">
+  <rect x="463.61099999999993" y="30" width="134.726" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="530.9739999999999" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Otros 8 servicios</text>
+</g>
+<g class="actor" data-id="Problema" data-label="Servicio problemático" data-type="participant">
+  <rect x="638.337" y="30" width="162.143" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="719.4085" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Servicio problemático</text>
+</g>
+<g class="actor" data-id="Replicas" data-label="Réplicas" data-type="participant">
+  <rect x="840.48" y="30" width="85.82" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="883.39" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Réplicas</text>
+</g>
+<g class="actor" data-id="Cache" data-label="Caché (TTL 1 s / 5 s)" data-type="participant">
+  <rect x="966.2999999999998" y="30" width="148.805" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1040.7024999999999" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Caché (TTL 1 s / 5 s)</text>
+</g>
+</svg>

@@ -16,9 +16,10 @@ class SequenceTraceTests(unittest.TestCase):
                     {"event": "service_outcome", "svc": 4, "outcome": "ok", "ms": 32.3}],
                 "outcome": "ok"}
         text = mermaid(case)
-        self.assertIn("participant Servicio4", text)
-        self.assertIn("participant Servicio7", text)
-        self.assertIn("t=17.4 ms - Replica de S4", text)
+        self.assertIn("participant Problema as Servicio problematico", text)
+        self.assertNotIn("participant Servicio4", text)
+        self.assertNotIn("participant Servicio7", text)
+        self.assertIn("t=17.4 ms - Superado alpha", text)
         self.assertIn("t=32.5 ms - Respuesta final: ok", text)
 
     def test_failed_outcome_is_not_drawn_as_success(self):

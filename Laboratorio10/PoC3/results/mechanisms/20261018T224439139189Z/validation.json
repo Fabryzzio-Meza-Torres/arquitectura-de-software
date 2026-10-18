@@ -1,0 +1,12 @@
+{
+  "automated_tests_passed": 42,
+  "diagnostic_api_requests": 5460,
+  "sequence_api_requests_including_setup": 9,
+  "official_benchmark_unchanged": true,
+  "executed_source_hashes_verified": true,
+  "paired_primary_latencies_identical": true,
+  "all_sequence_and_chart_png_backgrounds_opaque_white": true,
+  "forced_two_service_delay_and_recovery_verified": true,
+  "breaker_opens_after_five_failed_attempts": true,
+  "diagrams_and_charts_visually_inspected": true
+}

@@ -72,6 +72,28 @@ occasional-tail scenarios remain available via `experiment` and `plot --legacy`;
 `plot --advanced` preserves the historical diagnostics.
 
 `results/sequence/` contains measured baseline/PoC3 sequence diagrams and their
-trace. The two demonstration calls are separate from the 61000-request benchmark.
+trace. The three captures and six setup calls are separate from the 61000-request benchmark.
 PNG/SVG files correspond to the supplied capture; re-render the Mermaid files
-after recording a new trace. Validation: 33 automated tests passed.
+after recording a new trace. Validation: 42 automated tests passed.
+
+## Mechanism diagnostics
+
+`python -B run.py mechanisms` runs a separate 5460-request study (three seeds,
+50 requests/s); `python -B run.py mechanisms-plot` regenerates its charts.
+It disables one mechanism at a time: breaker, hedging, cache, retries, initial
+preload or threshold adaptation. Read latency together with response quality.
+Raw events and white-background charts are under `results/mechanisms/`.
+
+A separate forced scenario keeps two random services and both replicas slow:
+closed -> five failed attempts -> open for 1 s -> one half-open attempt -> close
+on success or reopen on failure. Each service has its own breaker. Open calls
+use valid cache or fail; they do not create fresh data. The measured sequence
+`results/sequence/breaker_open.png` follows six setup requests; all three sequence
+captures plus setup total nine API requests, outside both benchmark studies.
+The single Servicio problematico block visually groups two services.
+
+The complete Spanish sequence diagram is `results/sequence/flujo_completo.png`
+(white background; SVG and editable Mermaid also supplied).
+`python -B full_flow.py` restores its Mermaid source from `secuencia_completa.mmd`
+without sending requests; re-render the source to update PNG/SVG. Clock labels
+are one observed request; alternative branches show policy limits.

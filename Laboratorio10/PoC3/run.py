@@ -66,6 +66,8 @@ def main():
     exp.add_argument("--repetitions", type=positive_int, default=2)
     commands.add_parser("report")
     commands.add_parser("sequence")
+    commands.add_parser("mechanisms")
+    commands.add_parser("mechanisms-plot")
     volume = commands.add_parser("benchmark")
     volume.add_argument("--totals", nargs="+", type=positive_int, default=[1000, 10000, 50000])
     volume.add_argument("--seeds", nargs="+", type=int, default=[101, 202, 303, 404, 505])
@@ -75,6 +77,13 @@ def main():
     plots.add_argument("--advanced", action="store_true", help="historical and diagnostic plots")
     plots.add_argument("--legacy", action="store_true", help="previous occasional-tail presentation")
     args = parser.parse_args()
+    if args.command in ("mechanisms", "mechanisms-plot"):
+        from mechanism_study import run_study
+        from mechanism_plots import create_mechanism_plots
+        if args.command == "mechanisms":
+            print(run_study(HERE))
+        print(create_mechanism_plots(HERE))
+        return 0
     if args.command == "sequence":
         from sequence_trace import create_sequence_sources
         print(create_sequence_sources(HERE))

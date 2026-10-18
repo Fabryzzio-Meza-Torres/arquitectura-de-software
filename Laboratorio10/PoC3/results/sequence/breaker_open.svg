@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1135.1049999999998 440" width="1135.1049999999998" height="440" style="--bg:#ffffff;--fg:#233247;--line:#73849b;--accent:#187f78;--muted:#334155;--surface:#eef3fb;--border:#71829a;background:var(--bg)"><rect width="100%" height="100%" fill="#ffffff"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Arial', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="seq-arrow" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" />
+  </marker>
+  <marker id="seq-arrow-open" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polyline points="0 0, 8 2.5, 0 5" fill="none" stroke="var(--_arrow)" stroke-width="1" />
+  </marker>
+</defs>
+<line class="lifeline" data-actor="Cliente" x1="70" y1="70" x2="70" y2="410" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="API" x1="210" y1="70" x2="210" y2="410" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Circuito" x1="351.8055" y1="70" x2="351.8055" y2="410" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Otros8" x1="520.9739999999999" y1="70" x2="520.9739999999999" y2="410" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Problema" x1="709.4085" y1="70" x2="709.4085" y2="410" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Replicas" x1="873.39" y1="70" x2="873.39" y2="410" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Cache" x1="1030.7024999999999" y1="70" x2="1030.7024999999999" y2="410" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<rect class="activation" data-actor="API" x="205" y="90" width="10" height="280" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<g class="message" data-from="Cliente" data-to="API" data-label="t=0.0 ms - Solicitar datos de 10 servicios" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="70" y1="90" x2="210" y2="90" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="140" y="80" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=0.0 ms - Solicitar datos de 10 servicios</text>
+</g>
+<g class="message" data-from="API" data-to="Circuito" data-label="t=0.8 ms - Consultar circuit breaker" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="210" y1="130" x2="351.8055" y2="130" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="280.90274999999997" y="120" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=0.8 ms - Consultar circuit breaker</text>
+</g>
+<g class="message" data-from="API" data-to="Cache" data-label="t=0.8 ms - Consultar datos dentro del TTL" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="210" y1="170" x2="1030.7024999999999" y2="170" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="620.3512499999999" y="160" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=0.8 ms - Consultar datos dentro del TTL</text>
+</g>
+<g class="message" data-from="Circuito" data-to="API" data-label="t=1.1 ms - Abierto: evita 2 consultas" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="351.8055" y1="210" x2="210" y2="210" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="280.90274999999997" y="200" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=1.1 ms - Abierto: evita 2 consultas</text>
+</g>
+<g class="message" data-from="Cache" data-to="API" data-label="t=1.1 ms - 2 respuestas con cache vigente" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="1030.7024999999999" y1="250" x2="210" y2="250" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="620.3512499999999" y="240" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=1.1 ms - 2 respuestas con cache vigente</text>
+</g>
+<g class="message" data-from="API" data-to="Otros8" data-label="t=1.4 ms - 8 consultas en paralelo" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="210" y1="290" x2="520.9739999999999" y2="290" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <text x="365.48699999999997" y="280" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=1.4 ms - 8 consultas en paralelo</text>
+</g>
+<g class="message" data-from="Otros8" data-to="API" data-label="t=17.4 ms - Otros 8 completados" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="520.9739999999999" y1="330" x2="210" y2="330" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="365.48699999999997" y="320" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=17.4 ms - Otros 8 completados</text>
+</g>
+<g class="message" data-from="API" data-to="Cliente" data-label="t=17.5 ms - Respuesta final: degraded" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="210" y1="370" x2="70" y2="370" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <text x="140" y="360" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">t=17.5 ms - Respuesta final: degraded</text>
+</g>
+<g class="actor" data-id="Cliente" data-label="Cliente" data-type="participant">
+  <rect x="30" y="30" width="80" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="70" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Cliente</text>
+</g>
+<g class="actor" data-id="API" data-label="API" data-type="participant">
+  <rect x="170" y="30" width="80" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="210" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">API</text>
+</g>
+<g class="actor" data-id="Circuito" data-label="Circuit breaker" data-type="participant">
+  <rect x="290" y="30" width="123.611" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="351.8055" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Circuit breaker</text>
+</g>
+<g class="actor" data-id="Otros8" data-label="Otros 8 servicios" data-type="participant">
+  <rect x="453.61099999999993" y="30" width="134.726" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="520.9739999999999" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Otros 8 servicios</text>
+</g>
+<g class="actor" data-id="Problema" data-label="Servicio problematico" data-type="participant">
+  <rect x="628.337" y="30" width="162.143" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="709.4085" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Servicio problematico</text>
+</g>
+<g class="actor" data-id="Replicas" data-label="Replicas" data-type="participant">
+  <rect x="830.48" y="30" width="85.82" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="873.39" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Replicas</text>
+</g>
+<g class="actor" data-id="Cache" data-label="Cache (TTL 1 s / 5 s)" data-type="participant">
+  <rect x="956.2999999999998" y="30" width="148.805" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1030.7024999999999" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Cache (TTL 1 s / 5 s)</text>
+</g>
+</svg>

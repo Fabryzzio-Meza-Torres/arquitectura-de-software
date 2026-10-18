@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant Cliente
+    participant API
+    participant Otros8
+    participant Servicio2
+    participant Servicio10
+    participant Replicas
+    Cliente->>+API: t=0.0 ms - Solicitar datos de 10 servicios
+    API->>Otros8: t=0.5 ms - 8 consultas en paralelo
+    API->>Servicio2: t=0.5 ms - Consulta original S2 lenta
+    API->>Servicio10: t=0.7 ms - Consulta original S10 lenta
+    Otros8-->>API: t=14.3 ms - Finaliza el grupo de otros 8
+    API->>Replicas: t=17.4 ms - Replica de S2 tras alpha
+    API->>Replicas: t=17.5 ms - Replica de S10 tras alpha
+    Replicas-->>API: t=24.3 ms - Respuesta S10, intento 1
+    API-xServicio10: t=24.3 ms - Cancelar original S10
+    Replicas-->>API: t=32.4 ms - Respuesta S2, intento 1
+    API-xServicio2: t=32.4 ms - Cancelar original S2
+    API-->>-Cliente: t=32.5 ms - Respuesta final: ok

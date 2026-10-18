@@ -1,0 +1,19 @@
+{
+  "requests_executed": 61000,
+  "demo_requests_separate": 2,
+  "automated_tests_passed": 33,
+  "random_preload_count": 3,
+  "all_ten_cacheable": true,
+  "independent_selection_verified": true,
+  "clean_pairs_by_total": {
+    "1000": 5,
+    "10000": 2,
+    "50000": 0
+  },
+  "primary_fingerprints_match": true,
+  "executed_sources_verified": true,
+  "previous_pocs_and_historical_results_unchanged": true,
+  "plot_text_encoding_corrected_after_run": true,
+  "measurement_code_matches_executed_snapshot": true,
+  "charts_and_sequence_visually_inspected": true
+}

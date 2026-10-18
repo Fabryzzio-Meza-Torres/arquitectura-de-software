@@ -26,9 +26,9 @@ def summarize(records):
             for label in ("all", "ok", "degraded", "failed")}
 
 
-def fingerprint(cfg, n):
+def fingerprint(cfg, n, backend_factory=sc.Backend):
     """Both variants start warm and use identical primary attempt-1 samples."""
-    backend = sc.Backend(cfg)
+    backend = backend_factory(cfg)
     backend.warm_up()
     digest = hashlib.sha256()
     for req in range(n):
@@ -65,17 +65,18 @@ async def load(api, n, rps):
     return sorted(records, key=lambda r: r["request"]), lag, time.perf_counter() - start
 
 
-def run_trial(kind, cfg, n, rps, alpha, beta, lag_limit):
-    backend = sc.Backend(cfg)
+def run_trial(kind, cfg, n, rps, alpha, beta, lag_limit, backend_factory=sc.Backend):
+    backend = backend_factory(cfg)
     backend.warm_up()  # Equal cold-start condition; no warm-up mechanism redesign.
     api = sc.BaselineAPI(backend) if kind == "baseline" else ImprovedAPI(backend, alpha, beta)
+    initial_cache_services = list(getattr(api, "initial_cache_services", ()))
     records, lag, wall = asyncio.run(load(api, n, rps))
     maximum = max(lag, default=0.0)
     return {
         "variant": kind, "config": asdict(cfg), "n": n, "rps": rps,
         "alpha_ms": None if kind == "baseline" else alpha,
         "beta_ms": None if kind == "baseline" else beta,
-        "primary_samples_sha256": fingerprint(cfg, n),
+        "primary_samples_sha256": fingerprint(cfg, n, backend_factory),
         "measurement_valid": maximum <= lag_limit,
         "invalid_reason": None if maximum <= lag_limit else "event_loop_lag_exceeded",
         "lag_limit_ms": lag_limit, "loop_lag_max_ms": maximum,
@@ -86,6 +87,8 @@ def run_trial(kind, cfg, n, rps, alpha, beta, lag_limit):
         "timeouts": getattr(api, "timeouts", 0),
         "backend_errors": getattr(api, "backend_errors", 0),
         "hedges": getattr(api, "hedges", 0), "retries": getattr(api, "retries", 0),
+        "initial_cache_services": initial_cache_services,
+        "cache_preload_policy": "three_random_services_per_seed" if kind != "baseline" else "none",
         "cache_age_max_s": max(getattr(api, "cache_ages", []), default=None),
         "records": records,
     }

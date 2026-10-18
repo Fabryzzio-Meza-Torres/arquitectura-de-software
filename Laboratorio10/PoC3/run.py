@@ -65,11 +65,35 @@ def main():
     exp.add_argument("--scenario", choices=["all", *sc.SCENARIO_TITLES], default="all")
     exp.add_argument("--repetitions", type=positive_int, default=2)
     commands.add_parser("report")
-    commands.add_parser("plot")
+    commands.add_parser("sequence")
+    volume = commands.add_parser("benchmark")
+    volume.add_argument("--totals", nargs="+", type=positive_int, default=[1000, 10000, 50000])
+    volume.add_argument("--seeds", nargs="+", type=int, default=[101, 202, 303, 404, 505])
+    volume.add_argument("--rps", type=positive, default=250)
+    volume.add_argument("--max-lag-ms", type=positive, default=20)
+    plots = commands.add_parser("plot")
+    plots.add_argument("--advanced", action="store_true", help="historical and diagnostic plots")
+    plots.add_argument("--legacy", action="store_true", help="previous occasional-tail presentation")
     args = parser.parse_args()
+    if args.command == "sequence":
+        from sequence_trace import create_sequence_sources
+        print(create_sequence_sources(HERE))
+        return 0
+    if args.command == "benchmark":
+        from volume_benchmark import run_benchmark, create_volume_plots
+        print(run_benchmark(HERE, args.totals, args.seeds, args.rps, args.max_lag_ms))
+        print(create_volume_plots(HERE))
+        return 0
     if args.command == "plot":
-        from plot_results import create_plots
-        print(create_plots(HERE))
+        if args.advanced:
+            from plot_results import create_plots
+            print(create_plots(HERE))
+        elif args.legacy or not (HERE / "results/volumes/latest.json").exists():
+            from simple_plots import create_simple_plots
+            print(create_simple_plots(HERE))
+        else:
+            from volume_benchmark import create_volume_plots
+            print(create_volume_plots(HERE))
         return 0
     results = HERE / "results"
     results.mkdir(exist_ok=True)

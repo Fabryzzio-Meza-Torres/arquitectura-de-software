@@ -1,0 +1,22 @@
+{
+  "benchmark_requests": 61000,
+  "demonstration_requests_separate": 2,
+  "totals": [
+    1000,
+    10000,
+    50000
+  ],
+  "independent_seeds": 5,
+  "unit_tests_passed": 27,
+  "original_pocs_and_historical_measurements_unchanged": true,
+  "two_random_slow_primary_services_per_request": true,
+  "paired_input_fingerprints_match": true,
+  "lag_limit_unchanged_ms": 20,
+  "clean_pairs_by_total": {
+    "1000": 5,
+    "10000": 3,
+    "50000": 0
+  },
+  "execution_source_snapshots_verified": true,
+  "visual_inspection": "3 volume charts and 2 sequence diagrams"
+}

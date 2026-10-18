@@ -1,0 +1,495 @@
+{
+  "purpose": "single-request teaching trace; not a percentile benchmark",
+  "additional_demo_requests": 2,
+  "included_in_volume_totals": false,
+  "vertical_spacing": "message order, not proportional elapsed time",
+  "grouping": "other eight services and repeated attempts are condensed; full events retained",
+  "cases": [
+    {
+      "variant": "baseline",
+      "seed": 606,
+      "request": 0,
+      "outcome": "ok",
+      "initial_cache_services": [],
+      "total_ms": 1404.0985999999975,
+      "slow_services": [
+        2,
+        10
+      ],
+      "alpha_ms": null,
+      "beta_ms": null,
+      "backend_calls": 10,
+      "events": [
+        {
+          "event": "send",
+          "ms": 0.16139999934239313,
+          "svc": 1,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 0.21189999824855477,
+          "svc": 2,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 0.2468999991833698,
+          "svc": 3,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 0.2721999990171753,
+          "svc": 4,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 0.29399999766610563,
+          "svc": 5,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 0.3139000000373926,
+          "svc": 6,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 0.33210000037797727,
+          "svc": 7,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 0.3493999975034967,
+          "svc": 8,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 0.3661999980977271,
+          "svc": 9,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 0.38359999962267466,
+          "svc": 10,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 6.575899999006651,
+          "svc": 7,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 7.07709999915096,
+          "svc": 9,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 8.14170000012382,
+          "svc": 8,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 8.148400000209222,
+          "svc": 3,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 11.149499998282408,
+          "svc": 6,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 11.157900000398513,
+          "svc": 5,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 11.161700000229757,
+          "svc": 4,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 14.67439999760245,
+          "svc": 1,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 1177.6018999989901,
+          "svc": 2,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 1403.9922999982082,
+          "svc": 10,
+          "replica": 0,
+          "attempt": 1
+        }
+      ]
+    },
+    {
+      "variant": "poc3",
+      "seed": 606,
+      "request": 0,
+      "outcome": "ok",
+      "initial_cache_services": [
+        2,
+        5,
+        6
+      ],
+      "total_ms": 35.76439999960712,
+      "slow_services": [
+        2,
+        10
+      ],
+      "alpha_ms": 17,
+      "beta_ms": 34.1,
+      "backend_calls": 12,
+      "events": [
+        {
+          "event": "thresholds",
+          "ms": 0.5266000007395633,
+          "svc": 1,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "thresholds",
+          "ms": 0.7862000020395499,
+          "svc": 2,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "thresholds",
+          "ms": 0.894600001629442,
+          "svc": 3,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "thresholds",
+          "ms": 1.01379999978235,
+          "svc": 4,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "thresholds",
+          "ms": 1.0885000010603108,
+          "svc": 5,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "thresholds",
+          "ms": 1.1680000025080517,
+          "svc": 6,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "thresholds",
+          "ms": 1.239600002008956,
+          "svc": 7,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "thresholds",
+          "ms": 1.2989999995625112,
+          "svc": 8,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "thresholds",
+          "ms": 1.3551000010920689,
+          "svc": 9,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "thresholds",
+          "ms": 1.4119000006758142,
+          "svc": 10,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "send",
+          "ms": 1.4931000005162787,
+          "svc": 1,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 1.660400001128437,
+          "svc": 2,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 1.761100000294391,
+          "svc": 3,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 1.84830000216607,
+          "svc": 4,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 1.9267999996372964,
+          "svc": 5,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 2.0002000019303523,
+          "svc": 6,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 2.082800001517171,
+          "svc": 7,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 2.159400002710754,
+          "svc": 8,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 2.2308000006887596,
+          "svc": 9,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 2.3084000022208784,
+          "svc": 10,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 7.977799999935087,
+          "svc": 7,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "service_outcome",
+          "ms": 8.164300001226366,
+          "svc": 7,
+          "outcome": "ok"
+        },
+        {
+          "event": "return",
+          "ms": 8.968500002083601,
+          "svc": 9,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "service_outcome",
+          "ms": 9.126900000410387,
+          "svc": 9,
+          "outcome": "ok"
+        },
+        {
+          "event": "return",
+          "ms": 10.953500001050998,
+          "svc": 3,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 10.980999999446794,
+          "svc": 8,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "service_outcome",
+          "ms": 11.114299999462673,
+          "svc": 3,
+          "outcome": "ok"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 11.18010000209324,
+          "svc": 8,
+          "outcome": "ok"
+        },
+        {
+          "event": "return",
+          "ms": 11.241399999562418,
+          "svc": 6,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "service_outcome",
+          "ms": 11.324900002364302,
+          "svc": 6,
+          "outcome": "ok"
+        },
+        {
+          "event": "return",
+          "ms": 13.550100000429666,
+          "svc": 5,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 13.581800001702504,
+          "svc": 4,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "service_outcome",
+          "ms": 13.734700001805322,
+          "svc": 5,
+          "outcome": "ok"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 13.80070000232081,
+          "svc": 4,
+          "outcome": "ok"
+        },
+        {
+          "event": "return",
+          "ms": 15.819000000192318,
+          "svc": 1,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "service_outcome",
+          "ms": 15.971600001648767,
+          "svc": 1,
+          "outcome": "ok"
+        },
+        {
+          "event": "send",
+          "ms": 18.31569999922067,
+          "svc": 2,
+          "replica": 1,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 18.609700000524754,
+          "svc": 10,
+          "replica": 1,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 24.451900000713067,
+          "svc": 10,
+          "replica": 1,
+          "attempt": 1
+        },
+        {
+          "event": "cancel",
+          "ms": 35.17909999936819,
+          "svc": 10,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "service_outcome",
+          "ms": 35.42510000261245,
+          "svc": 10,
+          "outcome": "ok"
+        },
+        {
+          "event": "return",
+          "ms": 35.47249999974156,
+          "svc": 2,
+          "replica": 1,
+          "attempt": 1
+        },
+        {
+          "event": "cancel",
+          "ms": 35.63209999992978,
+          "svc": 2,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "service_outcome",
+          "ms": 35.70200000103796,
+          "svc": 2,
+          "outcome": "ok"
+        }
+      ]
+    }
+  ]
+}

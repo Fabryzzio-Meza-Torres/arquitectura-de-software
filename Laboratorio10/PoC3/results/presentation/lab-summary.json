@@ -1,0 +1,28 @@
+{
+  "scenario": "tails",
+  "n_per_run": 400,
+  "rps": 100.0,
+  "runs_executed_per_variant": 4,
+  "runs_used_per_variant": 2,
+  "variants": {
+    "baseline": {
+      "p50_ms": 35.237,
+      "p95_ms": 996.055,
+      "p99_ms": 1094.031,
+      "requests_executed": 1600,
+      "latency_samples_used": 800,
+      "failed_in_used_samples": 0,
+      "degraded_in_used_samples": 0
+    },
+    "poc3": {
+      "p50_ms": 32.338,
+      "p95_ms": 56.018,
+      "p99_ms": 63.486,
+      "requests_executed": 1600,
+      "latency_samples_used": 800,
+      "failed_in_used_samples": 0,
+      "degraded_in_used_samples": 1
+    }
+  },
+  "source_sha256": "c436bf03b689bfc3ab32704fbeb8544fce6a231f26d4b581129e1154a121df1c"
+}

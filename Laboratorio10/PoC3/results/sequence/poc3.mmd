@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant Cliente
+    participant API as API (cache inicial S2, S5, S6)
+    participant Otros8
+    participant Servicio2
+    participant Servicio10
+    participant Replicas
+    Cliente->>+API: t=0.0 ms - Solicitar datos de 10 servicios
+    API->>Otros8: t=1.5 ms - 8 consultas en paralelo
+    API->>Servicio2: t=1.7 ms - Consulta original S2 lenta
+    API->>Servicio10: t=2.3 ms - Consulta original S10 lenta
+    Otros8-->>API: t=16.0 ms - Finaliza el grupo de otros 8
+    API->>Replicas: t=18.3 ms - Replica de S2 tras alpha
+    API->>Replicas: t=18.6 ms - Replica de S10 tras alpha
+    Replicas-->>API: t=24.5 ms - Respuesta S10, intento 1
+    API-xServicio10: t=35.2 ms - Cancelar original S10
+    Replicas-->>API: t=35.5 ms - Respuesta S2, intento 1
+    API-xServicio2: t=35.6 ms - Cancelar original S2
+    API-->>-Cliente: t=35.8 ms - Respuesta final: ok

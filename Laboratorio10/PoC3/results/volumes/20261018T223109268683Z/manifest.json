@@ -1,0 +1,296 @@
+{
+  "schema": 2,
+  "run_id": "20261018T223109268683Z",
+  "status": "complete",
+  "totals": [
+    1000,
+    10000,
+    50000
+  ],
+  "seeds": [
+    101,
+    202,
+    303,
+    404,
+    505
+  ],
+  "rps": 250,
+  "lag_limit_ms": 20,
+  "model": "exactly_two_random_slow_primaries_per_request",
+  "cache_preload": {
+    "count": 3,
+    "selection": "random_once_per_seed_independent_of_slow_selection",
+    "cacheable_services": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "usage": "fallback_after_unsuccessful_attempt",
+    "fresh_ttl_s": 1.0,
+    "max_ttl_s": 5.0,
+    "baseline_cache": false
+  },
+  "replica_assumption": "independent latency; 1% chance of a slow replica call",
+  "primary_slow_ms": [
+    1000,
+    1500
+  ],
+  "healthy_ms": "lognormal median 10, capped at 50",
+  "alpha_ms": 17.0,
+  "beta_ms": 34.1,
+  "parameter_source": "inherited_initial_values_with_existing_moving_median_adaptation",
+  "environment": {
+    "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "levels": [
+    {
+      "total": 1000,
+      "file": "level_1000.json",
+      "summary": {
+        "pairs_executed": 5,
+        "pairs_clean": 5,
+        "variants": {
+          "baseline": {
+            "executed": 500,
+            "used_for_clean_latency": 500,
+            "observed_latency": {
+              "count": 500,
+              "p50_ms": 1362.685,
+              "p95_ms": 1491.55,
+              "p99_ms": 1501.775,
+              "cvar99_ms": 1502.506
+            },
+            "clean_latency": {
+              "count": 500,
+              "p50_ms": 1362.685,
+              "p95_ms": 1491.55,
+              "p99_ms": 1501.775,
+              "cvar99_ms": 1502.506
+            },
+            "outcomes": {
+              "ok": 500,
+              "degraded": 0,
+              "failed": 0
+            },
+            "backend_calls": 5000,
+            "max_loop_lag_ms": 5.810800002218457,
+            "p99_range_by_seed_ms": [
+              1493.631,
+              1502.494
+            ],
+            "clean_p99_by_seed_ms": [
+              1493.631,
+              1497.254,
+              1502.013,
+              1502.494,
+              1498.742
+            ]
+          },
+          "poc3": {
+            "executed": 500,
+            "used_for_clean_latency": 500,
+            "observed_latency": {
+              "count": 500,
+              "p50_ms": 51.115,
+              "p95_ms": 112.623,
+              "p99_ms": 123.127,
+              "cvar99_ms": 125.159
+            },
+            "clean_latency": {
+              "count": 500,
+              "p50_ms": 51.115,
+              "p95_ms": 112.623,
+              "p99_ms": 123.127,
+              "cvar99_ms": 125.159
+            },
+            "outcomes": {
+              "ok": 345,
+              "degraded": 155,
+              "failed": 0
+            },
+            "backend_calls": 6263,
+            "max_loop_lag_ms": 17.229500002140412,
+            "p99_range_by_seed_ms": [
+              43.884,
+              125.742
+            ],
+            "clean_p99_by_seed_ms": [
+              84.26,
+              110.819,
+              60.372,
+              125.742,
+              43.884
+            ]
+          }
+        }
+      }
+    },
+    {
+      "total": 10000,
+      "file": "level_10000.json",
+      "summary": {
+        "pairs_executed": 5,
+        "pairs_clean": 2,
+        "variants": {
+          "baseline": {
+            "executed": 5000,
+            "used_for_clean_latency": 2000,
+            "observed_latency": {
+              "count": 5000,
+              "p50_ms": 1358.714,
+              "p95_ms": 1490.508,
+              "p99_ms": 1501.237,
+              "cvar99_ms": 1503.584
+            },
+            "clean_latency": {
+              "count": 2000,
+              "p50_ms": 1356.041,
+              "p95_ms": 1489.102,
+              "p99_ms": 1500.319,
+              "cvar99_ms": 1502.12
+            },
+            "outcomes": {
+              "ok": 5000,
+              "degraded": 0,
+              "failed": 0
+            },
+            "backend_calls": 50000,
+            "max_loop_lag_ms": 38.515400000615045,
+            "p99_range_by_seed_ms": [
+              1500.24,
+              1501.872
+            ],
+            "clean_p99_by_seed_ms": [
+              1500.24,
+              1500.506
+            ]
+          },
+          "poc3": {
+            "executed": 5000,
+            "used_for_clean_latency": 2000,
+            "observed_latency": {
+              "count": 5000,
+              "p50_ms": 47.573,
+              "p95_ms": 90.623,
+              "p99_ms": 115.329,
+              "cvar99_ms": 127.706
+            },
+            "clean_latency": {
+              "count": 2000,
+              "p50_ms": 47.347,
+              "p95_ms": 79.37,
+              "p99_ms": 92.914,
+              "cvar99_ms": 95.134
+            },
+            "outcomes": {
+              "ok": 4566,
+              "degraded": 434,
+              "failed": 0
+            },
+            "backend_calls": 60449,
+            "max_loop_lag_ms": 54.15359999926295,
+            "p99_range_by_seed_ms": [
+              91.728,
+              136.384
+            ],
+            "clean_p99_by_seed_ms": [
+              93.364,
+              91.728
+            ]
+          }
+        }
+      }
+    },
+    {
+      "total": 50000,
+      "file": "level_50000.json",
+      "summary": {
+        "pairs_executed": 5,
+        "pairs_clean": 0,
+        "variants": {
+          "baseline": {
+            "executed": 25000,
+            "used_for_clean_latency": 0,
+            "observed_latency": {
+              "count": 25000,
+              "p50_ms": 1360.46,
+              "p95_ms": 1495.815,
+              "p99_ms": 1509.264,
+              "cvar99_ms": 1519.143
+            },
+            "clean_latency": {
+              "count": 0,
+              "p50_ms": null,
+              "p95_ms": null,
+              "p99_ms": null,
+              "cvar99_ms": null
+            },
+            "outcomes": {
+              "ok": 25000,
+              "degraded": 0,
+              "failed": 0
+            },
+            "backend_calls": 250000,
+            "max_loop_lag_ms": 70.57209999868064,
+            "p99_range_by_seed_ms": [
+              1500.289,
+              1518.219
+            ],
+            "clean_p99_by_seed_ms": []
+          },
+          "poc3": {
+            "executed": 25000,
+            "used_for_clean_latency": 0,
+            "observed_latency": {
+              "count": 25000,
+              "p50_ms": 53.73,
+              "p95_ms": 99.595,
+              "p99_ms": 122.127,
+              "cvar99_ms": 137.563
+            },
+            "clean_latency": {
+              "count": 0,
+              "p50_ms": null,
+              "p95_ms": null,
+              "p99_ms": null,
+              "cvar99_ms": null
+            },
+            "outcomes": {
+              "ok": 23306,
+              "degraded": 1694,
+              "failed": 0
+            },
+            "backend_calls": 301382,
+            "max_loop_lag_ms": 69.08500000019558,
+            "p99_range_by_seed_ms": [
+              94.527,
+              132.883
+            ],
+            "clean_p99_by_seed_ms": []
+          }
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "volume_benchmark.py": "6b5fbb3e57136d2ea40560774b89e7c7f5b5845a5b1d9d1fb99361f06dd314cc",
+    "experiment.py": "8a299b09060c2ce34f863c956be7711cb69a90c1bfe3fc82bb9b7172c1c8c865",
+    "improved_api.py": "a7b3fb392d1d2c3034993d7534d9c139131509b6284657bcf812eb5eb8f238bc",
+    "simcore.py": "38fcf9e68ba1169eca3d7539c905b7d818429835207a653a95056564c0dd5ef9"
+  },
+  "timer_resolution": {
+    "requested_ms": 1,
+    "active": true,
+    "begin_return_code": 0,
+    "end_return_code": 0
+  },
+  "requests_executed": 61000
+}

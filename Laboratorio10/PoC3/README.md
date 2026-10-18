@@ -1,51 +1,77 @@
-# PoC3 — high-priority audit fixes
+# PoC3 — tail-latency benchmark
 
-Standalone copy based on PoC 2. Previous PoCs and diagrams are unchanged.
-Only the five high-priority findings are addressed:
-
-1. Backend exceptions are retrieved and treated as failures. A hedge wins only
-   with a successful response; pending tasks are cleaned up, including cancellation.
-2. Baseline and PoC3 use the same primary samples (attempt 1), seed and warm
-   condition. Each pair includes a sample fingerprint for verification.
-3. Calibration evaluates three candidate pairs on separate seeds, under load,
-   timeout and failure constraints. It selects the lowest measured fresh-success
-   CVaR99 among feasible candidates; it does not claim a global optimum or assume
-   monotonicity. Every candidate is retained. No feasible clean candidate means
-   no selection. This replaces the unproven binary-search optimization claim.
-4. Experiments retain every repetition, alternate variant order and mark excessive
-   event-loop lag. Only pairs with both measurements valid enter summaries.
-   Seed-level mean/range/SD describe variability; they are not confidence intervals.
-   Jitter uses request-specific seeded randomness; OS scheduling still varies.
-5. p50/p95/p99/CVaR99 and counts are reported separately for fresh successes,
-   degraded responses and failures, alongside totals. Empty groups show no percentile.
-
-Alpha/beta remain adaptive per service, using PoC 2's moving median. Cache, retry
-budget, simulated capacity and diagram notation are unchanged. Initial values
-17/34.1 ms come from PoC 2 and are explicitly marked as not recalibrated for PoC3.
-
-## Run (PowerShell, from this folder)
+## Run
 
 ```powershell
 python -B -m unittest discover -s tests -v
-python -B run.py experiment --scenario tails
-python -B run.py report
+python -B run.py benchmark
 python -B run.py plot
-# Optional: recalibrate first; evaluation seeds must remain separate.
-python -B run.py calibrate --seeds 7 11
+# Separate two-request teaching capture (JSON and editable Mermaid):
+python -B run.py sequence
 ```
 
-Simulation/tests use the standard library; plotting additionally needs matplotlib.
-`plot` reads saved results only and creates PNG/SVG charts plus `results/comparison.md`.
-It compares PoC1/2 historically, marks noisy runs and separates valid paired evidence.
-Experiments default to 4000 requests at 250 rps,
-seeds 42/43/44 and two repetitions per seed. Use `--scenario all` for five scenarios.
-Results and the generated report stay in `results/`; a new experiment replaces
-that file. The default lag limit is 20 ms: noisy trials remain visible and provide
-no clean performance conclusion. Calibration exits with code 2 if no candidate
-qualifies, preserves the full trace and blocks experiments until recalibrated.
+Simulation/tests use Python's standard library; plots additionally use matplotlib.
 
-Validation: 19 tests passed; saved runs cover five scenarios, two seeds and two repeats.
-A longer outage verified failed-response reporting after cache expiry. The short
-calibration validation rejected noisy candidates; `calibration-validation.json`
-is evidence only, not the active calibration. No performance win is claimed from
-invalid pairs.
+## Exactly two slow services
+
+Each request randomly selects **two of the ten primary services**. These take
+1000–1500 ms; the other eight typically take 10 ms, capped at 50 ms. Selection is
+reproducible by seed and request. All ten services can be selected.
+
+A replica is another instance of the same service. Replicas have independent
+latencies and retain a 1% slow-call probability, as an explicit hedging assumption.
+Shared failures affecting every replica are a different scenario.
+
+## Random cache preload (warm-up)
+
+At the start of each repetition, PoC3 preloads simulated cached data for **three
+random distinct services out of ten**. A separate seeded random stream makes this
+selection reproducible and independent of the two slow services per request;
+overlap is allowed but never forced. Baseline has no cache.
+
+All ten services can update cached data after success. Cache is used as fallback
+after an unsuccessful attempt, with the existing 1 s fresh/5 s maximum TTLs;
+expired data cannot prevent failure. Preload does not force response latency to
+zero, train alpha/beta, or generate extra requests. Backend cold-start penalties
+remain excluded; cache preload is a separate simulated state.
+
+## Request counts
+
+Totals include baseline, PoC3 and all five independent repetitions:
+
+| Total API requests | Baseline | PoC3 | Per variant per repetition |
+|---:|---:|---:|---:|
+| 1000 | 500 | 500 | 100 |
+| 10000 | 5000 | 5000 | 1000 |
+| 50000 | 25000 | 25000 | 5000 |
+
+The complete command executes **61000 API requests**, at a fixed 250 requests/s.
+Calls to the ten services, replicas and retries are counted separately. Increasing
+request count tests longer observation, not increased arrival-rate capacity.
+
+Alpha/beta start at 17/34.1 ms and retain PoC2's moving-median adaptation. They are
+not claimed optimal for this new workload. Each repetition starts a new controller,
+so different durations also expose its learning phase.
+
+## Results
+
+Timestamped runs are preserved under `results/volumes/`; `latest.json` selects the
+last completed run. Three simple PNG/SVG charts show p50/p95/p99, one per total,
+with request counts and response quality. The short `presentation/summary.md`
+explains them. Original PoC1/2 and older experiment results remain unchanged.
+
+All repetitions and raw outcomes are retained. The 20 ms event-loop lag limit is
+unchanged; only complete clean comparisons enter clean latency estimates. Noisy
+observations are explicitly identified. Failure rates include all executed calls.
+A larger request count alone does not prove statistical significance.
+
+The five high-priority fixes remain: correct exception/cancellation handling,
+shared primary samples, explicit calibration selection, transparent repeated
+measurements and separate success/degraded/failure metrics. The previous
+occasional-tail scenarios remain available via `experiment` and `plot --legacy`;
+`plot --advanced` preserves the historical diagnostics.
+
+`results/sequence/` contains measured baseline/PoC3 sequence diagrams and their
+trace. The two demonstration calls are separate from the 61000-request benchmark.
+PNG/SVG files correspond to the supplied capture; re-render the Mermaid files
+after recording a new trace. Validation: 33 automated tests passed.

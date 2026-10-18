@@ -1,7 +1,7 @@
 import asyncio, random, statistics, time
 from collections import deque
 
-from simcore import N_SERVICES, PROBLEM_SERVICES, BETA_CAP_MS
+from simcore import N_SERVICES, BETA_CAP_MS
 
 
 class HalfOpenBreaker:
@@ -75,7 +75,10 @@ class ImprovedAPI:
         self.notifications = []
         backend.warm_up()
         now = time.monotonic()
-        for s in PROBLEM_SERVICES:
+        # A separate RNG stream keeps preload independent of slow-service choices.
+        self.initial_cache_services = tuple(sorted(random.Random(
+            f"{backend.cfg.seed}|cache-preload").sample(range(1, N_SERVICES + 1), 3)))
+        for s in self.initial_cache_services:
             self.cache[s] = now
 
     def _observe(self, svc, seconds):
@@ -145,7 +148,7 @@ class ImprovedAPI:
             await asyncio.gather(*tasks, return_exceptions=True)
 
     def _cacheable(self, svc):
-        return svc in PROBLEM_SERVICES
+        return 1 <= svc <= N_SERVICES
 
     def _age(self, svc):
         ts = self.cache.get(svc)

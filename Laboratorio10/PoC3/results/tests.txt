@@ -1,0 +1,20 @@
+test_baseline_and_poc_use_identical_first_primary_samples (test_poc3.APIErrors.test_baseline_and_poc_use_identical_first_primary_samples) ... ok
+test_baseline_exception_is_failed (test_poc3.APIErrors.test_baseline_exception_is_failed) ... ok
+test_exception_never_returns_ok_and_reaches_breaker (test_poc3.APIErrors.test_exception_never_returns_ok_and_reaches_breaker) ... ok
+test_hedge_error_does_not_hide_pending_primary_success (test_poc3.APIErrors.test_hedge_error_does_not_hide_pending_primary_success) ... ok
+test_parent_cancellation_cleans_up_calls (test_poc3.APIErrors.test_parent_cancellation_cleans_up_calls) ... ok
+test_primary_error_does_not_hide_pending_hedge_success (test_poc3.APIErrors.test_primary_error_does_not_hide_pending_hedge_success) ... ok
+test_timeout_cleans_up_both_calls (test_poc3.APIErrors.test_timeout_cleans_up_both_calls) ... ok
+test_candidate_selection_uses_objective_and_constraints (test_poc3.Measurements.test_candidate_selection_uses_objective_and_constraints) ... ok
+test_empty_outcome_has_no_invented_percentile (test_poc3.Measurements.test_empty_outcome_has_no_invented_percentile) ... ok
+test_experiment_keeps_all_repeats_and_alternates_order (test_poc3.Measurements.test_experiment_keeps_all_repeats_and_alternates_order) ... ok
+test_no_candidate_is_selected_when_measurement_is_noisy (test_poc3.Measurements.test_no_candidate_is_selected_when_measurement_is_noisy) ... ok
+test_noisy_measurements_are_kept_and_marked_invalid (test_poc3.Measurements.test_noisy_measurements_are_kept_and_marked_invalid) ... ok
+test_outcome_metrics_preserve_latency_label_alignment (test_poc3.Measurements.test_outcome_metrics_preserve_latency_label_alignment) ... ok
+test_repeats_aggregate_per_seed_not_as_independent_seeds (test_poc3.Measurements.test_repeats_aggregate_per_seed_not_as_independent_seeds) ... ok
+test_report_does_not_claim_success_from_fast_failures (test_poc3.Measurements.test_report_does_not_claim_success_from_fast_failures) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.691s
+
+OK

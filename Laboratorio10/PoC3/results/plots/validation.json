@@ -1,0 +1,12 @@
+{
+  "unit_tests_passed": 19,
+  "figures_visually_reviewed": 3,
+  "formats": [
+    "png",
+    "svg"
+  ],
+  "saved_measurements_unchanged": true,
+  "previous_pocs_unchanged": true,
+  "new_runtime_experiments": false,
+  "historical_cross_version_ranking_supported": false
+}

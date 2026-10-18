@@ -1,0 +1,18 @@
+{
+  "PoC1": {
+    "path": "C:\\Users\\ASUS\\OneDrive\\Documentos\\arquitectura-de-software\\Laboratorio10\\poc1_diagrama\\results\\results.json",
+    "sha256": "3aa08e3c211bcb5f8b4d0c83b491e8301a3686537fc919196ea19c0cffbc4e53"
+  },
+  "PoC2": {
+    "path": "C:\\Users\\ASUS\\OneDrive\\Documentos\\arquitectura-de-software\\Laboratorio10\\poc2_mejorada\\results\\results.json",
+    "sha256": "b2524477b32e33f678d8c9fdd6e1b2d80777618e667952d3eeb3476fe53d14a8"
+  },
+  "PoC3": {
+    "path": "C:\\Users\\ASUS\\OneDrive\\Documentos\\arquitectura-de-software\\Laboratorio10\\PoC3\\results\\results.json",
+    "sha256": "c436bf03b689bfc3ab32704fbeb8544fce6a231f26d4b581129e1154a121df1c"
+  },
+  "PoC3-long": {
+    "path": "C:\\Users\\ASUS\\OneDrive\\Documentos\\arquitectura-de-software\\Laboratorio10\\PoC3\\results\\long-outage-validation.json",
+    "sha256": "dc9c8087b6ecade0cb3636ca42ee2dd7a2d272e27efa31049f1b541814345aa0"
+  }
+}

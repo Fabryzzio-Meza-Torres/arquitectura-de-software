@@ -29,18 +29,22 @@ budget, simulated capacity and diagram notation are unchanged. Initial values
 python -B -m unittest discover -s tests -v
 python -B run.py experiment --scenario tails
 python -B run.py report
+python -B run.py plot
 # Optional: recalibrate first; evaluation seeds must remain separate.
 python -B run.py calibrate --seeds 7 11
 ```
 
-Python standard library only. Experiments default to 4000 requests at 250 rps,
+Simulation/tests use the standard library; plotting additionally needs matplotlib.
+`plot` reads saved results only and creates PNG/SVG charts plus `results/comparison.md`.
+It compares PoC1/2 historically, marks noisy runs and separates valid paired evidence.
+Experiments default to 4000 requests at 250 rps,
 seeds 42/43/44 and two repetitions per seed. Use `--scenario all` for five scenarios.
 Results and the generated report stay in `results/`; a new experiment replaces
 that file. The default lag limit is 20 ms: noisy trials remain visible and provide
 no clean performance conclusion. Calibration exits with code 2 if no candidate
 qualifies, preserves the full trace and blocks experiments until recalibrated.
 
-Validation: 15 tests passed; all five scenarios ran with two seeds and two repeats.
+Validation: 19 tests passed; saved runs cover five scenarios, two seeds and two repeats.
 A longer outage verified failed-response reporting after cache expiry. The short
 calibration validation rejected noisy candidates; `calibration-validation.json`
 is evidence only, not the active calibration. No performance win is claimed from

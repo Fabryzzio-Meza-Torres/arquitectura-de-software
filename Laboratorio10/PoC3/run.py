@@ -65,7 +65,12 @@ def main():
     exp.add_argument("--scenario", choices=["all", *sc.SCENARIO_TITLES], default="all")
     exp.add_argument("--repetitions", type=positive_int, default=2)
     commands.add_parser("report")
+    commands.add_parser("plot")
     args = parser.parse_args()
+    if args.command == "plot":
+        from plot_results import create_plots
+        print(create_plots(HERE))
+        return 0
     results = HERE / "results"
     results.mkdir(exist_ok=True)
     if args.command in ("train", "calibrate"):

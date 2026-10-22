@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant Cliente
+    participant API
+    participant Circuito as Circuit breaker
+    participant Otros8 as Otros 8 servicios
+    participant Problema as Servicio problematico
+    participant Replicas
+    participant Cache as Cache (TTL 1 s / 5 s)
+    Cliente->>+API: t=0.0 ms - Solicitar datos de 10 servicios
+    API->>Circuito: t=0.8 ms - Consultar circuit breaker
+    API->>Cache: t=0.8 ms - Consultar datos dentro del TTL
+    Circuito-->>API: t=1.1 ms - Abierto: evita 2 consultas
+    Cache-->>API: t=1.1 ms - 2 respuestas con cache vigente
+    API->>Otros8: t=1.4 ms - 8 consultas en paralelo
+    Otros8-->>API: t=17.4 ms - Otros 8 completados
+    API-->>-Cliente: t=17.5 ms - Respuesta final: degraded

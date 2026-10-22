@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1640" viewBox="0 0 1500 1640">
+<rect width="1500" height="1640" fill="#ffffff"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#64748b"/></marker></defs>
+<text x="48" y="52" font-family="Arial" font-size="34" font-weight="700" fill="#24364b">PoC3 | Flujo completo y tiempos</text>
+<text x="48" y="88" font-family="Arial" font-size="22" font-weight="400" fill="#24364b">Izquierda: una solicitud medida. Derecha: las rutas de proteccion si algo falla.</text>
+<text x="48" y="119" font-family="Arial" font-size="20" font-weight="400" fill="#24364b">Un bloque agrupa los 2 servicios problematicos; la politica se aplica por separado a los 10 servicios.</text>
+<text x="48" y="169" font-family="Arial" font-size="21" font-weight="700" fill="#187c70">RECORRIDO OBSERVADO</text>
+<text x="780" y="169" font-family="Arial" font-size="21" font-weight="700" fill="#a16d24">RUTAS ALTERNATIVAS / LIMITES</text>
+<rect x="48" y="190" width="672" height="144" rx="12" fill="#eef3fb" stroke="#7286a7" stroke-width="2"/>
+<text x="70" y="224" font-family="Arial" font-size="23" font-weight="700" fill="#24364b">0. Precarga antes de la solicitud</text>
+<text x="70" y="257" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">3 servicios aleatorios con datos disponibles en cache.</text>
+<text x="70" y="284" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Ejemplo: S2, S5, S6; seleccion independiente de los lentos.</text>
+<text x="70" y="311" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Los datos siguen sujetos al TTL; no fuerzan latencia cero.</text>
+<rect x="48" y="366" width="672" height="144" rx="12" fill="#eff8f6" stroke="#238479" stroke-width="2"/>
+<text x="70" y="400" font-family="Arial" font-size="23" font-weight="700" fill="#24364b">1. Solicitud y consultas en paralelo | t=0 ms</text>
+<text x="70" y="433" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">La API consulta los 10 servicios; exactamente 2 demoran.</text>
+<text x="70" y="460" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Los otros 8 terminan a t=14.8 ms en este ejemplo.</text>
+<text x="70" y="487" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">El tiempo total no es la suma de las llamadas paralelas.</text>
+<rect x="48" y="542" width="672" height="144" rx="12" fill="#eff8f6" stroke="#238479" stroke-width="2"/>
+<text x="70" y="576" font-family="Arial" font-size="23" font-weight="700" fill="#24364b">2. Comprobar el circuit breaker</text>
+<text x="70" y="609" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Decision observada: t=0.3-0.7 ms.</text>
+<text x="70" y="636" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Cerrado: permite las 2 consultas problematicas.</text>
+<text x="70" y="663" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Si ya estuviera abierto, se usa la ruta A.</text>
+<rect x="48" y="718" width="672" height="144" rx="12" fill="#eff8f6" stroke="#238479" stroke-width="2"/>
+<text x="70" y="752" font-family="Arial" font-size="23" font-weight="700" fill="#24364b">3. Servicio problematico | t=0.8 ms</text>
+<text x="70" y="785" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Se inicia una consulta original por servicio.</text>
+<text x="70" y="812" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Si responde antes de alpha, se acepta el dato valido.</text>
+<text x="70" y="839" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">alpha inicial = 17 ms; se adapta con las observaciones.</text>
+<rect x="48" y="894" width="672" height="144" rx="12" fill="#eff8f6" stroke="#238479" stroke-width="2"/>
+<text x="70" y="928" font-family="Arial" font-size="23" font-weight="700" fill="#24364b">4. Hedging y replicas | t=17.9 ms</text>
+<text x="70" y="961" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Como los originales siguen pendientes, se activan replicas.</text>
+<text x="70" y="988" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Original y replica compiten: gana la primera valida.</text>
+<text x="70" y="1015" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">beta inicial = 34,1 ms desde el inicio de cada intento.</text>
+<rect x="48" y="1070" width="672" height="144" rx="12" fill="#eff8f6" stroke="#238479" stroke-width="2"/>
+<text x="70" y="1104" font-family="Arial" font-size="23" font-weight="700" fill="#24364b">5. Resolver cada servicio y cancelar pendientes</text>
+<text x="70" y="1137" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">S2: t=33.4 ms / S10: t=23.8 ms</text>
+<text x="70" y="1164" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Cancelar lo que queda pendiente; actualizar la cache.</text>
+<text x="70" y="1191" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Cada respuesta valida reinicia y cierra su circuito.</text>
+<rect x="780" y="190" width="672" height="144" rx="12" fill="#eef3fb" stroke="#7286a7" stroke-width="2"/>
+<text x="802" y="224" font-family="Arial" font-size="23" font-weight="700" fill="#24364b">Como leer los tiempos</text>
+<text x="802" y="257" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">t=... ms: instante observado desde esta solicitud.</text>
+<text x="802" y="284" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">alpha/beta: limites iniciales por intento, adaptativos.</text>
+<text x="802" y="311" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">TTL, backoff y cooldown: reglas, no tiempos observados.</text>
+<rect x="780" y="366" width="672" height="144" rx="12" fill="#fff8ed" stroke="#bd8536" stroke-width="2"/>
+<text x="802" y="400" font-family="Arial" font-size="23" font-weight="700" fill="#24364b">A. Si el circuito esta abierto</text>
+<text x="802" y="433" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Desde 5 intentos fallidos, suspende consultas por 1 s.</text>
+<text x="802" y="460" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Despues permite una prueba: exito cierra; fallo reabre.</text>
+<text x="802" y="487" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Omite el servicio y valida cache hasta 5 s: ir a E.</text>
+<rect x="780" y="542" width="672" height="144" rx="12" fill="#fff8ed" stroke="#bd8536" stroke-width="2"/>
+<text x="802" y="576" font-family="Arial" font-size="23" font-weight="700" fill="#24364b">B. Si el intento termina sin dato valido</text>
+<text x="802" y="609" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Error o ninguna respuesta valida antes de beta.</text>
+<text x="802" y="636" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Cuenta un fallo y cancela las tareas pendientes.</text>
+<text x="802" y="663" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">El fallo puede abrir el circuito; luego se evalua C.</text>
+<rect x="780" y="718" width="672" height="144" rx="12" fill="#fff8ed" stroke="#bd8536" stroke-width="2"/>
+<text x="802" y="752" font-family="Arial" font-size="23" font-weight="700" fill="#24364b">C. Intentar respuesta con cache fresca</text>
+<text x="802" y="785" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Si la edad del dato es hasta 1 s, responde con cache.</text>
+<text x="802" y="812" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Se marca como degradada, no como dato nuevo.</text>
+<text x="802" y="839" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Si no hay dato fresco, se evalua el reintento D.</text>
+<rect x="780" y="894" width="672" height="144" rx="12" fill="#fff8ed" stroke="#bd8536" stroke-width="2"/>
+<text x="802" y="928" font-family="Arial" font-size="23" font-weight="700" fill="#24364b">D. Reintentar si la politica lo permite</text>
+<text x="802" y="961" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Circuito disponible + menos de 3 intentos + presupuesto.</text>
+<text x="802" y="988" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Backoff aleatorio: 0-5 ms y luego 0-10 ms; volver a 2.</text>
+<text x="802" y="1015" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Presupuesto: ratio 10 %, capacidad 20. Si no, ir a E.</text>
+<rect x="780" y="1070" width="672" height="144" rx="12" fill="#fff8ed" stroke="#bd8536" stroke-width="2"/>
+<text x="802" y="1104" font-family="Arial" font-size="23" font-weight="700" fill="#24364b">E. Ultimo respaldo con cache vigente</text>
+<text x="802" y="1137" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Hasta 5 s de edad: devuelve dato y marca degradada.</text>
+<text x="802" y="1164" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Sin cache o con dato vencido: marca fallo.</text>
+<text x="802" y="1191" font-family="Arial" font-size="19" font-weight="400" fill="#24364b">Responder rapido sin dato valido sigue siendo un fallo.</text>
+<path d="M384.0,334 L384.0,363" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M384.0,510 L384.0,539" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M384.0,686 L384.0,715" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M384.0,862 L384.0,891" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M384.0,1038 L384.0,1067" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1116.0,686 L1116.0,715" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1116.0,862 L1116.0,891" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1116.0,1038 L1116.0,1067" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M720,966 L746,966 L746,614 L780,614" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="721" y="798" font-family="Arial" font-size="17" font-weight="700" fill="#24364b">B</text>
+<path d="M384.0,1214 L384.0,1264" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1116.0,1214 L1116.0,1264" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="48" y="1270" width="1404" height="164" rx="12" fill="#eef3fb" stroke="#7286a7" stroke-width="2"/>
+<text x="72" y="1307" font-family="Arial" font-size="25" font-weight="700" fill="#24364b">6. Agregar los 10 resultados y responder | ejemplo observado: t=33.7 ms</text>
+<text x="72" y="1344" font-family="Arial" font-size="22" font-weight="400" fill="#24364b">Si alguno falla: fallo. Si usa cache y ninguno falla: degradada. Si todos responden: ok.</text>
+<text x="72" y="1382" font-family="Arial" font-size="22" font-weight="400" fill="#24364b">En la solicitud mostrada, las replicas respondieron a tiempo: resultado ok.</text>
+<text x="48" y="1490" font-family="Arial" font-size="21" font-weight="700" fill="#24364b">Ejemplo de una traza guardada: no es un p95/p99 ni una promesa de latencia maxima.</text>
+<text x="48" y="1524" font-family="Arial" font-size="20" font-weight="400" fill="#24364b">Las rutas A-E describen decisiones alternativas; no se ejecutaron todas en el ejemplo de la izquierda.</text>
+<text x="48" y="1558" font-family="Arial" font-size="20" font-weight="400" fill="#24364b">No se ejecutaron nuevas solicitudes ni se repitio el benchmark de 50 000 para generar esta imagen.</text>
+</svg>

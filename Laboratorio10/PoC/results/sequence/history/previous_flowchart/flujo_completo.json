@@ -1,0 +1,22 @@
+{
+  "new_experiment_requests": 0,
+  "source_trace_sha256": "de58e4cc7b9168136ee9cfa4915de08e263c3113e1ed188bcaffd0163de98c8f",
+  "source_case": "poc3",
+  "seed": 606,
+  "request": 0,
+  "measured_total_ms": 33.71619999961695,
+  "preloaded_services": [
+    2,
+    5,
+    6
+  ],
+  "slow_services": [
+    2,
+    10
+  ],
+  "clock_labels": "Observed milliseconds in one saved request, not p50/p95/p99",
+  "conditional_branches": "Policy routes, not all executed by the displayed request",
+  "alpha_beta": "Initial values; adaptive in operation; beta is measured from each attempt start",
+  "breaker_recovery": "After 1 s, a single logical attempt probes; success closes, failure reopens",
+  "parallelism": "The same policy applies to all ten services. Eight others are condensed; times are not summed"
+}

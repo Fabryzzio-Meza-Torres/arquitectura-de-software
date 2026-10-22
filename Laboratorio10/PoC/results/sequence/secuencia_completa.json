@@ -1,0 +1,9 @@
+{
+  "formato": "diagrama de secuencia",
+  "idioma": "español",
+  "solicitudes_nuevas": 0,
+  "fuente": "trace.json",
+  "tiempo_ejemplo_ms": 33.71619999961695,
+  "nota": "Los tiempos t= son observados. Precarga y actualización de caché son operaciones conceptuales; las ramas alternativas describen reglas, sin tiempos inventados.",
+  "source_trace_sha256": "de58e4cc7b9168136ee9cfa4915de08e263c3113e1ed188bcaffd0163de98c8f"
+}

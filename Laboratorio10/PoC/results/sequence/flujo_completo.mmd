@@ -1,0 +1,49 @@
+sequenceDiagram
+    participant Cliente
+    participant API
+    participant Circuito as Circuit breaker
+    participant Otros8 as Otros 8 servicios
+    participant Problema as Servicio problemático
+    participant Replicas as Réplicas
+    participant Cache as Caché (TTL 1 s / 5 s)
+    API->>Cache: Antes de t=0: precarga de 3 servicios aleatorios (S2, S5, S6)
+    Cliente->>API: t=0,0 ms - Solicitar datos de 10 servicios
+    API->>Circuito: t=0.3 ms - Consultar estado del circuito
+    alt Circuito cerrado o prueba permitida
+        Circuito-->>API: t=0.7 ms - Permitir las consultas
+        API->>Otros8: t=0.8 ms - 8 consultas en paralelo
+        API->>Problema: t=0.8 ms - Consultar los 2 servicios lentos
+        Otros8-->>API: t=14.8 ms - Los otros 8 completaron
+        API->>Replicas: t=17.9 ms - Superar α: lanzar 2 consultas alternativas (α inicial 17 ms)
+        alt Respuesta válida antes de β (ejemplo medido)
+            Replicas-->>API: t=23.8 ms - Primera respuesta válida de S10
+            Replicas-->>API: t=33.4 ms - Primera respuesta válida de S2
+            API-xProblema: t=33.6 ms - Cancelar originales pendientes
+            API->>Circuito: t=33.6 ms - Registrar éxito y reiniciar fallos
+            API->>Cache: Tras el éxito: actualizar datos y su vigencia
+            API-->>Cliente: t=33.7 ms - Respuesta final correcta
+        else Error o espera agotada (ruta alternativa)
+            API->>API: β inicial 34,1 ms por intento: cancelar pendientes
+            API->>Circuito: Registrar fallo; al quinto intento fallido, abrir durante 1 s
+            API->>Cache: Buscar dato fresco con edad de hasta 1 s
+            alt Hay dato fresco
+                Cache-->>API: Devolver dato de caché vigente
+                API-->>Cliente: Respuesta con caché (tras completar los 10)
+            else No hay dato fresco
+                API->>API: Verificar circuito, presupuesto y máximo de 3 intentos
+                API->>API: Si permite reintento: espera aleatoria 0-5 ms y luego 0-10 ms
+                API->>Problema: Repetir consulta y política de réplica con nuevo α/β
+                API->>Cache: Si no puede reintentar o agota intentos: buscar dato de hasta 5 s
+                Cache-->>API: Dato vigente o ausencia de dato válido
+                API-->>Cliente: Respuesta: caché vigente o fallo
+            end
+        end
+    else Circuito abierto o prueba ya en curso
+        Circuito-->>API: Evitar consultar al servicio problemático
+        API->>Otros8: Consultar los otros 8 servicios en paralelo
+        API->>Cache: Buscar dato con edad de hasta 5 s
+        Cache-->>API: Dato vigente o ausencia de dato válido
+        Otros8-->>API: Los otros 8 completaron
+        API-->>Cliente: Respuesta: caché vigente o fallo
+        API->>Circuito: Tras 1 s: permitir una prueba; éxito cierra y fallo reabre
+    end

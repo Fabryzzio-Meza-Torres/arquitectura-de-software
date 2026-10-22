@@ -1,6 +1,8 @@
 {
   "purpose": "single-request teaching trace; not a percentile benchmark",
-  "additional_demo_requests": 2,
+  "additional_demo_requests": 9,
+  "measured_demo_requests": 3,
+  "setup_requests": 6,
   "included_in_volume_totals": false,
   "vertical_spacing": "message order, not proportional elapsed time",
   "grouping": "other eight services and repeated attempts are condensed; full events retained",
@@ -11,7 +13,7 @@
       "request": 0,
       "outcome": "ok",
       "initial_cache_services": [],
-      "total_ms": 1404.0985999999975,
+      "total_ms": 1403.7186000023212,
       "slow_services": [
         2,
         10
@@ -22,140 +24,160 @@
       "events": [
         {
           "event": "send",
-          "ms": 0.16139999934239313,
+          "ms": 0.10180000026593916,
+          "req": 0,
           "svc": 1,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 0.21189999824855477,
+          "ms": 0.15050000001792796,
+          "req": 0,
           "svc": 2,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 0.2468999991833698,
+          "ms": 0.18700000146054663,
+          "req": 0,
           "svc": 3,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 0.2721999990171753,
+          "ms": 0.2106000029016286,
+          "req": 0,
           "svc": 4,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 0.29399999766610563,
+          "ms": 0.23080000028130598,
+          "req": 0,
           "svc": 5,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 0.3139000000373926,
+          "ms": 0.24950000079115853,
+          "req": 0,
           "svc": 6,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 0.33210000037797727,
+          "ms": 0.26650000290828757,
+          "req": 0,
           "svc": 7,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 0.3493999975034967,
+          "ms": 0.2830000012181699,
+          "req": 0,
           "svc": 8,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 0.3661999980977271,
+          "ms": 0.2992000008816831,
+          "req": 0,
           "svc": 9,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 0.38359999962267466,
+          "ms": 0.3159000007144641,
+          "req": 0,
           "svc": 10,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 6.575899999006651,
+          "ms": 5.750400003307732,
+          "req": 0,
           "svc": 7,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 7.07709999915096,
+          "ms": 7.278900000528665,
+          "req": 0,
           "svc": 9,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 8.14170000012382,
+          "ms": 9.121000002778601,
+          "req": 0,
           "svc": 8,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 8.148400000209222,
+          "ms": 9.129900001425995,
+          "req": 0,
           "svc": 3,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 11.149499998282408,
+          "ms": 10.151100002985913,
+          "req": 0,
           "svc": 6,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 11.157900000398513,
+          "ms": 11.59870000265073,
+          "req": 0,
           "svc": 5,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 11.161700000229757,
+          "ms": 11.606600000959588,
+          "req": 0,
           "svc": 4,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 14.67439999760245,
+          "ms": 13.678700001037214,
+          "req": 0,
           "svc": 1,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 1177.6018999989901,
+          "ms": 1177.4665000011737,
+          "req": 0,
           "svc": 2,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 1403.9922999982082,
+          "ms": 1403.675800000201,
+          "req": 0,
           "svc": 10,
           "replica": 0,
           "attempt": 1
@@ -172,7 +194,7 @@
         5,
         6
       ],
-      "total_ms": 35.76439999960712,
+      "total_ms": 33.71619999961695,
       "slow_services": [
         2,
         10
@@ -182,80 +204,170 @@
       "backend_calls": 12,
       "events": [
         {
-          "event": "thresholds",
-          "ms": 0.5266000007395633,
+          "event": "breaker_decision",
+          "ms": 0.19520000205375254,
+          "req": 0,
+          "svc": 1,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.20790000053239055,
+          "req": 0,
           "svc": 1,
           "attempt": 1,
           "alpha_ms": 17.0,
           "beta_ms": 34.1
         },
         {
-          "event": "thresholds",
-          "ms": 0.7862000020395499,
+          "event": "breaker_decision",
+          "ms": 0.29939999876660295,
+          "req": 0,
+          "svc": 2,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.3079999987676274,
+          "req": 0,
           "svc": 2,
           "attempt": 1,
           "alpha_ms": 17.0,
           "beta_ms": 34.1
         },
         {
-          "event": "thresholds",
-          "ms": 0.894600001629442,
+          "event": "breaker_decision",
+          "ms": 0.38299999869195744,
+          "req": 0,
+          "svc": 3,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.39000000106170774,
+          "req": 0,
           "svc": 3,
           "attempt": 1,
           "alpha_ms": 17.0,
           "beta_ms": 34.1
         },
         {
-          "event": "thresholds",
-          "ms": 1.01379999978235,
+          "event": "breaker_decision",
+          "ms": 0.43200000072829425,
+          "req": 0,
+          "svc": 4,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.43709999954444356,
+          "req": 0,
           "svc": 4,
           "attempt": 1,
           "alpha_ms": 17.0,
           "beta_ms": 34.1
         },
         {
-          "event": "thresholds",
-          "ms": 1.0885000010603108,
+          "event": "breaker_decision",
+          "ms": 0.4764000004797708,
+          "req": 0,
+          "svc": 5,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.48149999929592013,
+          "req": 0,
           "svc": 5,
           "attempt": 1,
           "alpha_ms": 17.0,
           "beta_ms": 34.1
         },
         {
-          "event": "thresholds",
-          "ms": 1.1680000025080517,
+          "event": "breaker_decision",
+          "ms": 0.5244000021775719,
+          "req": 0,
+          "svc": 6,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.5294000002322719,
+          "req": 0,
           "svc": 6,
           "attempt": 1,
           "alpha_ms": 17.0,
           "beta_ms": 34.1
         },
         {
-          "event": "thresholds",
-          "ms": 1.239600002008956,
+          "event": "breaker_decision",
+          "ms": 0.5719000000681262,
+          "req": 0,
+          "svc": 7,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.5772000004071742,
+          "req": 0,
           "svc": 7,
           "attempt": 1,
           "alpha_ms": 17.0,
           "beta_ms": 34.1
         },
         {
-          "event": "thresholds",
-          "ms": 1.2989999995625112,
+          "event": "breaker_decision",
+          "ms": 0.6166999992274214,
+          "req": 0,
+          "svc": 8,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.6217000009201001,
+          "req": 0,
           "svc": 8,
           "attempt": 1,
           "alpha_ms": 17.0,
           "beta_ms": 34.1
         },
         {
-          "event": "thresholds",
-          "ms": 1.3551000010920689,
+          "event": "breaker_decision",
+          "ms": 0.6586999988940079,
+          "req": 0,
+          "svc": 9,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.663800001348136,
+          "req": 0,
           "svc": 9,
           "attempt": 1,
           "alpha_ms": 17.0,
           "beta_ms": 34.1
         },
         {
-          "event": "thresholds",
-          "ms": 1.4119000006758142,
+          "event": "breaker_decision",
+          "ms": 0.6990000001678709,
+          "req": 0,
+          "svc": 10,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.7073999986459967,
+          "req": 0,
           "svc": 10,
           "attempt": 1,
           "alpha_ms": 17.0,
@@ -263,231 +375,990 @@
         },
         {
           "event": "send",
-          "ms": 1.4931000005162787,
+          "ms": 0.7623999990755692,
+          "req": 0,
           "svc": 1,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 1.660400001128437,
+          "ms": 0.8478000017930754,
+          "req": 0,
           "svc": 2,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 1.761100000294391,
+          "ms": 0.8999999990919605,
+          "req": 0,
           "svc": 3,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 1.84830000216607,
+          "ms": 0.9448999990127049,
+          "req": 0,
           "svc": 4,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 1.9267999996372964,
+          "ms": 0.9864000021480024,
+          "req": 0,
           "svc": 5,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 2.0002000019303523,
+          "ms": 1.0265000018989667,
+          "req": 0,
           "svc": 6,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 2.082800001517171,
+          "ms": 1.067100001819199,
+          "req": 0,
           "svc": 7,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 2.159400002710754,
+          "ms": 1.1068000021623448,
+          "req": 0,
           "svc": 8,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 2.2308000006887596,
+          "ms": 1.1450999991211575,
+          "req": 0,
           "svc": 9,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 2.3084000022208784,
+          "ms": 1.183700002002297,
+          "req": 0,
           "svc": 10,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 7.977799999935087,
+          "ms": 6.686400000035064,
+          "req": 0,
           "svc": 7,
           "replica": 0,
           "attempt": 1
         },
         {
-          "event": "service_outcome",
-          "ms": 8.164300001226366,
+          "event": "attempt_end",
+          "ms": 6.759100000635954,
+          "req": 0,
           "svc": 7,
-          "outcome": "ok"
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 6.18160000158241
+        },
+        {
+          "event": "breaker_success",
+          "ms": 6.768999999621883,
+          "req": 0,
+          "svc": 7,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 6.778499999199994,
+          "req": 0,
+          "svc": 7,
+          "outcome": "ok",
+          "duration_ms": 6.2087000005703885
         },
         {
           "event": "return",
-          "ms": 8.968500002083601,
+          "ms": 8.688800000527408,
+          "req": 0,
           "svc": 9,
           "replica": 0,
           "attempt": 1
         },
         {
-          "event": "service_outcome",
-          "ms": 9.126900000410387,
-          "svc": 9,
-          "outcome": "ok"
-        },
-        {
           "event": "return",
-          "ms": 10.953500001050998,
+          "ms": 8.70270000086748,
+          "req": 0,
           "svc": 3,
           "replica": 0,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 10.980999999446794,
+          "ms": 8.727500000532018,
+          "req": 0,
           "svc": 8,
           "replica": 0,
           "attempt": 1
         },
         {
+          "event": "attempt_end",
+          "ms": 8.779700001468882,
+          "req": 0,
+          "svc": 9,
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 8.115500000712927
+        },
+        {
+          "event": "breaker_success",
+          "ms": 8.788999999524094,
+          "req": 0,
+          "svc": 9,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
           "event": "service_outcome",
-          "ms": 11.114299999462673,
+          "ms": 8.796599999186583,
+          "req": 0,
+          "svc": 9,
+          "outcome": "ok",
+          "duration_ms": 8.140599999023834
+        },
+        {
+          "event": "attempt_end",
+          "ms": 8.825699998851633,
+          "req": 0,
           "svc": 3,
-          "outcome": "ok"
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 8.436199997959193
+        },
+        {
+          "event": "breaker_success",
+          "ms": 8.836799999698997,
+          "req": 0,
+          "svc": 3,
+          "before": "closed",
+          "state": "closed"
         },
         {
           "event": "service_outcome",
-          "ms": 11.18010000209324,
+          "ms": 8.841099999699509,
+          "req": 0,
+          "svc": 3,
+          "outcome": "ok",
+          "duration_ms": 8.464800001092954
+        },
+        {
+          "event": "attempt_end",
+          "ms": 8.877600001142127,
+          "req": 0,
           "svc": 8,
-          "outcome": "ok"
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 8.256299999629846
+        },
+        {
+          "event": "breaker_success",
+          "ms": 8.880800000042655,
+          "req": 0,
+          "svc": 8,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 8.88420000046608,
+          "req": 0,
+          "svc": 8,
+          "outcome": "ok",
+          "duration_ms": 8.271199996670475
         },
         {
           "event": "return",
-          "ms": 11.241399999562418,
+          "ms": 11.235300000407733,
+          "req": 0,
           "svc": 6,
           "replica": 0,
           "attempt": 1
         },
         {
-          "event": "service_outcome",
-          "ms": 11.324900002364302,
+          "event": "return",
+          "ms": 11.247599999478552,
+          "req": 0,
+          "svc": 5,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "attempt_end",
+          "ms": 11.305700001685182,
+          "req": 0,
           "svc": 6,
-          "outcome": "ok"
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 10.775899998407112
         },
         {
-          "event": "return",
-          "ms": 13.550100000429666,
+          "event": "breaker_success",
+          "ms": 11.312599999655504,
+          "req": 0,
+          "svc": 6,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 11.318500000925269,
+          "req": 0,
+          "svc": 6,
+          "outcome": "ok",
+          "duration_ms": 10.796999999001855
+        },
+        {
+          "event": "attempt_end",
+          "ms": 11.34490000185906,
+          "req": 0,
           "svc": 5,
-          "replica": 0,
-          "attempt": 1
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 10.86360000044806
+        },
+        {
+          "event": "breaker_success",
+          "ms": 11.348600000928855,
+          "req": 0,
+          "svc": 5,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 11.360500000591855,
+          "req": 0,
+          "svc": 5,
+          "outcome": "ok",
+          "duration_ms": 10.887000000366243
         },
         {
           "event": "return",
-          "ms": 13.581800001702504,
+          "ms": 12.212000001454726,
+          "req": 0,
           "svc": 4,
           "replica": 0,
           "attempt": 1
         },
         {
-          "event": "service_outcome",
-          "ms": 13.734700001805322,
-          "svc": 5,
-          "outcome": "ok"
+          "event": "attempt_end",
+          "ms": 12.261500000022352,
+          "req": 0,
+          "svc": 4,
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 11.82409999819356
+        },
+        {
+          "event": "breaker_success",
+          "ms": 12.266900001122849,
+          "req": 0,
+          "svc": 4,
+          "before": "closed",
+          "state": "closed"
         },
         {
           "event": "service_outcome",
-          "ms": 13.80070000232081,
+          "ms": 12.272100000700448,
+          "req": 0,
           "svc": 4,
-          "outcome": "ok"
+          "outcome": "ok",
+          "duration_ms": 11.84310000098776
         },
         {
           "event": "return",
-          "ms": 15.819000000192318,
+          "ms": 14.75879999998142,
+          "req": 0,
           "svc": 1,
           "replica": 0,
           "attempt": 1
         },
         {
-          "event": "service_outcome",
-          "ms": 15.971600001648767,
+          "event": "attempt_end",
+          "ms": 14.82169999871985,
+          "req": 0,
           "svc": 1,
-          "outcome": "ok"
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 14.61379999818746
+        },
+        {
+          "event": "breaker_success",
+          "ms": 14.827499999228166,
+          "req": 0,
+          "svc": 1,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 14.833000001090113,
+          "req": 0,
+          "svc": 1,
+          "outcome": "ok",
+          "duration_ms": 14.654399998107692
         },
         {
           "event": "send",
-          "ms": 18.31569999922067,
+          "ms": 17.936299998837058,
+          "req": 0,
           "svc": 2,
           "replica": 1,
           "attempt": 1
         },
         {
           "event": "send",
-          "ms": 18.609700000524754,
+          "ms": 17.99860000028275,
+          "req": 0,
           "svc": 10,
           "replica": 1,
           "attempt": 1
         },
         {
           "event": "return",
-          "ms": 24.451900000713067,
+          "ms": 23.828000001230976,
+          "req": 0,
           "svc": 10,
           "replica": 1,
           "attempt": 1
         },
         {
           "event": "cancel",
-          "ms": 35.17909999936819,
+          "ms": 23.929800001496915,
+          "req": 0,
           "svc": 10,
           "replica": 0,
           "attempt": 1
         },
         {
-          "event": "service_outcome",
-          "ms": 35.42510000261245,
+          "event": "attempt_end",
+          "ms": 23.956299999554176,
+          "req": 0,
           "svc": 10,
-          "outcome": "ok"
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 23.252399998455076
+        },
+        {
+          "event": "breaker_success",
+          "ms": 23.963700001331745,
+          "req": 0,
+          "svc": 10,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 23.97000000200933,
+          "req": 0,
+          "svc": 10,
+          "outcome": "ok",
+          "duration_ms": 23.273499999049818
         },
         {
           "event": "return",
-          "ms": 35.47249999974156,
+          "ms": 33.448300000600284,
+          "req": 0,
           "svc": 2,
           "replica": 1,
           "attempt": 1
         },
         {
           "event": "cancel",
-          "ms": 35.63209999992978,
+          "ms": 33.58680000019376,
+          "req": 0,
           "svc": 2,
           "replica": 0,
           "attempt": 1
         },
         {
-          "event": "service_outcome",
-          "ms": 35.70200000103796,
+          "event": "attempt_end",
+          "ms": 33.631500002229586,
+          "req": 0,
           "svc": 2,
-          "outcome": "ok"
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 33.32349999982398
+        },
+        {
+          "event": "breaker_success",
+          "ms": 33.6410000018077,
+          "req": 0,
+          "svc": 2,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 33.66259999893373,
+          "req": 0,
+          "svc": 2,
+          "outcome": "ok",
+          "duration_ms": 33.37010000177543
+        }
+      ]
+    },
+    {
+      "variant": "breaker_open",
+      "seed": 606,
+      "request": 15,
+      "outcome": "degraded",
+      "total_ms": 17.51670000157901,
+      "slow_services": [
+        4,
+        8
+      ],
+      "initial_cache_services": [
+        2,
+        5,
+        6
+      ],
+      "cache_services_at_capture": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "setup_requests": 6,
+      "scenario": "separate persistent-delay diagnostic after healthy traffic",
+      "backend_calls": 8,
+      "events": [
+        {
+          "event": "breaker_decision",
+          "ms": 0.4501000003074296,
+          "req": 15,
+          "svc": 1,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.47899999844958074,
+          "req": 15,
+          "svc": 1,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "breaker_decision",
+          "ms": 0.6033999998180661,
+          "req": 15,
+          "svc": 2,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.6149000000732485,
+          "req": 15,
+          "svc": 2,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "breaker_decision",
+          "ms": 0.6939999984751921,
+          "req": 15,
+          "svc": 3,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.7043000005069189,
+          "req": 15,
+          "svc": 3,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "breaker_decision",
+          "ms": 0.7729999997536652,
+          "req": 15,
+          "svc": 4,
+          "state": "open",
+          "allowed": false
+        },
+        {
+          "event": "cache_hit",
+          "ms": 0.7910999993328005,
+          "req": 15,
+          "svc": 4,
+          "age_s": 0.1908332999992126,
+          "tier": "stale"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 0.8028000011108816,
+          "req": 15,
+          "svc": 4,
+          "outcome": "cache",
+          "duration_ms": 0.03440000000409782
+        },
+        {
+          "event": "breaker_decision",
+          "ms": 0.8304000002681278,
+          "req": 15,
+          "svc": 5,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.8392999989155214,
+          "req": 15,
+          "svc": 5,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "breaker_decision",
+          "ms": 0.9078000002773479,
+          "req": 15,
+          "svc": 6,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.9161999987554736,
+          "req": 15,
+          "svc": 6,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "breaker_decision",
+          "ms": 0.9785000002011657,
+          "req": 15,
+          "svc": 7,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 0.9919000003719702,
+          "req": 15,
+          "svc": 7,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "breaker_decision",
+          "ms": 1.0824999990290962,
+          "req": 15,
+          "svc": 8,
+          "state": "open",
+          "allowed": false
+        },
+        {
+          "event": "cache_hit",
+          "ms": 1.0990000009769574,
+          "req": 15,
+          "svc": 8,
+          "age_s": 0.19303360000048997,
+          "tier": "stale"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 1.1091000014857855,
+          "req": 15,
+          "svc": 8,
+          "outcome": "cache",
+          "duration_ms": 0.032199997804127634
+        },
+        {
+          "event": "breaker_decision",
+          "ms": 1.1344999984430615,
+          "req": 15,
+          "svc": 9,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 1.1474999992060475,
+          "req": 15,
+          "svc": 9,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "breaker_decision",
+          "ms": 1.2548999984574039,
+          "req": 15,
+          "svc": 10,
+          "state": "closed",
+          "allowed": true
+        },
+        {
+          "event": "attempt_start",
+          "ms": 1.2688999995589256,
+          "req": 15,
+          "svc": 10,
+          "attempt": 1,
+          "alpha_ms": 17.0,
+          "beta_ms": 34.1
+        },
+        {
+          "event": "send",
+          "ms": 1.392199999827426,
+          "req": 15,
+          "svc": 1,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 1.5716000016254839,
+          "req": 15,
+          "svc": 2,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 1.6738000012992416,
+          "req": 15,
+          "svc": 3,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 1.7555999984324444,
+          "req": 15,
+          "svc": 5,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 1.8237000003864523,
+          "req": 15,
+          "svc": 6,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 1.9609999981184956,
+          "req": 15,
+          "svc": 7,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 2.165699999750359,
+          "req": 15,
+          "svc": 9,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "send",
+          "ms": 2.2490000010293443,
+          "req": 15,
+          "svc": 10,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 9.111300001677591,
+          "req": 15,
+          "svc": 2,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "attempt_end",
+          "ms": 9.3587999981537,
+          "req": 15,
+          "svc": 2,
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 8.739500000956468
+        },
+        {
+          "event": "breaker_success",
+          "ms": 9.381799998664064,
+          "req": 15,
+          "svc": 2,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 9.404000000358792,
+          "req": 15,
+          "svc": 2,
+          "outcome": "ok",
+          "duration_ms": 8.806699999695411
+        },
+        {
+          "event": "return",
+          "ms": 10.523100001591956,
+          "req": 15,
+          "svc": 7,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "attempt_end",
+          "ms": 10.67469999907189,
+          "req": 15,
+          "svc": 7,
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 9.681699997599935
+        },
+        {
+          "event": "breaker_success",
+          "ms": 10.691999999835389,
+          "req": 15,
+          "svc": 7,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 10.706699998991098,
+          "req": 15,
+          "svc": 7,
+          "outcome": "ok",
+          "duration_ms": 9.731699999974808
+        },
+        {
+          "event": "return",
+          "ms": 12.513300000136951,
+          "req": 15,
+          "svc": 5,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 12.54250000056345,
+          "req": 15,
+          "svc": 1,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "return",
+          "ms": 12.560399998619687,
+          "req": 15,
+          "svc": 3,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "attempt_end",
+          "ms": 12.736900000163587,
+          "req": 15,
+          "svc": 5,
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 11.895399999048095
+        },
+        {
+          "event": "breaker_success",
+          "ms": 12.754100000165636,
+          "req": 15,
+          "svc": 5,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 12.772800000675488,
+          "req": 15,
+          "svc": 5,
+          "outcome": "ok",
+          "duration_ms": 11.940700002014637
+        },
+        {
+          "event": "attempt_end",
+          "ms": 12.851799998315983,
+          "req": 15,
+          "svc": 1,
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 12.374699999782024
+        },
+        {
+          "event": "breaker_success",
+          "ms": 12.860800001362804,
+          "req": 15,
+          "svc": 1,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 12.870400001702365,
+          "req": 15,
+          "svc": 1,
+          "outcome": "ok",
+          "duration_ms": 12.444500000128755
+        },
+        {
+          "event": "attempt_end",
+          "ms": 12.930100001540268,
+          "req": 15,
+          "svc": 3,
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 12.225600003148429
+        },
+        {
+          "event": "breaker_success",
+          "ms": 12.937899999087676,
+          "req": 15,
+          "svc": 3,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 12.945899998157984,
+          "req": 15,
+          "svc": 3,
+          "outcome": "ok",
+          "duration_ms": 12.258200000360375
+        },
+        {
+          "event": "return",
+          "ms": 13.548200000514043,
+          "req": 15,
+          "svc": 6,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "attempt_end",
+          "ms": 13.687499998923158,
+          "req": 15,
+          "svc": 6,
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 12.769599998136982
+        },
+        {
+          "event": "breaker_success",
+          "ms": 13.70120000137831,
+          "req": 15,
+          "svc": 6,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 13.714799999434035,
+          "req": 15,
+          "svc": 6,
+          "outcome": "ok",
+          "duration_ms": 12.810899999749381
+        },
+        {
+          "event": "return",
+          "ms": 15.573299999232404,
+          "req": 15,
+          "svc": 9,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "attempt_end",
+          "ms": 15.713500000856584,
+          "req": 15,
+          "svc": 9,
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 14.565500001481269
+        },
+        {
+          "event": "breaker_success",
+          "ms": 15.728099999250844,
+          "req": 15,
+          "svc": 9,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 15.740300001198193,
+          "req": 15,
+          "svc": 9,
+          "outcome": "ok",
+          "duration_ms": 14.609900001232745
+        },
+        {
+          "event": "return",
+          "ms": 17.15619999959017,
+          "req": 15,
+          "svc": 10,
+          "replica": 0,
+          "attempt": 1
+        },
+        {
+          "event": "attempt_end",
+          "ms": 17.365100000461098,
+          "req": 15,
+          "svc": 10,
+          "attempt": 1,
+          "outcome": "ok",
+          "duration_ms": 16.093499998532934
+        },
+        {
+          "event": "breaker_success",
+          "ms": 17.385200000717305,
+          "req": 15,
+          "svc": 10,
+          "before": "closed",
+          "state": "closed"
+        },
+        {
+          "event": "service_outcome",
+          "ms": 17.402400000719354,
+          "req": 15,
+          "svc": 10,
+          "outcome": "ok",
+          "duration_ms": 16.155699999217177
         }
       ]
     }

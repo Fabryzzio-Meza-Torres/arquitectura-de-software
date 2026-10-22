@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant Cliente
+    participant API
+    participant Otros8
+    participant Servicio2
+    participant Servicio10
+    Cliente->>+API: t=0.0 ms - Solicitar datos de 10 servicios
+    API->>Otros8: t=0.2 ms - 8 consultas en paralelo
+    API->>Servicio2: t=0.2 ms - Consulta original S2 lenta
+    API->>Servicio10: t=0.4 ms - Consulta original S10 lenta
+    Otros8-->>API: t=14.7 ms - Finaliza el grupo de otros 8
+    Servicio2-->>API: t=1177.6 ms - Respuesta S2, intento 1
+    Servicio10-->>API: t=1404.0 ms - Respuesta S10, intento 1
+    API-->>-Cliente: t=1404.1 ms - Respuesta final: ok

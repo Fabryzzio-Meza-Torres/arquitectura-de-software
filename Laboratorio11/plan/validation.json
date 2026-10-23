@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-22",
+  "scope": "Document and diagram validation only; no runtime or evaluator execution",
+  "diagrams": {
+    "scheduler-architecture": {
+      "elements": 76,
+      "texts": 38,
+      "arrows": 17,
+      "sha256": "b3f6e8649ce7a6130529860f692cd99b0cb79917f63b3fde8067e50d8ff553cb",
+      "png_pixels": [
+        1890,
+        1355
+      ],
+      "network_failures": 0,
+      "ids_and_reciprocal_bindings": "pass",
+      "source_and_render_match": "pass"
+    },
+    "priority-tree": {
+      "elements": 36,
+      "texts": 21,
+      "arrows": 1,
+      "sha256": "920f987aa0dd4e8f0cfea637100f985c7469b78c60e7d4a2479aa70e23a7884a",
+      "png_pixels": [
+        1530,
+        1135
+      ],
+      "network_failures": 0,
+      "ids_and_reciprocal_bindings": "pass",
+      "source_and_render_match": "pass"
+    }
+  },
+  "red_black_example": {
+    "in_order": [
+      "P1",
+      "P2",
+      "A1",
+      "A2",
+      "P3",
+      "A3",
+      "P4"
+    ],
+    "black_height_including_nil": 3,
+    "root_black_no_red_red_equal_black_height_bst_order": "pass"
+  },
+  "source_files_sha256": {
+    "Laboratorio11/diagram/Architecture.excalidraw": "8f6064cc9935417515671c592bbf950975dabbb934f51ff1783942013a9fed33",
+    "Laboratorio11/diagram/diagrama_total.excalidraw": "1545fcc4abb13862bcb1ccdd9a8ca04565ec9168ca196a77dbe1d045e867ae47",
+    "Laboratorio11/diagram/proposal_1.jpeg": "88546fa0becaa4f1a3949996914c910e61ed75acb1b8749ba14886026bf16a4c",
+    "Laboratorio11/requirements/functional-requirements.md": "be949fdfea5952bc6717613345851b3f1f961c3efbec58407509fc8f52cf6dec",
+    "Laboratorio11/requirements/no-functional-requirements.md": "737a0b8dc08bcddc9e9fd6c58ecba77a143b644c2d0bf82b68dafaf0fbdf6dff",
+    "Laboratorio11/study-case/Lab #11.md": "df394571fb298bba1888d2a72e4acd473868aa97515ce43d3f46cb7e36506608"
+  },
+  "local_links_checked": 9,
+  "independent_builder_review": "Two material ambiguities fixed; follow-up: nothing important left."
+}

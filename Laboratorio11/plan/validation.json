@@ -37,20 +37,22 @@
       "visual_inspection": "pass"
     },
     "scheduler-integrated": {
-      "elements": 126,
-      "texts": 67,
-      "arrows": 27,
-      "sha256": "a2da2e1b6833613eee0eb79b570da7a47cfab875a43c2fc6a53b4b4b85a98a64",
+      "elements": 40,
+      "texts": 22,
+      "arrows": 10,
+      "component_shapes": 8,
+      "sha256": "d9794510a6db6f63695d4f2cdf7b4c9c1189ff66299006b8f9f5a048b203fd7c",
       "png_pixels": [
-        2315,
-        2370
+        1780,
+        833
       ],
       "language": "es",
       "network_failures": 0,
       "ids_and_reciprocal_bindings": "pass",
       "source_and_render_match": "pass",
-      "visual_inspection": "overview and all four full-scale tiles",
-      "rb_example": "BST order and colors checked; black height 2 including NIL"
+      "visual_inspection": "pass; one full-resolution PNG",
+      "semantic_palette": "pass: blue services, yellow reliability, green databases, red conditions",
+      "tree_operations": "notes preserve insert, reinsert, rekey, peek and post-commit removal"
     }
   },
   "red_black_example": {
@@ -90,8 +92,9 @@
   },
   "scheduler_integration": {
     "date": "2026-10-25",
-    "scope": "Integrate the screenshot planning block with priority/reservation/dispatch separation, durable schedule_at + spot_id output, and explicit READY-tree operations.",
+    "scope": "Simplified replacement of the integrated planning block: eight semantic components, user-defined colors, concise tree-operation notes and spot_id + schedule_at output.",
     "original_scenes_preserved": true,
-    "validation_limit": "Artifact validation only; no runtime, AWS, load test or laboratory evaluator execution."
+    "validation_limit": "Artifact validation only; no runtime, AWS, load test or laboratory evaluator execution.",
+    "revision": "simplified per explicit user feedback on 2026-10-25"
   }
 }

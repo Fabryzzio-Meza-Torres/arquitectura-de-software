@@ -1,12 +1,9 @@
-Requerimientos Funcionales
-
-- RF1: Gestión de envíos: El sistema permite a los estudiantes enviar código y archivos desde su aplicación móvil.
-- RF2: Subida docente: El sistema permite a los profesores subir entregas y gestionar evaluaciones desde interfaces web o de escritorio.
-- RF3: Enrutamiento inteligente: El enrutador redirige automáticamente las solicitudes hacia el sistema nuevo o hacia la laptop legacy según el curso.
-- RF4: Segmentación de colas: El sistema organiza las entregas en colas separadas por tipo de curso (Programación, Arquitectura e IA).
-- RF5: Calificación automática: El sistema procesa de forma asíncrona y aislada el código de los alumnos mediante workers especializados.
-- RF6: Revisión manual: El sistema brinda a los profesores una herramienta para realizar revisiones y calificaciones manuales directas.
-- RF7: Consulta de estados: El sistema permite a los usuarios consultar en tiempo real el estado y resultado de sus entregas.
-- RF8: Notificaciones push: El sistema avisa automáticamente al celular del estudiante cuando su entrega ha sido calificada.
-- RF9: Reintento por infraestructura: El sistema re-encola automáticamente aquellas tareas interrumpidas por fallas de la nube sin afectar al alumno.
-- RF10: Manejo de errores críticos: El sistema desvía a una cola de mensajes muertos (DLQ) los fallos repetitivos para la revisión humana.
+RF1 – Envío y subida de entregas: Los estudiantes envían código y archivos desde el móvil, y los profesores suben entregas desde web o escritorio. Cada entrega se guarda en S3 y se registra como tarea en la Tasks DB. (Mobile/Web/Desktop → BFF → Submission Service)
+RF2 – Enrutamiento y coexistencia: El Strangler Router envía cada solicitud al legacy o al sistema nuevo según curso, ciclo y tarea, y puede enviar una copia en sombra al sistema nuevo. (Strangler Router)
+RF3 – Paridad y migración de datos: El sistema compara los resultados del legacy con los del nuevo y migra los datos históricos en lotes idempotentes con validación. Un ciclo solo se marca como migrado si la validación es OK. (Parity Check Service, ETL)
+RF4 – Planificación y priorización: El Fair Planner ordena las tareas por prioridad (cantidad de tareas, tiempo estimado y urgencia) usando la capacidad que reporta Metrics & Telemetry, y asigna scheduled_at en la Tasks DB. (Fair Planner Task Scheduler)
+RF5 – Seguridad previa a la ejecución: El Agentic Security Scan analiza el código antes de ejecutarlo. Las entregas sospechosas pasan a revisión manual de seguridad y se rechazan o se retienen. (Security Scan, Manual Security Review, Reject/Hold)
+RF6 – Ejecución aislada y calificación automática: Las tareas se ejecutan en sandboxes que agrupan varias tareas, dentro de pools especializados por curso (Programación, Arquitectura, IA/GPU). Cada tarea se califica por separado y el Automatic Calification Service muestra la nota y las razones. (Sandbox, Worker Pools, Programming unit test service)
+RF7 – Revisión asistida y gestión de notas: Los minions de Arquitectura e IA revisan y proponen calificación dentro de los límites de su harness, y los profesores gestionan revisiones y calificaciones. (LLM Multimodal, Harnesses, Reviews Service)
+RF8 – Reintento y reanudación: Si se reclama una instancia Spot, las tareas en ejecución en ese sandbox se guardan en checkpoint y se re-encolan. Ante errores de sandbox o infraestructura, cada tarea se reintenta de forma individual hasta 3 veces actualizando next_run_at. Al superar los 3 intentos, esa tarea se cancela y se notifica. (Checkpoint Store, Retry, ¿>3 retries?)
+RF9 – Consulta de estado y notificaciones: Estudiantes y profesores consultan el estado y el resultado de cada entrega. El sistema los notifica cuando una tarea supera 45 minutos o se cancela tras agotar los reintentos. (Status Service, Notification Service)

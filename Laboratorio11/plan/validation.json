@@ -6,27 +6,51 @@
       "elements": 76,
       "texts": 38,
       "arrows": 17,
-      "sha256": "b3f6e8649ce7a6130529860f692cd99b0cb79917f63b3fde8067e50d8ff553cb",
+      "sha256": "ea03e46a95efa481f7823fd768dbae92045c80065e932b44aeba644e9bdceb03",
       "png_pixels": [
         1890,
-        1355
+        1350
       ],
       "network_failures": 0,
       "ids_and_reciprocal_bindings": "pass",
-      "source_and_render_match": "pass"
+      "source_and_render_match": "pass",
+      "language": "es",
+      "translated_text_elements": 38,
+      "non_text_elements_preserved": true,
+      "visual_inspection": "pass"
     },
     "priority-tree": {
-      "elements": 36,
-      "texts": 21,
+      "elements": 37,
+      "texts": 22,
       "arrows": 1,
-      "sha256": "920f987aa0dd4e8f0cfea637100f985c7469b78c60e7d4a2479aa70e23a7884a",
+      "sha256": "cd8d563450fc17e66cebf8755dbf3ca2ded566dace5f9bd428639497ab87d8cb",
       "png_pixels": [
-        1530,
-        1135
+        1520,
+        1130
       ],
       "network_failures": 0,
       "ids_and_reciprocal_bindings": "pass",
-      "source_and_render_match": "pass"
+      "source_and_render_match": "pass",
+      "language": "es",
+      "translated_text_elements": 8,
+      "non_text_elements_preserved": true,
+      "visual_inspection": "pass"
+    },
+    "scheduler-integrated": {
+      "elements": 126,
+      "texts": 67,
+      "arrows": 27,
+      "sha256": "a2da2e1b6833613eee0eb79b570da7a47cfab875a43c2fc6a53b4b4b85a98a64",
+      "png_pixels": [
+        2315,
+        2370
+      ],
+      "language": "es",
+      "network_failures": 0,
+      "ids_and_reciprocal_bindings": "pass",
+      "source_and_render_match": "pass",
+      "visual_inspection": "overview and all four full-scale tiles",
+      "rb_example": "BST order and colors checked; black height 2 including NIL"
     }
   },
   "red_black_example": {
@@ -50,6 +74,24 @@
     "Laboratorio11/requirements/no-functional-requirements.md": "737a0b8dc08bcddc9e9fd6c58ecba77a143b644c2d0bf82b68dafaf0fbdf6dff",
     "Laboratorio11/study-case/Lab #11.md": "df394571fb298bba1888d2a72e4acd473868aa97515ce43d3f46cb7e36506608"
   },
-  "local_links_checked": 9,
-  "independent_builder_review": "Two material ambiguities fixed; follow-up: nothing important left."
+  "local_links_checked": 11,
+  "independent_builder_review": "Two material ambiguities fixed; follow-up: nothing important left.",
+  "last_updated": "2026-10-25",
+  "architecture_translation": {
+    "date": "2026-10-25",
+    "baseline_sha256": "b76e3e020eaa108d7109b4110ca64a6af1679012977842026e47ae795128eea3",
+    "scope": "Translate all 38 text elements; preserve identifiers and every non-text element; replace PNG.",
+    "pixel_coverage_and_source_check": "pass"
+  },
+  "tree_translation": {
+    "date": "2026-10-25",
+    "scope": "Translate 8 prose labels, including the existing aging annotation; preserve all task IDs, key values, colors and connections; replace PNG.",
+    "pixel_coverage_and_source_check": "pass"
+  },
+  "scheduler_integration": {
+    "date": "2026-10-25",
+    "scope": "Integrate the screenshot planning block with priority/reservation/dispatch separation, durable schedule_at + spot_id output, and explicit READY-tree operations.",
+    "original_scenes_preserved": true,
+    "validation_limit": "Artifact validation only; no runtime, AWS, load test or laboratory evaluator execution."
+  }
 }

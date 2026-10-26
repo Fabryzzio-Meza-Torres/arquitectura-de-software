@@ -287,10 +287,26 @@ Open policy approvals before production: grading-clock origin, correction target
 
 ### Deliverable validation results
 
-- Architecture: 76 elements, 38 texts, 17 arrows; PNG 1890 × 1355. Tree: 36 elements, 21 texts, one selection arrow; PNG 1530 × 1135. Both were rendered from their final source scenes and visually inspected.
+- Architecture: 76 elements, 38 texts, 17 arrows; PNG 1890 × 1350. Tree: 37 elements, 22 texts, one selection arrow; PNG 1520 × 1130. Both were rendered from their final source scenes and visually inspected.
 - Checked unique IDs, existing targets and reciprocal arrow bindings, readable text settings, and source hashes matching render manifests. The render evidence checker verified complete image coverage and pixel-exact crops. Final renders had zero failed network requests.
 - Mechanically checked the illustrated tree's search order, black root, absence of red/red adjacency and equal black height of three including NIL. Verified the reported in-order sequence. This validates the example, not a production tree implementation.
 - Independent builder review found two issues: estimated backfill could overrun a protected start, and graceful drain was conflated with failure recovery. Both were corrected; follow-up review reported no important questions remaining within the proposed scope.
 - Checked local document links and `git diff --check`; original assignment, backlogs and drawings were not edited. Machine-readable counts, hashes and validation scope are in [validation.json](validation.json).
 - The skill's initial CDN-based renderer failed before scene loading because an `esm.sh` dependency returned HTTP 404. Used the repository's existing pinned local Excalidraw export helper instead; no skill code or runtime package manifest in the repository was changed.
 - No AWS deployment, runtime benchmark, load simulation, fitness-function execution or laboratory evaluator run was performed. The scenarios in section 9 remain proposed tests.
+
+### Spanish architecture export — 2026-10-25
+
+At the user's request, translated all 38 architecture text elements into Spanish and replaced `scheduler-architecture.png`. Preserved technical identifiers and every non-text element, including connection geometry and bindings. Inspected the new 1890 × 1350 PNG and verified its source hash, complete render coverage and reciprocal bindings. Updated `validation.json`; the priority-tree artifacts were not changed.
+
+### Spanish priority-tree export — 2026-10-25
+
+At the user's request, translated the eight prose labels of `priority-tree.excalidraw`, including the existing long-task aging annotation, and replaced `priority-tree.png`. All task identifiers, key values, node colors and non-text elements were preserved. Visually inspected the new export and verified the source/render hash and complete pixel coverage; refreshed `validation.json`.
+
+### Integrated scheduler and tree operations — 2026-10-25
+
+Created [scheduler-integrated.excalidraw](scheduler-integrated.excalidraw) and its [PNG preview](scheduler-integrated.png), preserving the earlier artifacts. The new Spanish scene evolves the planning subsystem shown in the user's screenshot: event detection, telemetry, priority/capacity planning, task scheduling, availability decision and Tasks DB. It adds interval-capacity reservation, dispatch authorization, worker/S3 connectors, global scaling bounds, recovery and a state timeline.
+
+The lower detail explicitly shows insert on committed READY, selection without removal, removal only after reservation commit, reinsertion after recovery/replanning, and remove/reinsert for a changed READY key. A three-node red-black example distinguishes balancing colors from priority. Its example `schedule_at` names the planned start represented by `planned_start_at` in the original design; it does not authorize execution by itself. Missing capacity keeps a task pending; running work and protected reservations remain respected.
+
+Inspected the overview and all four full-scale render tiles after correcting arrow/text crossings. Source-hash, full-pixel-coverage, unique-ID, reciprocal-binding, required-label and example-tree checks passed; final counts and dimensions are recorded in `validation.json`. This is artifact-level integration and visual validation, not implementation, an AWS test or a laboratory evaluator run.

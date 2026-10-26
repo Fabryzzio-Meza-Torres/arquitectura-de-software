@@ -1,12 +1,10 @@
-Requerimientos No Funcionales
-
-- RNF1: Alta disponibilidad: El sistema responde de inmediato ante picos masivos de tráfico gracias al encolamiento asíncrono con SQS.
-- RNF2: Tolerancia a fallos: El sistema recupera automáticamente las tareas afectadas si una instancia de nube se apaga repentinamente.
-- RNF3: Optimización de costos: La infraestructura de cómputo utiliza exclusivamente instancias Spot económicas para cumplir con el presupuesto.
-- RNF4: Escalabilidad automática: El sistema dimensiona el número de workers dinámicamente según la cantidad de entregas pendientes en las colas.
-- RNF5: Rendimiento en lecturas: El sistema soporta consultas masivas de notas utilizando réplicas de lectura en la base de datos.
-- RNF6: Baja latencia: El sistema ofrece consultas de estado ultrarrápidas en milisegundos apoyándose en una capa de caché Redis.
-- RNF7: Aislamiento seguro: El sistema ejecuta el código no confiable de los alumnos en sandboxes estrictamente seguros y sin red.
-- RNF8: Modularidad: El sistema está diseñado en componentes independientes para escalar y desplegarse por separado.
-- RNF9: Durabilidad de datos: El sistema almacena con seguridad todo el código y los resultados en S3 para evitar pérdidas.
-- RNF10: Observabilidad: El sistema monitorea constantemente métricas clave como el tamaño de las colas, el rendimiento y las interrupciones.
+RNF1 – Disponibilidad y durabilidad en picos: Las entregas se guardan de inmediato en S3 de forma inmutable y se programan de forma asíncrona, así que ningún pico de envíos bloquea la recepción. (Submission Service, S3, Tasks DB)
+RNF2 – Tolerancia a fallos Spot: Ante la reclamación de una instancia, cada tarea del sandbox afectado se reanuda desde su último checkpoint, sin intervención del alumno y sin que una tarea arrastre a las demás. (Checkpoint Store, Re-encolar)
+RNF3 – Optimización de costos: Los workers y sandboxes usan exclusivamente instancias Spot, y el Autoscaler dimensiona el cómputo según carga, prioridad y SLA. (Worker Pools, Autoscaler)
+RNF4 – Escalabilidad automática: El número de workers se ajusta a las tareas pendientes y su prioridad, con pools de CPU y GPU independientes. (Autoscaler, Worker Pools CPU/GPU)
+RNF5 – Cumplimiento de plazos y equidad: Toda entrega se califica o se deriva a revisión en 48 horas, priorizando las más urgentes. Ningún curso monopoliza la capacidad ni deja tareas sin atender. (Fair Planner, fórmula de prioridad, Fitness Functions)
+RNF6 – Rendimiento en consultas: Las consultas de estado se responden en milisegundos mediante caché Redis (cache-aside). (Redis Cache, Status Service)
+RNF7 – Aislamiento seguro: El código no confiable corre en un sandbox (contenedor o microVM) que impone red restringida, límites de CPU, RAM y tiempo, y no da acceso a credenciales. Como comparte sandbox con otras tareas, ninguna tarea puede leer ni afectar los datos de otra. Solo entra tras pasar el escaneo previo. (Sandbox)
+RNF8 – Control de agentes de IA: Los agentes operan con un harness en dos capas. El Global Harness define las herramientas, el contexto, la rúbrica, los permisos y los límites comunes, y el harness de cada curso los especializa. Un agente solo puede usar lo que esas capas le definen y no actúa fuera de su curso. Su salida es una propuesta de calificación, no una decisión final. (Global Harness, Course Harness)
+RNF9 – Migración gradual: El paso al sistema nuevo se hace por curso, con copia en sombra y verificación de paridad. El curso sigue en legacy hasta que la validación sea OK. (Strangler Router, Parity Check, ETL)
+RNF10 – Observabilidad: El sistema monitorea métricas, logs y trazas de la plataforma y valida la arquitectura con fitness functions. Las alertas llegan a IT, y las métricas de ejecución alimentan al planificador. (Observability + Fitness Functions, Alerts a IT, Metrics & Telemetry)

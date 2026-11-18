@@ -1,0 +1,285 @@
+{
+  "dataset": "trec-covid",
+  "argv": [
+    "/kaggle/input/datasets/gianpiersegoviaureta/minion-bench/minion_bench.py",
+    "--dataset",
+    "trec-covid",
+    "--alpha",
+    "/kaggle/input/datasets/gianpiersegoviaureta/minion-bench/alpha.json",
+    "--data-dir",
+    "/tmp/data",
+    "--out",
+    "results",
+    "--encode-batch",
+    "128",
+    "--reps",
+    "3",
+    "--calibration",
+    "results/trec-covid/calibration.json"
+  ],
+  "pilot": false,
+  "device": "cuda",
+  "node": "f9304166ff07",
+  "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "nvidia_smi": "Wed Nov 18 07:01:56 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |\n| N/A   45C    P8             10W /   70W |       3MiB /  15360MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   1  Tesla T4                       Off |   00000000:00:05.0 Off |                    0 |\n| N/A   47C    P8             10W /   70W |       3MiB /  15360MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+\n",
+  "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  4\nOn-line CPU(s) list:                     0-3\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      2\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.39\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch pti ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               64 KiB (2 instances)\nL1i cache:                               64 KiB (2 instances)\nL2 cache:                                2 MiB (2 instances)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-3\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Mitigation; Aligned branch/return thunks\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Mitigation; Clear CPU buffers; SMT Host state unknown\nVulnerability Meltdown:                  Mitigation; PTI\nVulnerability Mmio stale data:           Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Mitigation; IBRS\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; IBRS; IBPB conditional; STIBP conditional; RSB filling; PBRSB-eIBRS Not affected; BHI SW loop, KVM SW loop\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Mitigation; Clear CPU buffers; SMT Host state unknown\nVulnerability Vmscape:                   Not affected\n",
+  "libraries": {
+    "torch": "2.11.0+cu130",
+    "sentence-transformers": "6.3.0",
+    "transformers": "5.20.2",
+    "faiss-cpu": "1.16.0",
+    "bm25s": "0.3.16",
+    "PyStemmer": "3.1.0",
+    "numpy": "2.1.3",
+    "scipy": "1.16.3",
+    "huggingface-hub": "1.33.0",
+    "tokenizers": "0.23.3"
+  },
+  "model_shas": {
+    "reranker": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "semantic_pinned": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+  },
+  "script_sha256": "36671cd85f4b168d422c916701bbec79ec90bd7edb7f0d65ea36e52e9a9f0f47",
+  "config": {
+    "seed": 42,
+    "datasets": {
+      "fiqa": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/fiqa.zip",
+      "trec-covid": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/trec-covid.zip"
+    },
+    "doc_text": "title + ' ' + text",
+    "lexical": {
+      "lib": "bm25s",
+      "method": "lucene",
+      "k1": 0.9,
+      "b": 0.4,
+      "stopwords": "en",
+      "stemmer": "english (PyStemmer)",
+      "top_k": 10
+    },
+    "semantic": {
+      "model": "BAAI/bge-base-en-v1.5",
+      "model_revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+      "query_prefix": "Represent this sentence for searching relevant passages: ",
+      "encoding": "forward en fp16; pooling CLS; normalización L2; se guarda en float32",
+      "index": "faiss.IndexFlatIP",
+      "max_length": 512,
+      "top_k": 10
+    },
+    "fusion": {
+      "normalization": "min-max por consulta; si max == min -> 1.0",
+      "formula": "(1 - alpha) * lex_norm + alpha * sem_norm",
+      "alpha": "leer de alpha.json (= 0.85)",
+      "tie_break": "ID del documento ascendente (como string), también en el corte del top 10"
+    },
+    "reranker": {
+      "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+      "max_length": 512,
+      "replicas": 2,
+      "batch": "todos los candidatos en un lote"
+    },
+    "timeouts_ms": {
+      "lexical": 50,
+      "semantic": 1200,
+      "fusion": 50,
+      "rerank": 1200
+    },
+    "slo_ms": 2500,
+    "hedging": {
+      "threshold": "p95 del reranker medido en calibración",
+      "max_extra": 0.1,
+      "window_s": 60
+    }
+  },
+  "interpretations": {
+    "replica_model": "each stage/replica runs on its own ThreadPoolExecutor (lex 2 workers, sem 1, fusion 2, rerank_a 1, rerank_b 1); both reranker replicas share the same GPU",
+    "delay_injection": "the stage computes its result, then awaits asyncio.sleep(delay) before responding; the worker thread is not blocked by the injected delay",
+    "error_injection": "the stage raises immediately, without computing",
+    "expired_work": "work whose stage deadline already passed when it reaches a worker is skipped",
+    "hedge_trigger": "replica B is sent when A has no valid answer at the threshold (pending or failed) and hedges in the last 60 s < 10% of originals in the last 60 s",
+    "arrivals": "Poisson inter-arrivals from np.random.default_rng(42), identical for every condition with the same rate and for every repetition",
+    "delay_draws": "np.random.default_rng([42, rep, request_index]).random(4) -> lex, sem, rerank_a, rerank_b",
+    "fusion_failure": "if fusion fails or exceeds 50 ms the lexical top 3 is returned (route lex)",
+    "capacity_throughput": "throughput ratio = responses with route=reranked, 3 results and latency <= SLO divided by the requests actually sent in the step (Poisson arrivals make the sent count differ from the nominal rate); all ramp steps run and C is the highest passing rate",
+    "calibration_hedging": "calibration (a) runs with hedging off (threshold unknown); ramp (b) with hedging on",
+    "hedge_latency": "the 1.2 s rerank deadline is shared by both replicas; a hedge sent after the deadline cannot win and its latency equals the stage duration (compute + injected delay), so it may exceed the stage deadline",
+    "top_k_tie_break": "lexical and semantic top 10 also break score ties by ascending document ID"
+  },
+  "alpha_json": {
+    "alpha": 0.85,
+    "precision_at_3": 0.2513333333333326,
+    "ndcg_at_3": 0.40268380281868393,
+    "selection_rule": "max P@3; then max nDCG@3; then min alpha",
+    "dataset": "FiQA",
+    "split": "dev",
+    "n_queries": 500,
+    "n_documents": 57638,
+    "seed": 42,
+    "fusion": "(1-alpha)*lex_norm + alpha*sem_norm",
+    "normalization": "per-query candidate min-max; constant scores -> 1.0",
+    "document_tie_break": "ascending document ID (string)",
+    "model": "BAAI/bge-base-en-v1.5",
+    "model_revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+    "encoding": "fp16 forward; CLS pooling; L2 float32; stored float32",
+    "bm25": {
+      "library": "bm25s",
+      "method": "lucene",
+      "k1": 0.9,
+      "b": 0.4,
+      "stopwords": "en",
+      "stemmer": "english (PyStemmer)",
+      "top_k": 10
+    },
+    "semantic": {
+      "query_prefix": "Represent this sentence for searching relevant passages: ",
+      "max_length": 512,
+      "normalize": true,
+      "index": "faiss.IndexFlatIP",
+      "top_k": 10
+    },
+    "candidate_sha256": "733e489518a932a3d8a8e9de722eba903d274707e6770ab891f5e5ad5a5cd3ae",
+    "script_sha256": "288142a0b37e21801bd479f30e8bdf30b714e0413fc478425b029477e6566f8e",
+    "pilot": false,
+    "node": "ag001",
+    "slurm_job_id": "63761"
+  },
+  "settings": {
+    "max_docs": null,
+    "cond_seconds": 180,
+    "warmup_seconds": 30,
+    "ramp_seconds": 120,
+    "calib_n": 500,
+    "ramp_rates": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "reps": 3,
+    "conditions": [
+      "L25",
+      "L50",
+      "L75",
+      "L100",
+      "NORERANK",
+      "NOHEDGE",
+      "F1",
+      "F2",
+      "F3H",
+      "F3NH",
+      "F4",
+      "F5",
+      "F6"
+    ]
+  },
+  "env": {
+    "CUDA_VISIBLE_DEVICES": null,
+    "KAGGLE_KERNEL_RUN_TYPE": "Batch",
+    "SLURM_JOB_ID": null,
+    "HF_HUB_OFFLINE": null
+  },
+  "gpu": "Tesla T4",
+  "phase0_seconds": 821.8146872700001,
+  "index_timings": {
+    "bm25_index_s": 28.006969762999972,
+    "corpus_encode_s": 703.44209267
+  },
+  "corpus_size": 171332,
+  "n_test_queries": 50,
+  "n_calibration_queries": 1000,
+  "calibration": {
+    "frozen": true,
+    "dataset": "trec-covid",
+    "stages_1qps": {
+      "lex": {
+        "n": 500,
+        "p50_ms": 6.279,
+        "p95_ms": 13.66,
+        "p99_ms": 19.417
+      },
+      "sem": {
+        "n": 500,
+        "p50_ms": 62.196,
+        "p95_ms": 152.732,
+        "p99_ms": 261.163
+      },
+      "fusion": {
+        "n": 500,
+        "p50_ms": 0.513,
+        "p95_ms": 0.937,
+        "p99_ms": 1.421
+      },
+      "rerank": {
+        "n": 500,
+        "p50_ms": 114.604,
+        "p95_ms": 162.169,
+        "p99_ms": 181.269
+      },
+      "e2e": {
+        "n": 500,
+        "p50_ms": 184.303,
+        "p95_ms": 284.429,
+        "p99_ms": 383.045
+      }
+    },
+    "hedge_threshold_ms": 162.169,
+    "ramp": [
+      {
+        "rate": 1,
+        "n_sent": 131,
+        "qps_offered_measured": 1.0917,
+        "qps_achieved": 1.0917,
+        "throughput_ratio": 1.0,
+        "p99_ms": 316.707,
+        "p99_first_half_ms": 316.707,
+        "p99_second_half_ms": 329.446,
+        "p99_stable": true,
+        "pass": true
+      },
+      {
+        "rate": 2,
+        "n_sent": 244,
+        "qps_offered_measured": 2.0333,
+        "qps_achieved": 2.0333,
+        "throughput_ratio": 1.0,
+        "p99_ms": 561.5,
+        "p99_first_half_ms": 561.5,
+        "p99_second_half_ms": 481.072,
+        "p99_stable": true,
+        "pass": true
+      },
+      {
+        "rate": 4,
+        "n_sent": 478,
+        "qps_offered_measured": 3.9833,
+        "qps_achieved": 3.9833,
+        "throughput_ratio": 1.0,
+        "p99_ms": 758.188,
+        "p99_first_half_ms": 644.245,
+        "p99_second_half_ms": 812.046,
+        "p99_stable": false,
+        "pass": false
+      },
+      {
+        "rate": 8,
+        "n_sent": 949,
+        "qps_offered_measured": 7.9083,
+        "qps_achieved": 7.025,
+        "throughput_ratio": 0.8883,
+        "p99_ms": 1323.096,
+        "p99_first_half_ms": 1336.903,
+        "p99_second_half_ms": 1318.219,
+        "p99_stable": true,
+        "pass": false
+      }
+    ],
+    "ramp_seconds": 120,
+    "C_qps": 2,
+    "capacity_rule": "highest ramp rate (all steps are run) with throughput >= 99% of the requests actually sent and p99(second half) <= 1.2 * p99(first half)",
+    "throughput_definition": "throughput ratio = responses with route=reranked, 3 results and latency <= SLO divided by the requests actually sent in the step (Poisson arrivals make the sent count differ from the nominal rate); all ramp steps run and C is the highest passing rate"
+  },
+  "finished": "2026-11-18T09:13:55"
+}

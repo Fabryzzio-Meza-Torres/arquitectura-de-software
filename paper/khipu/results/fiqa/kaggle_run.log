@@ -1,0 +1,97 @@
+[{"stream_name":"stdout","time":11.671842817,"data":"[07:01:39] alpha.json OK (alpha=0.85)\n"}
+,{"stream_name":"stdout","time":25.136738634,"data":"[07:01:52] downloading https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/fiqa.zip\n"}
+,{"stream_name":"stdout","time":27.624988475,"data":"[07:01:55] fiqa: 57638 docs, 648 test queries, 5500 calibration queries\n"}
+,{"stream_name":"stdout","time":95.12660504,"data":"[07:03:02] BM25 index: 57638 docs in 7.4s\n"}
+,{"stream_name":"stderr","time":95.254810578,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":99.987418024,"data":"\rLoading weights:   0%|          | 0/199 [00:00\u003c?, ?it/s]\rLoading weights: 100%|██████████| 199/199 [00:00\u003c00:00, 2728.73it/s]\n"}
+,{"stream_name":"stdout","time":285.100327433,"data":"[07:06:12] corpus embeddings (57638, 768) in 183.4s\n"}
+,{"stream_name":"stderr","time":287.745330904,"data":"\rLoading weights:   0%|          | 0/105 [00:00\u003c?, ?it/s]\rLoading weights: 100%|██████████| 105/105 [00:00\u003c00:00, 2677.25it/s]\n"}
+,{"stream_name":"stderr","time":290.594009577,"data":"\rLoading weights:   0%|          | 0/105 [00:00\u003c?, ?it/s]\rLoading weights: 100%|██████████| 105/105 [00:00\u003c00:00, 2599.58it/s]\n"}
+,{"stream_name":"stdout","time":291.095329677,"data":"[07:06:18] warm-up: 50 queries\n"}
+,{"stream_name":"stdout","time":302.664958558,"data":"[07:06:30] loaded frozen calibration: C=2 threshold=168.069ms\n"}
+,{"stream_name":"stdout","time":302.665680279,"data":"[07:06:30] rep 1 L25: 0.500 QPS for 180s, faults={}, hedging=True\n"}
+,{"stream_name":"stdout","time":484.861768755,"data":"[07:09:32]   -\u003e p99=242.085 continuity=100.0% dup=1.1236% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":484.862254766,"data":"[07:09:32] rep 1 L50: 1.000 QPS for 180s, faults={}, hedging=True\n"}
+,{"stream_name":"stdout","time":666.867503909,"data":"[07:12:34]   -\u003e p99=251.746 continuity=100.0% dup=0.6452% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":666.868103311,"data":"[07:12:34] rep 1 L75: 1.500 QPS for 180s, faults={}, hedging=True\n"}
+,{"stream_name":"stdout","time":848.407011711,"data":"[07:15:36]   -\u003e p99=296.484 continuity=100.0% dup=1.7316% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":848.407594885,"data":"[07:15:36] rep 1 L100: 2.000 QPS for 180s, faults={}, hedging=True\n"}
+,{"stream_name":"stdout","time":1030.714833464,"data":"[07:18:38]   -\u003e p99=325.31 continuity=100.0% dup=1.3072% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":1030.715391258,"data":"[07:18:38] rep 1 NORERANK: 2.000 QPS for 180s, faults={}, hedging=False\n"}
+,{"stream_name":"stdout","time":1212.908694511,"data":"[07:21:40]   -\u003e p99=42.156 continuity=100.0% dup=None% routes={'fused_baseline': 100.0}\n"}
+,{"stream_name":"stdout","time":1212.909263676,"data":"[07:21:40] rep 1 NOHEDGE: 2.000 QPS for 180s, faults={}, hedging=False\n"}
+,{"stream_name":"stdout","time":1395.208302606,"data":"[07:24:42]   -\u003e p99=295.742 continuity=100.0% dup=0.0% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":1395.209045884,"data":"[07:24:42] rep 1 F1: 1.500 QPS for 180s, faults={'rerank_a': 'error', 'rerank_b': 'error'}, hedging=True\n"}
+,{"stream_name":"stdout","time":1576.699841834,"data":"[07:27:44]   -\u003e p99=38.388 continuity=100.0% dup=10.3896% routes={'fused_fallback': 100.0}\n"}
+,{"stream_name":"stdout","time":1576.70035923,"data":"[07:27:44] rep 1 F2: 1.500 QPS for 180s, faults={'rerank_a': 'delay:1500', 'rerank_b': 'delay:1500'}, hedging=True\n"}
+,{"stream_name":"stdout","time":1759.390059529,"data":"[07:30:47]   -\u003e p99=1364.54 continuity=100.0% dup=10.3896% routes={'fused_fallback': 100.0}\n"}
+,{"stream_name":"stdout","time":1759.390654631,"data":"[07:30:47] rep 1 F3H: 1.500 QPS for 180s, faults={'rerank_a': 'delay_prob:0.05:800'}, hedging=True\n"}
+,{"stream_name":"stdout","time":1940.929174139,"data":"[07:33:48]   -\u003e p99=311.961 continuity=100.0% dup=3.8961% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":1940.929414164,"data":"[07:33:48] rep 1 F3NH: 1.500 QPS for 180s, faults={'rerank_a': 'delay_prob:0.05:800'}, hedging=False\n"}
+,{"stream_name":"stdout","time":2122.467231349,"data":"[07:36:50]   -\u003e p99=930.674 continuity=100.0% dup=0.0% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":2122.467839863,"data":"[07:36:50] rep 1 F4: 1.500 QPS for 180s, faults={'sem': 'error'}, hedging=True\n"}
+,{"stream_name":"stdout","time":2303.927833557,"data":"[07:39:51]   -\u003e p99=5.759 continuity=100.0% dup=None% routes={'lex': 100.0}\n"}
+,{"stream_name":"stdout","time":2303.928379299,"data":"[07:39:51] rep 1 F5: 1.500 QPS for 180s, faults={'lex': 'error'}, hedging=True\n"}
+,{"stream_name":"stdout","time":2485.415038324,"data":"[07:42:53]   -\u003e p99=42.228 continuity=100.0% dup=None% routes={'sem': 100.0}\n"}
+,{"stream_name":"stdout","time":2485.415747034,"data":"[07:42:53] rep 1 F6: 1.500 QPS for 180s, faults={'lex': 'error', 'sem': 'error'}, hedging=True\n"}
+,{"stream_name":"stdout","time":2666.875882651,"data":"[07:45:54]   -\u003e p99=None continuity=0.0% dup=None% routes={'error': 100.0}\n"}
+,{"stream_name":"stdout","time":2666.876683864,"data":"[07:45:54] rep 2 L25: 0.500 QPS for 180s, faults={}, hedging=True\n"}
+,{"stream_name":"stdout","time":2849.071862286,"data":"[07:48:56]   -\u003e p99=262.989 continuity=100.0% dup=1.1236% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":2849.072644143,"data":"[07:48:56] rep 2 L50: 1.000 QPS for 180s, faults={}, hedging=True\n"}
+,{"stream_name":"stdout","time":3031.076732899,"data":"[07:51:58]   -\u003e p99=233.696 continuity=100.0% dup=0.0% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":3031.077496375,"data":"[07:51:58] rep 2 L75: 1.500 QPS for 180s, faults={}, hedging=True\n"}
+,{"stream_name":"stdout","time":3212.614875856,"data":"[07:55:00]   -\u003e p99=309.005 continuity=100.0% dup=2.1645% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":3212.615638424,"data":"[07:55:00] rep 2 L100: 2.000 QPS for 180s, faults={}, hedging=True\n"}
+,{"stream_name":"stdout","time":3394.914948532,"data":"[07:58:02]   -\u003e p99=314.683 continuity=100.0% dup=1.634% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":3394.915649482,"data":"[07:58:02] rep 2 NORERANK: 2.000 QPS for 180s, faults={}, hedging=False\n"}
+,{"stream_name":"stdout","time":3577.111906508,"data":"[08:01:04]   -\u003e p99=45.302 continuity=100.0% dup=None% routes={'fused_baseline': 100.0}\n"}
+,{"stream_name":"stdout","time":3577.112663664,"data":"[08:01:04] rep 2 NOHEDGE: 2.000 QPS for 180s, faults={}, hedging=False\n"}
+,{"stream_name":"stdout","time":3759.413051444,"data":"[08:04:07]   -\u003e p99=306.599 continuity=100.0% dup=0.0% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":3759.413805846,"data":"[08:04:07] rep 2 F1: 1.500 QPS for 180s, faults={'rerank_a': 'error', 'rerank_b': 'error'}, hedging=True\n"}
+,{"stream_name":"stdout","time":3940.901940621,"data":"[08:07:08]   -\u003e p99=44.977 continuity=100.0% dup=10.3896% routes={'fused_fallback': 100.0}\n"}
+,{"stream_name":"stdout","time":3940.902705372,"data":"[08:07:08] rep 2 F2: 1.500 QPS for 180s, faults={'rerank_a': 'delay:1500', 'rerank_b': 'delay:1500'}, hedging=True\n"}
+,{"stream_name":"stdout","time":4123.589652868,"data":"[08:10:11]   -\u003e p99=1367.964 continuity=100.0% dup=10.3896% routes={'fused_fallback': 100.0}\n"}
+,{"stream_name":"stdout","time":4123.590506745,"data":"[08:10:11] rep 2 F3H: 1.500 QPS for 180s, faults={'rerank_a': 'delay_prob:0.05:800'}, hedging=True\n"}
+,{"stream_name":"stdout","time":4305.304611504,"data":"[08:13:13]   -\u003e p99=389.485 continuity=100.0% dup=7.7922% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":4305.305555464,"data":"[08:13:13] rep 2 F3NH: 1.500 QPS for 180s, faults={'rerank_a': 'delay_prob:0.05:800'}, hedging=False\n"}
+,{"stream_name":"stdout","time":4487.644892111,"data":"[08:16:15]   -\u003e p99=988.936 continuity=100.0% dup=0.0% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":4487.645721887,"data":"[08:16:15] rep 2 F4: 1.500 QPS for 180s, faults={'sem': 'error'}, hedging=True\n"}
+,{"stream_name":"stdout","time":4669.106061304,"data":"[08:19:16]   -\u003e p99=5.886 continuity=100.0% dup=None% routes={'lex': 100.0}\n"}
+,{"stream_name":"stdout","time":4669.106809664,"data":"[08:19:16] rep 2 F5: 1.500 QPS for 180s, faults={'lex': 'error'}, hedging=True\n"}
+,{"stream_name":"stdout","time":4850.59309509,"data":"[08:22:18]   -\u003e p99=42.073 continuity=100.0% dup=None% routes={'sem': 100.0}\n"}
+,{"stream_name":"stdout","time":4850.594077711,"data":"[08:22:18] rep 2 F6: 1.500 QPS for 180s, faults={'lex': 'error', 'sem': 'error'}, hedging=True\n"}
+,{"stream_name":"stdout","time":5032.053807508,"data":"[08:25:19]   -\u003e p99=None continuity=0.0% dup=None% routes={'error': 100.0}\n"}
+,{"stream_name":"stdout","time":5032.05476355,"data":"[08:25:19] rep 3 L25: 0.500 QPS for 180s, faults={}, hedging=True\n"}
+,{"stream_name":"stdout","time":5214.251258036,"data":"[08:28:21]   -\u003e p99=235.663 continuity=100.0% dup=1.1236% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":5214.25212274,"data":"[08:28:21] rep 3 L50: 1.000 QPS for 180s, faults={}, hedging=True\n"}
+,{"stream_name":"stdout","time":5396.267450015,"data":"[08:31:24]   -\u003e p99=278.647 continuity=100.0% dup=2.5806% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":5396.268465525,"data":"[08:31:24] rep 3 L75: 1.500 QPS for 180s, faults={}, hedging=True\n"}
+,{"stream_name":"stdout","time":5577.810442377,"data":"[08:34:25]   -\u003e p99=313.497 continuity=100.0% dup=3.4632% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":5577.811377243,"data":"[08:34:25] rep 3 L100: 2.000 QPS for 180s, faults={}, hedging=True\n"}
+,{"stream_name":"stdout","time":5760.119866437,"data":"[08:37:27]   -\u003e p99=379.414 continuity=100.0% dup=3.9216% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":5760.120838526,"data":"[08:37:27] rep 3 NORERANK: 2.000 QPS for 180s, faults={}, hedging=False\n"}
+,{"stream_name":"stdout","time":5942.314950843,"data":"[08:40:30]   -\u003e p99=43.345 continuity=100.0% dup=None% routes={'fused_baseline': 100.0}\n"}
+,{"stream_name":"stdout","time":5942.315841426,"data":"[08:40:30] rep 3 NOHEDGE: 2.000 QPS for 180s, faults={}, hedging=False\n"}
+,{"stream_name":"stdout","time":6124.627726573,"data":"[08:43:32]   -\u003e p99=315.263 continuity=100.0% dup=0.0% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":6124.628784606,"data":"[08:43:32] rep 3 F1: 1.500 QPS for 180s, faults={'rerank_a': 'error', 'rerank_b': 'error'}, hedging=True\n"}
+,{"stream_name":"stdout","time":6306.117454053,"data":"[08:46:33]   -\u003e p99=50.107 continuity=100.0% dup=10.3896% routes={'fused_fallback': 100.0}\n"}
+,{"stream_name":"stdout","time":6306.118560649,"data":"[08:46:33] rep 3 F2: 1.500 QPS for 180s, faults={'rerank_a': 'delay:1500', 'rerank_b': 'delay:1500'}, hedging=True\n"}
+,{"stream_name":"stdout","time":6488.804791119,"data":"[08:49:36]   -\u003e p99=1379.847 continuity=100.0% dup=10.3896% routes={'fused_fallback': 100.0}\n"}
+,{"stream_name":"stdout","time":6488.805836245,"data":"[08:49:36] rep 3 F3H: 1.500 QPS for 180s, faults={'rerank_a': 'delay_prob:0.05:800'}, hedging=True\n"}
+,{"stream_name":"stdout","time":6670.345856699,"data":"[08:52:38]   -\u003e p99=449.864 continuity=100.0% dup=6.9264% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":6670.347038024,"data":"[08:52:38] rep 3 F3NH: 1.500 QPS for 180s, faults={'rerank_a': 'delay_prob:0.05:800'}, hedging=False\n"}
+,{"stream_name":"stdout","time":6851.896445317,"data":"[08:55:39]   -\u003e p99=947.583 continuity=100.0% dup=0.0% routes={'reranked': 100.0}\n"}
+,{"stream_name":"stdout","time":6851.897542094,"data":"[08:55:39] rep 3 F4: 1.500 QPS for 180s, faults={'sem': 'error'}, hedging=True\n"}
+,{"stream_name":"stdout","time":7033.357947248,"data":"[08:58:41]   -\u003e p99=6.132 continuity=100.0% dup=None% routes={'lex': 100.0}\n"}
+,{"stream_name":"stdout","time":7033.359198668,"data":"[08:58:41] rep 3 F5: 1.500 QPS for 180s, faults={'lex': 'error'}, hedging=True\n"}
+,{"stream_name":"stdout","time":7214.845155376,"data":"[09:01:42]   -\u003e p99=35.213 continuity=100.0% dup=None% routes={'sem': 100.0}\n"}
+,{"stream_name":"stdout","time":7214.846361188,"data":"[09:01:42] rep 3 F6: 1.500 QPS for 180s, faults={'lex': 'error', 'sem': 'error'}, hedging=True\n"}
+,{"stream_name":"stdout","time":7396.306058629,"data":"[09:04:44]   -\u003e p99=None continuity=0.0% dup=None% routes={'error': 100.0}\n"}
+,{"stream_name":"stdout","time":7396.307845727,"data":"[09:04:44] done\n"}
+,{"stream_name":"stderr","time":7409.380889965,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":7409.380922221,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":7409.723811384,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":7409.72383576,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":7410.598451226,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":7411.880603157,"data":"[NbConvertApp] Writing 278554 bytes to __results__.html\n"}
+]

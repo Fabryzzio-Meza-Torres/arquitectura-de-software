@@ -1,0 +1,118 @@
+{
+  "C_qps": 16.0,
+  "C_hybrid_qps_diagnostic": 2.0,
+  "hybrid_diagnostic_rule": "ruta reranked en >=99% de solicitudes y criterio original de C",
+  "hedge_threshold_ms": 159.37435254454613,
+  "stage_percentiles_1qps_ms": {
+    "lex": {
+      "p50": 2.520853653550148,
+      "p95": 2.8957026079297066,
+      "p99": 3.921724855899811,
+      "n": 100
+    },
+    "sem": {
+      "p50": 31.469136476516724,
+      "p95": 105.7095630094409,
+      "p99": 155.85946571081877,
+      "n": 100
+    },
+    "fusion": {
+      "p50": 0.771544873714447,
+      "p95": 0.8601602166891098,
+      "p99": 1.07522401958704,
+      "n": 100
+    },
+    "rerank": {
+      "p50": 117.88303777575493,
+      "p95": 159.37435254454613,
+      "p99": 164.9565352126956,
+      "n": 100
+    },
+    "end_to_end": {
+      "p50": 154.59738636190679,
+      "p95": 219.601993565,
+      "p99": 293.5130988039347,
+      "n": 100
+    }
+  },
+  "ramp": [
+    {
+      "offered_qps": 1.0,
+      "n_sent": 54,
+      "achieved_qps": 0.9,
+      "throughput_ratio": 0.9,
+      "delivered_fraction": 1.0,
+      "hybrid_qps": 0.9,
+      "hybrid_fraction": 1.0,
+      "p99_first_half_ms": 421.0929408822687,
+      "p99_second_half_ms": 279.54010987185285,
+      "p99_stable": true,
+      "passes": false,
+      "passes_hybrid_diagnostic": false,
+      "pct_reranked": 100.0
+    },
+    {
+      "offered_qps": 2.0,
+      "n_sent": 145,
+      "achieved_qps": 2.4166666666666665,
+      "throughput_ratio": 1.2083333333333333,
+      "delivered_fraction": 1.0,
+      "hybrid_qps": 2.4166666666666665,
+      "hybrid_fraction": 1.0,
+      "p99_first_half_ms": 462.45067920403216,
+      "p99_second_half_ms": 404.1528805104946,
+      "p99_stable": true,
+      "passes": true,
+      "passes_hybrid_diagnostic": true,
+      "pct_reranked": 100.0
+    },
+    {
+      "offered_qps": 4.0,
+      "n_sent": 233,
+      "achieved_qps": 3.8833333333333333,
+      "throughput_ratio": 0.9708333333333333,
+      "delivered_fraction": 1.0,
+      "hybrid_qps": 3.8833333333333333,
+      "hybrid_fraction": 1.0,
+      "p99_first_half_ms": 739.2638617514216,
+      "p99_second_half_ms": 1090.5032803378845,
+      "p99_stable": false,
+      "passes": false,
+      "passes_hybrid_diagnostic": false,
+      "pct_reranked": 100.0
+    },
+    {
+      "offered_qps": 8.0,
+      "n_sent": 445,
+      "achieved_qps": 7.416666666666667,
+      "throughput_ratio": 0.9270833333333334,
+      "delivered_fraction": 1.0,
+      "hybrid_qps": 5.583333333333333,
+      "hybrid_fraction": 0.7528089887640449,
+      "p99_first_half_ms": 1519.1894230009736,
+      "p99_second_half_ms": 2289.5460331907243,
+      "p99_stable": false,
+      "passes": false,
+      "passes_hybrid_diagnostic": false,
+      "pct_reranked": 75.28089887640449
+    },
+    {
+      "offered_qps": 16.0,
+      "n_sent": 986,
+      "achieved_qps": 16.433333333333334,
+      "throughput_ratio": 1.0270833333333333,
+      "delivered_fraction": 1.0,
+      "hybrid_qps": 6.166666666666667,
+      "hybrid_fraction": 0.3752535496957404,
+      "p99_first_half_ms": 1847.2922646286313,
+      "p99_second_half_ms": 1913.4877385936306,
+      "p99_stable": true,
+      "passes": true,
+      "passes_hybrid_diagnostic": false,
+      "pct_reranked": 37.52535496957404
+    }
+  ],
+  "ramp_seconds": 60.0,
+  "n_calib_queries": 100,
+  "note": "C_qps usa la definici\u00f3n original; C_hybrid_qps_diagnostic es adicional"
+}

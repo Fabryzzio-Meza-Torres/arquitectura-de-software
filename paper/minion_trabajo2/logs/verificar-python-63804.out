@@ -1,0 +1,13 @@
+Python: 3.6.8 (default, Sep 24 2024, 09:44:46) 
+[GCC 8.5.0 20210514 (Red Hat 8.5.0-22)]
+Ejecutable: /home/flavia.manuico/venvs/minion/bin/python
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AttributeError: module '__future__' has no attribute 'annotations'
+Python: 3.6.8 (default, Sep 24 2024, 09:44:46) 
+[GCC 8.5.0 20210514 (Red Hat 8.5.0-22)]
+Ejecutable: /home/flavia.manuico/venvs/minion/bin/python
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AttributeError: module '__future__' has no attribute 'annotations'
+srun: error: ds001: tasks 0-1: Exited with exit code 1

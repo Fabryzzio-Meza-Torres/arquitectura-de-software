@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=minion-calib
+#SBATCH --account=tesis
+#SBATCH --partition=data-science
+#SBATCH --nodelist=ds001
+#SBATCH --gres=shard:1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=32G
+#SBATCH --time=02:00:00
+#SBATCH --output=logs/%x-%j.out
+set -euo pipefail
+cd "$HOME/minion_trabajo2"
+source "$HOME/venvs/minion/bin/activate"
+export HF_HUB_OFFLINE=1
+export TOKENIZERS_PARALLELISM=false
+export OMP_NUM_THREADS=4
+nvidia-smi
+# Calibración real, sin --quick ni --subset.
+srun python minion_bench.py --dataset fiqa --phase calib \
+    --threads 4 --data-dir data --alpha-json alpha.json --out results/

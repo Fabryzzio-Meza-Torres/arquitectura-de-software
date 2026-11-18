@@ -1,0 +1,162 @@
+{
+  "C_qps": 64.0,
+  "C_hybrid_qps_diagnostic": 8.0,
+  "hybrid_diagnostic_rule": "ruta reranked en >=99% de solicitudes y criterio original de C",
+  "hedge_threshold_ms": 130.8930078521371,
+  "stage_percentiles_1qps_ms": {
+    "lex": {
+      "p50": 2.6239752769470215,
+      "p95": 3.689196892082691,
+      "p99": 8.038332685828209,
+      "n": 50
+    },
+    "sem": {
+      "p50": 27.03545056283474,
+      "p95": 97.26855624467134,
+      "p99": 111.30757164210081,
+      "n": 50
+    },
+    "fusion": {
+      "p50": 0.8043646812438965,
+      "p95": 0.9773178026080132,
+      "p99": 1.4666859060525894,
+      "n": 50
+    },
+    "rerank": {
+      "p50": 99.70833547413349,
+      "p95": 130.8930078521371,
+      "p99": 157.81527385115623,
+      "n": 50
+    },
+    "end_to_end": {
+      "p50": 135.42123258801377,
+      "p95": 217.50380072961306,
+      "p99": 227.07657205637233,
+      "n": 50
+    }
+  },
+  "ramp": [
+    {
+      "offered_qps": 1.0,
+      "offered_qps_measured": 1.0666666666666667,
+      "n_sent": 16,
+      "achieved_qps": 1.0666666666666667,
+      "throughput_ratio": 1.0,
+      "throughput_ratio_vs_nominal": 1.0666666666666667,
+      "delivered_fraction": 1.0,
+      "hybrid_qps": 1.0666666666666667,
+      "hybrid_fraction": 1.0,
+      "p99_first_half_ms": 296.9997948188813,
+      "p99_second_half_ms": 221.46365805521918,
+      "p99_stable": true,
+      "passes": true,
+      "passes_hybrid_diagnostic": true,
+      "pct_reranked": 100.0
+    },
+    {
+      "offered_qps": 2.0,
+      "offered_qps_measured": 2.533333333333333,
+      "n_sent": 38,
+      "achieved_qps": 2.533333333333333,
+      "throughput_ratio": 1.0,
+      "throughput_ratio_vs_nominal": 1.2666666666666666,
+      "delivered_fraction": 1.0,
+      "hybrid_qps": 2.533333333333333,
+      "hybrid_fraction": 1.0,
+      "p99_first_half_ms": 309.863399935672,
+      "p99_second_half_ms": 334.90975562231284,
+      "p99_stable": true,
+      "passes": true,
+      "passes_hybrid_diagnostic": true,
+      "pct_reranked": 100.0
+    },
+    {
+      "offered_qps": 4.0,
+      "offered_qps_measured": 3.066666666666667,
+      "n_sent": 46,
+      "achieved_qps": 3.066666666666667,
+      "throughput_ratio": 1.0,
+      "throughput_ratio_vs_nominal": 0.7666666666666667,
+      "delivered_fraction": 1.0,
+      "hybrid_qps": 3.066666666666667,
+      "hybrid_fraction": 1.0,
+      "p99_first_half_ms": 245.15551770412802,
+      "p99_second_half_ms": 374.84652070079784,
+      "p99_stable": false,
+      "passes": false,
+      "passes_hybrid_diagnostic": false,
+      "pct_reranked": 100.0
+    },
+    {
+      "offered_qps": 8.0,
+      "offered_qps_measured": 6.333333333333333,
+      "n_sent": 95,
+      "achieved_qps": 6.333333333333333,
+      "throughput_ratio": 1.0,
+      "throughput_ratio_vs_nominal": 0.7916666666666666,
+      "delivered_fraction": 1.0,
+      "hybrid_qps": 6.333333333333333,
+      "hybrid_fraction": 1.0,
+      "p99_first_half_ms": 559.2386008856902,
+      "p99_second_half_ms": 462.34094247834,
+      "p99_stable": true,
+      "passes": true,
+      "passes_hybrid_diagnostic": true,
+      "pct_reranked": 100.0
+    },
+    {
+      "offered_qps": 16.0,
+      "offered_qps_measured": 16.4,
+      "n_sent": 246,
+      "achieved_qps": 16.4,
+      "throughput_ratio": 1.0,
+      "throughput_ratio_vs_nominal": 1.025,
+      "delivered_fraction": 1.0,
+      "hybrid_qps": 7.066666666666666,
+      "hybrid_fraction": 0.43089430894308944,
+      "p99_first_half_ms": 1659.9953533916084,
+      "p99_second_half_ms": 1456.5596657315325,
+      "p99_stable": true,
+      "passes": true,
+      "passes_hybrid_diagnostic": false,
+      "pct_reranked": 43.08943089430895
+    },
+    {
+      "offered_qps": 32.0,
+      "offered_qps_measured": 33.86666666666667,
+      "n_sent": 508,
+      "achieved_qps": 33.86666666666667,
+      "throughput_ratio": 1.0,
+      "throughput_ratio_vs_nominal": 1.0583333333333333,
+      "delivered_fraction": 1.0,
+      "hybrid_qps": 3.8,
+      "hybrid_fraction": 0.11220472440944881,
+      "p99_first_half_ms": 1426.9504954130632,
+      "p99_second_half_ms": 1406.6717422084346,
+      "p99_stable": true,
+      "passes": true,
+      "passes_hybrid_diagnostic": false,
+      "pct_reranked": 11.220472440944881
+    },
+    {
+      "offered_qps": 64.0,
+      "offered_qps_measured": 66.93333333333334,
+      "n_sent": 1004,
+      "achieved_qps": 66.93333333333334,
+      "throughput_ratio": 1.0,
+      "throughput_ratio_vs_nominal": 1.0458333333333334,
+      "delivered_fraction": 1.0,
+      "hybrid_qps": 1.0666666666666667,
+      "hybrid_fraction": 0.01593625498007968,
+      "p99_first_half_ms": 1304.0804198398262,
+      "p99_second_half_ms": 1204.3632732263472,
+      "p99_stable": true,
+      "passes": true,
+      "passes_hybrid_diagnostic": false,
+      "pct_reranked": 1.593625498007968
+    }
+  ],
+  "ramp_seconds": 15.0,
+  "n_calib_queries": 50,
+  "note": "C_qps usa la definici\u00f3n original; C_hybrid_qps_diagnostic es adicional"
+}

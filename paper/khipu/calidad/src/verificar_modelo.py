@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 import time
 from pathlib import Path
@@ -37,6 +38,8 @@ def probar(modelo: str, device: str) -> dict:
         e_si, e_no = llm.esperanza(p_si), llm.esperanza(p_no)
         r.update({"score_relevante": round(e_si, 3), "score_irrelevante": round(e_no, 3),
                   "masa_digitos": [round(m_si, 3), round(m_no, 3)]})
+        if not all(math.isfinite(x) for x in (m_si, m_no, e_si, e_no)):
+            raise RuntimeError("el modelo produce valores inválidos (NaN/inf) en esta GPU; prueba otro modelo")
         if min(m_si, m_no) < llm.MASA_MINIMA:
             raise RuntimeError(f"el modelo no responde con un dígito 0-4 (masa {m_si:.2f}/{m_no:.2f})")
         if e_si <= e_no:

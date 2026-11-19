@@ -33,6 +33,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import re
 import sys
 import time
@@ -73,7 +74,7 @@ def prompt_sha() -> str:
 def esperanza(probs: Sequence[float]) -> float:
     """E[k]/4 con probabilidades de las etiquetas 0..4 (ya normalizadas). Da un valor continuo en [0, 1]."""
     total = float(sum(probs))
-    if total <= 0:
+    if not math.isfinite(total) or total <= 0:  # NaN/inf (p. ej. desborde en fp16): sin score, no un NaN que rompa el orden
         return 0.0
     return sum(k * p for k, p in enumerate(probs)) / total / (len(probs) - 1)
 
@@ -149,7 +150,7 @@ def puntuar_consulta_rgs(query: str, docs: Sequence[Tuple[str, str]], scorer, mo
     scores, malos = {}, 0
     for did, (pr, masa) in res:
         scores[did] = esperanza(pr)
-        malos += masa < MASA_MINIMA
+        malos += not (masa >= MASA_MINIMA)  # también cuenta NaN
     return scores, malos
 
 

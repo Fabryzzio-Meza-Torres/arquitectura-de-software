@@ -253,3 +253,13 @@ def test_merge_de_onepagers(tmp_path):
     d = w("d.jsonl", [{"_id": "1", "text": "distinto", "model": "m", "prompt_sha": "x"}])
     with pytest.raises(ValueError):
         op.merge([a, d], tmp_path / "m3.jsonl")  # mismo doc, texto distinto
+
+
+def test_nan_no_rompe_el_score():
+    nan = float("nan")
+    assert llm.esperanza([nan, 0.1, 0.1, 0.1, 0.1]) == 0.0
+    class Malo:
+        def probs(self, prompts):
+            return [([nan] * 5, nan) for _ in prompts]
+    scores, malos = llm.puntuar_consulta_rgs("q", [("a", "x")], Malo(), "lote4")
+    assert scores == {"a": 0.0} and malos == 1

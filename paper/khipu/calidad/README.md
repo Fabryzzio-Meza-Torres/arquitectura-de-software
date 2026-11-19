@@ -124,6 +124,14 @@ no depende de la GPU. Para que la latencia sea comparable con la del equipo, usa
 test (~3.000) se conservan siempre. Más documentos alargan los one-pagers, los embeddings y el BM25, pero no el scoring
 del sLLM (que depende de las consultas, no del corpus).
 
+## Qué deja al terminar (cada quien genera su reporte)
+
+El último paso del pipeline (`reporte_final.py`) escribe en `calidad_out/reporte/`: `reporte.md` (tabla de las tres
+arquitecturas, la diferencia propuesta menos base con su IC 95 %, latencia del sLLM por batch, % de scores degradados y los
+límites del experimento) y cuatro gráficos: calidad por arquitectura, peso α del léxico, latencia por batch y reparto de los
+scores del sLLM. Nadie tiene que armar nada a mano ni mandar archivos a otra persona. Si se quiere regenerar:
+`python calidad/src/reporte_final.py --out-dir <work>/calidad_out --qrels <work>/data1p/fiqa/qrels/test.tsv`.
+
 ## Los prompts
 
 Score semántico (RG-S, `PROMPT_RGS` en `src/llm_semantico.py`; el modelo responde con un dígito):
@@ -168,7 +176,7 @@ Si no cabe, se reduce con `--max-queries` (p. ej. 300 de test) o con el modelo m
 
 ## Qué falta y qué no se pudo probar
 
-- Nada de esto corrió con datos ni modelos reales; solo con datos de juguete (`pytest calidad/tests`, 58 pruebas), que
+- Nada de esto corrió con datos ni modelos reales; solo con datos de juguete (`pytest calidad/tests`, 60 pruebas), que
   incluyen la equivalencia de la fusión de la base con `Engine.fuse` y que batch 4 y batch 10 dan los mismos scores.
 - Hay que **fijar el modelo** antes de mirar test, y anotar su id exacto. Probar dos tamaños es lo ideal.
 - Confirmar con el profe el tamaño de la submuestra (8.000 es lo que dijo).
@@ -177,6 +185,6 @@ Si no cabe, se reduce con `--max-queries` (p. ej. 300 de test) o con el modelo m
 
 ## Mapa
 
-`src/`: `pipeline`, `verificar_modelo`, `subsample_corpus`, `generar_onepagers`, `onepagers`, `candidatos`, `llm_semantico`, `armar_runs`,
+`src/`: `pipeline`, `reporte_final`, `verificar_modelo`, `subsample_corpus`, `generar_onepagers`, `onepagers`, `candidatos`, `llm_semantico`, `armar_runs`,
 `compare_rankings`, `calidad_por_ruta`, `metrics`, `evaluate`, `significance`, `latency`, `report` y utilidades.
 `docs/`: reglas de evaluación (02), comparación de arquitecturas (07) y el resto de la guía.

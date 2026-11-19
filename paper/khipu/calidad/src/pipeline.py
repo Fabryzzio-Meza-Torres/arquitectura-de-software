@@ -2,7 +2,7 @@
 
 Pasos: verificar modelos -> bajar FiQA -> submuestra con los relevantes de dev y test -> one-pagers -> dataset de
 one-pagers -> candidatos (dev y test) -> score del sLLM (RG-S) con batch 4 y 10 -> α de la propuesta con dev ->
-rankings y comparación en test. Cada paso se salta si su salida ya existe, así que se puede reiniciar.
+rankings y comparación en test -> reporte final (reporte/reporte.md y gráficos). Cada paso se salta si su salida ya existe, así que se puede reiniciar.
 
   python calidad/src/pipeline.py --work-dir /ruta/trabajo --smoke          # prueba de que todo encadena (números sin valor)
   python calidad/src/pipeline.py --work-dir /ruta/trabajo --size 8000      # corrida completa
@@ -163,6 +163,9 @@ class Corrida:
                        "--lexical", test_run / "lexical.run", "--base", test_run / "base.run",
                        "--proposed", test_run / "proposed.run", "--out", o / f"comparacion_{tag}"),
                     f"comparación {tag}")
+        # reporte final (tabla, IC de la diferencia, latencia por batch y gráficos): cada quien lo genera solo
+        self.sh(py("reporte_final.py", "--out-dir", o, "--qrels", self.data1p / "fiqa" / "qrels" / "test.tsv"),
+                "reporte final")
 
 
 def parse(argv=None):

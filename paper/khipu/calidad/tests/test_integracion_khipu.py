@@ -263,3 +263,31 @@ def test_nan_no_rompe_el_score():
             return [([nan] * 5, nan) for _ in prompts]
     scores, malos = llm.puntuar_consulta_rgs("q", [("a", "x")], Malo(), "lote4")
     assert scores == {"a": 0.0} and malos == 1
+
+
+def test_reporte_final_genera_md_y_graficos(tmp_path):
+    import reporte_final as rf
+    from io_formats import write_run
+    rng = np.random.default_rng(1)
+    tag = "Modelo-1.5B"
+    out = tmp_path / "calidad_out"
+    (out / f"test_{tag}").mkdir(parents=True)
+    qids = [str(i) for i in range(30)]
+    qrels = tmp_path / "test.tsv"
+    qrels.write_text("query-id\tcorpus-id\tscore\n" + "".join(f"{q}\td{int(q) % 7}\t1\n" for q in qids), encoding="utf-8")
+    for n in ("lexical", "base", "proposed"):
+        write_run(out / f"test_{tag}" / f"{n}.run", {q: {f"d{k}": float(rng.random()) for k in range(8)} for q in qids}, tag=n)
+    (out / f"comparacion_{tag}.comparison.json").write_text("{}", encoding="utf-8")
+    (out / f"alpha_{tag}.alpha.csv").write_text("alpha,P@3,nDCG@3\n0.0,0.2,0.3\n0.5,0.3,0.4\n1.0,0.25,0.35\n", encoding="utf-8")
+    for modo, ms in (("lote4", 900.0), ("lote10", 600.0)):
+        (out / f"fiqa.test.{tag}.{modo}.tiempos.tsv").write_text("".join(f"{q}\t{ms + int(q)}\tok\n" for q in qids), encoding="utf-8")
+        (out / f"fiqa.test.{tag}.{modo}.scores.jsonl").write_text("".join(
+            json.dumps({"qid": q, "id": f"d{k}", "score": round(float(rng.random()), 3) if modo == "lote4" else 0.5})
+            + "\n" for q in qids for k in range(8)), encoding="utf-8")
+    (out / "entorno.json").write_text(json.dumps({"gpu": "T4", "plataforma": "x", "smoke": True}), encoding="utf-8")
+    md = rf.generar(str(out), str(qrels))
+    texto = md.read_text(encoding="utf-8")
+    assert "prueba corta" in texto and "Propuesta menos base" in texto and "batch" in texto.lower()
+    for fig in ("fig1_calidad", "fig2_alfa", "fig3_latencia_llm", "fig4_scores_llm"):
+        assert (md.parent / f"{fig}_{tag}.png").exists()
+    assert (md.parent / "resumen.json").exists()

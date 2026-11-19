@@ -1,0 +1,4 @@
+ccf561f4f3ef6c2d9f06e80bcc8194192abfcdac9726e2390775e6c43b833bd8  data/fiqa/corpus.jsonl
+eede1e61d4a0188940239b53ebc2da91f577a6a34679c812d1eb9090c29877bc  data/fiqa/queries.jsonl
+6adc2a640dcdd22bb8b3858f89107adef2a7c3db20a63550dfa7a0f71e379e44  data/fiqa/qrels/test.tsv
+b220b1661745b7be5bc15f3e2dc13089ef9d7a41aa8e09350ef26797d1baa633  codigo/minion_v2.py

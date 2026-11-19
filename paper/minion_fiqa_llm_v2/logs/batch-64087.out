@@ -1,0 +1,13 @@
+GPU retrieval: cuda
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5120.06it/s]
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights:   0%|          | 1/434 [00:00<01:45,  4.12it/s]Loading weights:  16%|█▋        | 71/434 [00:00<00:01, 261.34it/s]Loading weights:  26%|██▌       | 113/434 [00:00<00:01, 236.59it/s]Loading weights:  34%|███▎      | 146/434 [00:00<00:01, 250.42it/s]Loading weights:  41%|████      | 177/434 [00:00<00:01, 207.73it/s]Loading weights:  48%|████▊     | 207/434 [00:01<00:01, 193.14it/s]Loading weights:  53%|█████▎    | 231/434 [00:01<00:01, 190.71it/s]Loading weights:  59%|█████▉    | 255/434 [00:01<00:00, 192.21it/s]Loading weights:  64%|██████▎   | 276/434 [00:01<00:00, 190.93it/s]Loading weights:  68%|██████▊   | 296/434 [00:01<00:00, 188.36it/s]Loading weights:  73%|███████▎  | 316/434 [00:01<00:00, 185.35it/s]Loading weights:  77%|███████▋  | 335/434 [00:01<00:00, 181.45it/s]Loading weights:  82%|████████▏ | 354/434 [00:01<00:00, 181.03it/s]Loading weights:  89%|████████▉ | 387/434 [00:01<00:00, 194.26it/s]Loading weights:  97%|█████████▋| 419/434 [00:02<00:00, 226.25it/s]Loading weights: 100%|██████████| 434/434 [00:02<00:00, 206.59it/s]
+batch=4 rep=1 seconds=8.9 error=None
+batch=4 rep=2 seconds=8.8 error=None
+batch=1 rep=0 seconds=8.3 error=None
+batch=1 rep=2 seconds=8.4 error=None
+batch=8 rep=2 seconds=9.0 error=None
+batch=4 rep=0 seconds=9.0 error=None
+batch=8 rep=1 seconds=9.1 error=None
+batch=1 rep=1 seconds=8.6 error=None
+batch=8 rep=0 seconds=9.1 error=None

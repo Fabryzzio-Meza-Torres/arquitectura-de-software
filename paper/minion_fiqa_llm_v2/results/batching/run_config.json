@@ -1,0 +1,24 @@
+{
+  "args": {
+    "mode": "batch",
+    "dataset": "fiqa",
+    "data": "data/fiqa",
+    "out": "results/batching",
+    "cache": "data/cache",
+    "batch": 4,
+    "topk": 3,
+    "max_queries": 0,
+    "max_doc_tokens": 384,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "requests": 50,
+    "arm": "B"
+  },
+  "corpus_sha256": "ccf561f4f3ef6c2d9f06e80bcc8194192abfcdac9726e2390775e6c43b833bd8",
+  "qrels_sha256": "6adc2a640dcdd22bb8b3858f89107adef2a7c3db20a63550dfa7a0f71e379e44",
+  "prompt_sha256": "9c38fbb24bc43ce24e6363d13468a1caadf6c43f0d4c9a1b1f267acec7bae4df",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "bge": "BAAI/bge-base-en-v1.5",
+  "bge_rev": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+  "seed": 42,
+  "timestamp": "2026-11-19T07:01:16"
+}

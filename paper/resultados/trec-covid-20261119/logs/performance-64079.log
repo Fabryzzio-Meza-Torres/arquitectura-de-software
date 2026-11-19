@@ -1,0 +1,91 @@
+2026-11-19T03:55:59-05:00
+Thu Nov 19 03:55:59 2026
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:C1:00.0 Off |                   On |
+| N/A   42C    P0             92W /  250W |     237MiB /  40960MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| MIG devices:                                                                            |
++------------------+----------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |              Shared Memory-Usage |        Vol|        Shared         |
+|      ID  ID  Dev |                Shared BAR1-Usage | SM     Unc| CE ENC  DEC  OFA  JPG |
+|                  |                                  |        ECC|                       |
+|==================+==================================+===========+=======================|
+|  0    2   0   0  |             102MiB / 20096MiB    | 42      0 |  3   0    2    0    0 |
+|                  |               0MiB / 12199MiB    |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.21s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.02it/s]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.02s/it]
+03:57:55 BATCH 8, repeat 1: ok
+03:59:08 BATCH 1, repeat 1: ok
+04:00:41 BATCH 4, repeat 1: ok
+04:01:54 BATCH 1, repeat 2: ok
+04:03:39 BATCH 8, repeat 2: ok
+04:05:12 BATCH 4, repeat 2: ok
+04:06:57 BATCH 8, repeat 3: ok
+04:08:30 BATCH 4, repeat 3: ok
+04:09:43 BATCH 1, repeat 3: ok
+04:15:55 CONCURRENCY 4 finished
+04:22:00 CONCURRENCY 2 finished
+04:28:05 CONCURRENCY 1 finished
+04:28:11 LATENCY 1/1000 request pairs; 237.8min budget left
+04:31:16 LATENCY 26/1000 request pairs; 234.7min budget left
+04:34:17 LATENCY 51/1000 request pairs; 231.7min budget left
+04:37:22 LATENCY 76/1000 request pairs; 228.6min budget left
+04:40:24 LATENCY 101/1000 request pairs; 225.6min budget left
+04:43:28 LATENCY 126/1000 request pairs; 222.5min budget left
+04:46:30 LATENCY 151/1000 request pairs; 219.5min budget left
+04:49:34 LATENCY 176/1000 request pairs; 216.4min budget left
+04:52:36 LATENCY 201/1000 request pairs; 213.4min budget left
+04:55:41 LATENCY 226/1000 request pairs; 210.3min budget left
+04:58:43 LATENCY 251/1000 request pairs; 207.3min budget left
+05:01:47 LATENCY 276/1000 request pairs; 204.2min budget left
+05:04:49 LATENCY 301/1000 request pairs; 201.2min budget left
+05:07:53 LATENCY 326/1000 request pairs; 198.1min budget left
+05:10:55 LATENCY 351/1000 request pairs; 195.1min budget left
+05:14:00 LATENCY 376/1000 request pairs; 192.0min budget left
+05:17:02 LATENCY 401/1000 request pairs; 189.0min budget left
+05:20:06 LATENCY 426/1000 request pairs; 185.9min budget left
+05:23:08 LATENCY 451/1000 request pairs; 182.9min budget left
+05:26:13 LATENCY 476/1000 request pairs; 179.8min budget left
+05:29:15 LATENCY 501/1000 request pairs; 176.8min budget left
+05:32:19 LATENCY 526/1000 request pairs; 173.7min budget left
+05:35:21 LATENCY 551/1000 request pairs; 170.6min budget left
+05:38:26 LATENCY 576/1000 request pairs; 167.6min budget left
+05:41:28 LATENCY 601/1000 request pairs; 164.5min budget left
+05:44:33 LATENCY 626/1000 request pairs; 161.5min budget left
+05:47:35 LATENCY 651/1000 request pairs; 158.4min budget left
+05:50:40 LATENCY 676/1000 request pairs; 155.3min budget left
+05:53:42 LATENCY 701/1000 request pairs; 152.3min budget left
+05:56:47 LATENCY 726/1000 request pairs; 149.2min budget left
+05:59:49 LATENCY 751/1000 request pairs; 146.2min budget left
+06:02:54 LATENCY 776/1000 request pairs; 143.1min budget left
+06:05:56 LATENCY 801/1000 request pairs; 140.1min budget left
+06:09:01 LATENCY 826/1000 request pairs; 137.0min budget left
+06:12:03 LATENCY 851/1000 request pairs; 133.9min budget left
+06:15:08 LATENCY 876/1000 request pairs; 130.9min budget left
+06:18:10 LATENCY 901/1000 request pairs; 127.8min budget left
+06:21:15 LATENCY 926/1000 request pairs; 124.8min budget left
+06:24:17 LATENCY 951/1000 request pairs; 121.7min budget left
+06:27:22 LATENCY 976/1000 request pairs; 118.6min budget left
+06:30:19 PERFORMANCE_COMPLETE
+2026-11-19T06:30:20-05:00

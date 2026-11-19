@@ -1,0 +1,137 @@
+{
+  "ok": true,
+  "job": "64075",
+  "node": "ag001",
+  "gpu": "NVIDIA A100-PCIE-40GB MIG 3g.20gb",
+  "precision": "bfloat16",
+  "records": [
+    {
+      "batch": 1,
+      "effective": 1,
+      "seconds": 0.8966551553457975,
+      "scores": [
+        {
+          "score": 0.9443207383155823,
+          "label_mass": 1.0,
+          "probabilities": [
+            4.934877395612602e-09,
+            1.0656367521733046e-06,
+            7.87404951552162e-06,
+            0.2226981520652771,
+            0.7772929072380066
+          ],
+          "truncated": false,
+          "input_tokens": 125,
+          "degraded": false
+        },
+        {
+          "score": 6.869277058285661e-08,
+          "label_mass": 0.9999999403953552,
+          "probabilities": [
+            0.9999999403953552,
+            7.582559580221471e-10,
+            2.020683967374204e-11,
+            3.16088155649652e-10,
+            6.825603549032166e-08
+          ],
+          "truncated": false,
+          "input_tokens": 120,
+          "degraded": false
+        },
+        {
+          "score": 0.4580744504928589,
+          "label_mass": 3.290892836016468e-10,
+          "probabilities": [
+            0.017050324007868767,
+            0.18912707269191742,
+            0.7480120658874512,
+            0.03609553724527359,
+            0.00971498154103756
+          ],
+          "truncated": true,
+          "input_tokens": 1024,
+          "degraded": true
+        },
+        {
+          "score": 0.2517296075820923,
+          "label_mass": 1.0000001192092896,
+          "probabilities": [
+            0.0011650633532553911,
+            0.995032548904419,
+            0.000428602856118232,
+            0.0024664392694830894,
+            0.0009073522523976862
+          ],
+          "truncated": false,
+          "input_tokens": 501,
+          "degraded": false
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "effective": 4,
+      "seconds": 0.4777110116556287,
+      "scores": [
+        {
+          "score": 0.9197828769683838,
+          "label_mass": 1.0,
+          "probabilities": [
+            1.5049854695803333e-08,
+            2.5309961984021356e-06,
+            2.401342317170929e-05,
+            0.32081279158592224,
+            0.6791606545448303
+          ],
+          "truncated": false,
+          "input_tokens": 125,
+          "degraded": false
+        },
+        {
+          "score": 1.8651459754437383e-07,
+          "label_mass": 0.9999999403953552,
+          "probabilities": [
+            0.9999998211860657,
+            1.8189613149033335e-09,
+            3.775134024830429e-11,
+            6.691585063833827e-10,
+            1.8553912184415822e-07
+          ],
+          "truncated": false,
+          "input_tokens": 120,
+          "degraded": false
+        },
+        {
+          "score": 0.4578148424625397,
+          "label_mass": 3.713034602004228e-10,
+          "probabilities": [
+            0.015591559931635857,
+            0.1899440884590149,
+            0.7512434124946594,
+            0.03405509889125824,
+            0.009165805764496326
+          ],
+          "truncated": true,
+          "input_tokens": 1024,
+          "degraded": true
+        },
+        {
+          "score": 0.25490549206733704,
+          "label_mass": 1.0,
+          "probabilities": [
+            0.0011594044044613838,
+            0.9901995062828064,
+            0.0005476638907566667,
+            0.004046719055622816,
+            0.004046719055622816
+          ],
+          "truncated": false,
+          "input_tokens": 501,
+          "degraded": false
+        }
+      ]
+    }
+  ],
+  "max_batch_score_difference": 0.024537861347198486,
+  "scope": "real-model numerical and padding check; synthetic documents, not quality evidence"
+}

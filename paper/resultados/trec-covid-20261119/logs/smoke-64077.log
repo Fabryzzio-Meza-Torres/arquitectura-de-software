@@ -1,0 +1,25 @@
+SELF_TEST_OK
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.22s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.00it/s]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.03s/it]
+03:43:51 QUALITY 14: 18 pairs in 8.213s
+03:43:59 QUALITY 35: 19 pairs in 7.987s
+03:43:59 QUALITY_COMPLETE
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.23s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.01it/s]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.02s/it]
+03:44:29 BATCH 8, repeat 1: ok
+03:44:42 BATCH 1, repeat 1: ok
+03:44:59 BATCH 4, repeat 1: ok
+03:45:25 CONCURRENCY 4 finished
+03:45:45 CONCURRENCY 2 finished
+03:46:04 CONCURRENCY 1 finished
+03:46:10 LATENCY 1/1000 request pairs; 267.8min budget left
+03:46:18 PERFORMANCE_COMPLETE
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+ANALYSIS_AND_NOTEBOOK_COMPLETE
+SMOKE_COMPLETE

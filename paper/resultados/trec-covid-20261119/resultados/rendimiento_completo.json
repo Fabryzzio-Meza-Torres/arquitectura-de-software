@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "seconds": 9258.80504783336,
+  "latency_requests": 2000,
+  "target_each": 1000,
+  "actual_each": {
+    "fusion": 1000,
+    "LLM": 1000
+  },
+  "partial_due_to_budget": false,
+  "job": "64079"
+}

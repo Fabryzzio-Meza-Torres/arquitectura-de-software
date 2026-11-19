@@ -1,0 +1,7 @@
+{
+  "pairs": 893,
+  "invalid_scores": 0,
+  "degraded_label_mass_fraction": 0.004479283314669653,
+  "truncation_fraction": 0.004479283314669653,
+  "score_zero_or_one_fraction": 0.0
+}

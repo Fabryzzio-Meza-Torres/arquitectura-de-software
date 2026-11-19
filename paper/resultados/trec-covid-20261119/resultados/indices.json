@@ -1,0 +1,16 @@
+{
+  "bm25_seconds": 1.2592503735795617,
+  "semantic_seconds": 25.60672878101468,
+  "bge_revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+  "documents": 10000,
+  "dimension": 768,
+  "pooling": "CLS L2 float32, forward fp16",
+  "bm25": {
+    "k1": 0.9,
+    "b": 0.4,
+    "stemmer": "english",
+    "stopwords": "en"
+  },
+  "index": "faiss.IndexFlatIP",
+  "original_text_unchanged": true
+}

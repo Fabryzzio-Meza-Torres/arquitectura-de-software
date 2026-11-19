@@ -1,0 +1,90 @@
+2026-11-19T03:47:29-05:00
+Thu Nov 19 03:47:29 2026
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:C1:00.0 Off |                   On |
+| N/A   35C    P0             91W /  250W |     237MiB /  40960MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| MIG devices:                                                                            |
++------------------+----------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |              Shared Memory-Usage |        Vol|        Shared         |
+|      ID  ID  Dev |                Shared BAR1-Usage | SM     Unc| CE ENC  DEC  OFA  JPG |
+|                  |                                  |        ECC|                       |
+|==================+==================================+===========+=======================|
+|  0    2   0   0  |             102MiB / 20096MiB    | 42      0 |  3   0    2    0    0 |
+|                  |               0MiB / 12199MiB    |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+SELF_TEST_OK
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.19s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.03it/s]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.00it/s]
+03:48:20 QUALITY 14: 18 pairs in 8.207s
+03:48:28 QUALITY 35: 19 pairs in 7.972s
+03:48:39 QUALITY 21: 17 pairs in 10.788s
+03:48:50 QUALITY 20: 17 pairs in 11.084s
+03:48:58 QUALITY 18: 16 pairs in 7.775s
+03:49:07 QUALITY 15: 20 pairs in 8.880s
+03:49:17 QUALITY 8: 19 pairs in 10.334s
+03:49:25 QUALITY 40: 15 pairs in 8.057s
+03:49:34 QUALITY 11: 18 pairs in 8.578s
+03:49:43 QUALITY 50: 18 pairs in 9.621s
+03:49:52 QUALITY 49: 19 pairs in 9.081s
+03:50:00 QUALITY 47: 16 pairs in 7.885s
+03:50:08 QUALITY 1: 19 pairs in 7.372s
+03:50:20 QUALITY 31: 20 pairs in 12.141s
+03:50:29 QUALITY 44: 19 pairs in 8.691s
+03:50:38 QUALITY 23: 17 pairs in 9.813s
+03:50:48 QUALITY 9: 18 pairs in 9.227s
+03:50:56 QUALITY 22: 17 pairs in 8.194s
+03:51:04 QUALITY 37: 16 pairs in 8.596s
+03:51:15 QUALITY 25: 18 pairs in 10.431s
+03:51:22 QUALITY 16: 19 pairs in 7.279s
+03:51:33 QUALITY 17: 19 pairs in 10.577s
+03:51:43 QUALITY 6: 20 pairs in 10.295s
+03:51:52 QUALITY 42: 16 pairs in 8.892s
+03:51:59 QUALITY 5: 15 pairs in 7.069s
+03:52:05 QUALITY 13: 16 pairs in 6.015s
+03:52:15 QUALITY 29: 18 pairs in 9.500s
+03:52:25 QUALITY 27: 20 pairs in 10.500s
+03:52:36 QUALITY 4: 20 pairs in 10.237s
+03:52:46 QUALITY 34: 19 pairs in 10.571s
+03:52:56 QUALITY 38: 17 pairs in 9.963s
+03:53:05 QUALITY 12: 20 pairs in 8.503s
+03:53:13 QUALITY 26: 18 pairs in 8.533s
+03:53:20 QUALITY 36: 14 pairs in 6.283s
+03:53:31 QUALITY 48: 20 pairs in 10.908s
+03:53:41 QUALITY 28: 19 pairs in 10.390s
+03:53:51 QUALITY 33: 20 pairs in 9.712s
+03:54:00 QUALITY 2: 18 pairs in 9.745s
+03:54:09 QUALITY 41: 18 pairs in 8.508s
+03:54:19 QUALITY 32: 20 pairs in 9.820s
+03:54:25 QUALITY 39: 15 pairs in 6.308s
+03:54:36 QUALITY 46: 19 pairs in 10.329s
+03:54:44 QUALITY 7: 18 pairs in 8.279s
+03:54:50 QUALITY 43: 17 pairs in 6.429s
+03:55:02 QUALITY 24: 19 pairs in 11.814s
+03:55:10 QUALITY 30: 14 pairs in 7.664s
+03:55:18 QUALITY 10: 17 pairs in 7.872s
+03:55:26 QUALITY 45: 17 pairs in 7.985s
+03:55:35 QUALITY 19: 17 pairs in 9.577s
+03:55:45 QUALITY 3: 18 pairs in 9.366s
+03:55:46 QUALITY_COMPLETE
+2026-11-19T03:55:47-05:00

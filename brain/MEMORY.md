@@ -119,6 +119,8 @@ Work in this order unless the user explicitly requests another sequence:
 
 ## Memory maintenance standard
 
+Research experiments outside the laboratory sequence are recorded in [`research.md`](research.md). Read that file before changing the published TREC-COVID experiment artifacts under `paper/resultados/trec-covid-20261119/`.
+
 After a meaningful activity, update the relevant `labN.md` with only durable information:
 
 - **Activity:** what was attempted and its scope.

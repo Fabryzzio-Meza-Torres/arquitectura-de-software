@@ -1,0 +1,14 @@
+{
+  "hashes_checked": 61,
+  "hash_mismatches": [],
+  "queries": 50,
+  "candidate_pairs": 893,
+  "same_candidates_all_queries": true,
+  "notebook_code_cells": 5,
+  "all_cells_executed": true,
+  "notebook_errors": 0,
+  "LLM_latency_top3_checked": 1000,
+  "primary_batch": 4,
+  "latency_batch": 1,
+  "top3_mismatches": 0
+}

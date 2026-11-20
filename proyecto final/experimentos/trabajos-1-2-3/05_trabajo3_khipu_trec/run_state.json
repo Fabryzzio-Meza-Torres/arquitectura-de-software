@@ -1,0 +1,26 @@
+{
+  "objective": "Complete TREC-COVID latency and faults on Khipu ds001 with exact FiQA v4 code and matching environment, then update consolidated package, executed notebook and explanatory summary",
+  "remote_project": "/home/usuario/projects/minion_trec_khipu_v4_20261118",
+  "pilot_job": 63909,
+  "reference_fiqa_job": 63828,
+  "reference_source_sha256": "bb027763a577074373d5c1909467fbac67f8b5484d37696b29e1f697f02f22b7",
+  "full_job": 63911,
+  "environment": ".venv311_exact with module python3/3.11.11; explicit interpreter and module LD_LIBRARY_PATH required",
+  "full_resources": "data-science ds001 shard:1 4CPU 32G 05:00:00",
+  "full_protocol": "all, 3 reps, 500 queries at 1QPS, ramps 1/2/4/8/16/32/64 at 120s, 13 conditions 180s warmup30s, alpha0.85",
+  "deliverable_folder": "outputs/MINION_integrado",
+  "update_scripts": [
+    "work/consolidar_minion.py",
+    "work/resumen_minion.py"
+  ],
+  "important_limitations": [
+    "GPU shared; record contention",
+    "Reference MiniLM exact cache revision not recorded; new one pinned via cache"
+  ],
+  "full_log": "/home/usuario/projects/minion_trec_khipu_v4_20261118/logs/trec-completo-v4-63911.log",
+  "analysis_job": 63913,
+  "phase": "complete and verified",
+  "fixed_load_job": 63919,
+  "protocol": "complementary_fixed_absolute_load",
+  "trec_capacity_qps": null
+}

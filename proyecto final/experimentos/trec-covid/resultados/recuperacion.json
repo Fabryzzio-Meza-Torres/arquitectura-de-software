@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "interrupted_process_exit": 77,
+  "committed_before_stop": 3,
+  "expected": 40,
+  "actual": 40,
+  "duplicate_rows": 0,
+  "missing_rows": 0,
+  "scope": "real abrupt subprocess exit, committed score checkpoint and replay; stored reference scores, no model re-inference or machine failure"
+}

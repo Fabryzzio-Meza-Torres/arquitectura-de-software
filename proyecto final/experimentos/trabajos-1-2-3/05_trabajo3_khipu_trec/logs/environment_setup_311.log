@@ -1,0 +1,228 @@
+Collecting annotated-doc==0.0.6
+  Downloading annotated_doc-0.0.6-py3-none-any.whl (5.3 kB)
+Collecting annotated-types==0.8.0
+  Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Collecting anyio==4.16.0
+  Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.5/134.5 kB 4.2 MB/s eta 0:00:00
+Collecting bm25s==0.3.16
+  Downloading bm25s-0.3.16-py3-none-any.whl (76 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 76.0/76.0 kB 2.0 MB/s eta 0:00:00
+Collecting click==8.5.1
+  Downloading click-8.5.1-py3-none-any.whl (126 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.2/126.2 kB 3.2 MB/s eta 0:00:00
+Collecting cloudpickle==3.1.2
+  Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Collecting contourpy==1.3.3
+  Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (355 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 355.2/355.2 kB 6.1 MB/s eta 0:00:00
+Collecting cuda-bindings==13.5.0
+  Downloading cuda_bindings-13.5.0-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (8.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 34.8 MB/s eta 0:00:00
+Collecting cuda-pathfinder==1.9.0
+  Downloading cuda_pathfinder-1.9.0-py3-none-any.whl (63 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.4/63.4 kB 1.6 MB/s eta 0:00:00
+Collecting cuda-toolkit==13.2.2
+  Downloading cuda_toolkit-13.2.2-py2.py3-none-any.whl (2.6 kB)
+Collecting cycler==0.12.1
+  Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Collecting faiss-cpu==1.16.0
+  Downloading faiss_cpu-1.16.0-cp310-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (19.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.5/19.5 MB 15.9 MB/s eta 0:00:00
+Collecting filelock==4.2.12
+  Downloading filelock-4.2.12-py3-none-any.whl (222 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 222.4/222.4 kB 5.8 MB/s eta 0:00:00
+Collecting fonttools==4.68.0
+  Downloading fonttools-4.68.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 63.5 MB/s eta 0:00:00
+Collecting fsspec==2026.9.0
+  Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 221.7/221.7 kB 74.3 MB/s eta 0:00:00
+Collecting h11==0.16.0
+  Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Collecting hf-xet==1.8.0
+  Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 34.8 MB/s eta 0:00:00
+Collecting httpcore2==2.16.2
+  Downloading httpcore2-2.16.2-py3-none-any.whl (85 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 85.6/85.6 kB 26.9 MB/s eta 0:00:00
+Collecting httpx2==2.16.2
+  Downloading httpx2-2.16.2-py3-none-any.whl (97 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.9/97.9 kB 39.6 MB/s eta 0:00:00
+Collecting huggingface_hub==2.4.0
+  Downloading huggingface_hub-2.4.0-py3-none-any.whl (857 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 857.0/857.0 kB 72.0 MB/s eta 0:00:00
+Collecting idna==3.20
+  Downloading idna-3.20-py3-none-any.whl (69 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 30.9 MB/s eta 0:00:00
+Collecting Jinja2==3.1.6
+  Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 59.3 MB/s eta 0:00:00
+Collecting joblib==1.6.0
+  Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 306.1/306.1 kB 77.2 MB/s eta 0:00:00
+Collecting kiwisolver==1.5.1
+  Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 7.8 MB/s eta 0:00:00
+Collecting markdown-it-py==4.3.0
+  Downloading markdown_it_py-4.3.0-py3-none-any.whl (96 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.0/97.0 kB 3.2 MB/s eta 0:00:00
+Collecting MarkupSafe==3.0.4
+  Downloading markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Collecting matplotlib==3.11.2
+  Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 4.7 MB/s eta 0:00:00
+Collecting mdurl==0.1.2
+  Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Collecting mpmath==1.3.0
+  Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 16.3 MB/s eta 0:00:00
+Collecting narwhals==2.29.0
+  Downloading narwhals-2.29.0-py3-none-any.whl (501 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 501.7/501.7 kB 83.8 MB/s eta 0:00:00
+Collecting networkx==3.6.1
+  Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 62.2 MB/s eta 0:00:00
+Collecting numpy==2.4.6
+  Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 25.4 MB/s eta 0:00:00
+Collecting nvidia-cublas==13.4.1.3
+  Downloading nvidia_cublas-13.4.1.3-py3-none-manylinux_2_27_x86_64.whl (404.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 404.9/404.9 MB 3.9 MB/s eta 0:00:00
+Collecting nvidia-cuda-cccl==13.3.5.0.6
+  Downloading nvidia_cuda_cccl-13.3.5.0.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 63.1 MB/s eta 0:00:00
+Collecting nvidia-cuda-cupti==13.2.86
+  Downloading nvidia_cuda_cupti-13.2.86-py3-none-manylinux_2_25_x86_64.whl (12.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 41.9 MB/s eta 0:00:00
+Collecting nvidia-cuda-nvrtc==13.2.86
+  Downloading nvidia_cuda_nvrtc-13.2.86-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (47.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.0/47.0 MB 13.8 MB/s eta 0:00:00
+Collecting nvidia-cuda-runtime==13.2.86
+  Downloading nvidia_cuda_runtime-13.2.86-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 45.0 MB/s eta 0:00:00
+Collecting nvidia-cudnn-cu13==9.26.0.51
+  Downloading nvidia_cudnn_cu13-9.26.0.51-py3-none-manylinux_2_27_x86_64.whl (519.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 519.2/519.2 MB 2.8 MB/s eta 0:00:00
+Collecting nvidia-cufft==12.2.0.57
+  Downloading nvidia_cufft-12.2.0.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (218.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 218.3/218.3 MB 6.3 MB/s eta 0:00:00
+Collecting nvidia-cufile==1.17.1.22
+  Downloading nvidia_cufile-1.17.1.22-py3-none-manylinux_2_27_x86_64.whl (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 54.1 MB/s eta 0:00:00
+Collecting nvidia-cusolver==12.2.0.11
+  Downloading nvidia_cusolver-12.2.0.11-py3-none-manylinux_2_27_x86_64.whl (227.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 227.9/227.9 MB 5.7 MB/s eta 0:00:00
+Collecting nvidia-cusparse==12.7.10.12
+  Downloading nvidia_cusparse-12.7.10.12-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (151.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 151.0/151.0 MB 7.7 MB/s eta 0:00:00
+Collecting nvidia-cusparselt-cu13==0.8.1
+  Downloading nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl (170.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 170.1/170.1 MB 6.2 MB/s eta 0:00:00
+Collecting nvidia-nccl-cu13==2.30.7
+  Downloading nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl (216.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.0/216.0 MB 5.3 MB/s eta 0:00:00
+Collecting nvidia-nvjitlink==13.5.37
+  Downloading nvidia_nvjitlink-13.5.37-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (46.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.6/46.6 MB 13.2 MB/s eta 0:00:00
+Collecting nvidia-nvshmem-cu13==3.7.2
+  Downloading nvidia_nvshmem_cu13-3.7.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (135.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.4/135.4 MB 8.1 MB/s eta 0:00:00
+Collecting nvidia-nvtx==13.2.86
+  Downloading nvidia_nvtx-13.2.86-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl (153 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 153.5/153.5 kB 28.4 MB/s eta 0:00:00
+Collecting packaging==26.3
+  Downloading packaging-26.3-py3-none-any.whl (129 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.0/130.0 kB 59.1 MB/s eta 0:00:00
+Collecting pandas==3.1.1
+  Downloading pandas-3.1.1-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.4/12.4 MB 19.7 MB/s eta 0:00:00
+Collecting pillow==13.0.0
+  Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 67.5 MB/s eta 0:00:00
+Collecting pydantic==2.14.3
+  Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 494.1/494.1 kB 40.0 MB/s eta 0:00:00
+Collecting pydantic_core==2.50.4
+  Downloading pydantic_core-2.50.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 85.3 MB/s eta 0:00:00
+Collecting Pygments==2.21.0
+  Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 89.0 MB/s eta 0:00:00
+Collecting pyparsing==3.3.3
+  Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.4/126.4 kB 72.4 MB/s eta 0:00:00
+Collecting PyStemmer==3.1.0
+  Downloading pystemmer-3.1.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (744 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 744.3/744.3 kB 55.1 MB/s eta 0:00:00
+Collecting python-dateutil==4.0.0
+  Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.9/92.9 kB 44.7 MB/s eta 0:00:00
+Collecting PyYAML==6.0.3
+  Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 96.4 MB/s eta 0:00:00
+Collecting regex==2026.11.18
+  Downloading regex-2026.11.18-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.4/806.4 kB 24.4 MB/s eta 0:00:00
+Collecting rich==15.0.0
+  Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.7/310.7 kB 27.1 MB/s eta 0:00:00
+Collecting safetensors==0.8.0
+  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 516.0/516.0 kB 80.5 MB/s eta 0:00:00
+Collecting scikit-learn==1.9.1
+  Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.3/9.3 MB 50.4 MB/s eta 0:00:00
+Collecting scipy==1.17.1
+  Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 14.7 MB/s eta 0:00:00
+Collecting sentence-transformers==6.3.0
+  Downloading sentence_transformers-6.3.0-py3-none-any.whl (780 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 780.3/780.3 kB 51.6 MB/s eta 0:00:00
+Collecting shellingham==1.5.4
+  Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Collecting sympy==1.14.0
+  Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 33.9 MB/s eta 0:00:00
+Collecting threadpoolctl==3.8.0
+  Downloading threadpoolctl-3.8.0-py3-none-any.whl (32 kB)
+Collecting tokenizers==0.23.3
+  Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 82.5 MB/s eta 0:00:00
+Collecting torch==2.15.0
+  Downloading torch-2.15.0-cp311-cp311-manylinux_2_28_x86_64.whl (539.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 539.1/539.1 MB 2.7 MB/s eta 0:00:00
+Collecting tqdm==4.70.1
+  Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.2/80.2 kB 29.7 MB/s eta 0:00:00
+Collecting transformers==5.23.0
+  Downloading transformers-5.23.0-py3-none-any.whl (13.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.3/13.3 MB 18.2 MB/s eta 0:00:00
+Collecting triton==3.9.0
+  Downloading triton-3.9.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (285.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 285.8/285.8 MB 4.4 MB/s eta 0:00:00
+Collecting truststore==0.10.5
+  Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+Collecting typer==0.29.1
+  Downloading typer-0.29.1-py3-none-any.whl (121 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.1/121.1 kB 50.1 MB/s eta 0:00:00
+Collecting typing-inspection==0.4.5
+  Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+Collecting typing_extensions==4.16.0
+  Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 27.9 MB/s eta 0:00:00
+Collecting tzdata==2026.6
+  Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.2/348.2 kB 69.5 MB/s eta 0:00:00
+Collecting setuptools>=77.0.3
+  Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 63.3 MB/s eta 0:00:00
+Installing collected packages: PyStemmer, nvidia-cusparselt-cu13, mpmath, cuda-toolkit, tzdata, typing_extensions, truststore, triton, tqdm, threadpoolctl, sympy, shellingham, setuptools, safetensors, regex, PyYAML, pyparsing, Pygments, pillow, packaging, nvidia-nvtx, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, nvidia-cuda-cccl, numpy, networkx, narwhals, mdurl, MarkupSafe, kiwisolver, idna, hf-xet, h11, fsspec, fonttools, filelock, cycler, cuda-pathfinder, cloudpickle, click, annotated-types, annotated-doc, typing-inspection, scipy, python-dateutil, pydantic_core, nvidia-nvshmem-cu13, nvidia-cusparse, nvidia-cufft, nvidia-cublas, markdown-it-py, joblib, Jinja2, httpcore2, faiss-cpu, cuda-bindings, contourpy, bm25s, anyio, scikit-learn, rich, pydantic, pandas, nvidia-cusolver, nvidia-cudnn-cu13, matplotlib, httpx2, typer, huggingface_hub, torch, tokenizers, transformers, sentence-transformers
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 65.5.1
+    Uninstalling setuptools-65.5.1:
+      Successfully uninstalled setuptools-65.5.1
+Successfully installed Jinja2-3.1.6 MarkupSafe-3.0.4 PyStemmer-3.1.0 PyYAML-6.0.3 Pygments-2.21.0 annotated-doc-0.0.6 annotated-types-0.8.0 anyio-4.16.0 bm25s-0.3.16 click-8.5.1 cloudpickle-3.1.2 contourpy-1.3.3 cuda-bindings-13.5.0 cuda-pathfinder-1.9.0 cuda-toolkit-13.2.2 cycler-0.12.1 faiss-cpu-1.16.0 filelock-4.2.12 fonttools-4.68.0 fsspec-2026.9.0 h11-0.16.0 hf-xet-1.8.0 httpcore2-2.16.2 httpx2-2.16.2 huggingface_hub-2.4.0 idna-3.20 joblib-1.6.0 kiwisolver-1.5.1 markdown-it-py-4.3.0 matplotlib-3.11.2 mdurl-0.1.2 mpmath-1.3.0 narwhals-2.29.0 networkx-3.6.1 numpy-2.4.6 nvidia-cublas-13.4.1.3 nvidia-cuda-cccl-13.3.5.0.6 nvidia-cuda-cupti-13.2.86 nvidia-cuda-nvrtc-13.2.86 nvidia-cuda-runtime-13.2.86 nvidia-cudnn-cu13-9.26.0.51 nvidia-cufft-12.2.0.57 nvidia-cufile-1.17.1.22 nvidia-cusolver-12.2.0.11 nvidia-cusparse-12.7.10.12 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.30.7 nvidia-nvjitlink-13.5.37 nvidia-nvshmem-cu13-3.7.2 nvidia-nvtx-13.2.86 packaging-26.3 pandas-3.1.1 pillow-13.0.0 pydantic-2.14.3 pydantic_core-2.50.4 pyparsing-3.3.3 python-dateutil-4.0.0 regex-2026.11.18 rich-15.0.0 safetensors-0.8.0 scikit-learn-1.9.1 scipy-1.17.1 sentence-transformers-6.3.0 setuptools-84.2.1 shellingham-1.5.4 sympy-1.14.0 threadpoolctl-3.8.0 tokenizers-0.23.3 torch-2.15.0 tqdm-4.70.1 transformers-5.23.0 triton-3.9.0 truststore-0.10.5 typer-0.29.1 typing-inspection-0.4.5 typing_extensions-4.16.0 tzdata-2026.6
+
+[notice] A new release of pip available: 22.3.1 -> 26.3
+[notice] To update, run: /home/usuario/projects/minion_trec_khipu_v4_20261118/.venv311_exact/bin/python3.11 -m pip install --upgrade pip

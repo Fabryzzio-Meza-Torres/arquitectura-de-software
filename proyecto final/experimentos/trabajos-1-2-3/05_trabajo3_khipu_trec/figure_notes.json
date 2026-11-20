@@ -1,0 +1,11 @@
+{
+  "K1_rampa_trec-covid.png": "El primer escalón falla: no hay C validada en esta grilla. La rampa solo se conserva redondeada en stdout por el código original. El ensayo complementario usa 8 QPS como referencia externa de carga, no como C de TREC.",
+  "K2_etapas_trec-covid.png": "Umbral de hedge = p95 de rerank en calibración: 154.424 ms. Las líneas son plazos de respaldo. Se muestran tiempos positivos registrados; en un timeout se mide la espera hasta vencer el plazo, no el tiempo posterior del hilo residual.",
+  "K3_ecdf_carga_trec-covid.png": "Las ECDF reúnen respuestas válidas de las tres repeticiones después del calentamiento. La continuidad, cuyo denominador incluye errores, se muestra aparte.",
+  "K4_percentiles_carga_trec-covid.png": "En L100, p99 mediano = 1745.8 ms. Las barras son rangos mínimo–máximo, no intervalos de confianza.",
+  "K5_serie_tiempo_trec-covid.png": "Se conserva el calentamiento en esta visualización y se sombrea, aunque se excluye de los estadísticos. F2 fuerza vencimiento del plazo del reranker.",
+  "K6_matriz_rutas_trec-covid.png": "La matriz distingue omitir el reranker a propósito de invocarlo y usar respaldo. Un SLO cumplido no implica ejecución de la ruta completa en todas las solicitudes.",
+  "K7_continuidad_trec-covid.png": "F1 y F2 son las pruebas de continuidad ante error o lentitud del reranker. En F6 fallan las dos rutas y se espera error controlado, no continuidad.",
+  "K8_hedging_trec-covid.png": "La reducción NH−H del p99 extremo a extremo por repetición es [-87.0, -166.0, 73.6] ms. La CDF de etapa incluye solo invocaciones; la CDF extremo a extremo incluye toda respuesta válida. IDs y llegadas coinciden; las demoras efectivas difieren en [2, 1, 1] solicitudes poscalentamiento por repetición por rutas previas. No es una estimación causal aislada del hedge.",
+  "K9_fitness_trec-covid.png": "Las fitness temporales se calculan por repetición. La relevancia se evalúa en el Trabajo 1: no se convierte una prueba de continuidad en una prueba de mejora de P@3."
+}

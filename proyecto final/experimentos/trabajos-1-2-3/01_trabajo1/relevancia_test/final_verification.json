@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "alpha": 0.85,
+  "audit_job_id": "63776",
+  "notebook_code_cells": 29,
+  "notebook_errors": 0,
+  "inline_figures": 15,
+  "datasets": {
+    "fiqa": {
+      "queries": 648,
+      "documents": 57638,
+      "candidate_rows": 11665,
+      "explicit_negative_qrels": 0,
+      "negative_qrels_retrieved": [],
+      "literal_and_nonnegative_judged_definitions_identical": true,
+      "identical_candidate_sets": true,
+      "normalization_verified": true,
+      "ranking_ties_verified": true,
+      "bootstrap_replicates": 10000,
+      "bootstrap_verified": true
+    },
+    "trec-covid": {
+      "queries": 50,
+      "documents": 171332,
+      "candidate_rows": 930,
+      "explicit_negative_qrels": 2,
+      "negative_qrels_retrieved": [],
+      "literal_and_nonnegative_judged_definitions_identical": true,
+      "identical_candidate_sets": true,
+      "normalization_verified": true,
+      "ranking_ties_verified": true,
+      "bootstrap_replicates": 10000,
+      "bootstrap_verified": true
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "reference_job_id": "63828",
+  "reference_node": "ds001",
+  "python": "3.11.11",
+  "versions": {
+    "torch": "2.15.0",
+    "transformers": "5.23.0",
+    "sentence-transformers": "6.3.0",
+    "faiss-cpu": "1.16.0",
+    "bm25s": "0.3.16",
+    "PyStemmer": "3.1.0",
+    "numpy": "2.4.6"
+  },
+  "source_sha256": "bb027763a577074373d5c1909467fbac67f8b5484d37696b29e1f697f02f22b7",
+  "alpha": 0.85,
+  "frozen_config_identical": true,
+  "intentional_changes": [
+    "dataset=trec-covid",
+    "fresh dataset-specific calibration",
+    "output paths",
+    "authorized account"
+  ],
+  "source_environment": "reference job 63828 on ds001",
+  "limits": [
+    "GPU is shared; concurrent load may differ",
+    "Reference run did not record exact MiniLM cache revision; this run records the prepared revision"
+  ]
+}

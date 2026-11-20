@@ -1,0 +1,682 @@
+[
+  {
+    "qid": "14",
+    "docid": "1pujz3em",
+    "relevance": null,
+    "score": 0.001758165773935616,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.9930328130722046,
+      0.0069044772535562515,
+      6.007112096995115e-05,
+      2.565607928772806e-06,
+      8.668577322623605e-08
+    ],
+    "truncated": false,
+    "input_tokens": 255,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "2t4fsfy9",
+    "relevance": 2,
+    "score": 0.7510582804679871,
+    "label_mass": 1.0,
+    "probabilities": [
+      3.055705803944875e-07,
+      6.372167263180017e-05,
+      0.001404568087309599,
+      0.9927652478218079,
+      0.005766142625361681
+    ],
+    "truncated": false,
+    "input_tokens": 262,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "5906wju4",
+    "relevance": 1,
+    "score": 0.3186877369880676,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.0086355684325099,
+      0.708808422088623,
+      0.28172627091407776,
+      0.0008291887934319675,
+      5.888518330721126e-07
+    ],
+    "truncated": false,
+    "input_tokens": 258,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "5y8cc5eb",
+    "relevance": null,
+    "score": 9.75323473539902e-07,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.9999961853027344,
+      3.825623025477398e-06,
+      8.382063043654853e-09,
+      1.5682113385651064e-08,
+      2.9651019417542557e-09
+    ],
+    "truncated": false,
+    "input_tokens": 233,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "9rzly1f2",
+    "relevance": null,
+    "score": 0.019332831725478172,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.9227575659751892,
+      0.07715454697608948,
+      8.697470184415579e-05,
+      9.29045256725658e-07,
+      1.032115459764782e-08
+    ],
+    "truncated": false,
+    "input_tokens": 242,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "axns3ukm",
+    "relevance": 1,
+    "score": 0.33548349142074585,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.028367096558213234,
+      0.6689533591270447,
+      0.23560714721679688,
+      0.06652326136827469,
+      0.0005491286283358932
+    ],
+    "truncated": false,
+    "input_tokens": 384,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "b1ph5tuy",
+    "relevance": 0,
+    "score": 9.599358463674434e-07,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.999996542930603,
+      3.233595407436951e-06,
+      9.284443791557351e-08,
+      1.1969947877332743e-07,
+      1.534015758863916e-08
+    ],
+    "truncated": false,
+    "input_tokens": 363,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "d91t5o01",
+    "relevance": 2,
+    "score": 0.7515608072280884,
+    "label_mass": 0.9999999403953552,
+    "probabilities": [
+      3.370818149051047e-07,
+      5.850441084476188e-06,
+      0.00017747411038726568,
+      0.9933830499649048,
+      0.00643328670412302
+    ],
+    "truncated": false,
+    "input_tokens": 305,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "djzh602y",
+    "relevance": null,
+    "score": 3.7087465898366645e-06,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.9999853372573853,
+      1.460037128708791e-05,
+      7.641358479304472e-08,
+      2.135074161913053e-08,
+      4.43398073812773e-09
+    ],
+    "truncated": false,
+    "input_tokens": 320,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "ksp53qo3",
+    "relevance": null,
+    "score": 0.0002868336159735918,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.998855471611023,
+      0.0011419025249779224,
+      2.576559609224205e-06,
+      8.149966390647023e-08,
+      8.579947419207201e-09
+    ],
+    "truncated": false,
+    "input_tokens": 311,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "rhpxtlyz",
+    "relevance": null,
+    "score": 0.0001865940575953573,
+    "label_mass": 1.0000001192092896,
+    "probabilities": [
+      0.9994766116142273,
+      0.00039969870704226196,
+      2.8894273782498203e-05,
+      8.989735215436667e-05,
+      4.799225280294195e-06
+    ],
+    "truncated": false,
+    "input_tokens": 133,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "sk86rbap",
+    "relevance": 0,
+    "score": 0.12943075597286224,
+    "label_mass": 0.9999999403953552,
+    "probabilities": [
+      0.48232007026672363,
+      0.5176395177841187,
+      3.800235572271049e-05,
+      2.3451038941857405e-06,
+      1.1598830695902507e-07
+    ],
+    "truncated": false,
+    "input_tokens": 934,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "swk25qsv",
+    "relevance": null,
+    "score": 3.351743771418114e-08,
+    "label_mass": 0.9999999403953552,
+    "probabilities": [
+      0.9999999403953552,
+      4.6803229736269714e-08,
+      1.5200195546682949e-09,
+      1.1755041384731157e-08,
+      1.2240339408720047e-08
+    ],
+    "truncated": false,
+    "input_tokens": 543,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "u7arfoym",
+    "relevance": null,
+    "score": 0.0009220067877322435,
+    "label_mass": 0.9999999403953552,
+    "probabilities": [
+      0.9963330626487732,
+      0.0036503428127616644,
+      1.255802453670185e-05,
+      3.5304851735418197e-06,
+      4.94221126245975e-07
+    ],
+    "truncated": false,
+    "input_tokens": 604,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "vkoj5z5k",
+    "relevance": null,
+    "score": 0.004883038345724344,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.984966516494751,
+      0.01253668125718832,
+      0.0005620773881673813,
+      0.001867567072622478,
+      6.715413474012166e-05
+    ],
+    "truncated": false,
+    "input_tokens": 135,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "z2q063sa",
+    "relevance": 2,
+    "score": 0.7500528693199158,
+    "label_mass": 0.9999999403953552,
+    "probabilities": [
+      1.99742703443917e-06,
+      0.0003071172977797687,
+      0.0031962699722498655,
+      0.9924665689468384,
+      0.00402802973985672
+    ],
+    "truncated": false,
+    "input_tokens": 496,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "zb3ok9b8",
+    "relevance": null,
+    "score": 0.7492417693138123,
+    "label_mass": 1.0,
+    "probabilities": [
+      5.500610882336332e-07,
+      0.0001735789410304278,
+      0.006399176083505154,
+      0.9897117614746094,
+      0.003714963560923934
+    ],
+    "truncated": false,
+    "input_tokens": 277,
+    "degraded": false
+  },
+  {
+    "qid": "14",
+    "docid": "zqer9w9t",
+    "relevance": 0,
+    "score": 0.8013208508491516,
+    "label_mass": 1.0,
+    "probabilities": [
+      1.421821327340922e-08,
+      3.5135590223944746e-06,
+      0.0001056358014466241,
+      0.7944951057434082,
+      0.20539578795433044
+    ],
+    "truncated": false,
+    "input_tokens": 345,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "0m5mc320",
+    "relevance": 2,
+    "score": 0.001130773569457233,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.9958588480949402,
+      0.0038479366339743137,
+      0.00021676220057997853,
+      6.43812891212292e-05,
+      1.2122383850510232e-05
+    ],
+    "truncated": false,
+    "input_tokens": 440,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "0z3wu25j",
+    "relevance": null,
+    "score": 0.00033903971780091524,
+    "label_mass": 0.9999999403953552,
+    "probabilities": [
+      0.9988551735877991,
+      0.0010250246850773692,
+      3.588139952626079e-05,
+      7.635253859916702e-05,
+      7.578431905130856e-06
+    ],
+    "truncated": false,
+    "input_tokens": 132,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "3xk2zi4r",
+    "relevance": null,
+    "score": 0.001621258445084095,
+    "label_mass": 0.9999999403953552,
+    "probabilities": [
+      0.993558406829834,
+      0.006400882266461849,
+      3.829361594398506e-05,
+      2.328750042579486e-06,
+      1.4444508167343884e-07
+    ],
+    "truncated": false,
+    "input_tokens": 490,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "4n6v5kfv",
+    "relevance": 2,
+    "score": 0.8181877732276917,
+    "label_mass": 1.0,
+    "probabilities": [
+      4.677517608797643e-06,
+      0.00020201364532113075,
+      0.002381975296884775,
+      0.7218602299690247,
+      0.27555111050605774
+    ],
+    "truncated": false,
+    "input_tokens": 304,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "6pgii2nl",
+    "relevance": null,
+    "score": 0.0015040712896734476,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.9940184354782104,
+      0.005947425961494446,
+      3.357482637511566e-05,
+      5.600596182375739e-07,
+      7.396813828108861e-09
+    ],
+    "truncated": false,
+    "input_tokens": 424,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "79tbzfcc",
+    "relevance": null,
+    "score": 0.09221101552248001,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.6347995400428772,
+      0.3615640699863434,
+      0.0036292066797614098,
+      7.1174727054312825e-06,
+      5.965712546185387e-08
+    ],
+    "truncated": false,
+    "input_tokens": 287,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "9c09xlma",
+    "relevance": null,
+    "score": 0.00023026135750114918,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.9990812540054321,
+      0.0009165308438241482,
+      2.178839395128307e-06,
+      5.066634756190069e-08,
+      1.2302361351856916e-09
+    ],
+    "truncated": false,
+    "input_tokens": 295,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "as74qa0l",
+    "relevance": 0,
+    "score": 6.522715466417139e-06,
+    "label_mass": 0.9999999403953552,
+    "probabilities": [
+      0.9999741911888123,
+      2.560178836574778e-05,
+      1.7648586947416334e-07,
+      4.2406565370356475e-08,
+      2.2205659533369726e-09
+    ],
+    "truncated": false,
+    "input_tokens": 241,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "b7o9n6cz",
+    "relevance": null,
+    "score": 0.2415037602186203,
+    "label_mass": 0.9999998807907104,
+    "probabilities": [
+      0.08024604618549347,
+      0.8767102360725403,
+      0.039912570267915726,
+      0.0030448311008512974,
+      8.629401418147609e-05
+    ],
+    "truncated": false,
+    "input_tokens": 492,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "bl8nts34",
+    "relevance": 0,
+    "score": 0.003213669639080763,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.9872135519981384,
+      0.012721158564090729,
+      6.239055801415816e-05,
+      2.86644535663072e-06,
+      3.503742007637811e-08
+    ],
+    "truncated": false,
+    "input_tokens": 306,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "drgay9n0",
+    "relevance": 0,
+    "score": 0.25720080733299255,
+    "label_mass": 1.0000001192092896,
+    "probabilities": [
+      0.020725106820464134,
+      0.9300336837768555,
+      0.04895605146884918,
+      0.0002830989833455533,
+      2.0403401777002728e-06
+    ],
+    "truncated": false,
+    "input_tokens": 458,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "e941jx5c",
+    "relevance": 0,
+    "score": 0.24183380603790283,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.049842000007629395,
+      0.9330383539199829,
+      0.017062485218048096,
+      5.6837725423974916e-05,
+      3.375861297172378e-07
+    ],
+    "truncated": false,
+    "input_tokens": 448,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "k31dagdy",
+    "relevance": 0,
+    "score": 0.25441765785217285,
+    "label_mass": 1.0000001192092896,
+    "probabilities": [
+      0.02205479145050049,
+      0.9382873177528381,
+      0.039590682834386826,
+      6.681850936729461e-05,
+      3.684100988721184e-07
+    ],
+    "truncated": false,
+    "input_tokens": 335,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "kirbycpf",
+    "relevance": null,
+    "score": 0.23856163024902344,
+    "label_mass": 0.9999999403953552,
+    "probabilities": [
+      0.05244863033294678,
+      0.9409953355789185,
+      0.006417758762836456,
+      0.00013739614223595709,
+      8.807779181552178e-07
+    ],
+    "truncated": false,
+    "input_tokens": 313,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "n1656hq0",
+    "relevance": 0,
+    "score": 0.23872947692871094,
+    "label_mass": 0.9999998807907104,
+    "probabilities": [
+      0.04921165853738785,
+      0.9467110633850098,
+      0.004028490278869867,
+      4.548966899164952e-05,
+      3.3413425626349635e-06
+    ],
+    "truncated": false,
+    "input_tokens": 324,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "n1e3tfw4",
+    "relevance": 0,
+    "score": 0.13213612139225006,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.47231125831604004,
+      0.5268369317054749,
+      0.0008480413816869259,
+      3.731785682248301e-06,
+      5.980399464533548e-08
+    ],
+    "truncated": false,
+    "input_tokens": 307,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "wr2v9i1a",
+    "relevance": 0,
+    "score": 0.006564284674823284,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.9739046692848206,
+      0.025938041508197784,
+      0.00015300614177249372,
+      4.152807832724648e-06,
+      1.563412297400646e-07
+    ],
+    "truncated": false,
+    "input_tokens": 502,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "zrqp24gb",
+    "relevance": 0,
+    "score": 9.992312470785691e-07,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.9999963045120239,
+      3.475054654700216e-06,
+      6.589584700122941e-08,
+      7.735587814750033e-08,
+      3.9502811688407746e-08
+    ],
+    "truncated": false,
+    "input_tokens": 781,
+    "degraded": false
+  },
+  {
+    "qid": "35",
+    "docid": "zxvim4t8",
+    "relevance": 2,
+    "score": 0.7481462359428406,
+    "label_mass": 1.0,
+    "probabilities": [
+      1.9766870536841452e-05,
+      0.0056671155616641045,
+      0.043595582246780396,
+      0.903143584728241,
+      0.047573965042829514
+    ],
+    "truncated": false,
+    "input_tokens": 414,
+    "degraded": false
+  },
+  {
+    "qid": "21",
+    "docid": "0anzpkyl",
+    "relevance": null,
+    "score": 0.01886123977601528,
+    "label_mass": 1.0,
+    "probabilities": [
+      0.9274636507034302,
+      0.07006576657295227,
+      0.0020402581430971622,
+      0.0004227370664011687,
+      7.616874881932745e-06
+    ],
+    "truncated": false,
+    "input_tokens": 461,
+    "degraded": false
+  },
+  {
+    "qid": "21",
+    "docid": "0falsc4z",
+    "relevance": 0,
+    "score": 0.25478214025497437,
+    "label_mass": 0.9999999403953552,
+    "probabilities": [
+      0.028365859761834145,
+      0.9256956577301025,
+      0.044410597532987595,
+      0.0014998872065916657,
+      2.8023154300171882e-05
+    ],
+    "truncated": false,
+    "input_tokens": 431,
+    "degraded": false
+  },
+  {
+    "qid": "21",
+    "docid": "2epo3a4r",
+    "relevance": 2,
+    "score": 0.7841606736183167,
+    "label_mass": 1.0,
+    "probabilities": [
+      9.993958519771695e-05,
+      0.0060816360637545586,
+      0.020961055532097816,
+      0.802790641784668,
+      0.17006677389144897
+    ],
+    "truncated": false,
+    "input_tokens": 326,
+    "degraded": false
+  }
+]

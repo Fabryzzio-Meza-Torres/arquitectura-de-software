@@ -1,0 +1,3 @@
+dataset,comparison,metric,mean_difference,ci_95_low,ci_95_high,resamples,paired_queries
+fiqa,rrf_minus_convex,precision_at_3,-0.0375514403292181,-0.050411522633744855,-0.025205761316872428,10000,648
+fiqa,rrf_minus_convex,ndcg_at_3,-0.053531375882192804,-0.06989637623928288,-0.03710869801423174,10000,648

@@ -1,0 +1,30 @@
+JobId=63919 JobName=trec-fixed-load-v4
+   UserId=fabryzzio.meza(10067) GroupId=fabryzzio.meza(10067) MCS_label=N/A
+   Priority=1202 Nice=0 Account=investigacion2 QOS=a-investigacion2
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:43 TimeLimit=05:00:00 TimeMin=N/A
+   SubmitTime=2026-11-18T18:21:26 EligibleTime=2026-11-18T18:23:54
+   AccrueTime=2026-11-18T18:23:54
+   StartTime=2026-11-18T18:24:00 EndTime=2026-11-18T23:24:00 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-18T18:24:00 Scheduler=Backfill
+   Partition=data-science AllocNode:Sid=khipu:174637
+   ReqNodeList=ds001 ExcNodeList=(null)
+   NodeList=ds001
+   BatchHost=ds001
+   NumNodes=1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=4,mem=32G,node=1,billing=4,gres/shard=1
+   AllocTRES=cpu=4,mem=32G,node=1,billing=4,gres/shard=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryNode=32G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/home/usuario/projects/minion_trec_khipu_v4_20261118/trec_fixed_load_v4.sbatch
+   SubmitLine=sbatch --parsable --dependency=afterany:63911 trec_fixed_load_v4.sbatch
+   WorkDir=/home/usuario/projects/minion_trec_khipu_v4_20261118
+   StdErr=/home/usuario/projects/minion_trec_khipu_v4_20261118/logs/trec-fixed-load-v4-63919.log
+   StdIn=/dev/null
+   StdOut=/home/usuario/projects/minion_trec_khipu_v4_20261118/logs/trec-fixed-load-v4-63919.log
+   TresPerNode=gres/shard:1
+   TresPerTask=cpu=4
+

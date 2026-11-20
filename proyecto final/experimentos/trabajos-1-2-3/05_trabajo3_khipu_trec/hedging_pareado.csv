@@ -1,0 +1,4 @@
+rep,p99_H_ms,p99_NH_ms,p99_reduction_ms,dup_H_pct,paired_inputs_equal,planned_delays_count,observed_delay_mismatches,observed_delay_mismatches_postwarm,observed_delays_equal
+1,1319.865,1232.879,-86.9860000000001,9.729,True,48,2,2,False
+2,1490.621,1324.644,-165.9770000000001,9.725,True,42,1,1,False
+3,1411.136,1484.724,73.58799999999997,9.711,True,53,1,1,False

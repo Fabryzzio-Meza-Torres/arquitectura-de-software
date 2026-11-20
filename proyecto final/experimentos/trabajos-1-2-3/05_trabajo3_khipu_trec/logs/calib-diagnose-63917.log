@@ -1,0 +1,583 @@
+{
+  "n": 500,
+  "routes": {
+    "reranked": 462,
+    "sem": 38
+  },
+  "timeouts": {
+    "lex": 38
+  },
+  "errors": {},
+  "non_reranked": [
+    {
+      "qid": "doc4kkz8k8h",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 95.401,
+      "stage_ms": {
+        "lex": 50.639,
+        "sem": 93.849,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docv4nipq7g",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 118.427,
+      "stage_ms": {
+        "lex": 59.725,
+        "sem": 116.409,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docenob1ze1",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 81.005,
+      "stage_ms": {
+        "lex": 50.566,
+        "sem": 79.533,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "doc7zbvgvk8",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 78.27,
+      "stage_ms": {
+        "lex": 50.595,
+        "sem": 76.181,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "doc3ury4hnv",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 123.11,
+      "stage_ms": {
+        "lex": 50.638,
+        "sem": 121.064,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "doc0dnhcboy",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 92.356,
+      "stage_ms": {
+        "lex": 50.508,
+        "sem": 91.193,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docfdfz0n1x",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 82.131,
+      "stage_ms": {
+        "lex": 50.595,
+        "sem": 79.868,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docxyvhxvfy",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 79.682,
+      "stage_ms": {
+        "lex": 50.612,
+        "sem": 77.321,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "doco6znx8t8",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 99.365,
+      "stage_ms": {
+        "lex": 50.801,
+        "sem": 96.052,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "doc6jvx3l1u",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 79.963,
+      "stage_ms": {
+        "lex": 50.594,
+        "sem": 77.998,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docrhcvsqtk",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 81.867,
+      "stage_ms": {
+        "lex": 50.572,
+        "sem": 80.428,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "doc5s6acr7m",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 79.677,
+      "stage_ms": {
+        "lex": 50.608,
+        "sem": 77.819,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "doc4gaqdf3f",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 92.786,
+      "stage_ms": {
+        "lex": 50.556,
+        "sem": 91.35,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "doctujy0p11",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 80.086,
+      "stage_ms": {
+        "lex": 50.538,
+        "sem": 78.742,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "dockbysppgb",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 94.918,
+      "stage_ms": {
+        "lex": 50.603,
+        "sem": 91.486,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docnv1aa116",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 81.553,
+      "stage_ms": {
+        "lex": 59.449,
+        "sem": 77.761,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docoea5wvzy",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 79.621,
+      "stage_ms": {
+        "lex": 50.576,
+        "sem": 77.619,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docbamg5f0g",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 80.242,
+      "stage_ms": {
+        "lex": 50.574,
+        "sem": 78.504,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docxhzh8a14",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 120.71,
+      "stage_ms": {
+        "lex": 50.693,
+        "sem": 116.639,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docftqtubid",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 82.463,
+      "stage_ms": {
+        "lex": 50.592,
+        "sem": 80.907,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "dockxoo2ths",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 102.418,
+      "stage_ms": {
+        "lex": 54.883,
+        "sem": 100.122,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "doczpr3heeu",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 97.248,
+      "stage_ms": {
+        "lex": 51.561,
+        "sem": 95.17,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docg42p98ku",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 78.997,
+      "stage_ms": {
+        "lex": 50.559,
+        "sem": 76.763,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "dockusrgy0y",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 78.766,
+      "stage_ms": {
+        "lex": 58.608,
+        "sem": 76.891,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "doc6ehe2jju",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 98.56,
+      "stage_ms": {
+        "lex": 50.622,
+        "sem": 97.012,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docd2tbg81x",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 98.114,
+      "stage_ms": {
+        "lex": 50.512,
+        "sem": 95.412,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "doc2xky1wse",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 79.367,
+      "stage_ms": {
+        "lex": 50.534,
+        "sem": 77.859,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "doc7ijcg1wy",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 83.569,
+      "stage_ms": {
+        "lex": 50.603,
+        "sem": 80.332,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "dockgtr77e7",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 81.998,
+      "stage_ms": {
+        "lex": 50.658,
+        "sem": 79.114,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docqerm5cpo",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 95.242,
+      "stage_ms": {
+        "lex": 50.525,
+        "sem": 91.807,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docpdin1a3a",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 85.293,
+      "stage_ms": {
+        "lex": 50.567,
+        "sem": 83.871,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docr7ecz5be",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 126.753,
+      "stage_ms": {
+        "lex": 55.26,
+        "sem": 124.026,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docj224pm1k",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 81.434,
+      "stage_ms": {
+        "lex": 50.478,
+        "sem": 80.008,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docr91sjexi",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 82.874,
+      "stage_ms": {
+        "lex": 50.522,
+        "sem": 81.451,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "dochgqclv04",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 122.509,
+      "stage_ms": {
+        "lex": 52.21,
+        "sem": 120.982,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docubmvtvwc",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 92.106,
+      "stage_ms": {
+        "lex": 52.335,
+        "sem": 90.912,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docyy4110x4",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 89.05,
+      "stage_ms": {
+        "lex": 50.581,
+        "sem": 85.623,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    },
+    {
+      "qid": "docycai427w",
+      "route": "sem",
+      "timeouts": [
+        "lex"
+      ],
+      "errors": [],
+      "latency_ms": 108.315,
+      "stage_ms": {
+        "lex": 50.574,
+        "sem": 105.907,
+        "fusion": 0.0,
+        "rerank": 0.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "node": "ds001",
+  "slurm_nodename": "ds001",
+  "slurm_job_id": "63911",
+  "cuda_visible_devices": "0",
+  "nvidia_smi": "Wed Nov 18 17:55:05 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA RTX A6000               Off |   00000000:99:00.0 Off |                  Off |\n| 49%   74C    P2            163W /  300W |    7652MiB /  49140MiB |     99%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A          162975      C   python                                 2544MiB |\n|    0   N/A  N/A          162976      C   python                                 2544MiB |\n|    0   N/A  N/A          162977      C   python                                 2544MiB |\n+-----------------------------------------------------------------------------------------+\n",
+  "lscpu": "Architecture:        x86_64\nCPU op-mode(s):      32-bit, 64-bit\nByte Order:          Little Endian\nCPU(s):              96\nOn-line CPU(s) list: 0-95\nThread(s) per core:  2\nCore(s) per socket:  24\nSocket(s):           2\nNUMA node(s):        2\nVendor ID:           GenuineIntel\nCPU family:          6\nModel:               143\nModel name:          Intel(R) Xeon(R) Gold 5418Y\nStepping:            8\nCPU MHz:             2000.000\nBogoMIPS:            4000.00\nVirtualization:      VT-x\nL1d cache:           48K\nL1i cache:           32K\nL2 cache:            2048K\nL3 cache:            46080K\nNUMA node0 CPU(s):   0-23,48-71\nNUMA node1 CPU(s):   24-47,72-95\nFlags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cat_l2 cdp_l3 invpcid_single intel_ppin cdp_l2 ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect avx_vnni avx512_bf16 wbnoinvd dtherm ida arat pln pts hfi avx512vbmi umip pku ospke waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg tme avx512_vpopcntdq la57 rdpid bus_lock_detect cldemote movdiri movdir64b enqcmd fsrm md_clear serialize tsxldtrk pconfig arch_lbr amx_bf16 avx512_fp16 amx_tile amx_int8 flush_l1d arch_capabilities\n",
+  "python": "3.11.11 (main, Feb  7 2025, 11:01:11) [GCC 12.4.0]",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "libraries": {
+    "torch": "2.15.0",
+    "transformers": "5.23.0",
+    "sentence-transformers": "6.3.0",
+    "faiss-cpu": "1.16.0",
+    "bm25s": "0.3.16",
+    "PyStemmer": "3.1.0",
+    "numpy": "2.4.6"
+  },
+  "script_sha256": "bb027763a577074373d5c1909467fbac67f8b5484d37696b29e1f697f02f22b7",
+  "frozen_config": {
+    "seed": 42,
+    "datasets": {
+      "fiqa": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/fiqa.zip",
+      "trec-covid": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/trec-covid.zip"
+    },
+    "doc_text": "title + ' ' + text",
+    "lexical": {
+      "lib": "bm25s",
+      "method": "lucene",
+      "k1": 0.9,
+      "b": 0.4,
+      "stopwords": "en",
+      "stemmer": "english (PyStemmer)",
+      "top_k": 10
+    },
+    "semantic": {
+      "model": "BAAI/bge-base-en-v1.5",
+      "model_revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+      "query_prefix": "Represent this sentence for searching relevant passages: ",
+      "encoding": "forward fp16; CLS pooling; L2; float32",
+      "index": "faiss.IndexFlatIP",
+      "max_length": 512,
+      "top_k": 10
+    },
+    "fusion": {
+      "normalization": "per-query candidate min-max; constant scores -> 1.0",
+      "formula": "(1 - alpha) * lex_norm + alpha * sem_norm",
+      "alpha": "alpha.json",
+      "tie_break": "ascending document ID (string)"
+    },
+    "reranker": {
+      "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+      "max_length": 512,
+      "replicas": 2,
+      "batch": "todos los candidatos en un lote"
+    },
+    "timeouts_ms": {
+      "lexical": 50,
+      "semantic": 1200,
+      "fusion": 50,
+      "rerank": 1200
+    },
+    "slo_ms": 2500.0,
+    "hedging": {
+      "threshold": "p95 del reranker en calibración",
+      "max_extra": 0.1,
+      "window_s": 60.0
+    }
+  },
+  "args": {
+    "dataset": "trec-covid",
+    "reps": 3,
+    "out": "results_trec_covid_completo_v4/",
+    "data_dir": "data",
+    "alpha_json": "alpha.json",
+    "subset": 0,
+    "cond_seconds": 180.0,
+    "warmup_seconds": 30.0,
+    "calib_queries": 500,
+    "ramp_seconds": 120.0,
+    "ramp_rates": "1,2,4,8,16,32,64",
+    "quick": false,
+    "fake": false,
+    "phase": "all",
+    "conditions": "all",
+    "resume": false,
+    "reuse_calibration": false,
+    "no_cache": false,
+    "device": "auto",
+    "threads": 4,
+    "rates": [
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0,
+      32.0,
+      64.0
+    ]
+  },
+  "alpha_json": {
+    "alpha": 0.85,
+    "precision_at_3": 0.2513333333333326,
+    "ndcg_at_3": 0.40268380281868393,
+    "selection_rule": "max P@3; then max nDCG@3; then min alpha",
+    "dataset": "FiQA",
+    "split": "dev",
+    "n_queries": 500,
+    "n_documents": 57638,
+    "seed": 42,
+    "fusion": "(1-alpha)*lex_norm + alpha*sem_norm",
+    "normalization": "per-query candidate min-max; constant scores -> 1.0",
+    "document_tie_break": "ascending document ID (string)",
+    "model": "BAAI/bge-base-en-v1.5",
+    "model_revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+    "encoding": "fp16 forward; CLS pooling; L2 float32; stored float32",
+    "bm25": {
+      "library": "bm25s",
+      "method": "lucene",
+      "k1": 0.9,
+      "b": 0.4,
+      "stopwords": "en",
+      "stemmer": "english (PyStemmer)",
+      "top_k": 10
+    },
+    "semantic": {
+      "query_prefix": "Represent this sentence for searching relevant passages: ",
+      "max_length": 512,
+      "normalize": true,
+      "index": "faiss.IndexFlatIP",
+      "top_k": 10
+    },
+    "candidate_sha256": "733e489518a932a3d8a8e9de722eba903d274707e6770ab891f5e5ad5a5cd3ae",
+    "script_sha256": "288142a0b37e21801bd479f30e8bdf30b714e0413fc478425b029477e6566f8e",
+    "pilot": false,
+    "node": "ag001",
+    "slurm_job_id": "63761"
+  },
+  "calibration_json": null
+}

@@ -1,0 +1,4 @@
+63919 trec-fixed-load-v4 RUNNING 39:25 gres/shard:1
+63869 attn_ax42 RUNNING 3:26:56 gres/shard:1
+63870 attn_ax43 RUNNING 3:26:56 gres/shard:1
+63871 attn_ax44 RUNNING 3:26:56 gres/shard:1

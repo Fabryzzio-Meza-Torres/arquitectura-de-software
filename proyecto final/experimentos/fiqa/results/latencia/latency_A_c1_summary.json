@@ -1,0 +1,11 @@
+{
+  "arm": "A",
+  "concurrency": 1,
+  "requests": 50,
+  "success": 50,
+  "throughput_requests_per_s": 29.81074702140811,
+  "p50_ms": 23.140598088502884,
+  "p95_ms": 31.127896159887314,
+  "p99_ms": 431.75553157925606,
+  "continuity_within_2500_ms": 1.0
+}

@@ -1,0 +1,38 @@
+{
+  "alpha": 0.85,
+  "precision_at_3": 0.2513333333333326,
+  "ndcg_at_3": 0.40268380281868393,
+  "selection_rule": "max P@3; then max nDCG@3; then min alpha",
+  "dataset": "FiQA",
+  "split": "dev",
+  "n_queries": 500,
+  "n_documents": 57638,
+  "seed": 42,
+  "fusion": "(1-alpha)*lex_norm + alpha*sem_norm",
+  "normalization": "per-query candidate min-max; constant scores -> 1.0",
+  "document_tie_break": "ascending document ID (string)",
+  "model": "BAAI/bge-base-en-v1.5",
+  "model_revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+  "encoding": "fp16 forward; CLS pooling; L2 float32; stored float32",
+  "bm25": {
+    "library": "bm25s",
+    "method": "lucene",
+    "k1": 0.9,
+    "b": 0.4,
+    "stopwords": "en",
+    "stemmer": "english (PyStemmer)",
+    "top_k": 10
+  },
+  "semantic": {
+    "query_prefix": "Represent this sentence for searching relevant passages: ",
+    "max_length": 512,
+    "normalize": true,
+    "index": "faiss.IndexFlatIP",
+    "top_k": 10
+  },
+  "candidate_sha256": "733e489518a932a3d8a8e9de722eba903d274707e6770ab891f5e5ad5a5cd3ae",
+  "script_sha256": "288142a0b37e21801bd479f30e8bdf30b714e0413fc478425b029477e6566f8e",
+  "pilot": false,
+  "node": "ag001",
+  "slurm_job_id": "63761"
+}

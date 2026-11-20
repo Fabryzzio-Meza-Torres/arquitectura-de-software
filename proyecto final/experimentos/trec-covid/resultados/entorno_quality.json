@@ -1,0 +1,19 @@
+{
+  "stage": "quality",
+  "job": "64078",
+  "node": "ag001",
+  "gpu": "NVIDIA A100-PCIE-40GB MIG 3g.20gb",
+  "gpu_memory_bytes": 21072183296,
+  "precision_llm": "float32",
+  "backend": "standard ATen; native CUDA overrides disabled",
+  "python": "3.12.2 | packaged by conda-forge | (main, Feb 16 2024, 20:50:58) [GCC 12.3.0]",
+  "libraries": {
+    "torch": "2.14.1",
+    "transformers": "4.48.3",
+    "numpy": "2.2.6",
+    "bm25s": "0.3.16",
+    "faiss-cpu": "1.16.0"
+  },
+  "started_utc": "2026-11-19T08:47:33Z",
+  "publication_note": "Raw device/process dump omitted; hardware and library metadata retained."
+}

@@ -1,0 +1,13 @@
+{
+  "corpus": 171332,
+  "qrels": 66336,
+  "grades": {
+    "2": 14217,
+    "1": 10456,
+    "0": 41661,
+    "-1": 2
+  },
+  "missing_corpus_qrels": 0,
+  "missing_corpus_unique_docs": 0,
+  "missing_examples": []
+}

@@ -1,0 +1,12 @@
+{
+  "model_instances": 1,
+  "gpu_execution_lanes": 1,
+  "clients": [
+    1,
+    2,
+    4
+  ],
+  "pending_requests_bound": "at most client concurrency; closed loop, no overload rejection experiment",
+  "overlap": "CPU lexical search overlaps serialized semantic and LLM GPU operations",
+  "not_claimed": "No independent model replicas, dynamic cross-query batching or open-loop capacity claim"
+}

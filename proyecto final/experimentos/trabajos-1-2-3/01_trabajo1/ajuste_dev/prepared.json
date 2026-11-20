@@ -1,0 +1,10 @@
+{
+  "model": "BAAI/bge-base-en-v1.5",
+  "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+  "archive_sha256": "32c7df99ed21252fdfb2cf3f5673502a8d245ee0c44c4a133570d92ce2b3ad02",
+  "files": {
+    "corpus.jsonl": "ff593e4df9933955dc3af83be0c3fa28ac7465f627e08c2e53593e734d506517",
+    "queries.jsonl": "eede1e61d4a0188940239b53ebc2da91f577a6a34679c812d1eb9090c29877bc",
+    "qrels/dev.tsv": "03b27e547cd29dc721c3b93ce8ddd70df6b2d0ce954d8ef3659d386e8cd72c11"
+  }
+}

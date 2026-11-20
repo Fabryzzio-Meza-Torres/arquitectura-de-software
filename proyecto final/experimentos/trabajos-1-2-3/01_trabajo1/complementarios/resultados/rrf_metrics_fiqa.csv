@@ -1,0 +1,3 @@
+dataset,method,rrf_k,alpha,n_queries,precision_at_3,ndcg_at_3
+fiqa,convex,60,0.85,648,0.25154320987654377,0.3769242360719935
+fiqa,rrf,60,0.85,648,0.21399176954732468,0.3233928601898005

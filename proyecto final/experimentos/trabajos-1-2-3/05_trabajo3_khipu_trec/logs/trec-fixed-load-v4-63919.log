@@ -1,0 +1,256 @@
+2026-11-18T18:24:01-05:00
+ds001
+Python 3.11.11
+Wed Nov 18 18:24:01 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A6000               Off |   00000000:99:00.0 Off |                  Off |
+| 50%   72C    P2            164W /  300W |    7652MiB /  49140MiB |     74%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A          162975      C   python                                 2544MiB |
+|    0   N/A  N/A          162976      C   python                                 2544MiB |
+|    0   N/A  N/A          162977      C   python                                 2544MiB |
++-----------------------------------------------------------------------------------------+
+COMPARABILITY_PREFLIGHT_PASSED {"passed": true, "reference_job_id": "63828", "reference_node": "ds001", "python": "3.11.11", "versions": {"torch": "2.15.0", "transformers": "5.23.0", "sentence-transformers": "6.3.0", "faiss-cpu": "1.16.0", "bm25s": "0.3.16", "PyStemmer": "3.1.0", "numpy": "2.4.6"}, "source_sha256": "bb027763a577074373d5c1909467fbac67f8b5484d37696b29e1f697f02f22b7", "alpha": 0.85, "frozen_config_identical": true, "intentional_changes": ["dataset=trec-covid", "fresh dataset-specific calibration", "output paths", "authorized account"], "source_environment": "reference job 63828 on ds001", "limits": ["GPU is shared; concurrent load may differ", "Reference run did not record exact MiniLM cache revision; this run records the prepared revision"]}
+{"prepared": true, "protocol": "complementary_fixed_absolute_load", "threshold_ms": 154.424, "trec_capacity_qps": null}
+{
+  "protocol": "complementary_fixed_absolute_load",
+  "capacity_validated": false,
+  "trec_capacity_qps": null,
+  "C_qps": 8,
+  "C_role": "EXTERNAL LOAD SCALE ONLY; NOT TREC CAPACITY",
+  "reference_fiqa_job": "63828",
+  "reference_fiqa_capacity_qps": 8,
+  "failed_capacity_job": "63911",
+  "hedge_threshold_ms": 154.424,
+  "stage_percentiles_1qps_ms": {
+    "lex": {
+      "p50": 10.252,
+      "p95": 43.275,
+      "p99": 49.055,
+      "n": 462
+    },
+    "sem": {
+      "p50": 80.58,
+      "p95": 138.164,
+      "p99": 167.809,
+      "n": 462
+    },
+    "fusion": {
+      "p50": 0.572,
+      "p95": 1.003,
+      "p99": 2.632,
+      "n": 462
+    },
+    "rerank": {
+      "p50": 75.118,
+      "p95": 154.424,
+      "p99": 298.773,
+      "n": 462
+    }
+  },
+  "n_calib_queries": 500,
+  "ramp_log_rounded": [
+    {
+      "offered_qps": 1.0,
+      "achieved_qps_rounded": 0.94,
+      "p99_first_half_ms_rounded": 425.0,
+      "p99_second_half_ms_rounded": 263.0,
+      "reranked_pct_rounded": 97.0,
+      "passes": false,
+      "passes_any": true
+    },
+    {
+      "offered_qps": 2.0,
+      "achieved_qps_rounded": 2.02,
+      "p99_first_half_ms_rounded": 449.0,
+      "p99_second_half_ms_rounded": 324.0,
+      "reranked_pct_rounded": 97.0,
+      "passes": false,
+      "passes_any": true
+    },
+    {
+      "offered_qps": 4.0,
+      "achieved_qps_rounded": 4.04,
+      "p99_first_half_ms_rounded": 739.0,
+      "p99_second_half_ms_rounded": 472.0,
+      "reranked_pct_rounded": 95.0,
+      "passes": false,
+      "passes_any": true
+    },
+    {
+      "offered_qps": 8.0,
+      "achieved_qps_rounded": 7.78,
+      "p99_first_half_ms_rounded": 1061.0,
+      "p99_second_half_ms_rounded": 1491.0,
+      "reranked_pct_rounded": 93.0,
+      "passes": false,
+      "passes_any": false
+    },
+    {
+      "offered_qps": 16.0,
+      "achieved_qps_rounded": 16.48,
+      "p99_first_half_ms_rounded": 2381.0,
+      "p99_second_half_ms_rounded": 2398.0,
+      "reranked_pct_rounded": 8.0,
+      "passes": false,
+      "passes_any": true
+    },
+    {
+      "offered_qps": 32.0,
+      "achieved_qps_rounded": 31.11,
+      "p99_first_half_ms_rounded": 2376.0,
+      "p99_second_half_ms_rounded": 2368.0,
+      "reranked_pct_rounded": 12.0,
+      "passes": false,
+      "passes_any": false
+    },
+    {
+      "offered_qps": 64.0,
+      "achieved_qps_rounded": 62.43,
+      "p99_first_half_ms_rounded": 1242.0,
+      "p99_second_half_ms_rounded": 1287.0,
+      "reranked_pct_rounded": 0.0,
+      "passes": false,
+      "passes_any": false
+    }
+  ],
+  "fixed_loads_qps": {
+    "L25": 2,
+    "L50": 4,
+    "L75": 6,
+    "L100": 8,
+    "NORERANK": 8,
+    "NOHEDGE": 8,
+    "F1_F6": 6
+  },
+  "note": "Exact v4 benchmark in --phase runs. C_qps is only an adapter for fixed loads selected from the pre-existing FiQA reference. TREC failed the unmodified v4 capacity criterion. Do not report 8 QPS as TREC capacity.",
+  "source_calibration_sha256": "4b7fbb0a9acc5d018435b302f211085a11cbe61c432b1cfb52bcbdc31c50bc8e"
+}
+[18:24:05] trec-covid: 171332 docs | calib 1000 consultas | test 50 consultas
+[18:24:08] fase 0: indexando BM25 (171332 docs)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7785.85it/s]
+[18:24:36] cargando embeddings de caché data/cache/emb_trec-covid_171332_96468dba742a_a5beb1e3_fp16.npy
+Could not reach the Hub (Cannot reach https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'cross-encoder/ms-marco-MiniLM-L-6-v2'.
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 7744.69it/s]
+Could not reach the Hub (Cannot reach https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'cross-encoder/ms-marco-MiniLM-L-6-v2'.
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 6986.51it/s]
+[18:24:39] fase 0: índices y modelos listos en 31s
+[18:24:49] calentamiento listo
+[18:24:49] rep1 L25: 2.00 QPS durante 180.0s
+[18:27:49]   n=275 p99=556ms cont=100.0% dup=7.6% rutas=reranked:96,sem:4
+[18:27:51] rep1 L50: 4.00 QPS durante 180.0s
+[18:30:51]   n=535 p99=744ms cont=100.0% dup=9.0% rutas=reranked:94,sem:6
+[18:30:54] rep1 L75: 6.00 QPS durante 180.0s
+[18:33:54]   n=855 p99=1125ms cont=100.0% dup=9.7% rutas=reranked:96,sem:4
+[18:33:56] rep1 L100: 8.00 QPS durante 180.0s
+[18:36:57]   n=1187 p99=1746ms cont=100.0% dup=9.9% rutas=reranked:88,fused_fallback:7,sem:5
+[18:37:00] rep1 NORERANK: 8.00 QPS durante 180.0s
+[18:40:00]   n=1187 p99=297ms cont=100.0% dup=0.0% rutas=fused_baseline:95,sem:5
+[18:40:03] rep1 NOHEDGE: 8.00 QPS durante 180.0s
+[18:43:04]   n=1187 p99=1696ms cont=100.0% dup=0.0% rutas=reranked:90,fused_fallback:5,sem:5
+[18:43:07] rep1 F1: 6.00 QPS durante 180.0s
+[18:46:07]   n=855 p99=234ms cont=100.0% dup=9.9% rutas=fused_fallback:94,sem:6
+[18:46:09] rep1 F2: 6.00 QPS durante 180.0s
+[18:49:11]   n=855 p99=1427ms cont=100.0% dup=9.8% rutas=fused_fallback:93,sem:7
+[18:49:13] rep1 F3H: 6.00 QPS durante 180.0s
+[18:52:13]   n=855 p99=1320ms cont=100.0% dup=9.7% rutas=reranked:94,fused_fallback:1,sem:5
+[18:52:16] rep1 F3NH: 6.00 QPS durante 180.0s
+[18:55:16]   n=855 p99=1233ms cont=100.0% dup=0.0% rutas=reranked:94,fused_fallback:0,sem:6
+[18:55:19] rep1 F4: 6.00 QPS durante 180.0s
+[18:58:19]   n=855 p99=34ms cont=100.0% dup=0.0% rutas=lex:100
+[18:58:22] rep1 F5: 6.00 QPS durante 180.0s
+[19:01:22]   n=855 p99=228ms cont=100.0% dup=0.0% rutas=sem:100
+[19:01:24] rep1 F6: 6.00 QPS durante 180.0s
+[19:04:24]   n=855 p99=nanms cont=0.0% dup=0.0% rutas=error:100
+[19:04:26] rep2 L25: 2.00 QPS durante 180.0s
+[19:07:27]   n=309 p99=560ms cont=100.0% dup=7.7% rutas=reranked:96,sem:4
+[19:07:29] rep2 L50: 4.00 QPS durante 180.0s
+[19:10:29]   n=612 p99=993ms cont=100.0% dup=9.4% rutas=reranked:97,sem:3
+[19:10:31] rep2 L75: 6.00 QPS durante 180.0s
+[19:13:32]   n=900 p99=1527ms cont=100.0% dup=9.8% rutas=reranked:95,fused_fallback:3,sem:2
+[19:13:34] rep2 L100: 8.00 QPS durante 180.0s
+[19:16:35]   n=1209 p99=2068ms cont=99.9% dup=9.9% rutas=reranked:64,fused_fallback:33,lex:1,sem:3,error:0
+[19:16:37] rep2 NORERANK: 8.00 QPS durante 180.0s
+[19:19:37]   n=1209 p99=251ms cont=100.0% dup=0.0% rutas=fused_baseline:96,sem:4
+[19:19:40] rep2 NOHEDGE: 8.00 QPS durante 180.0s
+[19:22:41]   n=1209 p99=1699ms cont=100.0% dup=0.0% rutas=reranked:59,fused_fallback:39,sem:3
+[19:22:43] rep2 F1: 6.00 QPS durante 180.0s
+[19:25:43]   n=900 p99=223ms cont=100.0% dup=9.8% rutas=fused_fallback:96,sem:4
+[19:25:45] rep2 F2: 6.00 QPS durante 180.0s
+[19:28:47]   n=900 p99=1440ms cont=100.0% dup=9.8% rutas=fused_fallback:98,sem:2
+[19:28:49] rep2 F3H: 6.00 QPS durante 180.0s
+[19:31:49]   n=900 p99=1491ms cont=100.0% dup=9.7% rutas=reranked:94,fused_fallback:3,sem:3
+[19:31:52] rep2 F3NH: 6.00 QPS durante 180.0s
+[19:34:52]   n=900 p99=1325ms cont=100.0% dup=0.0% rutas=reranked:96,fused_fallback:1,sem:3
+[19:34:54] rep2 F4: 6.00 QPS durante 180.0s
+[19:37:54]   n=900 p99=32ms cont=100.0% dup=0.0% rutas=lex:100
+[19:37:57] rep2 F5: 6.00 QPS durante 180.0s
+[19:40:57]   n=900 p99=224ms cont=100.0% dup=0.0% rutas=sem:100
+[19:40:59] rep2 F6: 6.00 QPS durante 180.0s
+[19:43:59]   n=900 p99=nanms cont=0.0% dup=0.0% rutas=error:100
+[19:44:01] rep3 L25: 2.00 QPS durante 180.0s
+[19:47:02]   n=296 p99=722ms cont=100.0% dup=9.2% rutas=reranked:95,sem:5
+[19:47:04] rep3 L50: 4.00 QPS durante 180.0s
+[19:50:04]   n=584 p99=975ms cont=100.0% dup=9.6% rutas=reranked:98,sem:2
+[19:50:06] rep3 L75: 6.00 QPS durante 180.0s
+[19:53:07]   n=896 p99=1617ms cont=100.0% dup=9.7% rutas=reranked:93,fused_fallback:4,sem:2
+[19:53:09] rep3 L100: 8.00 QPS durante 180.0s
+[19:56:09]   n=1194 p99=1729ms cont=100.0% dup=9.9% rutas=reranked:80,fused_fallback:16,sem:4
+[19:56:11] rep3 NORERANK: 8.00 QPS durante 180.0s
+[19:59:12]   n=1194 p99=316ms cont=100.0% dup=0.0% rutas=fused_baseline:95,sem:5
+[19:59:14] rep3 NOHEDGE: 8.00 QPS durante 180.0s
+[20:02:15]   n=1194 p99=1858ms cont=100.0% dup=0.0% rutas=reranked:92,fused_fallback:5,lex:0,sem:2
+[20:02:17] rep3 F1: 6.00 QPS durante 180.0s
+[20:05:17]   n=896 p99=284ms cont=100.0% dup=9.9% rutas=fused_fallback:97,sem:3
+[20:05:19] rep3 F2: 6.00 QPS durante 180.0s
+[20:08:20]   n=896 p99=1438ms cont=100.0% dup=9.9% rutas=fused_fallback:95,sem:5
+[20:08:23] rep3 F3H: 6.00 QPS durante 180.0s
+[20:11:23]   n=896 p99=1411ms cont=100.0% dup=9.7% rutas=reranked:95,fused_fallback:1,sem:3
+[20:11:25] rep3 F3NH: 6.00 QPS durante 180.0s
+[20:14:25]   n=896 p99=1485ms cont=100.0% dup=0.0% rutas=reranked:96,fused_fallback:1,sem:2
+[20:14:27] rep3 F4: 6.00 QPS durante 180.0s
+[20:17:27]   n=896 p99=32ms cont=100.0% dup=0.0% rutas=lex:100
+[20:17:30] rep3 F5: 6.00 QPS durante 180.0s
+[20:20:30]   n=896 p99=230ms cont=100.0% dup=0.0% rutas=sem:100
+[20:20:32] rep3 F6: 6.00 QPS durante 180.0s
+[20:23:32]   n=896 p99=nanms cont=0.0% dup=0.0% rutas=error:100
+[20:23:34] listo. Copia results/ fuera de Khipu (scp/rsync): no hay backup.
+Wed Nov 18 20:23:35 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A6000               Off |   00000000:99:00.0 Off |                  Off |
+| 60%   84C    P2            221W /  300W |   39219MiB /  49140MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A          162975      C   python                                 2544MiB |
+|    0   N/A  N/A          162976      C   python                                 2544MiB |
+|    0   N/A  N/A          162977      C   python                                 2544MiB |
+|    0   N/A  N/A          171129    C+G   ...ac-sim/kit/python/bin/python3       4184MiB |
+|    0   N/A  N/A          171913      C   python                                15576MiB |
+|    0   N/A  N/A          171914      C   python                                11754MiB |
++-----------------------------------------------------------------------------------------+
+2026-11-18T20:23:35-05:00

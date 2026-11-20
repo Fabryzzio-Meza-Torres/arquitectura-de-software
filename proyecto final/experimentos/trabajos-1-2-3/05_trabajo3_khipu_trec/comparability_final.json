@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "same_source": true,
+    "same_python": true,
+    "same_libraries": true,
+    "same_node": true,
+    "same_gpu_model": true,
+    "same_frozen_config": true,
+    "same_alpha": true,
+    "same_threads": true,
+    "same_reps": true,
+    "same_cond_seconds": true,
+    "same_warmup": true,
+    "same_calib_queries": true,
+    "same_ramp_seconds": true,
+    "same_ramp_rates": true,
+    "same_calibration_rule": false,
+    "same_absolute_loads_as_fiqa": true,
+    "gpu_contention_controlled": false,
+    "reference_minilm_revision_verified": false
+  },
+  "reference_job": "63828",
+  "new_job": "63919",
+  "protocol": "complementary_fixed_absolute_load",
+  "trec_capacity_qps": null,
+  "limitations": [
+    "GPU is shared; concurrent load may differ",
+    "Reference run did not record exact MiniLM cache revision; this run records the prepared revision",
+    "TREC failed original v4 capacity criterion; subsequent 8-QPS reference is an external fixed-load experiment, not a normalized TREC-capacity run"
+  ]
+}

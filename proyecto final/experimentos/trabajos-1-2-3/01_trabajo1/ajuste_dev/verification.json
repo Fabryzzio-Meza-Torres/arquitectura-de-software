@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "curve_rows": 21,
+  "selected": {
+    "alpha": 0.85,
+    "precision_at_3": 0.2513333333333326,
+    "ndcg_at_3": 0.40268380281868393
+  },
+  "full_corpus_and_dev_counts": true,
+  "sha256_verified": true,
+  "job_id": "63761",
+  "node": "ag001"
+}

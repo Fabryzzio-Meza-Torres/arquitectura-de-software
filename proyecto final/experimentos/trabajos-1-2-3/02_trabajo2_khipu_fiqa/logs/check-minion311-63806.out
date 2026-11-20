@@ -1,0 +1,5 @@
+Python: 3.11.11 (main, Feb  7 2025, 11:01:11) [GCC 12.4.0]
+Ejecutable: /home/flavia.manuico/venvs/minion311/bin/python
+PyTorch: 2.15.0+cu132
+CUDA: True
+Dependencias OK

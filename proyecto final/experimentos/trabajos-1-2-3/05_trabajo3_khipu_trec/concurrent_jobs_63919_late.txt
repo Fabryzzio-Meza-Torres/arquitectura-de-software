@@ -1,0 +1,8 @@
+2026-11-18T20:00:01-05:00
+63919 trec-fixed-load-v4 RUNNING 1:36:01 gres/shard:1
+63958 pfc-eval RUNNING 17:01 gres/shard:4
+63959 pfc-eval RUNNING 17:01 gres/shard:4
+63947 W2_push_s1 RUNNING 27:01 gres/shard:rtxa6000:16
+63869 attn_ax42 RUNNING 4:23:32 gres/shard:1
+63870 attn_ax43 RUNNING 4:23:32 gres/shard:1
+63871 attn_ax44 RUNNING 4:23:32 gres/shard:1

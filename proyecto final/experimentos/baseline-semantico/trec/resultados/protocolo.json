@@ -1,0 +1,35 @@
+{
+  "dataset": "trec",
+  "smoke": false,
+  "documents": 10000,
+  "queries": 50,
+  "corpus_sha256": "f2b76206e3f9680d8b004c1a931879b7d2ba7009ff1bd77e57a0925e16b2d4a2",
+  "qrels_sha256": "b31eac1340a59bb54cdba6fe72af64d47d401c310de509677a471fa70a2e49a4",
+  "index_sha256": "ac2968a42d385ffba323b14ddd9d7f547d6bf089c94344dab36147f773853cb9",
+  "code_sha256": "887ce172230c9d39e3d9719022d51da0934414a15e69b01296b3cd31fddc9349",
+  "model": "BAAI/bge-base-en-v1.5",
+  "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+  "pooling": "CLS L2",
+  "precision": "fp16 forward, normalized float32",
+  "query_max_length": 512,
+  "semantic_baseline": "Full selected corpus search; no lexical search, candidate union, convex fusion or LLM in semantic requests",
+  "matched_control": "BM25 and semantic search in parallel, same union and alpha_semantic0.85; rerun in same job",
+  "references": "Saved main experiment quality scores, no new LLM inference; latency references not pooled",
+  "node": "ag001",
+  "gpu": "NVIDIA A100-PCIE-40GB MIG 3g.20gb",
+  "torch": "2.14.1+cu130",
+  "job": "64172",
+  "positive_coverage": 50,
+  "warmup_excluded": true,
+  "latency_requests_each": 1000,
+  "reference_fusion_max_metric_drift": {
+    "P3": 0.0,
+    "nDCG3": 0.0,
+    "MRR10": 0.0
+  },
+  "limitations": [
+    "Prior exposed datasets",
+    "FiQA environment differs from prior run; matched fusion control remeasured",
+    "Shared GPU contention not controlled"
+  ]
+}

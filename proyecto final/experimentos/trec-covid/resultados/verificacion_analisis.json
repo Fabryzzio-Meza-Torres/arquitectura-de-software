@@ -1,0 +1,8 @@
+{
+  "quality_complete": true,
+  "metric_rows": 200,
+  "performance_complete": true,
+  "paired_bootstrap_rows": 3,
+  "latency_observations": 2000,
+  "analysis_job": "64080"
+}

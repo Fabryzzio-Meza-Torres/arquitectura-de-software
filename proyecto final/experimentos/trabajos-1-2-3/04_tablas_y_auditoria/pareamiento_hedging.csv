@@ -1,0 +1,13 @@
+series,rep,requests_H,requests_NH,qids_equal,schedules_equal,injected_delays_equal,observed_delay_mismatches
+fiqa_khipu,1,1016,1016,True,True,True,0
+fiqa_khipu,2,1081,1081,True,True,True,0
+fiqa_khipu,3,1075,1075,True,True,True,0
+fiqa_kaggle,1,285,285,True,True,True,0
+fiqa_kaggle,2,285,285,True,True,True,0
+fiqa_kaggle,3,285,285,True,True,True,0
+trec-covid_kaggle,1,285,285,True,True,True,0
+trec-covid_kaggle,2,285,285,True,True,True,0
+trec-covid_kaggle,3,285,285,True,True,True,0
+trec-covid_khipu,1,1016,1016,True,True,False,2
+trec-covid_khipu,2,1081,1081,True,True,False,1
+trec-covid_khipu,3,1075,1075,True,True,False,1

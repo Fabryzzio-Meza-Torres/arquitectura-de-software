@@ -1,0 +1,7 @@
+{
+  "ok": true,
+  "smoke": false,
+  "queries": 50,
+  "latency_requests": 2000,
+  "job": "64172"
+}

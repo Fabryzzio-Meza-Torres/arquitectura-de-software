@@ -1,0 +1,4 @@
+{
+  "batch": 1,
+  "reason": "Fastest median time among tested batches satisfying frozen numerical/top3 stability rule"
+}

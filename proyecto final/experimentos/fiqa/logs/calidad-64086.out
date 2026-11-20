@@ -1,0 +1,714 @@
+GPU retrieval: cuda
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 4887.95it/s]
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights:   0%|          | 1/434 [00:00<03:06,  2.32it/s]Loading weights:  22%|██▏       | 95/434 [00:00<00:01, 231.79it/s]Loading weights:  34%|███▍      | 147/434 [00:00<00:01, 234.70it/s]Loading weights:  43%|████▎     | 187/434 [00:00<00:01, 207.44it/s]Loading weights:  50%|█████     | 218/434 [00:01<00:00, 219.24it/s]Loading weights:  57%|█████▋    | 247/434 [00:01<00:00, 195.54it/s]Loading weights:  63%|██████▎   | 272/434 [00:01<00:00, 193.42it/s]Loading weights:  68%|██████▊   | 295/434 [00:01<00:00, 178.21it/s]Loading weights:  73%|███████▎  | 316/434 [00:01<00:00, 184.67it/s]Loading weights:  78%|███████▊  | 339/434 [00:01<00:00, 194.36it/s]Loading weights:  84%|████████▎ | 363/434 [00:01<00:00, 196.98it/s]Loading weights:  89%|████████▉ | 387/434 [00:02<00:00, 197.67it/s]Loading weights:  95%|█████████▍| 412/434 [00:02<00:00, 208.75it/s]Loading weights: 100%|██████████| 434/434 [00:02<00:00, 200.26it/s]
+[1/648] qid=10034 candidates=19 llm_ms=1040.2
+[2/648] qid=10039 candidates=20 llm_ms=1057.6
+[3/648] qid=10109 candidates=20 llm_ms=972.1
+[4/648] qid=10122 candidates=18 llm_ms=918.8
+[5/648] qid=10136 candidates=20 llm_ms=1056.2
+[6/648] qid=10137 candidates=20 llm_ms=1050.5
+[7/648] qid=10152 candidates=20 llm_ms=1084.6
+[8/648] qid=10183 candidates=18 llm_ms=985.8
+[9/648] qid=10213 candidates=19 llm_ms=991.7
+[10/648] qid=10246 candidates=19 llm_ms=944.0
+[11/648] qid=10267 candidates=18 llm_ms=966.2
+[12/648] qid=104 candidates=19 llm_ms=1028.9
+[13/648] qid=10414 candidates=19 llm_ms=1023.4
+[14/648] qid=10447 candidates=13 llm_ms=802.8
+[15/648] qid=10462 candidates=19 llm_ms=867.9
+[16/648] qid=10482 candidates=18 llm_ms=966.0
+[17/648] qid=10497 candidates=18 llm_ms=941.8
+[18/648] qid=10526 candidates=17 llm_ms=833.5
+[19/648] qid=10547 candidates=17 llm_ms=866.8
+[20/648] qid=10558 candidates=20 llm_ms=1067.9
+[21/648] qid=10596 candidates=13 llm_ms=681.1
+[22/648] qid=106 candidates=19 llm_ms=1004.3
+[23/648] qid=10601 candidates=18 llm_ms=904.7
+[24/648] qid=10628 candidates=17 llm_ms=919.4
+[25/648] qid=10639 candidates=19 llm_ms=989.3
+[26/648] qid=10645 candidates=14 llm_ms=773.5
+[27/648] qid=10674 candidates=20 llm_ms=1077.8
+[28/648] qid=10710 candidates=12 llm_ms=665.9
+[29/648] qid=10734 candidates=20 llm_ms=954.5
+[30/648] qid=1074 candidates=19 llm_ms=999.8
+[31/648] qid=10792 candidates=15 llm_ms=726.0
+[32/648] qid=10808 candidates=19 llm_ms=1050.4
+[33/648] qid=10809 candidates=13 llm_ms=765.1
+[34/648] qid=10812 candidates=17 llm_ms=884.0
+[35/648] qid=10827 candidates=18 llm_ms=932.2
+[36/648] qid=10845 candidates=19 llm_ms=975.9
+[37/648] qid=1085 candidates=17 llm_ms=937.1
+[38/648] qid=109 candidates=20 llm_ms=1060.0
+[39/648] qid=1090 candidates=16 llm_ms=884.4
+[40/648] qid=10912 candidates=17 llm_ms=809.8
+[41/648] qid=10932 candidates=17 llm_ms=930.2
+[42/648] qid=10975 candidates=19 llm_ms=1002.8
+[43/648] qid=10979 candidates=15 llm_ms=707.1
+[44/648] qid=10994 candidates=16 llm_ms=875.6
+[45/648] qid=11039 candidates=20 llm_ms=1013.5
+[46/648] qid=11054 candidates=14 llm_ms=724.2
+[47/648] qid=11088 candidates=20 llm_ms=1080.5
+[48/648] qid=1150 candidates=20 llm_ms=1106.3
+[49/648] qid=1157 candidates=17 llm_ms=820.2
+[50/648] qid=1159 candidates=17 llm_ms=865.0
+[51/648] qid=1198 candidates=17 llm_ms=886.8
+[52/648] qid=1230 candidates=20 llm_ms=813.7
+[53/648] qid=1281 candidates=14 llm_ms=741.1
+[54/648] qid=1284 candidates=19 llm_ms=1024.5
+[55/648] qid=1297 candidates=18 llm_ms=812.6
+[56/648] qid=1306 candidates=20 llm_ms=1072.3
+[57/648] qid=1309 candidates=19 llm_ms=1028.8
+[58/648] qid=1310 candidates=16 llm_ms=767.7
+[59/648] qid=1321 candidates=19 llm_ms=809.5
+[60/648] qid=1322 candidates=19 llm_ms=867.4
+[61/648] qid=1391 candidates=20 llm_ms=1023.8
+[62/648] qid=1393 candidates=15 llm_ms=771.9
+[63/648] qid=1415 candidates=13 llm_ms=627.1
+[64/648] qid=1416 candidates=16 llm_ms=805.6
+[65/648] qid=1441 candidates=17 llm_ms=884.3
+[66/648] qid=1451 candidates=17 llm_ms=926.0
+[67/648] qid=1469 candidates=18 llm_ms=926.6
+[68/648] qid=15 candidates=19 llm_ms=929.8
+[69/648] qid=1530 candidates=20 llm_ms=1102.4
+[70/648] qid=1670 candidates=19 llm_ms=927.1
+[71/648] qid=1676 candidates=16 llm_ms=872.6
+[72/648] qid=1736 candidates=18 llm_ms=958.2
+[73/648] qid=1748 candidates=18 llm_ms=995.2
+[74/648] qid=1783 candidates=17 llm_ms=833.3
+[75/648] qid=18 candidates=16 llm_ms=792.8
+[76/648] qid=1812 candidates=15 llm_ms=780.6
+[77/648] qid=1815 candidates=18 llm_ms=958.9
+[78/648] qid=1819 candidates=19 llm_ms=1056.2
+[79/648] qid=1824 candidates=16 llm_ms=885.1
+[80/648] qid=1826 candidates=20 llm_ms=1086.5
+[81/648] qid=1832 candidates=15 llm_ms=797.5
+[82/648] qid=1871 candidates=16 llm_ms=787.8
+[83/648] qid=1877 candidates=14 llm_ms=766.5
+[84/648] qid=1889 candidates=19 llm_ms=1034.8
+[85/648] qid=1915 candidates=15 llm_ms=784.9
+[86/648] qid=1920 candidates=20 llm_ms=1098.4
+[87/648] qid=1933 candidates=16 llm_ms=882.3
+[88/648] qid=1948 candidates=19 llm_ms=993.6
+[89/648] qid=1994 candidates=18 llm_ms=855.0
+[90/648] qid=2010 candidates=18 llm_ms=901.4
+[91/648] qid=2051 candidates=20 llm_ms=1082.5
+[92/648] qid=2070 candidates=17 llm_ms=865.1
+[93/648] qid=2075 candidates=18 llm_ms=852.3
+[94/648] qid=2076 candidates=20 llm_ms=1069.1
+[95/648] qid=2088 candidates=20 llm_ms=1097.8
+[96/648] qid=2108 candidates=19 llm_ms=1064.7
+[97/648] qid=2118 candidates=17 llm_ms=919.2
+[98/648] qid=2154 candidates=20 llm_ms=1077.9
+[99/648] qid=2181 candidates=17 llm_ms=908.5
+[100/648] qid=2183 candidates=19 llm_ms=1001.9
+[101/648] qid=2204 candidates=19 llm_ms=964.5
+[102/648] qid=2264 candidates=19 llm_ms=1067.0
+[103/648] qid=2296 candidates=18 llm_ms=987.5
+[104/648] qid=2306 candidates=17 llm_ms=867.0
+[105/648] qid=2316 candidates=17 llm_ms=912.1
+[106/648] qid=2318 candidates=17 llm_ms=906.5
+[107/648] qid=2330 candidates=20 llm_ms=1073.3
+[108/648] qid=2334 candidates=17 llm_ms=922.4
+[109/648] qid=2348 candidates=18 llm_ms=906.7
+[110/648] qid=2376 candidates=18 llm_ms=919.9
+[111/648] qid=2383 candidates=18 llm_ms=994.2
+[112/648] qid=2384 candidates=15 llm_ms=774.0
+[113/648] qid=2385 candidates=18 llm_ms=868.0
+[114/648] qid=2388 candidates=18 llm_ms=968.8
+[115/648] qid=2395 candidates=19 llm_ms=785.9
+[116/648] qid=2398 candidates=15 llm_ms=647.0
+[117/648] qid=2399 candidates=17 llm_ms=806.1
+[118/648] qid=2400 candidates=19 llm_ms=959.2
+[119/648] qid=2407 candidates=18 llm_ms=905.5
+[120/648] qid=2416 candidates=19 llm_ms=947.5
+[121/648] qid=2423 candidates=20 llm_ms=1152.6
+[122/648] qid=2443 candidates=18 llm_ms=806.4
+[123/648] qid=2445 candidates=16 llm_ms=811.8
+[124/648] qid=2460 candidates=17 llm_ms=743.1
+[125/648] qid=2465 candidates=17 llm_ms=902.6
+[126/648] qid=2472 candidates=18 llm_ms=983.5
+[127/648] qid=2486 candidates=20 llm_ms=1142.0
+[128/648] qid=2498 candidates=18 llm_ms=1022.1
+[129/648] qid=2513 candidates=19 llm_ms=953.6
+[130/648] qid=2516 candidates=18 llm_ms=932.3
+[131/648] qid=2549 candidates=19 llm_ms=883.9
+[132/648] qid=2551 candidates=20 llm_ms=946.6
+[133/648] qid=2568 candidates=19 llm_ms=943.8
+[134/648] qid=2579 candidates=17 llm_ms=867.5
+[135/648] qid=2580 candidates=18 llm_ms=997.0
+[136/648] qid=2587 candidates=17 llm_ms=913.1
+[137/648] qid=2589 candidates=19 llm_ms=1021.6
+[138/648] qid=2590 candidates=19 llm_ms=972.9
+[139/648] qid=2593 candidates=16 llm_ms=898.0
+[140/648] qid=2598 candidates=17 llm_ms=864.6
+[141/648] qid=26 candidates=17 llm_ms=919.6
+[142/648] qid=2648 candidates=17 llm_ms=895.2
+[143/648] qid=2676 candidates=18 llm_ms=991.9
+[144/648] qid=2685 candidates=19 llm_ms=999.8
+[145/648] qid=2695 candidates=17 llm_ms=928.9
+[146/648] qid=2713 candidates=17 llm_ms=679.7
+[147/648] qid=2724 candidates=18 llm_ms=989.3
+[148/648] qid=2737 candidates=18 llm_ms=941.4
+[149/648] qid=2747 candidates=19 llm_ms=1063.5
+[150/648] qid=2749 candidates=16 llm_ms=738.1
+[151/648] qid=2790 candidates=17 llm_ms=916.4
+[152/648] qid=2801 candidates=18 llm_ms=885.7
+[153/648] qid=2856 candidates=19 llm_ms=1049.5
+[154/648] qid=2857 candidates=19 llm_ms=1048.4
+[155/648] qid=2880 candidates=20 llm_ms=1078.9
+[156/648] qid=2885 candidates=17 llm_ms=954.0
+[157/648] qid=2891 candidates=20 llm_ms=1036.1
+[158/648] qid=2895 candidates=19 llm_ms=1056.8
+[159/648] qid=2903 candidates=17 llm_ms=946.1
+[160/648] qid=2923 candidates=18 llm_ms=909.1
+[161/648] qid=2964 candidates=18 llm_ms=906.1
+[162/648] qid=2968 candidates=16 llm_ms=883.8
+[163/648] qid=2994 candidates=16 llm_ms=816.3
+[164/648] qid=3006 candidates=17 llm_ms=946.0
+[165/648] qid=3008 candidates=18 llm_ms=1017.2
+[166/648] qid=3014 candidates=20 llm_ms=1108.8
+[167/648] qid=3033 candidates=18 llm_ms=886.1
+[168/648] qid=3039 candidates=17 llm_ms=858.7
+[169/648] qid=3049 candidates=15 llm_ms=787.2
+[170/648] qid=3051 candidates=15 llm_ms=824.8
+[171/648] qid=3067 candidates=18 llm_ms=1006.5
+[172/648] qid=3085 candidates=17 llm_ms=896.7
+[173/648] qid=3091 candidates=19 llm_ms=1031.4
+[174/648] qid=3103 candidates=19 llm_ms=992.0
+[175/648] qid=3115 candidates=20 llm_ms=994.8
+[176/648] qid=3125 candidates=17 llm_ms=936.0
+[177/648] qid=3148 candidates=17 llm_ms=843.5
+[178/648] qid=3149 candidates=17 llm_ms=947.9
+[179/648] qid=3177 candidates=16 llm_ms=794.8
+[180/648] qid=3179 candidates=15 llm_ms=833.1
+[181/648] qid=3186 candidates=17 llm_ms=699.5
+[182/648] qid=3189 candidates=18 llm_ms=1009.9
+[183/648] qid=3254 candidates=17 llm_ms=862.9
+[184/648] qid=3264 candidates=19 llm_ms=759.2
+[185/648] qid=3357 candidates=17 llm_ms=885.5
+[186/648] qid=3369 candidates=16 llm_ms=899.1
+[187/648] qid=3394 candidates=18 llm_ms=1013.6
+[188/648] qid=34 candidates=20 llm_ms=1069.5
+[189/648] qid=3404 candidates=19 llm_ms=1004.4
+[190/648] qid=3405 candidates=15 llm_ms=828.5
+[191/648] qid=3446 candidates=15 llm_ms=799.3
+[192/648] qid=3451 candidates=19 llm_ms=931.6
+[193/648] qid=3453 candidates=15 llm_ms=810.6
+[194/648] qid=3480 candidates=19 llm_ms=984.2
+[195/648] qid=3490 candidates=18 llm_ms=953.1
+[196/648] qid=3500 candidates=19 llm_ms=957.7
+[197/648] qid=3503 candidates=17 llm_ms=973.4
+[198/648] qid=3512 candidates=17 llm_ms=957.5
+[199/648] qid=3528 candidates=17 llm_ms=971.2
+[200/648] qid=3530 candidates=19 llm_ms=1043.4
+[201/648] qid=3534 candidates=19 llm_ms=957.6
+[202/648] qid=3566 candidates=19 llm_ms=1109.6
+[203/648] qid=3569 candidates=16 llm_ms=867.5
+[204/648] qid=3594 candidates=19 llm_ms=1078.0
+[205/648] qid=3612 candidates=16 llm_ms=882.2
+[206/648] qid=3615 candidates=17 llm_ms=920.8
+[207/648] qid=3625 candidates=20 llm_ms=1127.3
+[208/648] qid=3682 candidates=17 llm_ms=917.8
+[209/648] qid=3683 candidates=18 llm_ms=807.7
+[210/648] qid=3694 candidates=19 llm_ms=897.1
+[211/648] qid=3724 candidates=17 llm_ms=886.6
+[212/648] qid=3735 candidates=16 llm_ms=924.3
+[213/648] qid=3759 candidates=19 llm_ms=970.3
+[214/648] qid=3767 candidates=14 llm_ms=718.7
+[215/648] qid=3771 candidates=18 llm_ms=992.1
+[216/648] qid=3781 candidates=17 llm_ms=948.9
+[217/648] qid=3789 candidates=19 llm_ms=1099.2
+[218/648] qid=3791 candidates=19 llm_ms=959.6
+[219/648] qid=3801 candidates=19 llm_ms=824.8
+[220/648] qid=3822 candidates=19 llm_ms=1043.2
+[221/648] qid=3829 candidates=17 llm_ms=877.7
+[222/648] qid=3830 candidates=18 llm_ms=866.0
+[223/648] qid=3837 candidates=17 llm_ms=955.5
+[224/648] qid=3859 candidates=19 llm_ms=1076.1
+[225/648] qid=3875 candidates=18 llm_ms=1016.7
+[226/648] qid=3888 candidates=17 llm_ms=861.2
+[227/648] qid=3909 candidates=19 llm_ms=1007.8
+[228/648] qid=3932 candidates=18 llm_ms=971.8
+[229/648] qid=3934 candidates=18 llm_ms=1058.7
+[230/648] qid=3995 candidates=18 llm_ms=950.4
+[231/648] qid=4007 candidates=17 llm_ms=940.1
+[232/648] qid=4011 candidates=19 llm_ms=1063.9
+[233/648] qid=4019 candidates=20 llm_ms=1135.6
+[234/648] qid=4031 candidates=20 llm_ms=1107.8
+[235/648] qid=4037 candidates=17 llm_ms=943.0
+[236/648] qid=4047 candidates=20 llm_ms=1059.0
+[237/648] qid=4071 candidates=18 llm_ms=984.7
+[238/648] qid=4084 candidates=18 llm_ms=976.4
+[239/648] qid=4102 candidates=20 llm_ms=1146.6
+[240/648] qid=4103 candidates=15 llm_ms=837.4
+[241/648] qid=4105 candidates=18 llm_ms=913.5
+[242/648] qid=4116 candidates=18 llm_ms=913.1
+[243/648] qid=4125 candidates=17 llm_ms=871.1
+[244/648] qid=4142 candidates=16 llm_ms=836.2
+[245/648] qid=4153 candidates=14 llm_ms=802.4
+[246/648] qid=4179 candidates=18 llm_ms=1063.3
+[247/648] qid=4188 candidates=19 llm_ms=988.0
+[248/648] qid=42 candidates=18 llm_ms=1025.1
+[249/648] qid=4205 candidates=17 llm_ms=905.6
+[250/648] qid=4233 candidates=18 llm_ms=1025.9
+[251/648] qid=4265 candidates=20 llm_ms=1025.7
+[252/648] qid=4286 candidates=18 llm_ms=1026.5
+[253/648] qid=4289 candidates=18 llm_ms=996.2
+[254/648] qid=4306 candidates=18 llm_ms=973.4
+[255/648] qid=4312 candidates=19 llm_ms=1028.0
+[256/648] qid=4335 candidates=20 llm_ms=1038.2
+[257/648] qid=4339 candidates=19 llm_ms=802.7
+[258/648] qid=4394 candidates=18 llm_ms=966.8
+[259/648] qid=4409 candidates=19 llm_ms=1093.0
+[260/648] qid=4411 candidates=17 llm_ms=954.4
+[261/648] qid=4414 candidates=17 llm_ms=884.7
+[262/648] qid=4415 candidates=16 llm_ms=894.3
+[263/648] qid=4433 candidates=16 llm_ms=925.3
+[264/648] qid=4447 candidates=14 llm_ms=792.3
+[265/648] qid=4464 candidates=17 llm_ms=969.9
+[266/648] qid=4465 candidates=18 llm_ms=872.3
+[267/648] qid=4484 candidates=20 llm_ms=1118.4
+[268/648] qid=4499 candidates=18 llm_ms=1001.7
+[269/648] qid=4500 candidates=18 llm_ms=868.0
+[270/648] qid=4504 candidates=18 llm_ms=1007.2
+[271/648] qid=4514 candidates=15 llm_ms=811.1
+[272/648] qid=4523 candidates=20 llm_ms=1136.5
+[273/648] qid=4539 candidates=17 llm_ms=852.3
+[274/648] qid=4571 candidates=20 llm_ms=866.1
+[275/648] qid=4600 candidates=20 llm_ms=1123.4
+[276/648] qid=4605 candidates=17 llm_ms=879.5
+[277/648] qid=4615 candidates=15 llm_ms=541.2
+[278/648] qid=4640 candidates=20 llm_ms=1089.4
+[279/648] qid=4641 candidates=14 llm_ms=718.0
+[280/648] qid=4678 candidates=16 llm_ms=880.4
+[281/648] qid=4681 candidates=18 llm_ms=962.6
+[282/648] qid=4700 candidates=16 llm_ms=904.9
+[283/648] qid=4714 candidates=19 llm_ms=1070.5
+[284/648] qid=475 candidates=16 llm_ms=803.3
+[285/648] qid=4756 candidates=19 llm_ms=947.4
+[286/648] qid=4767 candidates=16 llm_ms=882.7
+[287/648] qid=4775 candidates=15 llm_ms=853.4
+[288/648] qid=4777 candidates=20 llm_ms=1135.9
+[289/648] qid=4785 candidates=19 llm_ms=952.2
+[290/648] qid=4804 candidates=20 llm_ms=975.5
+[291/648] qid=4813 candidates=17 llm_ms=938.6
+[292/648] qid=4823 candidates=20 llm_ms=1145.8
+[293/648] qid=4827 candidates=17 llm_ms=900.1
+[294/648] qid=4837 candidates=18 llm_ms=1028.8
+[295/648] qid=4844 candidates=16 llm_ms=896.7
+[296/648] qid=4845 candidates=20 llm_ms=1135.8
+[297/648] qid=4846 candidates=18 llm_ms=835.0
+[298/648] qid=4863 candidates=18 llm_ms=968.0
+[299/648] qid=4865 candidates=20 llm_ms=1092.2
+[300/648] qid=4920 candidates=20 llm_ms=1123.8
+[301/648] qid=4942 candidates=20 llm_ms=1011.4
+[302/648] qid=4946 candidates=20 llm_ms=1021.7
+[303/648] qid=4955 candidates=16 llm_ms=871.7
+[304/648] qid=4962 candidates=20 llm_ms=1129.9
+[305/648] qid=4968 candidates=19 llm_ms=1015.8
+[306/648] qid=4981 candidates=19 llm_ms=1048.6
+[307/648] qid=4999 candidates=18 llm_ms=931.8
+[308/648] qid=5021 candidates=20 llm_ms=1052.0
+[309/648] qid=503 candidates=19 llm_ms=870.7
+[310/648] qid=5030 candidates=18 llm_ms=970.5
+[311/648] qid=504 candidates=19 llm_ms=912.7
+[312/648] qid=5045 candidates=17 llm_ms=926.3
+[313/648] qid=5054 candidates=17 llm_ms=955.6
+[314/648] qid=5061 candidates=20 llm_ms=1127.1
+[315/648] qid=5064 candidates=19 llm_ms=1009.0
+[316/648] qid=5067 candidates=18 llm_ms=1007.7
+[317/648] qid=5080 candidates=20 llm_ms=1054.2
+[318/648] qid=5083 candidates=17 llm_ms=756.1
+[319/648] qid=5085 candidates=19 llm_ms=1028.1
+[320/648] qid=5086 candidates=17 llm_ms=973.0
+[321/648] qid=5090 candidates=17 llm_ms=926.4
+[322/648] qid=5125 candidates=17 llm_ms=883.9
+[323/648] qid=5134 candidates=19 llm_ms=1036.1
+[324/648] qid=515 candidates=19 llm_ms=898.6
+[325/648] qid=5150 candidates=19 llm_ms=1016.3
+[326/648] qid=5155 candidates=19 llm_ms=1028.9
+[327/648] qid=5172 candidates=18 llm_ms=951.9
+[328/648] qid=5178 candidates=19 llm_ms=1068.5
+[329/648] qid=5185 candidates=16 llm_ms=930.0
+[330/648] qid=5196 candidates=19 llm_ms=1026.8
+[331/648] qid=5206 candidates=17 llm_ms=959.8
+[332/648] qid=5228 candidates=18 llm_ms=991.3
+[333/648] qid=5231 candidates=18 llm_ms=954.5
+[334/648] qid=5241 candidates=19 llm_ms=1102.3
+[335/648] qid=5254 candidates=20 llm_ms=1071.2
+[336/648] qid=5255 candidates=19 llm_ms=973.3
+[337/648] qid=5264 candidates=20 llm_ms=1116.9
+[338/648] qid=5271 candidates=19 llm_ms=1094.1
+[339/648] qid=529 candidates=19 llm_ms=946.7
+[340/648] qid=5331 candidates=14 llm_ms=787.1
+[341/648] qid=5343 candidates=19 llm_ms=1002.3
+[342/648] qid=5347 candidates=17 llm_ms=911.3
+[343/648] qid=5356 candidates=19 llm_ms=966.4
+[344/648] qid=5369 candidates=18 llm_ms=863.8
+[345/648] qid=5374 candidates=20 llm_ms=1005.8
+[346/648] qid=5380 candidates=15 llm_ms=870.2
+[347/648] qid=5402 candidates=18 llm_ms=976.1
+[348/648] qid=5410 candidates=18 llm_ms=970.9
+[349/648] qid=5422 candidates=17 llm_ms=807.4
+[350/648] qid=5427 candidates=20 llm_ms=970.2
+[351/648] qid=5460 candidates=18 llm_ms=918.2
+[352/648] qid=5464 candidates=19 llm_ms=1023.1
+[353/648] qid=547 candidates=20 llm_ms=1030.8
+[354/648] qid=549 candidates=17 llm_ms=857.0
+[355/648] qid=5503 candidates=18 llm_ms=979.1
+[356/648] qid=5505 candidates=16 llm_ms=864.8
+[357/648] qid=5511 candidates=17 llm_ms=902.6
+[358/648] qid=5534 candidates=19 llm_ms=1047.0
+[359/648] qid=5549 candidates=19 llm_ms=993.1
+[360/648] qid=5585 candidates=19 llm_ms=759.0
+[361/648] qid=559 candidates=20 llm_ms=1058.3
+[362/648] qid=5592 candidates=19 llm_ms=988.9
+[363/648] qid=56 candidates=18 llm_ms=825.8
+[364/648] qid=5616 candidates=16 llm_ms=836.7
+[365/648] qid=5620 candidates=16 llm_ms=696.3
+[366/648] qid=5646 candidates=17 llm_ms=924.2
+[367/648] qid=5653 candidates=19 llm_ms=898.0
+[368/648] qid=5683 candidates=17 llm_ms=870.6
+[369/648] qid=570 candidates=17 llm_ms=865.0
+[370/648] qid=5710 candidates=18 llm_ms=933.1
+[371/648] qid=5741 candidates=19 llm_ms=998.0
+[372/648] qid=5763 candidates=17 llm_ms=944.0
+[373/648] qid=5782 candidates=20 llm_ms=1102.8
+[374/648] qid=5790 candidates=19 llm_ms=881.4
+[375/648] qid=5808 candidates=19 llm_ms=1047.1
+[376/648] qid=585 candidates=19 llm_ms=970.3
+[377/648] qid=5853 candidates=18 llm_ms=1006.1
+[378/648] qid=5862 candidates=17 llm_ms=894.8
+[379/648] qid=588 candidates=16 llm_ms=807.5
+[380/648] qid=5888 candidates=15 llm_ms=773.4
+[381/648] qid=5903 candidates=18 llm_ms=1007.1
+[382/648] qid=5906 candidates=16 llm_ms=888.6
+[383/648] qid=594 candidates=17 llm_ms=892.7
+[384/648] qid=5940 candidates=19 llm_ms=964.1
+[385/648] qid=5951 candidates=17 llm_ms=914.9
+[386/648] qid=5970 candidates=15 llm_ms=821.6
+[387/648] qid=5981 candidates=18 llm_ms=894.1
+[388/648] qid=5993 candidates=19 llm_ms=984.5
+[389/648] qid=6002 candidates=17 llm_ms=936.5
+[390/648] qid=6004 candidates=19 llm_ms=949.8
+[391/648] qid=6005 candidates=16 llm_ms=865.2
+[392/648] qid=6009 candidates=18 llm_ms=983.1
+[393/648] qid=603 candidates=19 llm_ms=1015.8
+[394/648] qid=604 candidates=19 llm_ms=983.2
+[395/648] qid=6041 candidates=17 llm_ms=919.6
+[396/648] qid=6080 candidates=15 llm_ms=710.5
+[397/648] qid=6110 candidates=17 llm_ms=809.4
+[398/648] qid=6121 candidates=19 llm_ms=1033.1
+[399/648] qid=6122 candidates=18 llm_ms=1003.3
+[400/648] qid=6131 candidates=17 llm_ms=900.9
+[401/648] qid=6133 candidates=14 llm_ms=667.6
+[402/648] qid=6142 candidates=17 llm_ms=868.2
+[403/648] qid=6146 candidates=17 llm_ms=920.5
+[404/648] qid=6199 candidates=19 llm_ms=1004.9
+[405/648] qid=620 candidates=20 llm_ms=1094.3
+[406/648] qid=6219 candidates=17 llm_ms=783.1
+[407/648] qid=622 candidates=18 llm_ms=913.2
+[408/648] qid=6221 candidates=18 llm_ms=1004.7
+[409/648] qid=6252 candidates=20 llm_ms=1084.5
+[410/648] qid=6262 candidates=17 llm_ms=894.9
+[411/648] qid=6278 candidates=17 llm_ms=900.0
+[412/648] qid=6395 candidates=16 llm_ms=729.3
+[413/648] qid=6410 candidates=17 llm_ms=857.9
+[414/648] qid=6420 candidates=15 llm_ms=788.9
+[415/648] qid=6441 candidates=18 llm_ms=1005.6
+[416/648] qid=6467 candidates=18 llm_ms=984.8
+[417/648] qid=6468 candidates=18 llm_ms=1009.3
+[418/648] qid=6479 candidates=18 llm_ms=998.6
+[419/648] qid=6525 candidates=17 llm_ms=932.7
+[420/648] qid=6554 candidates=18 llm_ms=935.2
+[421/648] qid=6562 candidates=18 llm_ms=907.6
+[422/648] qid=659 candidates=19 llm_ms=1009.5
+[423/648] qid=6611 candidates=18 llm_ms=993.3
+[424/648] qid=6612 candidates=20 llm_ms=1136.2
+[425/648] qid=6625 candidates=17 llm_ms=853.1
+[426/648] qid=6629 candidates=18 llm_ms=992.4
+[427/648] qid=6635 candidates=19 llm_ms=1068.4
+[428/648] qid=6644 candidates=18 llm_ms=855.8
+[429/648] qid=6647 candidates=20 llm_ms=924.3
+[430/648] qid=6668 candidates=19 llm_ms=1060.5
+[431/648] qid=6679 candidates=15 llm_ms=701.0
+[432/648] qid=6683 candidates=20 llm_ms=1104.6
+[433/648] qid=6713 candidates=16 llm_ms=850.8
+[434/648] qid=6715 candidates=17 llm_ms=899.5
+[435/648] qid=672 candidates=18 llm_ms=779.8
+[436/648] qid=6746 candidates=18 llm_ms=1008.7
+[437/648] qid=6787 candidates=16 llm_ms=856.3
+[438/648] qid=6792 candidates=19 llm_ms=972.0
+[439/648] qid=68 candidates=17 llm_ms=945.1
+[440/648] qid=6800 candidates=19 llm_ms=1065.9
+[441/648] qid=6803 candidates=16 llm_ms=877.4
+[442/648] qid=6807 candidates=16 llm_ms=878.8
+[443/648] qid=6814 candidates=20 llm_ms=1057.6
+[444/648] qid=6832 candidates=17 llm_ms=890.5
+[445/648] qid=6835 candidates=16 llm_ms=795.9
+[446/648] qid=684 candidates=17 llm_ms=893.0
+[447/648] qid=6849 candidates=20 llm_ms=1093.5
+[448/648] qid=6862 candidates=17 llm_ms=798.9
+[449/648] qid=6867 candidates=20 llm_ms=1055.7
+[450/648] qid=687 candidates=20 llm_ms=981.7
+[451/648] qid=6875 candidates=19 llm_ms=988.1
+[452/648] qid=689 candidates=17 llm_ms=956.0
+[453/648] qid=6890 candidates=18 llm_ms=1014.2
+[454/648] qid=6891 candidates=18 llm_ms=1013.8
+[455/648] qid=6896 candidates=20 llm_ms=1104.7
+[456/648] qid=6901 candidates=16 llm_ms=710.1
+[457/648] qid=6907 candidates=20 llm_ms=1062.9
+[458/648] qid=6909 candidates=20 llm_ms=1093.5
+[459/648] qid=691 candidates=19 llm_ms=973.9
+[460/648] qid=6959 candidates=20 llm_ms=1108.6
+[461/648] qid=6985 candidates=19 llm_ms=1024.8
+[462/648] qid=699 candidates=20 llm_ms=1118.9
+[463/648] qid=701 candidates=20 llm_ms=947.8
+[464/648] qid=7017 candidates=17 llm_ms=899.1
+[465/648] qid=7068 candidates=15 llm_ms=807.7
+[466/648] qid=7071 candidates=15 llm_ms=811.8
+[467/648] qid=7080 candidates=16 llm_ms=841.7
+[468/648] qid=7096 candidates=15 llm_ms=850.1
+[469/648] qid=7098 candidates=15 llm_ms=782.3
+[470/648] qid=7105 candidates=17 llm_ms=924.7
+[471/648] qid=7109 candidates=19 llm_ms=959.8
+[472/648] qid=7124 candidates=19 llm_ms=1070.8
+[473/648] qid=7141 candidates=18 llm_ms=905.6
+[474/648] qid=7145 candidates=17 llm_ms=943.1
+[475/648] qid=715 candidates=19 llm_ms=1057.1
+[476/648] qid=7178 candidates=17 llm_ms=825.9
+[477/648] qid=7188 candidates=17 llm_ms=874.1
+[478/648] qid=7205 candidates=19 llm_ms=999.9
+[479/648] qid=7206 candidates=19 llm_ms=902.9
+[480/648] qid=721 candidates=20 llm_ms=1109.5
+[481/648] qid=7218 candidates=17 llm_ms=891.9
+[482/648] qid=7221 candidates=16 llm_ms=874.3
+[483/648] qid=7269 candidates=19 llm_ms=963.1
+[484/648] qid=7279 candidates=17 llm_ms=921.4
+[485/648] qid=7295 candidates=16 llm_ms=795.3
+[486/648] qid=7311 candidates=19 llm_ms=1011.3
+[487/648] qid=7326 candidates=17 llm_ms=845.3
+[488/648] qid=7329 candidates=19 llm_ms=1071.3
+[489/648] qid=7344 candidates=19 llm_ms=783.7
+[490/648] qid=7345 candidates=19 llm_ms=944.5
+[491/648] qid=7377 candidates=19 llm_ms=1045.9
+[492/648] qid=7431 candidates=18 llm_ms=927.6
+[493/648] qid=744 candidates=19 llm_ms=1033.7
+[494/648] qid=7441 candidates=19 llm_ms=1072.9
+[495/648] qid=7445 candidates=20 llm_ms=1044.7
+[496/648] qid=7448 candidates=18 llm_ms=929.6
+[497/648] qid=7456 candidates=15 llm_ms=802.7
+[498/648] qid=7463 candidates=19 llm_ms=1072.1
+[499/648] qid=7467 candidates=18 llm_ms=975.6
+[500/648] qid=7484 candidates=15 llm_ms=608.2
+[501/648] qid=750 candidates=18 llm_ms=1047.2
+[502/648] qid=7509 candidates=20 llm_ms=1059.8
+[503/648] qid=7512 candidates=20 llm_ms=1065.5
+[504/648] qid=7513 candidates=18 llm_ms=833.6
+[505/648] qid=7529 candidates=17 llm_ms=822.3
+[506/648] qid=753 candidates=18 llm_ms=967.1
+[507/648] qid=7533 candidates=18 llm_ms=990.8
+[508/648] qid=7534 candidates=19 llm_ms=1073.4
+[509/648] qid=7590 candidates=17 llm_ms=943.5
+[510/648] qid=7592 candidates=17 llm_ms=835.2
+[511/648] qid=7594 candidates=20 llm_ms=1099.5
+[512/648] qid=7622 candidates=18 llm_ms=856.8
+[513/648] qid=7633 candidates=14 llm_ms=720.4
+[514/648] qid=766 candidates=17 llm_ms=885.2
+[515/648] qid=7674 candidates=16 llm_ms=856.9
+[516/648] qid=7700 candidates=17 llm_ms=946.2
+[517/648] qid=7702 candidates=17 llm_ms=875.3
+[518/648] qid=7705 candidates=16 llm_ms=850.5
+[519/648] qid=7734 candidates=16 llm_ms=872.4
+[520/648] qid=7747 candidates=18 llm_ms=929.0
+[521/648] qid=7754 candidates=18 llm_ms=882.7
+[522/648] qid=7758 candidates=13 llm_ms=699.4
+[523/648] qid=776 candidates=20 llm_ms=1083.1
+[524/648] qid=7801 candidates=19 llm_ms=1028.6
+[525/648] qid=7803 candidates=16 llm_ms=876.3
+[526/648] qid=7823 candidates=17 llm_ms=932.3
+[527/648] qid=7876 candidates=15 llm_ms=658.4
+[528/648] qid=7879 candidates=18 llm_ms=1009.6
+[529/648] qid=7880 candidates=19 llm_ms=1021.2
+[530/648] qid=7911 candidates=19 llm_ms=1067.3
+[531/648] qid=7925 candidates=20 llm_ms=1100.8
+[532/648] qid=7928 candidates=18 llm_ms=944.5
+[533/648] qid=7936 candidates=15 llm_ms=751.7
+[534/648] qid=7992 candidates=17 llm_ms=927.9
+[535/648] qid=8 candidates=20 llm_ms=972.9
+[536/648] qid=8002 candidates=17 llm_ms=911.3
+[537/648] qid=8005 candidates=17 llm_ms=848.1
+[538/648] qid=8013 candidates=20 llm_ms=1112.4
+[539/648] qid=8017 candidates=20 llm_ms=1031.9
+[540/648] qid=8034 candidates=18 llm_ms=1030.1
+[541/648] qid=8040 candidates=13 llm_ms=723.8
+[542/648] qid=8072 candidates=15 llm_ms=807.9
+[543/648] qid=8079 candidates=17 llm_ms=841.8
+[544/648] qid=810 candidates=17 llm_ms=868.6
+[545/648] qid=8102 candidates=18 llm_ms=964.8
+[546/648] qid=8116 candidates=16 llm_ms=660.4
+[547/648] qid=8121 candidates=19 llm_ms=1035.8
+[548/648] qid=813 candidates=18 llm_ms=920.1
+[549/648] qid=8202 candidates=20 llm_ms=1019.4
+[550/648] qid=8230 candidates=20 llm_ms=1108.1
+[551/648] qid=8247 candidates=15 llm_ms=779.1
+[552/648] qid=8271 candidates=19 llm_ms=966.4
+[553/648] qid=8275 candidates=15 llm_ms=825.1
+[554/648] qid=8296 candidates=17 llm_ms=838.1
+[555/648] qid=8332 candidates=16 llm_ms=889.0
+[556/648] qid=8351 candidates=20 llm_ms=1040.1
+[557/648] qid=8378 candidates=15 llm_ms=815.8
+[558/648] qid=8456 candidates=18 llm_ms=848.9
+[559/648] qid=8475 candidates=16 llm_ms=887.7
+[560/648] qid=849 candidates=18 llm_ms=951.8
+[561/648] qid=8507 candidates=20 llm_ms=1070.4
+[562/648] qid=8512 candidates=17 llm_ms=853.8
+[563/648] qid=8513 candidates=20 llm_ms=978.9
+[564/648] qid=852 candidates=19 llm_ms=1027.5
+[565/648] qid=853 candidates=15 llm_ms=813.0
+[566/648] qid=8532 candidates=20 llm_ms=1027.6
+[567/648] qid=8537 candidates=19 llm_ms=1035.0
+[568/648] qid=8539 candidates=18 llm_ms=954.9
+[569/648] qid=8544 candidates=18 llm_ms=1012.1
+[570/648] qid=858 candidates=20 llm_ms=1078.0
+[571/648] qid=859 candidates=19 llm_ms=1014.3
+[572/648] qid=8592 candidates=15 llm_ms=840.7
+[573/648] qid=8632 candidates=16 llm_ms=878.3
+[574/648] qid=8635 candidates=20 llm_ms=907.2
+[575/648] qid=864 candidates=16 llm_ms=766.9
+[576/648] qid=8702 candidates=16 llm_ms=802.3
+[577/648] qid=8779 candidates=15 llm_ms=793.3
+[578/648] qid=8789 candidates=19 llm_ms=1013.2
+[579/648] qid=879 candidates=18 llm_ms=818.9
+[580/648] qid=8795 candidates=18 llm_ms=937.1
+[581/648] qid=8832 candidates=18 llm_ms=917.5
+[582/648] qid=8834 candidates=17 llm_ms=766.3
+[583/648] qid=885 candidates=20 llm_ms=1057.5
+[584/648] qid=8855 candidates=20 llm_ms=1092.0
+[585/648] qid=8874 candidates=16 llm_ms=805.3
+[586/648] qid=89 candidates=19 llm_ms=1006.4
+[587/648] qid=8934 candidates=17 llm_ms=807.1
+[588/648] qid=8937 candidates=17 llm_ms=881.5
+[589/648] qid=8947 candidates=18 llm_ms=1022.5
+[590/648] qid=895 candidates=18 llm_ms=957.0
+[591/648] qid=8959 candidates=17 llm_ms=949.5
+[592/648] qid=8970 candidates=19 llm_ms=1080.1
+[593/648] qid=8974 candidates=19 llm_ms=1032.8
+[594/648] qid=8982 candidates=16 llm_ms=858.9
+[595/648] qid=90 candidates=16 llm_ms=784.2
+[596/648] qid=904 candidates=19 llm_ms=997.9
+[597/648] qid=9060 candidates=18 llm_ms=907.7
+[598/648] qid=9088 candidates=18 llm_ms=876.4
+[599/648] qid=9108 candidates=18 llm_ms=1005.4
+[600/648] qid=9115 candidates=18 llm_ms=982.2
+[601/648] qid=9126 candidates=17 llm_ms=823.6
+[602/648] qid=9164 candidates=18 llm_ms=981.7
+[603/648] qid=9174 candidates=18 llm_ms=848.3
+[604/648] qid=9188 candidates=17 llm_ms=953.3
+[605/648] qid=9245 candidates=19 llm_ms=1013.3
+[606/648] qid=9275 candidates=19 llm_ms=1033.1
+[607/648] qid=928 candidates=18 llm_ms=923.2
+[608/648] qid=929 candidates=18 llm_ms=847.5
+[609/648] qid=9291 candidates=15 llm_ms=817.8
+[610/648] qid=9296 candidates=16 llm_ms=826.6
+[611/648] qid=932 candidates=17 llm_ms=867.3
+[612/648] qid=9329 candidates=17 llm_ms=761.9
+[613/648] qid=9332 candidates=18 llm_ms=894.9
+[614/648] qid=9381 candidates=20 llm_ms=1046.3
+[615/648] qid=9385 candidates=17 llm_ms=864.7
+[616/648] qid=939 candidates=19 llm_ms=1022.1
+[617/648] qid=9391 candidates=18 llm_ms=995.9
+[618/648] qid=94 candidates=17 llm_ms=949.5
+[619/648] qid=9403 candidates=20 llm_ms=1077.8
+[620/648] qid=945 candidates=20 llm_ms=1125.8
+[621/648] qid=9481 candidates=16 llm_ms=876.9
+[622/648] qid=9487 candidates=16 llm_ms=807.2
+[623/648] qid=9548 candidates=17 llm_ms=954.7
+[624/648] qid=9556 candidates=15 llm_ms=759.0
+[625/648] qid=9565 candidates=17 llm_ms=921.4
+[626/648] qid=957 candidates=19 llm_ms=958.5
+[627/648] qid=9598 candidates=17 llm_ms=877.9
+[628/648] qid=9617 candidates=19 llm_ms=1016.6
+[629/648] qid=9633 candidates=17 llm_ms=883.9
+[630/648] qid=9643 candidates=19 llm_ms=916.3
+[631/648] qid=9644 candidates=13 llm_ms=671.7
+[632/648] qid=9646 candidates=18 llm_ms=975.3
+[633/648] qid=9668 candidates=18 llm_ms=960.8
+[634/648] qid=9701 candidates=20 llm_ms=1098.0
+[635/648] qid=9733 candidates=19 llm_ms=840.6
+[636/648] qid=9735 candidates=18 llm_ms=929.1
+[637/648] qid=9737 candidates=18 llm_ms=984.4
+[638/648] qid=9771 candidates=20 llm_ms=953.0
+[639/648] qid=98 candidates=19 llm_ms=1123.2
+[640/648] qid=9808 candidates=18 llm_ms=888.0
+[641/648] qid=9824 candidates=19 llm_ms=810.6
+[642/648] qid=9871 candidates=20 llm_ms=1039.1
+[643/648] qid=988 candidates=20 llm_ms=1062.6
+[644/648] qid=9882 candidates=20 llm_ms=1096.3
+[645/648] qid=9925 candidates=17 llm_ms=931.0
+[646/648] qid=9929 candidates=19 llm_ms=812.9
+[647/648] qid=9961 candidates=16 llm_ms=846.6
+[648/648] qid=9979 candidates=16 llm_ms=885.7
+{
+  "p@3": {
+    "A": 0.08230452674897118,
+    "B": 0.06584362139917695,
+    "delta": -0.016460905349794237,
+    "CI95": [
+      -0.025720164609053495,
+      -0.007716049382716048
+    ],
+    "wins": 24,
+    "ties": 569,
+    "losses": 55
+  },
+  "ndcg@3": {
+    "A": 0.19333573111026942,
+    "B": 0.13810536134114465,
+    "delta": -0.05523036976912479,
+    "CI95": [
+      -0.07684621295579074,
+      -0.03432868188173009
+    ],
+    "wins": 35,
+    "ties": 523,
+    "losses": 90
+  },
+  "p@5": {
+    "A": 0.056172839506172835,
+    "B": 0.04722222222222222,
+    "delta": -0.00895061728395062,
+    "CI95": [
+      -0.013888888888888888,
+      -0.004012345679012346
+    ],
+    "wins": 17,
+    "ties": 588,
+    "losses": 43
+  },
+  "ndcg@5": {
+    "A": 0.2038758559593229,
+    "B": 0.15161956511960323,
+    "delta": -0.05225629083971964,
+    "CI95": [
+      -0.07201254036529973,
+      -0.03352656331522227
+    ],
+    "wins": 40,
+    "ties": 514,
+    "losses": 94
+  },
+  "mrr@10": {
+    "A": 0.20465473740936707,
+    "B": 0.14953030080344895,
+    "delta": -0.05512443660591809,
+    "CI95": [
+      -0.07479688724769745,
+      -0.03473384222516168
+    ],
+    "wins": 40,
+    "ties": 514,
+    "losses": 94
+  }
+}

@@ -1,0 +1,86 @@
+GPU retrieval: cuda
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5942.08it/s]
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights:   0%|          | 1/434 [00:00<02:41,  2.69it/s]Loading weights:  26%|██▌       | 111/434 [00:00<00:01, 263.41it/s]Loading weights:  35%|███▌      | 152/434 [00:00<00:01, 250.61it/s]Loading weights:  43%|████▎     | 185/434 [00:00<00:01, 224.25it/s]Loading weights:  49%|████▉     | 212/434 [00:01<00:00, 232.18it/s]Loading weights:  55%|█████▌    | 239/434 [00:01<00:00, 219.77it/s]Loading weights:  62%|██████▏   | 267/434 [00:01<00:00, 216.72it/s]Loading weights:  67%|██████▋   | 291/434 [00:01<00:00, 220.27it/s]Loading weights:  73%|███████▎  | 315/434 [00:01<00:00, 209.41it/s]Loading weights:  78%|███████▊  | 339/434 [00:01<00:00, 199.63it/s]Loading weights:  84%|████████▎ | 363/434 [00:01<00:00, 201.43it/s]Loading weights:  89%|████████▉ | 387/434 [00:01<00:00, 202.58it/s]Loading weights:  96%|█████████▌| 417/434 [00:01<00:00, 223.73it/s]Loading weights: 100%|██████████| 434/434 [00:02<00:00, 214.42it/s]
+[1/20] qid=10034 candidates=19 llm_ms=1008.8
+[2/20] qid=10039 candidates=20 llm_ms=956.2
+[3/20] qid=10109 candidates=20 llm_ms=928.3
+[4/20] qid=10122 candidates=18 llm_ms=863.4
+[5/20] qid=10136 candidates=20 llm_ms=981.2
+[6/20] qid=10137 candidates=20 llm_ms=880.2
+[7/20] qid=10152 candidates=20 llm_ms=999.1
+[8/20] qid=10183 candidates=18 llm_ms=887.6
+[9/20] qid=10213 candidates=19 llm_ms=988.8
+[10/20] qid=10246 candidates=19 llm_ms=897.7
+[11/20] qid=10267 candidates=18 llm_ms=867.0
+[12/20] qid=104 candidates=19 llm_ms=1030.3
+[13/20] qid=10414 candidates=19 llm_ms=909.8
+[14/20] qid=10447 candidates=13 llm_ms=731.0
+[15/20] qid=10462 candidates=19 llm_ms=830.8
+[16/20] qid=10482 candidates=18 llm_ms=843.6
+[17/20] qid=10497 candidates=18 llm_ms=889.6
+[18/20] qid=10526 candidates=17 llm_ms=837.6
+[19/20] qid=10547 candidates=17 llm_ms=850.8
+[20/20] qid=10558 candidates=20 llm_ms=997.7
+{
+  "p@3": {
+    "A": 0.08333333333333333,
+    "B": 0.06666666666666667,
+    "delta": -0.016666666666666666,
+    "CI95": [
+      -0.05,
+      0.0
+    ],
+    "wins": 0,
+    "ties": 19,
+    "losses": 1
+  },
+  "ndcg@3": {
+    "A": 0.2065464876785729,
+    "B": 0.1261859507142915,
+    "delta": -0.08036053696428137,
+    "CI95": [
+      -0.2,
+      0.006546487678572877
+    ],
+    "wins": 1,
+    "ties": 16,
+    "losses": 3
+  },
+  "p@5": {
+    "A": 0.05,
+    "B": 0.05,
+    "delta": 0.0,
+    "CI95": [
+      0.0,
+      0.0
+    ],
+    "wins": 0,
+    "ties": 20,
+    "losses": 0
+  },
+  "ndcg@5": {
+    "A": 0.2065464876785729,
+    "B": 0.14771977861796115,
+    "delta": -0.058826709060611715,
+    "CI95": [
+      -0.1407590532532724,
+      0.006546487678572877
+    ],
+    "wins": 1,
+    "ties": 16,
+    "losses": 3
+  },
+  "mrr@10": {
+    "A": 0.19166666666666665,
+    "B": 0.1125,
+    "delta": -0.07916666666666666,
+    "CI95": [
+      -0.1875,
+      0.008333333333333335
+    ],
+    "wins": 1,
+    "ties": 16,
+    "losses": 3
+  }
+}

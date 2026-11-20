@@ -1,0 +1,249 @@
+{
+  "passed": true,
+  "complete_conditions": 39,
+  "paired_comparisons": 3,
+  "checks": [
+    {
+      "rep": 1,
+      "condition": "L25",
+      "n_requests": 275,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 1,
+      "condition": "L50",
+      "n_requests": 535,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 1,
+      "condition": "L75",
+      "n_requests": 855,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 1,
+      "condition": "L100",
+      "n_requests": 1187,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 1,
+      "condition": "NORERANK",
+      "n_requests": 1187,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 1,
+      "condition": "NOHEDGE",
+      "n_requests": 1187,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 1,
+      "condition": "F1",
+      "n_requests": 855,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 1,
+      "condition": "F2",
+      "n_requests": 855,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 1,
+      "condition": "F3H",
+      "n_requests": 855,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 1,
+      "condition": "F3NH",
+      "n_requests": 855,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 1,
+      "condition": "F4",
+      "n_requests": 855,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 1,
+      "condition": "F5",
+      "n_requests": 855,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 1,
+      "condition": "F6",
+      "n_requests": 855,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "L25",
+      "n_requests": 309,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "L50",
+      "n_requests": 612,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "L75",
+      "n_requests": 900,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "L100",
+      "n_requests": 1209,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "NORERANK",
+      "n_requests": 1209,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "NOHEDGE",
+      "n_requests": 1209,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "F1",
+      "n_requests": 900,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "F2",
+      "n_requests": 900,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "F3H",
+      "n_requests": 900,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "F3NH",
+      "n_requests": 900,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "F4",
+      "n_requests": 900,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "F5",
+      "n_requests": 900,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 2,
+      "condition": "F6",
+      "n_requests": 900,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "L25",
+      "n_requests": 296,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "L50",
+      "n_requests": 584,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "L75",
+      "n_requests": 896,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "L100",
+      "n_requests": 1194,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "NORERANK",
+      "n_requests": 1194,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "NOHEDGE",
+      "n_requests": 1194,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "F1",
+      "n_requests": 896,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "F2",
+      "n_requests": 896,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "F3H",
+      "n_requests": 896,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "F3NH",
+      "n_requests": 896,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "F4",
+      "n_requests": 896,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "F5",
+      "n_requests": 896,
+      "metrics_match_raw": true
+    },
+    {
+      "rep": 3,
+      "condition": "F6",
+      "n_requests": 896,
+      "metrics_match_raw": true
+    }
+  ],
+  "source_sha256": "bb027763a577074373d5c1909467fbac67f8b5484d37696b29e1f697f02f22b7",
+  "dataset": "trec-covid",
+  "node": "ds001",
+  "corpus_documents": 171332,
+  "test_queries": 50,
+  "protocol": "complementary_fixed_absolute_load",
+  "capacity_validated": false,
+  "trec_capacity_qps": null
+}

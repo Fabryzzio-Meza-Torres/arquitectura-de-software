@@ -1,0 +1,47 @@
+{
+  "original_results_unchanged_locally": true,
+  "redacted_files": [
+    "base.py",
+    "entrada_comun\\manifiesto.json",
+    "jobs.json",
+    "modelo_preparado.json",
+    "performance.sbatch",
+    "preflight.sbatch",
+    "provenance\\bf16_diagnostic\\base.py",
+    "quality.sbatch",
+    "report.sbatch",
+    "resultados\\entorno_performance.json",
+    "resultados\\entorno_quality.json",
+    "resultados\\protocolo.json",
+    "smoke.sbatch"
+  ],
+  "transformations": [
+    "Private filesystem paths and usernames redacted",
+    "Raw nvidia-smi process/device dumps removed from environment JSON",
+    "Slurm account, interpreter and experiment directory configured through environment variables",
+    "Model/data paths configured through settings.py",
+    "Fresh submission job IDs supplied through arguments instead of historical constants",
+    "Publication hashes regenerated for public copies"
+  ],
+  "excluded": [
+    "SSH transport and credentials",
+    "full corpus and candidate document texts",
+    "model weights and caches",
+    "FAISS/BM25 indexes",
+    "SQLite checkpoint databases",
+    "unsanitized original tar archive",
+    "virtual environments and temporary files",
+    "empty original Slurm accounting CSV"
+  ],
+  "retained": [
+    "executed notebook and outputs",
+    "per-query scores and metrics",
+    "request timings",
+    "figures",
+    "sanitized logs",
+    "model revisions and seeds",
+    "corpus IDs and official query/qrel subset",
+    "executed-source portable copies and original source hashes"
+  ],
+  "note": "Portable code differs from executed source only in configuration/publication handling, not scientific scoring; historical IDs remain evidence, not new submissions."
+}

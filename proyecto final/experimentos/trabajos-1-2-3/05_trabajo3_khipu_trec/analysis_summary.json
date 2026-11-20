@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "notebook_code_cells": 17,
+  "notebook_errors": 0,
+  "figures": 9,
+  "protocol": "complementary_fixed_absolute_load",
+  "capacity_validated": false,
+  "trec_capacity_qps": null,
+  "experimental_job": "63919",
+  "analysis_job": "63913",
+  "benchmark_source_sha256": "bb027763a577074373d5c1909467fbac67f8b5484d37696b29e1f697f02f22b7",
+  "notebook_sha256": "a95f122f658baeb571af00b3ac12c720307ee90a9357ac07871861b987fd3df4"
+}

@@ -1,0 +1,9 @@
+{
+  "dataset": "fiqa",
+  "seed": 42,
+  "original_docs": 57638,
+  "selected_docs": 10000,
+  "corpus_sha256": "ccf561f4f3ef6c2d9f06e80bcc8194192abfcdac9726e2390775e6c43b833bd8",
+  "evaluation_universe": "selected_10000",
+  "note": "qrels originales; filtrar por corpus al evaluar"
+}

@@ -1,0 +1,3 @@
+dataset,comparison,metric,mean_difference,ci_95_low,ci_95_high,resamples,paired_queries
+trec-covid,rrf_minus_convex,precision_at_3,-0.11333333333333334,-0.1733333333333333,-0.05333333333333334,10000,50
+trec-covid,rrf_minus_convex,ndcg_at_3,-0.10592163821931733,-0.16073274628299425,-0.05206589301476601,10000,50

@@ -1,0 +1,4 @@
+rep,max_load_p99_ms,fitness_i,min_F1F2_continuity_pct,fitness_iii,max_dup_pct,fitness_iv
+1,1745.818,True,100.0,True,9.912,True
+2,2067.905,True,100.0,True,9.915,True
+3,1728.866,True,100.0,True,9.904,True

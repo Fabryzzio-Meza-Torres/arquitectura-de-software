@@ -1,0 +1,91 @@
+{
+  "frozen": true,
+  "dataset": "fiqa",
+  "stages_1qps": {
+    "lex": {
+      "n": 500,
+      "p50_ms": 4.669,
+      "p95_ms": 6.345,
+      "p99_ms": 7.424
+    },
+    "sem": {
+      "n": 500,
+      "p50_ms": 28.309,
+      "p95_ms": 99.659,
+      "p99_ms": 155.505
+    },
+    "fusion": {
+      "n": 500,
+      "p50_ms": 0.466,
+      "p95_ms": 0.627,
+      "p99_ms": 1.02
+    },
+    "rerank": {
+      "n": 500,
+      "p50_ms": 115.371,
+      "p95_ms": 168.069,
+      "p99_ms": 177.039
+    },
+    "e2e": {
+      "n": 500,
+      "p50_ms": 149.137,
+      "p95_ms": 228.188,
+      "p99_ms": 305.392
+    }
+  },
+  "hedge_threshold_ms": 168.069,
+  "ramp": [
+    {
+      "rate": 1,
+      "n_sent": 131,
+      "qps_offered_measured": 1.0917,
+      "qps_achieved": 1.0917,
+      "throughput_ratio": 1.0,
+      "p99_ms": 255.348,
+      "p99_first_half_ms": 255.348,
+      "p99_second_half_ms": 271.531,
+      "p99_stable": true,
+      "pass": true
+    },
+    {
+      "rate": 2,
+      "n_sent": 244,
+      "qps_offered_measured": 2.0333,
+      "qps_achieved": 2.0333,
+      "throughput_ratio": 1.0,
+      "p99_ms": 370.462,
+      "p99_first_half_ms": 435.5,
+      "p99_second_half_ms": 340.638,
+      "p99_stable": true,
+      "pass": true
+    },
+    {
+      "rate": 4,
+      "n_sent": 478,
+      "qps_offered_measured": 3.9833,
+      "qps_achieved": 3.9833,
+      "throughput_ratio": 1.0,
+      "p99_ms": 772.077,
+      "p99_first_half_ms": 570.937,
+      "p99_second_half_ms": 811.678,
+      "p99_stable": false,
+      "pass": false
+    },
+    {
+      "rate": 8,
+      "n_sent": 949,
+      "qps_offered_measured": 7.9083,
+      "qps_achieved": 7.375,
+      "throughput_ratio": 0.9326,
+      "p99_ms": 1344.36,
+      "p99_first_half_ms": 1344.36,
+      "p99_second_half_ms": 1356.158,
+      "p99_stable": true,
+      "pass": false
+    }
+  ],
+  "ramp_seconds": 120,
+  "C_qps": 2,
+  "capacity_rule": "highest ramp rate (all steps are run) with throughput >= 99% of the requests actually sent and p99(second half) <= 1.2 * p99(first half)",
+  "throughput_definition": "throughput ratio = responses with route=reranked, 3 results and latency <= SLO divided by the requests actually sent in the step (Poisson arrivals make the sent count differ from the nominal rate); all ramp steps run and C is the highest passing rate"
+}

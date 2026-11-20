@@ -1,0 +1,10 @@
+{
+  "BAAI/bge-base-en-v1.5": {
+    "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+    "path": "/home/usuario/projects/minion_trec_khipu_v4_20261118/hf_home/hub/models--BAAI--bge-base-en-v1.5/snapshots/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+  },
+  "cross-encoder/ms-marco-MiniLM-L-6-v2": {
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "path": "/home/usuario/projects/minion_trec_khipu_v4_20261118/hf_home/hub/models--cross-encoder--ms-marco-MiniLM-L-6-v2/snapshots/233902d25c440f23af6f7d6e94d2946bac0bee0a"
+  }
+}

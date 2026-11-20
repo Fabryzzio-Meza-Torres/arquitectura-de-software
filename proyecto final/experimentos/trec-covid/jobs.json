@@ -1,0 +1,19 @@
+{
+  "project": "<PRIVATE_PATH>",
+  "preflight_job": 64076,
+  "smoke_job": 64077,
+  "output": "<PRIVATE_PATH>",
+  "logs": "<PRIVATE_PATH>",
+  "input_package": "<PRIVATE_PATH>",
+  "submitted_utc": "2026-11-19T08:47:24Z",
+  "maximum_allocated_compute_time": "7 hours plus queues",
+  "previous_failed_pilot_jobs": [
+    64070,
+    64072
+  ],
+  "numerical_check_bf16_job": 64075,
+  "quality_job": 64078,
+  "performance_job": 64079,
+  "report_job": 64080,
+  "submission_complete": true
+}

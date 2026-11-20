@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "pilot": true,
+  "subset": 2000,
+  "checks": {
+    "L100": {
+      "n": 13,
+      "expected_route": "reranked"
+    },
+    "F1": {
+      "n": 10,
+      "expected_route": "fused_fallback"
+    },
+    "F2": {
+      "n": 10,
+      "expected_route": "fused_fallback"
+    },
+    "F3H": {
+      "n": 10,
+      "expected_route": "reranked"
+    },
+    "F3NH": {
+      "n": 10,
+      "expected_route": "reranked"
+    },
+    "F4": {
+      "n": 10,
+      "expected_route": "lex"
+    },
+    "F5": {
+      "n": 10,
+      "expected_route": "sem"
+    },
+    "F6": {
+      "n": 10,
+      "expected_route": "error"
+    }
+  },
+  "paired_fault_injection_verified": true
+}

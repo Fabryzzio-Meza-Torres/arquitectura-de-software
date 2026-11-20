@@ -1,0 +1,130 @@
+2026-11-17T23:38:27-05:00
+ag001
+Tue Nov 17 23:38:27 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:C1:00.0 Off |                   On |
+| N/A   43C    P0             91W /  250W |    9612MiB /  40960MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| MIG devices:                                                                            |
++------------------+----------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |              Shared Memory-Usage |        Vol|        Shared         |
+|      ID  ID  Dev |                Shared BAR1-Usage | SM     Unc| CE ENC  DEC  OFA  JPG |
+|                  |                                  |        ECC|                       |
+|==================+==================================+===========+=======================|
+|  0    3   0   0  |              68MiB /  9984MiB    | 28      0 |  2   0    1    0    0 |
+|                  |               0MiB /  6099MiB    |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+configuration_validated 
+fiqa_data_validated {'corpus': 57638, 'test_queries': 648, 'qrels': 1706, 'positive_qrels': 1706, 'zero_qrels': 0, 'negative_unjudged_qrels': 0, 'relevant_queries': 648, 'empty_titles': 57638, 'empty_texts': 38, 'duplicate_texts': 39, 'corpus_sha256': 'ff593e4df9933955dc3af83be0c3fa28ac7465f627e08c2e53593e734d506517', 'qrels_sha256': '6adc2a640dcdd22bb8b3858f89107adef2a7c3db20a63550dfa7a0f71e379e44'}
+fiqa_bm25_ready 
+encode emb_fiqa_test.npy 0 / 648
+fiqa_embeddings_ready {'documents': 57638, 'queries': 648}
+candidates fiqa 0 / 648
+candidates fiqa 50 / 648
+candidates fiqa 100 / 648
+candidates fiqa 150 / 648
+candidates fiqa 200 / 648
+candidates fiqa 250 / 648
+candidates fiqa 300 / 648
+candidates fiqa 350 / 648
+candidates fiqa 400 / 648
+candidates fiqa 450 / 648
+candidates fiqa 500 / 648
+candidates fiqa 550 / 648
+candidates fiqa 600 / 648
+fiqa_candidate_scores_saved 11665
+rerank fiqa 0 / 648
+rerank fiqa 100 / 648
+rerank fiqa 200 / 648
+rerank fiqa 300 / 648
+rerank fiqa 400 / 648
+rerank fiqa 500 / 648
+rerank fiqa 600 / 648
+fiqa_reranked_same_candidates {'queries': 648, 'candidates': 11665}
+fiqa_metrics_bootstrap_complete {'dataset': 'fiqa', 'n_queries': 648, 'resamples': 10000, 'seed': 42, 'delta_precision_at_3': -0.020576131687242795, 'ci_95_low': -0.035493827160493825, 'ci_95_high': -0.005658436213991769, 'condensed_delta_precision_at_3': 0.0, 'delta_sign_preserved': False}
+trec-covid_data_validated {'corpus': 171332, 'test_queries': 50, 'qrels': 66336, 'positive_qrels': 24673, 'zero_qrels': 41661, 'negative_unjudged_qrels': 2, 'relevant_queries': 50, 'empty_titles': 7, 'empty_texts': 42140, 'duplicate_texts': 0, 'corpus_sha256': 'aded69896598665082316d00df487d22212cc5a8611db05db34eb40d04ed00d7', 'qrels_sha256': '10669ab7d526cb04f52079139fd88c3d467a0776441b046567f540582798982b'}
+trec-covid_bm25_ready 
+encode emb_trec-covid.npy 0 / 171332
+encode emb_trec-covid.npy 3200 / 171332
+encode emb_trec-covid.npy 6400 / 171332
+encode emb_trec-covid.npy 9600 / 171332
+encode emb_trec-covid.npy 12800 / 171332
+encode emb_trec-covid.npy 16000 / 171332
+encode emb_trec-covid.npy 19200 / 171332
+encode emb_trec-covid.npy 22400 / 171332
+encode emb_trec-covid.npy 25600 / 171332
+encode emb_trec-covid.npy 28800 / 171332
+encode emb_trec-covid.npy 32000 / 171332
+encode emb_trec-covid.npy 35200 / 171332
+encode emb_trec-covid.npy 38400 / 171332
+encode emb_trec-covid.npy 41600 / 171332
+encode emb_trec-covid.npy 44800 / 171332
+encode emb_trec-covid.npy 48000 / 171332
+encode emb_trec-covid.npy 51200 / 171332
+encode emb_trec-covid.npy 54400 / 171332
+encode emb_trec-covid.npy 57600 / 171332
+encode emb_trec-covid.npy 60800 / 171332
+encode emb_trec-covid.npy 64000 / 171332
+encode emb_trec-covid.npy 67200 / 171332
+encode emb_trec-covid.npy 70400 / 171332
+encode emb_trec-covid.npy 73600 / 171332
+encode emb_trec-covid.npy 76800 / 171332
+encode emb_trec-covid.npy 80000 / 171332
+encode emb_trec-covid.npy 83200 / 171332
+encode emb_trec-covid.npy 86400 / 171332
+encode emb_trec-covid.npy 89600 / 171332
+encode emb_trec-covid.npy 92800 / 171332
+encode emb_trec-covid.npy 96000 / 171332
+encode emb_trec-covid.npy 99200 / 171332
+encode emb_trec-covid.npy 102400 / 171332
+encode emb_trec-covid.npy 105600 / 171332
+encode emb_trec-covid.npy 108800 / 171332
+encode emb_trec-covid.npy 112000 / 171332
+encode emb_trec-covid.npy 115200 / 171332
+encode emb_trec-covid.npy 118400 / 171332
+encode emb_trec-covid.npy 121600 / 171332
+encode emb_trec-covid.npy 124800 / 171332
+encode emb_trec-covid.npy 128000 / 171332
+encode emb_trec-covid.npy 131200 / 171332
+encode emb_trec-covid.npy 134400 / 171332
+encode emb_trec-covid.npy 137600 / 171332
+encode emb_trec-covid.npy 140800 / 171332
+encode emb_trec-covid.npy 144000 / 171332
+encode emb_trec-covid.npy 147200 / 171332
+encode emb_trec-covid.npy 150400 / 171332
+encode emb_trec-covid.npy 153600 / 171332
+encode emb_trec-covid.npy 156800 / 171332
+encode emb_trec-covid.npy 160000 / 171332
+encode emb_trec-covid.npy 163200 / 171332
+encode emb_trec-covid.npy 166400 / 171332
+encode emb_trec-covid.npy 169600 / 171332
+encode emb_trec-covid_test.npy 0 / 50
+trec-covid_embeddings_ready {'documents': 171332, 'queries': 50}
+candidates trec-covid 0 / 50
+trec-covid_candidate_scores_saved 930
+rerank trec-covid 0 / 50
+trec-covid_reranked_same_candidates {'queries': 50, 'candidates': 930}
+trec-covid_metrics_bootstrap_complete {'dataset': 'trec-covid', 'n_queries': 50, 'resamples': 10000, 'seed': 42, 'delta_precision_at_3': -0.026666666666666665, 'ci_95_low': -0.09333333333333334, 'ci_95_high': 0.03333333333333333, 'condensed_delta_precision_at_3': -0.026666666666666665, 'delta_sign_preserved': True}
+COMPUTE_COMPLETE 
+2026-11-17T23:57:43-05:00
+fiqa_data_validated {'corpus': 57638, 'test_queries': 648, 'qrels': 1706, 'positive_qrels': 1706, 'zero_qrels': 0, 'negative_unjudged_qrels': 0, 'relevant_queries': 648, 'empty_titles': 57638, 'empty_texts': 38, 'duplicate_texts': 39, 'corpus_sha256': 'ff593e4df9933955dc3af83be0c3fa28ac7465f627e08c2e53593e734d506517', 'qrels_sha256': '6adc2a640dcdd22bb8b3858f89107adef2a7c3db20a63550dfa7a0f71e379e44'}
+trec-covid_data_validated {'corpus': 171332, 'test_queries': 50, 'qrels': 66336, 'positive_qrels': 24673, 'zero_qrels': 41661, 'negative_unjudged_qrels': 2, 'relevant_queries': 50, 'empty_titles': 7, 'empty_texts': 42140, 'duplicate_texts': 0, 'corpus_sha256': 'aded69896598665082316d00df487d22212cc5a8611db05db34eb40d04ed00d7', 'qrels_sha256': '10669ab7d526cb04f52079139fd88c3d467a0776441b046567f540582798982b'}
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+NOTEBOOK_COMPLETE_VERIFIED 77 cells

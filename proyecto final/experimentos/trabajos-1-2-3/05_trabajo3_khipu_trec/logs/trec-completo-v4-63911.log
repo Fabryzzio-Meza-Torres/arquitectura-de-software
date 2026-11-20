@@ -1,0 +1,104 @@
+2026-11-18T17:55:01-05:00
+ds001
+Python 3.11.11
+Wed Nov 18 17:55:01 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A6000               Off |   00000000:99:00.0 Off |                  Off |
+| 49%   74C    P2            167W /  300W |    7652MiB /  49140MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A          162975      C   python                                 2544MiB |
+|    0   N/A  N/A          162976      C   python                                 2544MiB |
+|    0   N/A  N/A          162977      C   python                                 2544MiB |
++-----------------------------------------------------------------------------------------+
+bb027763a577074373d5c1909467fbac67f8b5484d37696b29e1f697f02f22b7  minion_bench.py
+10f8b9ed90d17367837e9f40f7fd3a21c0e6b2db07b6f91c6892b3bf1560d500  alpha.json
+COMPARABILITY_PREFLIGHT_PASSED {"passed": true, "reference_job_id": "63828", "reference_node": "ds001", "python": "3.11.11", "versions": {"torch": "2.15.0", "transformers": "5.23.0", "sentence-transformers": "6.3.0", "faiss-cpu": "1.16.0", "bm25s": "0.3.16", "PyStemmer": "3.1.0", "numpy": "2.4.6"}, "source_sha256": "bb027763a577074373d5c1909467fbac67f8b5484d37696b29e1f697f02f22b7", "alpha": 0.85, "frozen_config_identical": true, "intentional_changes": ["dataset=trec-covid", "fresh dataset-specific calibration", "output paths", "authorized account"], "source_environment": "reference job 63828 on ds001", "limits": ["GPU is shared; concurrent load may differ", "Reference run did not record exact MiniLM cache revision; this run records the prepared revision"]}
+[17:55:07] trec-covid: 171332 docs | calib 1000 consultas | test 50 consultas
+[17:55:10] fase 0: indexando BM25 (171332 docs)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7482.31it/s]
+[17:55:38] calculando embeddings del corpus
+[17:55:39]   embeddings 0/171332 (1s)
+[17:55:52]   embeddings 3200/171332 (14s)
+[17:56:04]   embeddings 6400/171332 (26s)
+[17:56:15]   embeddings 9600/171332 (37s)
+[17:56:25]   embeddings 12800/171332 (47s)
+[17:56:36]   embeddings 16000/171332 (58s)
+[17:56:47]   embeddings 19200/171332 (69s)
+[17:56:57]   embeddings 22400/171332 (80s)
+[17:57:08]   embeddings 25600/171332 (90s)
+[17:57:19]   embeddings 28800/171332 (101s)
+[17:57:29]   embeddings 32000/171332 (111s)
+[17:57:38]   embeddings 35200/171332 (121s)
+[17:57:49]   embeddings 38400/171332 (131s)
+[17:57:59]   embeddings 41600/171332 (141s)
+[17:58:09]   embeddings 44800/171332 (151s)
+[17:58:19]   embeddings 48000/171332 (162s)
+[17:58:29]   embeddings 51200/171332 (171s)
+[17:58:39]   embeddings 54400/171332 (181s)
+[17:58:47]   embeddings 57600/171332 (190s)
+[17:58:56]   embeddings 60800/171332 (198s)
+[17:59:05]   embeddings 64000/171332 (207s)
+[17:59:14]   embeddings 67200/171332 (216s)
+[17:59:22]   embeddings 70400/171332 (225s)
+[17:59:31]   embeddings 73600/171332 (233s)
+[17:59:39]   embeddings 76800/171332 (241s)
+[17:59:46]   embeddings 80000/171332 (249s)
+[17:59:53]   embeddings 83200/171332 (255s)
+[18:00:00]   embeddings 86400/171332 (262s)
+[18:00:06]   embeddings 89600/171332 (268s)
+[18:00:13]   embeddings 92800/171332 (275s)
+[18:00:19]   embeddings 96000/171332 (281s)
+[18:00:25]   embeddings 99200/171332 (288s)
+[18:00:31]   embeddings 102400/171332 (294s)
+[18:00:37]   embeddings 105600/171332 (300s)
+[18:00:43]   embeddings 108800/171332 (305s)
+[18:00:48]   embeddings 112000/171332 (310s)
+[18:00:52]   embeddings 115200/171332 (315s)
+[18:00:57]   embeddings 118400/171332 (319s)
+[18:01:01]   embeddings 121600/171332 (323s)
+[18:01:05]   embeddings 124800/171332 (327s)
+[18:01:08]   embeddings 128000/171332 (330s)
+[18:01:10]   embeddings 131200/171332 (332s)
+[18:01:11]   embeddings 134400/171332 (333s)
+[18:01:12]   embeddings 137600/171332 (334s)
+[18:01:13]   embeddings 140800/171332 (335s)
+[18:01:14]   embeddings 144000/171332 (336s)
+[18:01:14]   embeddings 147200/171332 (337s)
+[18:01:15]   embeddings 150400/171332 (337s)
+[18:01:16]   embeddings 153600/171332 (338s)
+[18:01:17]   embeddings 156800/171332 (339s)
+[18:01:17]   embeddings 160000/171332 (340s)
+[18:01:18]   embeddings 163200/171332 (340s)
+[18:01:19]   embeddings 166400/171332 (341s)
+[18:01:19]   embeddings 169600/171332 (342s)
+Could not reach the Hub (Cannot reach https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'cross-encoder/ms-marco-MiniLM-L-6-v2'.
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 7882.90it/s]
+Could not reach the Hub (Cannot reach https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'cross-encoder/ms-marco-MiniLM-L-6-v2'.
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 5282.50it/s]
+[18:01:30] fase 0: índices y modelos listos en 380s
+[18:01:40] calentamiento listo
+[18:01:40] calibración (a): 500 consultas a 1 QPS
+[18:09:23]   umbral de hedging = p95 reranker = 154.4 ms | e2e p99 = 423.3 ms
+[18:09:23] calibración (b): rampa
+[18:11:24]   1.0 QPS: logrado 0.94 | p99 425->263 ms | reranked 97% | ruta completa NO | cualquier ruta OK
+[18:13:27]   2.0 QPS: logrado 2.02 | p99 449->324 ms | reranked 97% | ruta completa NO | cualquier ruta OK
+[18:15:31]   4.0 QPS: logrado 4.04 | p99 739->472 ms | reranked 95% | ruta completa NO | cualquier ruta OK
+[18:17:35]   8.0 QPS: logrado 7.78 | p99 1061->1491 ms | reranked 93% | ruta completa NO | cualquier ruta NO
+[18:19:40]   16.0 QPS: logrado 16.48 | p99 2381->2398 ms | reranked 8% | ruta completa NO | cualquier ruta OK
+[18:21:45]   32.0 QPS: logrado 31.11 | p99 2376->2368 ms | reranked 12% | ruta completa NO | cualquier ruta NO
+[18:23:50]   64.0 QPS: logrado 62.43 | p99 1242->1287 ms | reranked 0% | ruta completa NO | cualquier ruta NO
+ERROR: el primer escalón no sostuvo >=99% de consultas reranked con p99 estable; no se puede fijar C con este criterio; revisa la rampa y repite la calibración.
+srun: error: ds001: task 0: Exited with exit code 1

@@ -1,0 +1,4 @@
+batch,complete,max_absolute_score_difference,identical_top3,accepted
+1,True,0.0,True,True
+4,True,4.9501657485961914e-05,True,True
+8,True,4.419684410095215e-05,True,True

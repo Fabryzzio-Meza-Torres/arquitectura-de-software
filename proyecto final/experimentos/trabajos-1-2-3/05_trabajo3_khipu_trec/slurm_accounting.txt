@@ -1,0 +1,15 @@
+JobID|JobName|Partition|State|ExitCode|Start|End|Elapsed|NodeList|AllocCPUS|ReqMem|AllocTRES
+63909|trec-pilot-v4|data-science|COMPLETED|0:0|2026-11-18T17:50:30|2026-11-18T17:54:21|00:03:51|ds001|4|32G|billing=4,cpu=4,energy=120512,gres/shard=1,mem=32G,node=1
+63909.batch|batch||COMPLETED|0:0|2026-11-18T17:50:30|2026-11-18T17:54:21|00:03:51|ds001|4||cpu=4,gres/shard=1,mem=32G,node=1
+63909.0|python||COMPLETED|0:0|2026-11-18T17:50:34|2026-11-18T17:54:21|00:03:47|ds001|4||cpu=4,gres/shard=1,mem=32G,node=1
+63911|trec-completo-v4|data-science|FAILED|1:0|2026-11-18T17:55:00|2026-11-18T18:23:54|00:28:54|ds001|4|32G|billing=4,cpu=4,energy=961253,gres/shard=1,mem=32G,node=1
+63911.batch|batch||FAILED|1:0|2026-11-18T17:55:00|2026-11-18T18:23:54|00:28:54|ds001|4||cpu=4,gres/shard=1,mem=32G,node=1
+63911.0|python||FAILED|1:0|2026-11-18T17:55:04|2026-11-18T18:23:54|00:28:50|ds001|4||cpu=4,gres/shard=1,mem=32G,node=1
+63913|trec-v4-analysis|standard|COMPLETED|0:0|2026-11-18T20:23:35|2026-11-18T20:23:49|00:00:14|n006|4|8G|billing=4,cpu=4,energy=7126,mem=8G,node=1
+63913.batch|batch||COMPLETED|0:0|2026-11-18T20:23:35|2026-11-18T20:23:49|00:00:14|n006|4||cpu=4,mem=8G,node=1
+63913.0|python||COMPLETED|0:0|2026-11-18T20:23:35|2026-11-18T20:23:49|00:00:14|n006|4||cpu=4,mem=8G,node=1
+63917|trec-calib-diagnose|standard|COMPLETED|0:0|2026-11-18T18:15:07|2026-11-18T18:15:08|00:00:01|n006|2|1G|billing=2,cpu=2,mem=1G,node=1
+63917.batch|batch||COMPLETED|0:0|2026-11-18T18:15:07|2026-11-18T18:15:08|00:00:01|n006|2||cpu=2,mem=1G,node=1
+63919|trec-fixed-load-v4|data-science|COMPLETED|0:0|2026-11-18T18:24:00|2026-11-18T20:23:35|01:59:35|ds001|4|32G|billing=4,cpu=4,energy=4284717,gres/shard=1,mem=32G,node=1
+63919.batch|batch||COMPLETED|0:0|2026-11-18T18:24:00|2026-11-18T20:23:35|01:59:35|ds001|4||cpu=4,gres/shard=1,mem=32G,node=1
+63919.0|python||COMPLETED|0:0|2026-11-18T18:24:02|2026-11-18T20:23:35|01:59:33|ds001|4||cpu=4,gres/shard=1,mem=32G,node=1

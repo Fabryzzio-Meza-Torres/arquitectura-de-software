@@ -1,0 +1,77 @@
+=== HARDWARE ===
+ds001
+Wed Nov 18 06:15:59 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A6000               Off |   00000000:99:00.0 Off |                  Off |
+| 65%   85C    P2            259W /  300W |    8872MiB /  49140MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A           39535      C   python                                 1274MiB |
+|    0   N/A  N/A         3621130      C   python                                 1670MiB |
+|    0   N/A  N/A         3621131      C   python                                 1670MiB |
+|    0   N/A  N/A         4151087      C   ...hot-diffdef/.venv/bin/python3       4232MiB |
++-----------------------------------------------------------------------------------------+
+=== PYTHON ===
+Python 3.11.11
+=== PILOTO INTEGRAL V3 ===
+[06:15:59] fiqa: 2000 docs | calib 5500 consultas | test 648 consultas
+[06:16:02] fase 0: indexando BM25 (2000 docs)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 4549.09it/s]
+[06:16:12] cargando embeddings de caché data/cache/emb_fiqa_2000_4d3e74f3f7ab_a5beb1e3_fp16.npy
+Could not reach the Hub (Cannot reach https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'cross-encoder/ms-marco-MiniLM-L-6-v2'.
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 4671.01it/s]
+Could not reach the Hub (Cannot reach https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'cross-encoder/ms-marco-MiniLM-L-6-v2'.
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 2822.09it/s]
+[06:16:17] fase 0: índices y modelos listos en 15s
+[06:16:26] calentamiento listo
+[06:16:26] calibración (a): 50 consultas a 1 QPS
+[06:17:03]   umbral de hedging = p95 reranker = 130.9 ms | e2e p99 = 227.1 ms
+[06:17:03] calibración (b): rampa
+[06:17:14]   1.0 QPS: logrado 1.07 | p99 297->221 ms | reranked 100% | servicio OK | híbrido OK
+[06:17:33]   2.0 QPS: logrado 2.53 | p99 310->335 ms | reranked 100% | servicio OK | híbrido OK
+[06:17:51]   4.0 QPS: logrado 3.07 | p99 245->375 ms | reranked 100% | servicio NO | híbrido NO
+[06:18:10]   8.0 QPS: logrado 6.33 | p99 559->462 ms | reranked 100% | servicio OK | híbrido OK
+[06:18:29]   16.0 QPS: logrado 16.40 | p99 1660->1457 ms | reranked 43% | servicio OK | híbrido NO
+[06:18:49]   32.0 QPS: logrado 33.87 | p99 1427->1407 ms | reranked 11% | servicio OK | híbrido NO
+[06:19:08]   64.0 QPS: logrado 66.93 | p99 1304->1204 ms | reranked 2% | servicio OK | híbrido NO
+[06:19:12] C servicio = 64.0 QPS | C híbrido (diagnóstico) = 8.0 QPS | umbral hedging = 130.9 ms
+[06:19:12] rep1 L25: 16.00 QPS durante 60.0s
+[06:20:13]   n=768 p99=2330ms cont=100.0% dup=9.8% rutas=reranked:43,fused_fallback:15,lex:42
+[06:20:15] rep1 L50: 32.00 QPS durante 60.0s
+[06:21:17]   n=1613 p99=1412ms cont=100.0% dup=9.5% rutas=reranked:10,lex:90
+[06:21:19] rep1 L75: 48.00 QPS durante 60.0s
+[06:22:20]   n=2505 p99=1305ms cont=100.0% dup=9.1% rutas=reranked:2,lex:98
+[06:22:23] rep1 L100: 64.00 QPS durante 60.0s
+[06:23:24]   n=3340 p99=1204ms cont=100.0% dup=0.0% rutas=reranked:0,lex:100
+[06:23:27] rep1 NORERANK: 64.00 QPS durante 60.0s
+[06:24:28]   n=3340 p99=1204ms cont=100.0% dup=0.0% rutas=fused_baseline:1,lex:99
+[06:24:30] rep1 NOHEDGE: 64.00 QPS durante 60.0s
+[06:25:32]   n=3340 p99=1204ms cont=100.0% dup=0.0% rutas=reranked:0,lex:100
+[06:25:34] rep1 F1: 48.00 QPS durante 60.0s
+[06:26:35]   n=2505 p99=1204ms cont=100.0% dup=9.9% rutas=fused_fallback:15,lex:85
+[06:26:38] rep1 F2: 48.00 QPS durante 60.0s
+[06:27:40]   n=2505 p99=2398ms cont=100.0% dup=9.9% rutas=fused_fallback:29,lex:71
+[06:27:42] rep1 F3H: 48.00 QPS durante 60.0s
+[06:28:44]   n=2505 p99=1335ms cont=100.0% dup=9.2% rutas=reranked:3,lex:97
+[06:28:46] rep1 F3NH: 48.00 QPS durante 60.0s
+[06:29:48]   n=2505 p99=1320ms cont=100.0% dup=0.0% rutas=reranked:2,lex:98
+[06:29:50] rep1 F4: 48.00 QPS durante 60.0s
+[06:30:50]   n=2505 p99=5ms cont=100.0% dup=0.0% rutas=lex:100
+[06:30:52] rep1 F5: 48.00 QPS durante 60.0s
+[06:31:54]   n=2505 p99=1202ms cont=22.9% dup=0.0% rutas=sem:23,error:77
+[06:31:56] rep1 F6: 48.00 QPS durante 60.0s
+[06:32:56]   n=2505 p99=nanms cont=0.0% dup=0.0% rutas=error:100
+[06:32:58] listo. Copia results/ fuera de Khipu (scp/rsync): no hay backup.
+=== PILOTO FINALIZADO ===

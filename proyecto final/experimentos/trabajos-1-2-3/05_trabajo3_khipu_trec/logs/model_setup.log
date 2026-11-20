@@ -1,0 +1,5 @@
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files:  73%|███████▎  | 8/11 [00:00<00:00, 16.35it/s]Fetching 11 files:  91%|█████████ | 10/11 [00:20<00:02,  2.00s/it]Fetching 11 files: 100%|██████████| 11/11 [00:23<00:00,  2.16s/it]Fetching 11 files: 100%|██████████| 11/11 [00:23<00:00,  2.16s/it]
+MODEL_READY BAAI/bge-base-en-v1.5 a5beb1e3e68b9ab74eb54cfd186867f64f240e1a
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files:  14%|█▍        | 1/7 [00:00<00:01,  4.03it/s]Fetching 7 files: 100%|██████████| 7/7 [00:05<00:00,  1.30it/s]Fetching 7 files: 100%|██████████| 7/7 [00:05<00:00,  1.30it/s]
+MODEL_READY cross-encoder/ms-marco-MiniLM-L-6-v2 233902d25c440f23af6f7d6e94d2946bac0bee0a
+MODELS_AND_DATA_PREPARED

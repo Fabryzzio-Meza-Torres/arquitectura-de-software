@@ -1,0 +1,30 @@
+{
+  "fiqa": {
+    "corpus": 57638,
+    "test_queries": 648,
+    "qrels": 1706,
+    "positive_qrels": 1706,
+    "zero_qrels": 0,
+    "negative_unjudged_qrels": 0,
+    "relevant_queries": 648,
+    "empty_titles": 57638,
+    "empty_texts": 38,
+    "duplicate_texts": 39,
+    "corpus_sha256": "ff593e4df9933955dc3af83be0c3fa28ac7465f627e08c2e53593e734d506517",
+    "qrels_sha256": "6adc2a640dcdd22bb8b3858f89107adef2a7c3db20a63550dfa7a0f71e379e44"
+  },
+  "trec-covid": {
+    "corpus": 171332,
+    "test_queries": 50,
+    "qrels": 66336,
+    "positive_qrels": 24673,
+    "zero_qrels": 41661,
+    "negative_unjudged_qrels": 2,
+    "relevant_queries": 50,
+    "empty_titles": 7,
+    "empty_texts": 42140,
+    "duplicate_texts": 0,
+    "corpus_sha256": "aded69896598665082316d00df487d22212cc5a8611db05db34eb40d04ed00d7",
+    "qrels_sha256": "10669ab7d526cb04f52079139fd88c3d467a0776441b046567f540582798982b"
+  }
+}

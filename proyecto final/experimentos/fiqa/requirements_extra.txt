@@ -1,0 +1,10 @@
+# Install in the existing Khipu venv ONLY if missing; pin resolved versions in final manifest.
+transformers>=4.45,<5
+accelerate
+sentencepiece
+safetensors
+huggingface_hub
+faiss-cpu
+bm25s
+PyStemmer
+numpy

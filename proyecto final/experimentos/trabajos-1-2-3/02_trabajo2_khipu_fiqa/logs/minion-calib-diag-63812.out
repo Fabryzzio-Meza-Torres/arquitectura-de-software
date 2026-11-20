@@ -1,0 +1,20 @@
+[05:21:02] fiqa: 2000 docs | calib 5500 consultas | test 648 consultas
+[05:21:06] fase 0: indexando BM25 (2000 docs)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5536.17it/s]
+[05:21:14] cargando embeddings de caché data/cache/emb_fiqa_2000_4d3e74f3f7ab_a5beb1e3_fp16.npy
+Could not reach the Hub (Cannot reach https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'cross-encoder/ms-marco-MiniLM-L-6-v2'.
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 5479.75it/s]
+Could not reach the Hub (Cannot reach https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'cross-encoder/ms-marco-MiniLM-L-6-v2'.
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 6139.97it/s]
+[05:21:17] fase 0: índices y modelos listos en 11s
+[05:21:29] calentamiento listo
+[05:21:29] calibración (a): 100 consultas a 1 QPS
+[05:22:57]   umbral de hedging = p95 reranker = 159.4 ms | e2e p99 = 293.5 ms
+[05:22:57] calibración (b): rampa
+[05:23:57]   1.0 QPS: logrado 0.90 | p99 421->280 ms | reranked 100% | servicio NO | híbrido NO
+[05:25:01]   2.0 QPS: logrado 2.42 | p99 462->404 ms | reranked 100% | servicio OK | híbrido OK
+[05:26:04]   4.0 QPS: logrado 3.88 | p99 739->1091 ms | reranked 100% | servicio NO | híbrido NO
+[05:27:10]   8.0 QPS: logrado 7.42 | p99 1519->2290 ms | reranked 75% | servicio NO | híbrido NO
+[05:28:15]   16.0 QPS: logrado 16.43 | p99 1847->1913 ms | reranked 38% | servicio OK | híbrido NO
+[05:28:18] C servicio = 16.0 QPS | C híbrido (diagnóstico) = 2.0 QPS | umbral hedging = 159.4 ms
+[05:28:18] listo. Copia results/ fuera de Khipu (scp/rsync): no hay backup.

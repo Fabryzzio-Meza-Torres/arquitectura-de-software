@@ -1,0 +1,135 @@
+{
+  "pilot": false,
+  "alpha": 0.85,
+  "alpha_sha256": "10f8b9ed90d17367837e9f40f7fd3a21c0e6b2db07b6f91c6892b3bf1560d500",
+  "node": "ag001",
+  "job_id": "63769",
+  "reranker": {
+    "specified_alias": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "canonical_model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "precision": "float32"
+  },
+  "stages": {
+    "configuration_validated": {
+      "elapsed_seconds": 0.00047596730291843414,
+      "details": null
+    },
+    "fiqa_data_validated": {
+      "elapsed_seconds": 1.7082635974511504,
+      "details": {
+        "corpus": 57638,
+        "test_queries": 648,
+        "qrels": 1706,
+        "positive_qrels": 1706,
+        "zero_qrels": 0,
+        "negative_unjudged_qrels": 0,
+        "relevant_queries": 648,
+        "empty_titles": 57638,
+        "empty_texts": 38,
+        "duplicate_texts": 39,
+        "corpus_sha256": "ff593e4df9933955dc3af83be0c3fa28ac7465f627e08c2e53593e734d506517",
+        "qrels_sha256": "6adc2a640dcdd22bb8b3858f89107adef2a7c3db20a63550dfa7a0f71e379e44"
+      }
+    },
+    "fiqa_bm25_ready": {
+      "elapsed_seconds": 0.804295752197504,
+      "details": null
+    },
+    "fiqa_embeddings_ready": {
+      "elapsed_seconds": 8.12152974307537,
+      "details": {
+        "documents": 57638,
+        "queries": 648
+      }
+    },
+    "fiqa_candidate_scores_saved": {
+      "elapsed_seconds": 26.531743394210935,
+      "details": 11665
+    },
+    "fiqa_reranked_same_candidates": {
+      "elapsed_seconds": 104.04670349974185,
+      "details": {
+        "queries": 648,
+        "candidates": 11665
+      }
+    },
+    "fiqa_metrics_bootstrap_complete": {
+      "elapsed_seconds": 107.30719462689012,
+      "details": {
+        "dataset": "fiqa",
+        "n_queries": 648,
+        "resamples": 10000,
+        "seed": 42,
+        "delta_precision_at_3": -0.020576131687242795,
+        "ci_95_low": -0.035493827160493825,
+        "ci_95_high": -0.005658436213991769,
+        "condensed_delta_precision_at_3": 0.0,
+        "delta_sign_preserved": false
+      }
+    },
+    "trec-covid_data_validated": {
+      "elapsed_seconds": 7.991537540219724,
+      "details": {
+        "corpus": 171332,
+        "test_queries": 50,
+        "qrels": 66336,
+        "positive_qrels": 24673,
+        "zero_qrels": 41661,
+        "negative_unjudged_qrels": 2,
+        "relevant_queries": 50,
+        "empty_titles": 7,
+        "empty_texts": 42140,
+        "duplicate_texts": 0,
+        "corpus_sha256": "aded69896598665082316d00df487d22212cc5a8611db05db34eb40d04ed00d7",
+        "qrels_sha256": "10669ab7d526cb04f52079139fd88c3d467a0776441b046567f540582798982b"
+      }
+    },
+    "trec-covid_bm25_ready": {
+      "elapsed_seconds": 110.01980405673385,
+      "details": null
+    },
+    "trec-covid_embeddings_ready": {
+      "elapsed_seconds": 1137.335459381342,
+      "details": {
+        "documents": 171332,
+        "queries": 50
+      }
+    },
+    "trec-covid_candidate_scores_saved": {
+      "elapsed_seconds": 1142.1405495041981,
+      "details": 930
+    },
+    "trec-covid_reranked_same_candidates": {
+      "elapsed_seconds": 1149.0122892996296,
+      "details": {
+        "queries": 50,
+        "candidates": 930
+      }
+    },
+    "trec-covid_metrics_bootstrap_complete": {
+      "elapsed_seconds": 1153.7039835825562,
+      "details": {
+        "dataset": "trec-covid",
+        "n_queries": 50,
+        "resamples": 10000,
+        "seed": 42,
+        "delta_precision_at_3": -0.026666666666666665,
+        "ci_95_low": -0.09333333333333334,
+        "ci_95_high": 0.03333333333333333,
+        "condensed_delta_precision_at_3": -0.026666666666666665,
+        "delta_sign_preserved": true
+      }
+    },
+    "COMPUTE_COMPLETE": {
+      "elapsed_seconds": 1154.0598175385967,
+      "details": null
+    }
+  },
+  "stage": "COMPLETE_VERIFIED",
+  "notebook_code_cells": 29,
+  "notebook_errors": 0,
+  "figures": 15,
+  "script_sha256": "c64853fe2d55fa207e06ac535c277b3a87d8687f4e632d45575442932e84e5e3",
+  "notebook_sha256": "620aa6b0039920dca95c187e315ebbd57910343cf4f42938186ec294c6c0a5c1"
+}

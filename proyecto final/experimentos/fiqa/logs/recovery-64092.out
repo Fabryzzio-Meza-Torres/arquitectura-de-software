@@ -1,0 +1,79 @@
+GPU retrieval: cuda
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 4992.32it/s]
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights:   0%|          | 1/434 [00:00<02:22,  3.04it/s]Loading weights:  20%|██        | 87/434 [00:00<00:01, 249.58it/s]Loading weights:  30%|███       | 131/434 [00:00<00:01, 236.34it/s]Loading weights:  38%|███▊      | 165/434 [00:00<00:01, 222.47it/s]Loading weights:  45%|████▍     | 194/434 [00:00<00:01, 215.64it/s]Loading weights:  51%|█████     | 220/434 [00:01<00:01, 193.92it/s]Loading weights:  56%|█████▌    | 243/434 [00:01<00:01, 182.60it/s]Loading weights:  62%|██████▏   | 267/434 [00:01<00:00, 189.02it/s]Loading weights:  66%|██████▋   | 288/434 [00:01<00:00, 185.80it/s]Loading weights:  71%|███████   | 309/434 [00:01<00:00, 188.30it/s]Loading weights:  76%|███████▌  | 329/434 [00:01<00:00, 186.54it/s]Loading weights:  81%|████████  | 351/434 [00:01<00:00, 173.50it/s]Loading weights:  86%|████████▋ | 375/434 [00:01<00:00, 185.88it/s]Loading weights:  92%|█████████▏| 400/434 [00:02<00:00, 192.30it/s]Loading weights: 100%|██████████| 434/434 [00:02<00:00, 199.35it/s]
+[8/20] qid=10183 candidates=18 llm_ms=1085.7
+[9/20] qid=10213 candidates=19 llm_ms=1000.1
+[10/20] qid=10246 candidates=19 llm_ms=906.6
+[11/20] qid=10267 candidates=18 llm_ms=852.3
+[12/20] qid=104 candidates=19 llm_ms=1050.4
+[13/20] qid=10414 candidates=19 llm_ms=918.6
+[14/20] qid=10447 candidates=13 llm_ms=736.4
+[15/20] qid=10462 candidates=19 llm_ms=840.9
+[16/20] qid=10482 candidates=18 llm_ms=887.3
+[17/20] qid=10497 candidates=18 llm_ms=877.3
+[18/20] qid=10526 candidates=17 llm_ms=838.1
+[19/20] qid=10547 candidates=17 llm_ms=838.4
+[20/20] qid=10558 candidates=20 llm_ms=1000.1
+{
+  "p@3": {
+    "A": 0.08333333333333333,
+    "B": 0.06666666666666667,
+    "delta": -0.016666666666666666,
+    "CI95": [
+      -0.05,
+      0.0
+    ],
+    "wins": 0,
+    "ties": 19,
+    "losses": 1
+  },
+  "ndcg@3": {
+    "A": 0.2065464876785729,
+    "B": 0.1261859507142915,
+    "delta": -0.08036053696428137,
+    "CI95": [
+      -0.2,
+      0.006546487678572877
+    ],
+    "wins": 1,
+    "ties": 16,
+    "losses": 3
+  },
+  "p@5": {
+    "A": 0.05,
+    "B": 0.05,
+    "delta": 0.0,
+    "CI95": [
+      0.0,
+      0.0
+    ],
+    "wins": 0,
+    "ties": 20,
+    "losses": 0
+  },
+  "ndcg@5": {
+    "A": 0.2065464876785729,
+    "B": 0.14771977861796115,
+    "delta": -0.058826709060611715,
+    "CI95": [
+      -0.1407590532532724,
+      0.006546487678572877
+    ],
+    "wins": 1,
+    "ties": 16,
+    "losses": 3
+  },
+  "mrr@10": {
+    "A": 0.19166666666666665,
+    "B": 0.1125,
+    "delta": -0.07916666666666666,
+    "CI95": [
+      -0.1875,
+      0.008333333333333335
+    ],
+    "wins": 1,
+    "ties": 16,
+    "losses": 3
+  }
+}

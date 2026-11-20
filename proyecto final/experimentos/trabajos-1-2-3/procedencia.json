@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/Fabryzzio-Meza-Torres/arquitectura-de-software",
+  "branches": {
+    "main": "f749842d94371a198228799af29b763d621364b4",
+    "paper/trabajo2": "650c992c4dd6aabd73b06ed9a218eb763ce80fba",
+    "feat/khipu-kaggle-results": "45e4db4e0cdf7c82375b6e1596a168737a07ac38"
+  },
+  "work1_jobs": [
+    63761,
+    63769
+  ],
+  "complementary_job": 63778,
+  "work3_capacity_attempt_job": 63911,
+  "work3_fixed_load_job": 63919,
+  "work3_analysis_job": 63913,
+  "work3_khipu_job": "63919",
+  "preserved_sources": true,
+  "original_branches_modified": false
+}

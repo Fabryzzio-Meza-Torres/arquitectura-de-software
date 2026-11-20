@@ -1,0 +1,6 @@
+{
+  "project": "/home/usuario/projects/minion_semantic_baselines_20261119",
+  "scope": "pure semantic baseline plus same-job convex latency control; saved LLM quality reference",
+  "trec_job": 64172,
+  "fiqa_job": 64173
+}

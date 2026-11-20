@@ -1,0 +1,13 @@
+series,rep,protocol,worst_load_p99_ms,fitness_i,worst_F1F2_continuity_pct,fitness_iii,worst_duplicates_pct,fitness_iv
+fiqa_kaggle,1,dataset_capacity_normalized,325.31,True,100.0,True,3.896103896103896,True
+fiqa_kaggle,2,dataset_capacity_normalized,314.683,True,100.0,True,7.792207792207792,True
+fiqa_kaggle,3,dataset_capacity_normalized,379.414,True,100.0,True,6.926406926406926,True
+fiqa_khipu,1,dataset_capacity_normalized,1483.018,True,100.0,True,9.856781802864363,True
+fiqa_khipu,2,dataset_capacity_normalized,1417.606,True,100.0,True,9.760132340777503,True
+fiqa_khipu,3,dataset_capacity_normalized,1504.033,True,100.0,True,9.882747068676716,True
+trec-covid_kaggle,1,dataset_capacity_normalized,398.888,True,100.0,True,8.98876404494382,True
+trec-covid_kaggle,2,dataset_capacity_normalized,453.507,True,100.0,True,10.112359550561798,False
+trec-covid_kaggle,3,dataset_capacity_normalized,463.0,True,100.0,True,10.112359550561798,False
+trec-covid_khipu,1,complementary_fixed_absolute_load,1745.818,True,100.0,True,9.91150442477876,True
+trec-covid_khipu,2,complementary_fixed_absolute_load,2067.905,True,100.0,True,9.914529914529915,True
+trec-covid_khipu,3,complementary_fixed_absolute_load,1728.866,True,100.0,True,9.904430929626411,True

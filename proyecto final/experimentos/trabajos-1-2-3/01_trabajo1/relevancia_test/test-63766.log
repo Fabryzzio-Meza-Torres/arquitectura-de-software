@@ -1,0 +1,54 @@
+2026-11-17T23:33:27-05:00
+ag001
+Tue Nov 17 23:33:27 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:C1:00.0 Off |                   On |
+| N/A   39C    P0             89W /  250W |    9612MiB /  40960MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| MIG devices:                                                                            |
++------------------+----------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |              Shared Memory-Usage |        Vol|        Shared         |
+|      ID  ID  Dev |                Shared BAR1-Usage | SM     Unc| CE ENC  DEC  OFA  JPG |
+|                  |                                  |        ECC|                       |
+|==================+==================================+===========+=======================|
+|  0    3   0   0  |              68MiB /  9984MiB    | 28      0 |  2   0    1    0    0 |
+|                  |               0MiB /  6099MiB    |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+configuration_validated 
+fiqa_data_validated {'corpus': 57638, 'test_queries': 648, 'qrels': 1706, 'positive_qrels': 1706, 'zero_qrels': 0, 'relevant_queries': 648, 'empty_titles': 57638, 'empty_texts': 38, 'duplicate_texts': 39, 'corpus_sha256': 'ff593e4df9933955dc3af83be0c3fa28ac7465f627e08c2e53593e734d506517', 'qrels_sha256': '6adc2a640dcdd22bb8b3858f89107adef2a7c3db20a63550dfa7a0f71e379e44'}
+fiqa_bm25_ready 
+encode emb_fiqa_test_pilot.npy 0 / 3
+fiqa_embeddings_ready {'documents': 57638, 'queries': 3}
+candidates fiqa 0 / 3
+fiqa_candidate_scores_saved 54
+rerank fiqa 0 / 3
+fiqa_reranked_same_candidates {'queries': 3, 'candidates': 54}
+fiqa_metrics_bootstrap_complete {'dataset': 'fiqa', 'n_queries': 3, 'resamples': 10000, 'seed': 42, 'delta_precision_at_3': 0.0, 'ci_95_low': -0.3333333333333333, 'ci_95_high': 0.3333333333333333, 'condensed_delta_precision_at_3': 0.0, 'delta_sign_preserved': True}
+Traceback (most recent call last):
+  File "/home/usuario/projects/minion_fiqa_alpha/minion_test.py", line 291, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/home/usuario/projects/minion_fiqa_alpha/minion_test.py", line 287, in main
+    s=load_dataset(ctx,ds); retrieve(ctx,s); rerank(ctx,s); evaluate(ctx,s)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/home/usuario/projects/minion_fiqa_alpha/minion_test.py", line 63, in load_dataset
+    assert set(qr.doc_id)<=set(ids) and (qr.relevance>=0).all()
+AssertionError
+srun: error: ag001: task 0: Exited with exit code 1

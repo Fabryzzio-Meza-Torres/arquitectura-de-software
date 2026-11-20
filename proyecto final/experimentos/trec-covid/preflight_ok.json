@@ -1,0 +1,200 @@
+{
+  "ok": true,
+  "job": "64076",
+  "node": "ag001",
+  "gpu": "NVIDIA A100-PCIE-40GB MIG 3g.20gb",
+  "precision": "float32",
+  "records": [
+    {
+      "batch": 1,
+      "effective": 1,
+      "seconds": 1.9098205715417862,
+      "scores": [
+        {
+          "score": 0.9269370436668396,
+          "label_mass": 1.0,
+          "probabilities": [
+            9.080220131352235e-09,
+            1.603095938662591e-06,
+            1.508074001321802e-05,
+            0.29221710562705994,
+            0.7077662348747253
+          ],
+          "truncated": false,
+          "input_tokens": 125,
+          "degraded": false
+        },
+        {
+          "score": 6.476749803141502e-08,
+          "label_mass": 0.9999999403953552,
+          "probabilities": [
+            0.9999999403953552,
+            9.088196861739561e-10,
+            2.3994656955794724e-11,
+            4.2185274717887467e-10,
+            6.421191045546948e-08
+          ],
+          "truncated": false,
+          "input_tokens": 120,
+          "degraded": false
+        },
+        {
+          "score": 0.45492851734161377,
+          "label_mass": 2.6648933060258173e-10,
+          "probabilities": [
+            0.015534426085650921,
+            0.20472979545593262,
+            0.7337307929992676,
+            0.03649694472551346,
+            0.009507965296506882
+          ],
+          "truncated": true,
+          "input_tokens": 1024,
+          "degraded": true
+        },
+        {
+          "score": 0.2569641172885895,
+          "label_mass": 1.0,
+          "probabilities": [
+            0.0007259540725499392,
+            0.9866315722465515,
+            0.0006887893541716039,
+            0.00796754565089941,
+            0.003986180294305086
+          ],
+          "truncated": false,
+          "input_tokens": 501,
+          "degraded": false
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "effective": 4,
+      "seconds": 3.595816041342914,
+      "scores": [
+        {
+          "score": 0.9269545078277588,
+          "label_mass": 1.0,
+          "probabilities": [
+            9.071755791012492e-09,
+            1.60192837483919e-06,
+            1.5069928849698044e-05,
+            0.2921468913555145,
+            0.7078364491462708
+          ],
+          "truncated": false,
+          "input_tokens": 125,
+          "degraded": false
+        },
+        {
+          "score": 6.473522518035679e-08,
+          "label_mass": 0.9999999403953552,
+          "probabilities": [
+            0.9999999403953552,
+            9.085042163015089e-10,
+            2.3988524708307146e-11,
+            4.217047266941165e-10,
+            6.417982945094991e-08
+          ],
+          "truncated": false,
+          "input_tokens": 120,
+          "degraded": false
+        },
+        {
+          "score": 0.4549283981323242,
+          "label_mass": 2.6649465967309993e-10,
+          "probabilities": [
+            0.015534470789134502,
+            0.20473039150238037,
+            0.7337300181388855,
+            0.036497119814157486,
+            0.00950795691460371
+          ],
+          "truncated": true,
+          "input_tokens": 1024,
+          "degraded": true
+        },
+        {
+          "score": 0.2569636404514313,
+          "label_mass": 1.0,
+          "probabilities": [
+            0.0007259215926751494,
+            0.9866325855255127,
+            0.0006887033232487738,
+            0.007966369390487671,
+            0.003986367490142584
+          ],
+          "truncated": false,
+          "input_tokens": 501,
+          "degraded": false
+        }
+      ]
+    },
+    {
+      "batch": 8,
+      "effective": 4,
+      "seconds": 3.5837275674566627,
+      "scores": [
+        {
+          "score": 0.9269545078277588,
+          "label_mass": 1.0,
+          "probabilities": [
+            9.071755791012492e-09,
+            1.60192837483919e-06,
+            1.5069928849698044e-05,
+            0.2921468913555145,
+            0.7078364491462708
+          ],
+          "truncated": false,
+          "input_tokens": 125,
+          "degraded": false
+        },
+        {
+          "score": 6.473522518035679e-08,
+          "label_mass": 0.9999999403953552,
+          "probabilities": [
+            0.9999999403953552,
+            9.085042163015089e-10,
+            2.3988524708307146e-11,
+            4.217047266941165e-10,
+            6.417982945094991e-08
+          ],
+          "truncated": false,
+          "input_tokens": 120,
+          "degraded": false
+        },
+        {
+          "score": 0.4549283981323242,
+          "label_mass": 2.6649465967309993e-10,
+          "probabilities": [
+            0.015534470789134502,
+            0.20473039150238037,
+            0.7337300181388855,
+            0.036497119814157486,
+            0.00950795691460371
+          ],
+          "truncated": true,
+          "input_tokens": 1024,
+          "degraded": true
+        },
+        {
+          "score": 0.2569636404514313,
+          "label_mass": 1.0,
+          "probabilities": [
+            0.0007259215926751494,
+            0.9866325855255127,
+            0.0006887033232487738,
+            0.007966369390487671,
+            0.003986367490142584
+          ],
+          "truncated": false,
+          "input_tokens": 501,
+          "degraded": false
+        }
+      ]
+    }
+  ],
+  "max_batch_score_difference": 1.7464160919189453e-05,
+  "scope": "real-model numerical and padding check; synthetic documents, not quality evidence"
+}

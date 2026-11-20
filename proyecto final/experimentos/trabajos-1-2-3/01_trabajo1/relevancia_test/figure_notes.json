@@ -1,0 +1,17 @@
+{
+  "R3_alpha_fiqa_dev.png": "La curva proviene del archivo validado de desarrollo: no se recalculó ni se usó test para ajustar α.\nEl valor fijo 0,85 se aplica sin cambios a FiQA-test y TREC-COVID.",
+  "R1_metricas_fiqa.png": "P@3 pasa de 0.2515 (fusión) a 0.2310 (reranking).\nLas barras muestran IC marginales; la comparación pareada de ΔP@3 está en R2. MRR de lex y sem es complementario.",
+  "R2_bootstrap_fiqa.png": "ΔP@3 = -0.0206; IC 95 % [-0.0355, -0.0057].\nEl intervalo es negativo; el remuestreo conserva el emparejamiento por consulta.",
+  "R4_matriz_transicion_fiqa.png": "72 consultas mejoran, 470 empatan y 106 empeoran.\nLas celdas a la derecha y por encima de la diagonal representan mejoras; la diagonal representa empates.",
+  "R5_gana_empata_pierde_fiqa.png": "El reranker mejora 11.1 %, empata 72.5 % y empeora 16.4 % de las consultas.\nEl cambio promedio debe interpretarse junto con estas diferencias entre consultas.",
+  "R6_matriz_posiciones_fiqa.png": "97 relevantes entran al top 3 desde posiciones inferiores; 137 salen del top 3.\nCada documento es el mismo antes y después: esta figura aísla el efecto de reordenar candidatos.",
+  "R7_origen_candidatos_fiqa.png": "La unión contiene 18.00 candidatos por consulta y 1.23 relevantes juzgados.\nLos aportes relevantes exclusivos de BM25 y denso son 0.11 y 0.58 por consulta.",
+  "R8_judged_fiqa.png": "Judged@10: fusión 11.6 %, reranker 10.6 %. Los grados 0 cuentan como juzgados.\nΔP@3 condensada = +0.0000; cambia el signo respecto de la evaluación original. FiQA solo tiene juicios positivos: el empate de P@3 condensada es estructural al compartir candidatos.",
+  "R1_metricas_trec-covid.png": "P@3 pasa de 0.9133 (fusión) a 0.8867 (reranking).\nLas barras muestran IC marginales; la comparación pareada de ΔP@3 está en R2. MRR de lex y sem es complementario.",
+  "R2_bootstrap_trec-covid.png": "ΔP@3 = -0.0267; IC 95 % [-0.0933, +0.0333].\nEl intervalo es compatible con cero; el remuestreo conserva el emparejamiento por consulta.",
+  "R4_matriz_transicion_trec-covid.png": "6 consultas mejoran, 37 empatan y 7 empeoran.\nLas celdas a la derecha y por encima de la diagonal representan mejoras; la diagonal representa empates.",
+  "R5_gana_empata_pierde_trec-covid.png": "El reranker mejora 12.0 %, empata 74.0 % y empeora 14.0 % de las consultas.\nEl cambio promedio debe interpretarse junto con estas diferencias entre consultas.",
+  "R6_matriz_posiciones_trec-covid.png": "83 relevantes entran al top 3 desde posiciones inferiores; 87 salen del top 3.\nCada documento es el mismo antes y después: esta figura aísla el efecto de reordenar candidatos.",
+  "R7_origen_candidatos_trec-covid.png": "La unión contiene 18.60 candidatos por consulta y 13.34 relevantes juzgados.\nLos aportes relevantes exclusivos de BM25 y denso son 5.06 y 6.98 por consulta.",
+  "R8_judged_trec-covid.png": "Judged@10: fusión 93.8 %, reranker 96.8 %. Los grados 0 cuentan como juzgados.\nΔP@3 condensada = -0.0267; se mantiene el signo respecto de la evaluación original."
+}

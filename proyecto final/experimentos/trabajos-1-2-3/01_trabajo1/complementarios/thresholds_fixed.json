@@ -1,0 +1,37 @@
+{
+  "analysis": "complementary",
+  "alpha": 0.85,
+  "training_split": "FiQA-dev",
+  "primary_target_rate": 0.5,
+  "rule": "rerank iff n_candidates >= 4 and fused_score_rank3 - fused_score_rank4 <= threshold",
+  "quantile_method": "numpy.quantile(method=linear)",
+  "threshold_ties": "invoke all gaps <= threshold; report actual rates",
+  "source_path": "/home/usuario/projects/minion_fiqa_alpha/results/cands_fiqa_dev.parquet",
+  "source_sha256": "733e489518a932a3d8a8e9de722eba903d274707e6770ab891f5e5ad5a5cd3ae",
+  "thresholds": [
+    {
+      "target_rate": 0.25,
+      "threshold": 0.010909720700030157,
+      "dev_invocations": 125,
+      "dev_queries": 500,
+      "dev_actual_rate": 0.25,
+      "quantile": 0.25
+    },
+    {
+      "target_rate": 0.5,
+      "threshold": 0.025397131662537986,
+      "dev_invocations": 250,
+      "dev_queries": 500,
+      "dev_actual_rate": 0.5,
+      "quantile": 0.5
+    },
+    {
+      "target_rate": 0.75,
+      "threshold": 0.05134022427134277,
+      "dev_invocations": 375,
+      "dev_queries": 500,
+      "dev_actual_rate": 0.75,
+      "quantile": 0.75
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "analysis_type": "complementary",
+  "passed": true,
+  "smoke": true,
+  "alpha": 0.85,
+  "rrf_k": 60,
+  "thresholds_source": "FiQA-dev only; frozen before test evaluation",
+  "primary_target_rate": 0.5,
+  "thresholds_sha256": "1dd32cd21a04cb46c6aa35e0209fa0e8137ad31242e746fd6ae8326248a83704",
+  "script_sha256": "be73138602a063046cc028f4d630aab6ed94c1a0eec91e5c863379cb89b4e692",
+  "inputs": {
+    "/home/usuario/projects/minion_fiqa_alpha/results/alpha.json": {
+      "bytes": 1221,
+      "sha256": "10f8b9ed90d17367837e9f40f7fd3a21c0e6b2db07b6f91c6892b3bf1560d500"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/results/alpha_curve.csv": {
+      "bytes": 1205,
+      "sha256": "c9656b66713f50ea8827d375fd9c6e07f6c781f672ec09470633957e80d96103"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/results/cands_fiqa_dev.parquet": {
+      "bytes": 362706,
+      "sha256": "733e489518a932a3d8a8e9de722eba903d274707e6770ab891f5e5ad5a5cd3ae"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/test_results/alpha_usado.json": {
+      "bytes": 1221,
+      "sha256": "10f8b9ed90d17367837e9f40f7fd3a21c0e6b2db07b6f91c6892b3bf1560d500"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/test_results/per_query_metrics.csv": {
+      "bytes": 136846,
+      "sha256": "f11d57d25d273c28db3b909d495b574ed6deacb56cd5a86e06aa2b6af0167c90"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/test_results/cands_fiqa_test.parquet": {
+      "bytes": 740823,
+      "sha256": "e09d73e5c0b5618e1f53abead381a71264f5bbe02f0a4d4a35811f048d18ace3"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/data/fiqa/qrels/test.tsv": {
+      "bytes": 25256,
+      "sha256": "6adc2a640dcdd22bb8b3858f89107adef2a7c3db20a63550dfa7a0f71e379e44"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/test_results/runs/fiqa_lex.trec": {
+      "bytes": 194122,
+      "sha256": "f5463390c6700ad38974dadf12eb5b2cec04a953afd54c7067bc36b06d414c46"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/test_results/runs/fiqa_sem.trec": {
+      "bytes": 194062,
+      "sha256": "f2b8a29cf1e986b2d01d0abb60508a1335d85171c6bb741be3fdfe588cb2916c"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/test_results/runs/fiqa_fused.trec": {
+      "bytes": 382019,
+      "sha256": "2667866bbd78298398a1f5b18c2b371a27e7b7d4c75861881f16cb47350b2360"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/test_results/runs/fiqa_reranked.trec": {
+      "bytes": 417014,
+      "sha256": "6eee4090cbaf3ac4343c030e3ff69b2ae1b649b28a03ec54355c03e61908d690"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/test_results/cands_trec-covid_test.parquet": {
+      "bytes": 66316,
+      "sha256": "9d550c7ddcf5382a65b5c800a5c8766276aef9d43d8d28e40fa74209ff89c4a9"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/data/trec-covid/qrels/test.tsv": {
+      "bytes": 980831,
+      "sha256": "10669ab7d526cb04f52079139fd88c3d467a0776441b046567f540582798982b"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/test_results/runs/trec-covid_lex.trec": {
+      "bytes": 15010,
+      "sha256": "3336bcaf417b9f2d5adff5a57d15d616b259193ea34b3b584d1ea58e3b55323f"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/test_results/runs/trec-covid_sem.trec": {
+      "bytes": 15010,
+      "sha256": "bab92eb1fe150d49e2f15e86097fefa0f9de66703591eca3d0b41d6f92fff5b7"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/test_results/runs/trec-covid_fused.trec": {
+      "bytes": 30546,
+      "sha256": "48c8426b6c98ed5d046ab6754a6bf96244011ee305fecdb1030b178081c32f53"
+    },
+    "/home/usuario/projects/minion_fiqa_alpha/test_results/runs/trec-covid_reranked.trec": {
+      "bytes": 33336,
+      "sha256": "b438e68102349ec744aa55b1feda1616cec3bd9ac02e097f067f43faa2925b6b"
+    }
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "pandas": "3.1.0",
+    "ir_measures": "0.4.3",
+    "matplotlib": "3.11.2",
+    "pyarrow": "26.0.0"
+  },
+  "bootstrap_seeds": {
+    "fiqa": 420,
+    "trec-covid": 421
+  },
+  "bootstrap_resamples": 100,
+  "random_repetitions": 3,
+  "random_seed_formula": "42000 + dataset_index*10000 + target_index*1000 + replicate_index",
+  "paired_random_comparison": "query bootstrap conditional on the recorded average of 100 fixed random selections",
+  "latencies_measured": false,
+  "model_inference_executed": false,
+  "node": "n005",
+  "slurm_job_id": "63777",
+  "elapsed_seconds": 13.365049861371517
+}

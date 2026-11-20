@@ -1,0 +1,43 @@
+#!/bin/bash
+#SBATCH --job-name=minion-pilot-v3
+#SBATCH --account=tesis
+#SBATCH --partition=data-science
+#SBATCH --nodelist=ds001
+#SBATCH --gres=shard:1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+#SBATCH --time=00:45:00
+#SBATCH --output=logs/%x-%j.out
+
+set -euo pipefail
+
+cd "$HOME/minion_trabajo2"
+
+module load python3/3.11.11
+source "$HOME/venvs/minion311/bin/activate"
+
+export HF_HUB_OFFLINE=1
+export TOKENIZERS_PARALLELISM=false
+export OMP_NUM_THREADS=4
+
+echo "=== HARDWARE ==="
+hostname
+nvidia-smi
+
+echo "=== PYTHON ==="
+python --version
+
+echo "=== PILOTO INTEGRAL V3 ==="
+
+srun --ntasks=1 "$HOME/venvs/minion311/bin/python" \
+  minion_bench.py \
+  --dataset fiqa \
+  --subset 2000 \
+  --quick \
+  --conditions all \
+  --threads 4 \
+  --data-dir data \
+  --alpha-json alpha.json \
+  --out results_pilot_v3/
+
+echo "=== PILOTO FINALIZADO ==="

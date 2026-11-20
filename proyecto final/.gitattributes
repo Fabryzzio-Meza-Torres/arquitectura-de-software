@@ -1,0 +1,6 @@
+# Preserve the bytes of archived experiment evidence across platforms.
+* -text
+* whitespace=cr-at-eol
+# The archive retains whitespace from the original logs and experiment sources.
+experimentos/** whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+paper/figuras/*.svg whitespace=cr-at-eol,-blank-at-eol

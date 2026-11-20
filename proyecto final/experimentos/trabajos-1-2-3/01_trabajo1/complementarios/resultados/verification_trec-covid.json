@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "queries": 50,
+  "all_query_candidate_sets_equal": true,
+  "cached_metrics_match": true,
+  "bootstrap_seed": 421,
+  "bootstrap_resamples": 10000,
+  "random_repetitions": 100,
+  "random_exact_invocation_counts": true
+}
